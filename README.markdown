@@ -1,0 +1,1 @@
+Jekyll made static site
