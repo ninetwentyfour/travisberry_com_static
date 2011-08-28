@@ -1,0 +1,21 @@
+multiviews: true
+#only works with https://github.com/stammy/jekyll, explained below
+
+source:      .
+destination: ./_site
+includes:    ./_includes
+
+pygments:    true
+markdown:    rdiscount
+permalink:   /:year/:month/:title.html
+pagination: true
+
+#base_url: http://www.travisberry.com
+base_url: http://localhost:4000
+description: "Travis Berry's blog about all thing video production and web design."
+root_desc: "Travis Berry's blog about all thing video production and web design."
+
+rdiscount:
+  extensions: []
+  
+exclude: ['Rakefile', 'README.markdown', 'config.rb']

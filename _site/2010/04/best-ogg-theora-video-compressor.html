@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Best Ogg Theora Video Compressor | Travis Berry</title>
+    <meta name="author" content="Travis Berry">
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+    
+    <link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/stylev2.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    ie
+    <![endif]-->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    </head>
+      <body>
+        <div id="topBar">
+          
+          <a href="http://localhost:4000/2011/05/create-github-gist-with-ruby.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/05/write-text-anywhere-with-html5-canvas.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/03/a-day-in-the-life-of-me.html"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/02/fast-cakephp-search-with-indextank.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/haml-sass-markdown-and-cakephp-oh-my.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/new-time-tracking-web-app-homkora.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+          
+        </div>
+        <div id="wrapper" class="container_12">
+          <!--<header id="header" class="grid_12">
+          <h1><a href="/">Travis Berry</a></h1>
+        </header>--> <!-- end header -->
+				<div id="content">     
+				  <nav>
+					  <ul id="menu" class="clearfix">
+					    <li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+							<li class="link on first last" id="home-link"><a href="/blog.html"><span></span>Blog</a></li>
+							<li class="link on first last" id="home-link"><a href="/work.html"><span></span>Work</a></li>
+							<li class="link on first last" id="home-link"><a href="/contact.html"><span></span>Contact</a></li>
+					  </ul>
+					  <br class="clear" />
+					</nav>
+				  <!-- Show a "Please Upgrade" box to both IE7 and IE6 users (Edit to IE 6 if you just want to show it to IE6 users) - jQuery will load the content from js/ie.html into the div -->
+				  <!--[if lte IE 7]>
+				  <div class="ie grid_7"></div>
+				  <![endif]-->
+					<div id="post">
+<p><a href="http://www.flickr.com/photos/lancesh/2162074087/"><img src="http://content.travisberry.com/oggpixels.jpg" title="oggpixels" alt="" /></a>A while back I did a <a href="http://www.travisberry.com/2010/03/video-compression-show-down/">comparison of the popular mp4 compressors</a>. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.I try to make my content cross browser compatible, but for this one I have no choice. <strong>You must use Firefox or Chrome to fully view this post.</strong> The newer the version the better.<!--more-->Anyway, back to the post. I started with a small clip from the 720p version of <a href="http://orange.blender.org/">Elephants Dream</a>. It's a cool little short and I suggest going and watching it if you haven't already.So with this clip in hand I ran it through 6 different compressors. <br /><br /><a href="http://v2v.cc/~j/ffmpeg2theora/">ffmpeg2theora</a> (6.10 MB)- lots of settings
+- smallest file
+- moderate quality
+- moderate ease of use
+<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/2theora.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.ffmpeg.org/">FFmpeg</a> (6.19 MB)- same as ffmpeg2theora
+- no sound (can have sound if you encode separately and then combine)
+- has to be a size divisible by 16
+<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/ffmpeg.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://firefogg.org/">FireFogg</a> (18.87 MB)- decent settings
+- fairly easy to use
+- good quality at large size
+<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/firefogg.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.mirovideoconverter.com/">Miro Video Converter</a> (22.20 MB)- largest size
+- best quality
+- easy to use
+- can't resize
+- no settings for anything
+<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/miro.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://xiph.org/quicktime/">QuickTime</a> (17.37 MB)- good quality large size
+- same export as any other qt
+- moderate amounts of video settings, no audio settings
+<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/qt.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.videolan.org/vlc/">VLC</a> (21.94 MB)- large size
+- serious streaming issues
+- small amount of settings
+<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/vlc.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video>and for comparison <br /><br />h264 (6.22 MB)<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/html5video/oggoutputs/h264.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/html5video/oggoutputs/h264.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/">In the end I would recommend ffmpeg2theora. If you're comfortable with the command line that is. Otherwise, everything except VLC would work for you. For the curious here are the commands I used.FFmpeg</embed><code>ffmpeg -i Elephants_Dream.mov -vcodec libtheora -b 700k -s 512x288 -acodec libvorbis -ab 96k -threads 6 test.ogg</code>ffmpeg2theora<code>ffmpeg2theora -V 700 -A 96 -H 44100 -K 24 -x 640 -y 360 --two-pass --optimize --speedlevel 0 --seek-index --soft-target --pp vdeblock:10/hdeblock:10 Elephants_Dream.mov</code>If you have any suggestions for improving these please let me know in the comments. <script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></object></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby.html">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas.html">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me.html">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+				</div> <!-- end content -->
+				<div class="clear"></div>
+				<footer id="footer" class="grid_12">
+				  <h1><a href="/">Travis Berry</a></h1>
+				</footer> <!-- end footer -->
+				<div class="clear"></div>
+				</div> <!-- end wrapper -->
+				</body>
+				</html>

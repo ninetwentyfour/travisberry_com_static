@@ -1,0 +1,13 @@
+--- 
+layout: post
+title: Google Adds Support For Self Hosted Video
+wordpress_id: 279
+wordpress_url: http://www.travisberry.com/?p=279
+categories: 
+- title: Uncategorized
+  slug: uncategorized
+  autoslug: uncategorized
+tags: []
+
+---
+At one point it was a big question as to whether or not google would include self hosted video in it's universal search results. Well it looks like it does. I found this pic while searching for my indexed pages. This video is an embedded quicktime movie.

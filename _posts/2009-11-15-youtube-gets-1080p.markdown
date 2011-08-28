@@ -1,0 +1,33 @@
+--- 
+layout: post
+title: YouTube Gets 1080p
+wordpress_id: 91
+wordpress_url: http://www.travisberry.com/?p=91
+categories: 
+- title: Uncategorized
+  slug: uncategorized
+  autoslug: uncategorized
+tags: []
+image: "http://www.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg"
+summary: "YouTube is the worlds largest online video site. They have been slow to the game when it comes to HD video but they seem to be trying to take the lead as of late."
+---
+<article class="post clearfix">
+  <h3>YouTube Gets 1080p</h3>
+  <a href="http://youtube.com" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2009-11-15</h6>
+
+[YouTube](http://youtube.com) is the worlds largest online video site. They have been slow to the game when it comes to HD video but they seem to be trying to take the lead as of late. <!--more-->
+<div class="clearfix"></div>
+
+YouTube now streams in up to 1080p. If you're interested in the quality check out this embed below.
+
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/qas5lWp7_R0&hl=en_US&fs=1&rel=0&hd=1" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed src="http://www.youtube.com/v/qas5lWp7_R0&hl=en_US&fs=1&rel=0&hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+
+You'll notice it takes some seriously fast internet to not have to let it buffer for a while, but it's not unbearable.They have certainly come a long way compared to the early days. 
+
+This is a screencap of the compressed mess that is one of my early uploads.
+
+![compressedvideoyoutube](http://www.travisberry.com/wp-content/uploads/2009/11/compressedvideoyoutube-640x385.jpg "compressedvideoyoutube")
+
+Have you uploaded a 1080p video? Post a link to it in the comments.
+</article>

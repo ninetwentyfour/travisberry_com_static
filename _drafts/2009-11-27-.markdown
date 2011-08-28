@@ -1,0 +1,13 @@
+--- 
+layout: post
+title: Flash vs Quicktime - Streaming Showdown
+wordpress_id: 281
+wordpress_url: http://www.travisberry.com/?p=281
+categories: 
+- title: Uncategorized
+  slug: uncategorized
+  autoslug: uncategorized
+tags: []
+
+---
+Quicktime:Good:Speed detection: iphone friendly:Simpler:

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Haml, Sass, Markdown, and CakePHP - Oh My! | Travis Berry</title>
+    <meta name="author" content="Travis Berry">
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+    
+    <link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/stylev2.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    ie
+    <![endif]-->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    </head>
+      <body>
+        <div id="topBar">
+          
+          <a href="http://localhost:4000/2011/05/create-github-gist-with-ruby.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/05/write-text-anywhere-with-html5-canvas.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/03/a-day-in-the-life-of-me.html"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/02/fast-cakephp-search-with-indextank.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/haml-sass-markdown-and-cakephp-oh-my.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/new-time-tracking-web-app-homkora.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+          
+        </div>
+        <div id="wrapper" class="container_12">
+          <!--<header id="header" class="grid_12">
+          <h1><a href="/">Travis Berry</a></h1>
+        </header>--> <!-- end header -->
+				<div id="content">     
+				  <nav>
+					  <ul id="menu" class="clearfix">
+					    <li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+							<li class="link on first last" id="home-link"><a href="/blog.html"><span></span>Blog</a></li>
+							<li class="link on first last" id="home-link"><a href="/work.html"><span></span>Work</a></li>
+							<li class="link on first last" id="home-link"><a href="/contact.html"><span></span>Contact</a></li>
+					  </ul>
+					  <br class="clear" />
+					</nav>
+				  <!-- Show a "Please Upgrade" box to both IE7 and IE6 users (Edit to IE 6 if you just want to show it to IE6 users) - jQuery will load the content from js/ie.html into the div -->
+				  <!--[if lte IE 7]>
+				  <div class="ie grid_7"></div>
+				  <![endif]-->
+					<div id="post">
+<p><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" title="haml-sass" alt="" />I've recently begun using <a href="http://haml-lang.com/">Haml</a> and <a href="http://sass-lang.com/">Sass</a> instead of good ol' HTML and CSS. If you haven't heard of them, "Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to", and "Sass makes CSS fun again". The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.While I don't have anything against Ruby, it's not my language of choice. I use PHP for just about everything backend and most of my apps and sites are built upon CakePHP, my favorite framework.Luckily there are ports of Haml and Sass for use with PHP. There are several out there, but I went with PHamlP mainly because it has a CakePHP plugin available for download.The install instructions for the plugin are greatly lacking, or at least I couldn't get them to work out of the box, so I decided to document how I went about getting it working and rocking out.<!--more-->Oh, and as a bonus, we are going to setup <a href="http://daringfireball.net/projects/markdown/">Markdown</a> too.So to start <a href="http://code.google.com/p/phamlp/downloads/list">grab a copy of PHamlP</a> and find a CakePHP project you would like to add it to. Unzip the file and you should be looking at a Installation.txt, license.txt, vendors, views, and webroot folders.Copy the files in each folder to their corresponding folders in /app in your Cake project. (e.g. vendors => vendors | views => views | webroot => webroot)Now for all the wonderful configuring.<strong>HAML</strong>Let's start with getting just Haml working for the time being.Open up your app_controller.php and add the following line[cc lang="php"]var $view = 'Haml';[/cc]Now open up /config/core.php and scroll to the bottom. Add[cc lang="php"]Configure::write('Haml.format', 'html5');Configure::write('Haml.filterDir', VIEWS.'filters');[/cc]The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.Now open up the haml.php file you added to views. Find the line that says[cc lang="php"]App::import('Vendor', 'HamlParser', array('file'=>'phamlp'.DS.'haml'.DS.'HamlParser.php'));[/cc]and change it to[cc lang="php"]App::import('Vendor', 'HamlParser', array('file'=>'haml'.DS.'HamlParser.php'));[/cc]This assumes you copied the vendors contents to vendors in CakePHP.After that, you should have Haml up and running. I find the best way to test without changing all you layouts and views is to test with a page, then move on to replacing the rest of your views.<strong>SASS</strong>Let's tackle the Sass.One important decision to make right off the bat is if you want to use the older .sass format or the newer .scss version. Now according to the docs, it shouldn't matter, you just create whatever type you want and it handles the rest. Well I didn't find this to work, and I had to change some code to support .scss files. So for the purpose of this tutorial I will show how to get those to work, but I'll flag the step to skip if you want to use the older .sassWith that out of the way, time to start the config.Open the core.php file back up and go to the Haml code we added earlier. Under that add[cc lang="php"]Configure::write('Sass.style', 'compressed');Configure::write('Asset.filter.css', 'sass.php');[/cc]The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.Now open up sass.php and find the line that looks like[cc lang="php"]App::import('Vendor', 'SassParser', array('file'=>'phamlp'.DS.'sass'.DS.'SassParser.php'));[/cc]Replace it with[cc lang="php"]App::import('Vendor', 'SassParser', array('file'=>'sass'.DS.'SassParser.php'));[/cc]After that you should be able to start putting .sass files into your css directory and they will compile to css.However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like[cc lang="php"]header("Content-Type: text/css");header("Expires: " . gmdate("D, j M Y H:i:s", time() + DAY) . " GMT");header("Cache-Control: cache"); // HTTP/1.1header("Pragma: cache");        // HTTP/1.0[/cc]with[cc lang="php"]ob_start ("ob_gzhandler");header("Content-Type: text/css");$seconds_to_cache = 31556926;$ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";header("Expires: $ts");header("Pragma: cache");header("Cache-Control: maxage=$seconds_to_cache");[/cc]Then add a line to the bottom of the file with this[cc lang="php"]ob_end_flush();[/cc]Your compiled css files should now transfer gzipped.Now lets add support for the newer .scss file. If you want to use .sass you can skip this part.Find the line[cc lang="php"]$sassFile = str_replace('.css', '.sass', $cssFile);[/cc]and replace it with[cc lang="php"]$sassFile = str_replace('.css', '.scss', $cssFile);[/cc]You can now use .scss files instead of .sassHaml and Sass should be up and running now.<strong>MARKDOWN</strong>However, some people make the argument that you shouldn't use Haml to style the content of your page. By content, they are referring to the main text of the page. The "meat" so to speak. For a good read on the subject, check out this post. http://chriseppstein.github.com/blog/2010/02/08/haml-sucks-for-content/Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to[cc lang="php"]:markdownHere is some markdown===[/cc]inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/Make sure to grab the EXTRA's version.Add a folder to vendors called markdown. Place the download files into it.Now open up the HamlMarkdownFilter.php inside the views/filters folder.Change[cc lang="php"]App::import('Vendor', 'HamlMarkdownFilter', array('file'=>'phamlp'.DS.'haml'.DS.'filters'.DS.'<em>HamlMarkdownFilter.php'));[/cc]To[cc lang="php"]App::import('Vendor', 'HamlMarkdownFilter', array('file'=>'haml'.DS.'filters'.DS.'</em>HamlMarkdownFilter.php'));[/cc]Now open up the <em>HamlMarkdownFilter.php file inside /vendors/haml/filtersChange[cc lang="php"]protected $vendorClass = 'MarkdownExtra_Parser';[/cc]To[cc lang="php"]protected $vendorClass = 'Markdown_Parser';[/cc]also change[cc lang="php"]return '&lt;?php'.(!empty($this->vendorPath)?'require_once "'.$this->vendorPath.'";':'').'$markdown</em><strong>=new '.$this->vendorClass.'();echo  $markdown</strong><em>->safeTransform("'.preg_replace(HamlParser::MATCH_INTERPOLATION, '".\1."', $text).'");?>';[/cc]To[cc lang="php"]return '&lt;?php'.(!empty($this->vendorPath)?'require_once "'.$this->vendorPath.'";':'').'$markdown</em><strong>=new '.$this->vendorClass.'();echo  $markdown</strong>_->transform("'.preg_replace(HamlParser::MATCH_INTERPOLATION, '".\1."', $text).'");?>';[/cc]Now throw some Markdown into you Haml files and prepare to be amazed.I'm not sure why I had to change so much to get this setup to work. If you compare the Installation.txt to this post, you will see mine takes much more work. Don't take that as a dig on the developers though, there could be many reasons their interactions didn't work for me. I just figured if I had this hard of a time, someone else may run into similar issues and I could save them some time with this write up.If I am an idiot and there is a way simpler way to get this working, let me know in the comments. You can also view a project I've set this up with on <a href="https://github.com/ninetwentyfour/Homkora">github</a>.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby.html">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas.html">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me.html">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+				</div> <!-- end content -->
+				<div class="clear"></div>
+				<footer id="footer" class="grid_12">
+				  <h1><a href="/">Travis Berry</a></h1>
+				</footer> <!-- end footer -->
+				<div class="clear"></div>
+				</div> <!-- end wrapper -->
+				</body>
+				</html>

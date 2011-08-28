@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Create A Ghetto, But Functional, Search Function For CakePHP | Travis Berry</title>
+    <meta name="author" content="Travis Berry">
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+    
+    <link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/stylev2.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    ie
+    <![endif]-->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    </head>
+      <body>
+        <div id="topBar">
+          
+          <a href="http://localhost:4000/2011/05/create-github-gist-with-ruby.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/05/write-text-anywhere-with-html5-canvas.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/03/a-day-in-the-life-of-me.html"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/02/fast-cakephp-search-with-indextank.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/haml-sass-markdown-and-cakephp-oh-my.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+          
+          <a href="http://localhost:4000/2011/01/new-time-tracking-web-app-homkora.html"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+          
+        </div>
+        <div id="wrapper" class="container_12">
+          <!--<header id="header" class="grid_12">
+          <h1><a href="/">Travis Berry</a></h1>
+        </header>--> <!-- end header -->
+				<div id="content">     
+				  <nav>
+					  <ul id="menu" class="clearfix">
+					    <li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+							<li class="link on first last" id="home-link"><a href="/blog.html"><span></span>Blog</a></li>
+							<li class="link on first last" id="home-link"><a href="/work.html"><span></span>Work</a></li>
+							<li class="link on first last" id="home-link"><a href="/contact.html"><span></span>Contact</a></li>
+					  </ul>
+					  <br class="clear" />
+					</nav>
+				  <!-- Show a "Please Upgrade" box to both IE7 and IE6 users (Edit to IE 6 if you just want to show it to IE6 users) - jQuery will load the content from js/ie.html into the div -->
+				  <!--[if lte IE 7]>
+				  <div class="ie grid_7"></div>
+				  <![endif]-->
+					<div id="post">
+<p><a href="http://store.steampowered.com/app/400/"><img src="http://content.travisberry.com/portalcake2.jpg" title="portalcake2" alt="" /></a>Recently I needed to add a search function for a <a href="http://cakephp.org/">CakePHP</a> application I am building. After googling the bejeezus out of it, I never found a solution that worked. Some required the use of a search table, which then needed to index all of your content, other's just didn't work at all.After much hacking around I came up with a solution that works for me. This may or may not solve your particular problem, but it may help get you started in the right direction.<!--more-->I'll be using a fairly standard User MVC for this demo.First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.<code>&lt;div id="search"&gt;    &lt;form id="orderform" action="&lt;?php echo $html-&gt;url('/users/search'); ?&gt;" method="post" enctype="multipart/form-data"&gt;    &lt;label for="searchuser"&gt;Search Users:&lt;/label&gt;&lt;input type="text" name="searchuser" /&gt;    Search By:    &lt;input type="radio" name="searchtype" value="User.id" checked /&gt; User ID    &lt;input type="radio" name="searchtype" value="User.email" checked /&gt; User Email    &lt;input type="radio" name="searchtype" value="Entity.name" /&gt; Entity Name    &lt;?php echo $form?&gt;end('Search');    ?&gt;&lt;/form&gt;&lt;/div&gt;</code>The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.Now in the controller, it's time to add the search action.       <code>&lt;?phpfunction search() {    $searchtype = $_POST['searchtype'];    $value = $_POST['searchuser'];    $results = $this?&gt;User-&gt;find('all', array('fields' =&gt; array(                                                                'User.id',                                                                'User.email',                                                                'Entity.name',                                                                'User.created',                                                                'User.modified'                                                                ),                                              'order' =&gt; 'User.id ASC',                                              'conditions' =&gt; array($searchtype . ' ' . 'LIKE' =&gt; '%'.$value.'%')                                              )                                 );    $this-&gt;set('results', $results);}</code>It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' => %1%) One last thing is to create the search.ctp``<div id="search">    <form id="orderform" action="<?php echo $html->url('/users/search'); ?>" method="post" enctype="multipart/form-data">    <label for="searchuser">Search Users:</label><input type="text" name="searchuser" />    Search By:    <input type="radio" name="searchtype" value="User.id" checked /> User ID    <input type="radio" name="searchtype" value="User.email" checked /> User Email    <input type="radio" name="searchtype" value="Entity.name" /> Entity Name    &lt;?php echo $form?>end('Search'); ?></form></div><div id="contentbox">    ## Manage Users</p>
+
+<pre><code>&lt;table&gt;        &lt;thead&gt;            &lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Email&lt;/th&gt;&lt;th&gt;Entity Name&lt;/th&gt;        &lt;/thead&gt;        &lt;?php foreach($results as $user) : ?&gt;              &lt;tr&gt;                &lt;td&gt;&lt;?php echo $user['User']['id'] ?&gt;&lt;/td&gt;                &lt;td&gt;&lt;?php echo $user['User']['email'] ?&gt;&lt;/td&gt;                &lt;td&gt;&lt;?php echo $user['Entity']['name'] ?&gt;&lt;/td&gt;            &lt;/tr&gt;        &lt;?php endforeach; ?&gt;    &lt;/table&gt;&lt;/div&gt;``It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.So it may not be the cleanest solution in the world, but it works well, and is flexible enough so you can tweak it to many different situations. If you have a better way to search with CakePHP, please let me know in the comments. Or feel free to ask any questions.&lt;script&gt;utmx_section("contact1")&lt;/script&gt;&lt;div id="contactme"&gt;&lt;div class="avatar"&gt;![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G)&lt;/div&gt;I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.&lt;/div&gt;
+</code></pre>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby.html">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas.html">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me.html">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+				</div> <!-- end content -->
+				<div class="clear"></div>
+				<footer id="footer" class="grid_12">
+				  <h1><a href="/">Travis Berry</a></h1>
+				</footer> <!-- end footer -->
+				<div class="clear"></div>
+				</div> <!-- end wrapper -->
+				</body>
+				</html>

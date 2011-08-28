@@ -1,0 +1,21 @@
+---
+layout: static
+---
+<div id="main" class="grid_8 alpha">
+  <div id="search">
+    <form id="searchFrom" action="/search" method="get">
+      <label for="search">Search for:</label>
+      <input id="search" name="search" type="text" />
+      <input id="submit" name="commit" type="submit" value="Search" />
+    </form>
+    <div class="clear"></div>
+  </div>
+  {% for post in site.posts %}
+  <article class="post clearfix">
+    <h3><a href="{{ site.base_url}}{{ post.url }}">{{ post.title }}</a></h3>
+    <a href="{{ post.image }}" class="postImageLink"><img src="{{ post.image }}" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+    <h6>Published: {{ post.date}}</h6>
+    <p>{{ post.summary }}</p> <a href="{{ site.base_url}}{{ post.url }}" class="more-link"> Read More...</a>
+  </article>
+  {% endfor %}
+</div>
