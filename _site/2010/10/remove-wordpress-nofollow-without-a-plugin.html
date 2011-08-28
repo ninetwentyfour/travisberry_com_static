@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,46 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://www.siliakatung.com/exhibition.htm"><img src="http://content.travisberry.com/do_follow.jpg" title="do_follow" alt="" /></a>And even better, do so without modifying the WordPress core files. It's really quite simple.<!--more-->In your templates functions.php file add [cc lang="php"]function comment_author_link_mine( $comment_ID = 0 ) {    echo get_comment_author_link_mine( $comment_ID );}function get_comment_author_link_mine( $comment_ID = 0 ) {    /<em>* @todo Only call these functions when they are needed. Include in if... else blocks </em>/    $url    = get_comment_author_url( $comment_ID );    $author = get_comment_author( $comment_ID );    if ( empty( $url ) || 'http://' == $url )        $return = $author;    else        $return = "<a href="$url">$author</a>";    return apply_filters('get_comment_author_link', $return);}[/cc]Then in your comments.php file, find and replace any mention of[cc lang="php"]&lt;?php comment_author_link(); ?>[/cc]With[cc lang="php"]&lt;?php comment_author_link_mine(); ?>[/cc]This simply replaces the core files "comment_author_link()" function with one of our own. The original has [cc lang="php"]$return = "<a href="$url">$author</a>";[/cc]as the link. We simply remove the rel attribute and change it to[cc lang="php"]$return = "<a href="$url">$author</a>";[/cc]and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.If you have tips for removing other plugins and using your own solution, let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></p>
+<p><article class="post clearfix">
+  <h3>Remove WordPress' NoFollow Without A Plugin</h3>
+  <a href="http://www.siliakatung.com/exhibition.htm" class="postImageLink"><img src="http://content.travisberry.com/do_follow.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-10-03</h6></p>
+
+<p>And even better, do so without modifying the WordPress core files. It's really quite simple.</p>
+
+<div class="clearfix"></div>
+
+
+<p>In your templates functions.php file add</p>
+
+<script src="https://gist.github.com/1177082.js?file=example1.php"></script>
+
+
+<p>Then in your comments.php file, find and replace any mention of</p>
+
+<script src="https://gist.github.com/1177082.js?file=example2.php"></script>
+
+
+<p>With</p>
+
+<script src="https://gist.github.com/1177082.js?file=example3.php"></script>
+
+
+<p>This simply replaces the core files "comment_author_link()" function with one of our own. The original has</p>
+
+<script src="https://gist.github.com/1177082.js?file=example4.php"></script>
+
+
+<p>as the link. We simply remove the rel attribute and change it to</p>
+
+<script src="https://gist.github.com/1177082.js?file=example5.php"></script>
+
+
+<p>and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.</p>
+
+<p>If you have tips for removing other plugins and using your own solution, let me know in the comments.</p>
+
+<p></article></p>
 
 </div>
 
@@ -79,5 +124,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

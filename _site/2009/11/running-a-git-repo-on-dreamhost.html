@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -83,27 +89,34 @@
 
 <p>After an hour or so the folder will be setup. You can test by logging in. In OSx hit command k and enter in the url to your folder. something like http://yoursite.com/git . You will be prompted for the user name and password you assigned when you setup the webDAV. If all goes well, a folder should appear in your finder with the folder on your server shown.</p>
 
-<p>Now create a blank folder on the desktop. Name it whatever you want. I'll call mine, "gittest" .Initiate a blank repository by running</p>
+<p>Now create a blank folder on the desktop. Name it whatever you want. I'll call mine, "gittest" .</p>
 
-<p><code>mkdir gittestcd gittestgit --bare init</code></p>
+<p>Initiate a blank repository by running</p>
+
+<script src="https://gist.github.com/1176861.js?file=command1.txt"></script>
+
 
 <p>Now tell the repository where it will live</p>
 
-<p><code>git repo-config remote.origin.url http://yoursite.com/git/gittest/git update-server-info</code></p>
+<script src="https://gist.github.com/1176861.js?file=command2.txt"></script>
+
 
 <p>Once you have that done, upload the folder into the "git" folder on your webDAV server.</p>
 
 <p>Now create the folder you want to use as your local files folder. It can be named whatever you want. Inside create a couple html files. Save them.Now do the typical git initialization and commit the files.</p>
 
-<p><code>git initgit add .git commit -m "yourmessagegoeshere"</code></p>
+<script src="https://gist.github.com/1176861.js?file=command3.txt"></script>
+
 
 <p>Now configure your remote master repo.</p>
 
-<p><code>git repo-config remote.origin.url http://yourusername@www.yoursite.com/git/gittest/</code></p>
+<script src="https://gist.github.com/1176861.js?file=command4.txt"></script>
+
 
 <p>The "yourusername" is the user name you use to login to the webDAV folder. Now try to push to the remote.</p>
 
-<p><code>git push origin master</code></p>
+<script src="https://gist.github.com/1176861.js?file=command5.txt"></script>
+
 
 <p>After you hit enter on the code above it will prompt your for the password for the account.</p>
 
@@ -111,7 +124,8 @@
 
 <p>You can test that it works by creating a new folder somewhere on your computer. Now clone your project to it.</p>
 
-<p><code>mkdir newfoldercd newfoldergit clone http://yourusername@www.yoursite.com/git/gittest/</code></p>
+<script src="https://gist.github.com/1176861.js?file=command6.txt"></script>
+
 
 <p>If everything is working you should now be able to see the html files in the new folder.</p>
 
@@ -153,5 +167,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

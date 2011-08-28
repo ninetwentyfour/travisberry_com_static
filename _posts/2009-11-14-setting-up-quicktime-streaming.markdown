@@ -26,7 +26,7 @@ You take this url and use an &lt;object&gt; code to embed the movie in a page.
 
 The final code looks something like this
 
-``&lt;OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"     WIDTH="320"     HEIGHT="240"    CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"&gt;&lt;PARAM name="SRC" VALUE="poster.mov"&gt;&lt;PARAM name="QTSRC" VALUE="rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov"&gt;&lt;PARAM name="AUTOPLAY" VALUE="true"&gt;&lt;PARAM name="CONTROLLER" VALUE="false"&gt;    &lt;embed src="poster.mov"    qtsrc="rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov"     width="320" height="240" target="myself" controller="false" autoplay="true"&gt;    &lt;/embed&gt;&lt;/OBJECT&gt;``
+<script src="https://gist.github.com/1176830.js?file=quicktime.html"></script>
 
 Here is my first test at an embeded .mov file streamed off a quicktime server.
 
@@ -34,7 +34,7 @@ Here is my first test at an embeded .mov file streamed off a quicktime server.
 
 You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -
 
-``&lt;object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"&gt;&lt;param name="src" value="http://www.travisberry.com/videos/Comp51_3.mov"&gt;&lt;param name="autoplay" value="false"&gt;&lt;param name="type" value="video/quicktime" height="376" width="640"&gt;&lt;embed src="http://www.travisberry.com/videos/Comp51_3.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"&gt;`` 
+<script src="https://gist.github.com/1176830.js?file=quicktime2.html"></script>
 
 This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.
 

@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,40 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://www.flickr.com/photos/markjsebastian/3114597691/"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg" title="warpspeed" alt="warpspeed" /></a>How fast your site loads is a huge factor in how many visits you get. One of the biggest names in performance testing is <a href="http://developer.yahoo.com/yslow/">YSlow</a>. A high score on YSlow is a good indicator that your site is performing well. Many of the scores can be improved with a little bit of tweaking to your .htaccess file.<!--more-->Add this snippet to the top of your .htaccess file.<code>Header unset ETagFileETag None&amp;lt;FilesMatch "\.(css|js)$"&amp;gt;               SetOutputFilter DEFLATE               &amp;lt;/FilesMatch&amp;gt;               &amp;lt;FilesMatch "\.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$"&amp;gt;               Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"               &amp;lt;/FilesMatch&amp;gt;</code>Now for a little breakdown of what each part does.This part disables <a href="http://en.wikipedia.org/wiki/HTTP_ETag">E-Tags</a> so not to cause conflicts.<code>Header unset ETagFileETag None</code>This <a href="http://en.wikipedia.org/wiki/Gzip">gzips</a> your css and javascript files resulting in a smaller transfer size.<code>&amp;lt;FilesMatch "\.(css|js)$"&amp;gt;               SetOutputFilter DEFLATE               &amp;lt;/FilesMatch&amp;gt;</code>This adds a <a href="http://www.askapache.com/htaccess/apache-speed-expires.html">far future Expires header</a> to most static files you will have. <code>&amp;lt;FilesMatch "\.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$"&amp;gt;               Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"               &amp;lt;/FilesMatch&amp;gt;</code>With these few changes your score in YSlow should dramatically improve. Any other .htacces tricks? Let me know in the comments.</p>
+<p><article class="post clearfix">
+  <h3>Improve YSlow Score With .htaccess</h3>
+  <a href="http://www.flickr.com/photos/markjsebastian/3114597691/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2009-12-20</h6></p>
+
+<p>How fast your site loads is a huge factor in how many visits you get. One of the biggest names in performance testing is <a href="http://developer.yahoo.com/yslow/">YSlow</a>. A high score on YSlow is a good indicator that your site is performing well. Many of the scores can be improved with a little bit of tweaking to your .htaccess file.</p>
+
+<div class="clearfix"></div>
+
+
+<p>Add this snippet to the top of your .htaccess file.</p>
+
+<script src="https://gist.github.com/1176878.js?file=example1.txt"></script>
+
+
+<p>Now for a little breakdown of what each part does.</p>
+
+<p>This part disables <a href="http://en.wikipedia.org/wiki/HTTP_ETag">E-Tags</a> so not to cause conflicts.</p>
+
+<script src="https://gist.github.com/1176878.js?file=example2.txt"></script>
+
+
+<p>This <a href="http://en.wikipedia.org/wiki/Gzip">gzips</a> your css and javascript files resulting in a smaller transfer size.</p>
+
+<script src="https://gist.github.com/1176878.js?file=example3.txt"></script>
+
+
+<p>This adds a <a href="http://www.askapache.com/htaccess/apache-speed-expires.html">far future Expires header</a> to most static files you will have.</p>
+
+<script src="https://gist.github.com/1176878.js?file=example4.txt"></script>
+
+
+<p>With these few changes your score in YSlow should dramatically improve. Any other .htacces tricks? Let me know in the comments.
+</article></p>
 
 </div>
 
@@ -79,5 +118,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

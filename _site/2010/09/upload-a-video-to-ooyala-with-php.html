@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,25 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://www.cl.cam.ac.uk/Relics/archive_photos.html"><img src="http://content.travisberry.com/ooyala_upload.jpg" title="ooyala_upload" alt="" /></a><strong>EDIT</strong>: <a href="https://github.com/ninetwentyfour/Ooyala-Uploader">You can find a better/updated Ooyala class here</a>.<a href="http://www.ooyala.com/">Ooyala</a> is a fairly popular video hosting platform. We have started using them where I work, and they seem to be doing a really good job so far. One of the advantages of Ooyala is their nice API. They have some <a href="http://www.ooyala.com/support/docs/backlot_api#example">example code</a> for you to use, but one feature that was lacking was uploading. They also have a widget that does do uploading but it is handled through Flash, something I wanted to avoid.<!--more-->This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)<code>&lt;?php/***Publish video to ooyala*/function publish(){// this kicks off the massive publish functions    $labels = $_POST['label'];    $file = $_POST['video_file'];    $dir = $file;    $name = explode("/", $dir );    $name = array_reverse($name );//this get just the name of the file and not    //the whole path for the name and title of the video    $nameforshow = $name[0];    $label = '/'.$labels;    $filesize = filesize($dir);    $expires = time() + 900;    $upload = OrdersController::upload(array('expires' =&gt; $expires,                                             'file_size' =&gt; $filesize,                                             'file_name' =&gt; $name[0],                                             'title' =&gt; $name[0]),$dir,$label);                                            //send this to the upload function}function upload($params,$dir,$label){//this passes to the send request function                                    //for the first time    return OrdersController::send_request('create_video', $params,$dir,                                          $label,'');}function upload_complete($params,$label2){//this gets hit after posting the                                        //video to ooyala    $label3 = $label2;    $dir ='';    $label = '';    return OrdersController::send_request('upload_complete', $params,                                          '','',$label3);                            //goes back to send request for the second time}function assign_label($params){//this starts creating and assigning labels    return OrdersController::send_request2('labels', $params);//this kicks off                                                            //send request 2}function send_request($request_type, $params,$dir,$label,$label3){    // first time through this hits the create video url and returns a url    //to post the video to. second time through we hit the upload complete url    $ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';    $ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';    if (!array_key_exists('expires', $params)) {        $params['expires'] = time() + 900;    }    $string_to_sign = $ooyala_scode;    $url = 'http://api.ooyala.com/ingestion/'.$request_type.'?pcode='.$ooyala_pcode;    $keys = array_keys($params);    sort($keys);    foreach ($keys as $key) {        $string_to_sign .= $key.'='.$params[$key];        $url .= '&amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);    }    $digest = hash('sha256', $string_to_sign, true);    $signature = ereg_replace('=+$', '', trim(base64_encode($digest)));    $url .= '&amp;signature='.rawurlencode($signature);    if ($request_type == 'create_video') {// if type is create video then                                    //parse the returned xml for the post url        $xml = simplexml_load_file($url);        foreach($xml-&gt;children() as $child){            if($child-&gt;getName()=='embedCode'){                $embed_code = $child;            }            if($child-&gt;getname()=='urls'){                $upload_url = $child-&gt;children();                $file= $dir;                $label2 = $label;                $ch = curl_init($upload_url);                curl_setopt($ch, CURLOPT_POSTFIELDS, array('file'=&gt;"@$file"));                //post the file                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                $postResult = curl_exec($ch);                curl_close($ch);                if ($postResult != ''){                    $upload_complete = OrdersController::upload_complete(array                                        ('embed_code' =&gt; $embed_code),$label2);                    //after posting you have to hit the upload complete url                    //to get ooyala to process the video.                    //so kick this up to the upload complete function                }            }        }    }else{        if ($request_type == 'upload_complete') {            // hit the upload complete url            $ch = curl_init($url);            $postResult2 = curl_exec($ch);            curl_close($ch);            $add_label = OrdersController::assign_label(array(            'embedCodes' =&gt; $params['embed_code'], 'labels' =&gt; $label3,            'mode'=&gt;'assignLabels'));            // this kicks back up to assign label function to add a label            //to the video        }    }}function send_request2($request_type, $params)// this creates the url to hit to add a label to the last uploaded video{    $ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';    $ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';    //Add an expire time of 15 minutes unless otherwise specified    if (!array_key_exists('expires', $params)) {        $params['expires'] = time() + 900;    }    $string_to_sign = $ooyala_scode;    $url = 'http://api.ooyala.com/partner/'.$request_type.'?pcode='.$ooyala_pcode;    $keys = array_keys($params);    sort($keys);    foreach ($keys as $key) {        $string_to_sign .= $key.'='.$params[$key];        $url .= '&amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);    }    $digest = hash('sha256', $string_to_sign, true);    $signature = ereg_replace('=+$', '', trim(base64_encode($digest)));    $url .= '&amp;signature='.rawurlencode($signature);    $ch = curl_init($url);    $postResult3 = curl_exec($ch);    curl_close($ch);//now the video is done and uploaded to ooyala}?&gt;</code>Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.I'm sure there is an easier way to do this, so if you know how to improve this, please let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></p>
+<p><article class="post clearfix">
+  <h3>Upload A Video To Ooyala With PHP</h3>
+  <a href="http://www.cl.cam.ac.uk/Relics/archive_photos.html" class="postImageLink"><img src="http://content.travisberry.com/ooyala_upload.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-09-11</h6></p>
+
+<p><strong>EDIT</strong>: <a href="https://github.com/ninetwentyfour/Ooyala-Uploader">You can find a better/updated Ooyala class here</a>.</p>
+
+<p><a href="http://www.ooyala.com/">Ooyala</a> is a fairly popular video hosting platform. We have started using them where I work, and they seem to be doing a really good job so far. One of the advantages of Ooyala is their nice API. They have some <a href="http://www.ooyala.com/support/docs/backlot_api#example">example code</a> for you to use, but one feature that was lacking was uploading. They also have a widget that does do uploading but it is handled through Flash, something I wanted to avoid.</p>
+
+<p>This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)</p>
+
+<script src="https://gist.github.com/1177051.js?file=example1.php"></script>
+
+
+<p>Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.</p>
+
+<p>I’m sure there is an easier way to do this, so if you know how to improve this, please let me know in the comments.</p>
+
+<p></article></p>
 
 </div>
 
@@ -79,5 +103,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

@@ -33,27 +33,29 @@ Go through the on screen instructions to setup the webDAV in a folder. I named m
 
 After an hour or so the folder will be setup. You can test by logging in. In OSx hit command k and enter in the url to your folder. something like http://yoursite.com/git . You will be prompted for the user name and password you assigned when you setup the webDAV. If all goes well, a folder should appear in your finder with the folder on your server shown.
 
-Now create a blank folder on the desktop. Name it whatever you want. I'll call mine, "gittest" .Initiate a blank repository by running
+Now create a blank folder on the desktop. Name it whatever you want. I'll call mine, "gittest" .
 
-``mkdir gittestcd gittestgit --bare init``
+Initiate a blank repository by running
+
+<script src="https://gist.github.com/1176861.js?file=command1.txt"></script>
 
 Now tell the repository where it will live
 
-``git repo-config remote.origin.url http://yoursite.com/git/gittest/git update-server-info``
+<script src="https://gist.github.com/1176861.js?file=command2.txt"></script>
 
 Once you have that done, upload the folder into the "git" folder on your webDAV server.
 
 Now create the folder you want to use as your local files folder. It can be named whatever you want. Inside create a couple html files. Save them.Now do the typical git initialization and commit the files.
 
-``git initgit add .git commit -m "yourmessagegoeshere"``
+<script src="https://gist.github.com/1176861.js?file=command3.txt"></script>
 
 Now configure your remote master repo.
 
-``git repo-config remote.origin.url http://yourusername@www.yoursite.com/git/gittest/``
+<script src="https://gist.github.com/1176861.js?file=command4.txt"></script>
 
 The "yourusername" is the user name you use to login to the webDAV folder. Now try to push to the remote.
 
-``git push origin master``
+<script src="https://gist.github.com/1176861.js?file=command5.txt"></script>
 
 After you hit enter on the code above it will prompt your for the password for the account.
 
@@ -61,7 +63,7 @@ That should push all your local files to the git remote repo. Now don't panic wh
 
 You can test that it works by creating a new folder somewhere on your computer. Now clone your project to it.
 
-``mkdir newfoldercd newfoldergit clone http://yourusername@www.yoursite.com/git/gittest/``
+<script src="https://gist.github.com/1176861.js?file=command6.txt"></script>
 
 If everything is working you should now be able to see the html files in the new folder.
 

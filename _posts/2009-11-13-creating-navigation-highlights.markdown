@@ -21,5 +21,5 @@ It's not impossible but it's not easy. As you can see above, I eventually got it
 
 One final tip, if your home page is different from the blog page, use the is_page('originalpagename') not is_home() and use is_home() for the blog page. Update: This is the code I used for those interested.
 
-``<ul><li<?php if ( is_page('about') || is_404() ){ echo ' class="current_page_item"  ';}?>><a href="<?php echo get_option('home'); ?>/">Home</a>  <li<?php if ( is_home() || is_page('blog')|| is_single() || is_search() || is_archive())  { echo ' class="current_page_item"'; } ?>><a href="<?php bloginfo('url'); ?>/blog/">Blog</a><li<?php if ( is_page('work') || is_page('video') || is_page('web'))  { echo ' class="current_page_item"'; } ?>><a href="<?php bloginfo('url'); ?>/work/">Work</a><li<?php if ( is_page('contact'))  { echo ' class="current_page_item"'; } ?>><a href="<?php bloginfo('url'); ?>/contact/">Contact</a></ul>``
+<script src="https://gist.github.com/1176823.js?file=highlightedNav.php"></script>
 </article>

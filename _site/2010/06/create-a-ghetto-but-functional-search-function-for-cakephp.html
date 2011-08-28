@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,10 +62,38 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://store.steampowered.com/app/400/"><img src="http://content.travisberry.com/portalcake2.jpg" title="portalcake2" alt="" /></a>Recently I needed to add a search function for a <a href="http://cakephp.org/">CakePHP</a> application I am building. After googling the bejeezus out of it, I never found a solution that worked. Some required the use of a search table, which then needed to index all of your content, other's just didn't work at all.After much hacking around I came up with a solution that works for me. This may or may not solve your particular problem, but it may help get you started in the right direction.<!--more-->I'll be using a fairly standard User MVC for this demo.First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.<code>&lt;div id="search"&gt;    &lt;form id="orderform" action="&lt;?php echo $html-&gt;url('/users/search'); ?&gt;" method="post" enctype="multipart/form-data"&gt;    &lt;label for="searchuser"&gt;Search Users:&lt;/label&gt;&lt;input type="text" name="searchuser" /&gt;    Search By:    &lt;input type="radio" name="searchtype" value="User.id" checked /&gt; User ID    &lt;input type="radio" name="searchtype" value="User.email" checked /&gt; User Email    &lt;input type="radio" name="searchtype" value="Entity.name" /&gt; Entity Name    &lt;?php echo $form?&gt;end('Search');    ?&gt;&lt;/form&gt;&lt;/div&gt;</code>The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.Now in the controller, it's time to add the search action.       <code>&lt;?phpfunction search() {    $searchtype = $_POST['searchtype'];    $value = $_POST['searchuser'];    $results = $this?&gt;User-&gt;find('all', array('fields' =&gt; array(                                                                'User.id',                                                                'User.email',                                                                'Entity.name',                                                                'User.created',                                                                'User.modified'                                                                ),                                              'order' =&gt; 'User.id ASC',                                              'conditions' =&gt; array($searchtype . ' ' . 'LIKE' =&gt; '%'.$value.'%')                                              )                                 );    $this-&gt;set('results', $results);}</code>It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' => %1%) One last thing is to create the search.ctp``<div id="search">    <form id="orderform" action="<?php echo $html->url('/users/search'); ?>" method="post" enctype="multipart/form-data">    <label for="searchuser">Search Users:</label><input type="text" name="searchuser" />    Search By:    <input type="radio" name="searchtype" value="User.id" checked /> User ID    <input type="radio" name="searchtype" value="User.email" checked /> User Email    <input type="radio" name="searchtype" value="Entity.name" /> Entity Name    &lt;?php echo $form?>end('Search'); ?></form></div><div id="contentbox">    ## Manage Users</p>
+<p><article class="post clearfix">
+  <h3>Create A Ghetto, But Functional, Search Function For CakePHP</h3>
+  <a href="http://store.steampowered.com/app/400/" class="postImageLink"><img src="http://content.travisberry.com/portalcake2.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-06-21</h6></p>
 
-<pre><code>&lt;table&gt;        &lt;thead&gt;            &lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Email&lt;/th&gt;&lt;th&gt;Entity Name&lt;/th&gt;        &lt;/thead&gt;        &lt;?php foreach($results as $user) : ?&gt;              &lt;tr&gt;                &lt;td&gt;&lt;?php echo $user['User']['id'] ?&gt;&lt;/td&gt;                &lt;td&gt;&lt;?php echo $user['User']['email'] ?&gt;&lt;/td&gt;                &lt;td&gt;&lt;?php echo $user['Entity']['name'] ?&gt;&lt;/td&gt;            &lt;/tr&gt;        &lt;?php endforeach; ?&gt;    &lt;/table&gt;&lt;/div&gt;``It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.So it may not be the cleanest solution in the world, but it works well, and is flexible enough so you can tweak it to many different situations. If you have a better way to search with CakePHP, please let me know in the comments. Or feel free to ask any questions.&lt;script&gt;utmx_section("contact1")&lt;/script&gt;&lt;div id="contactme"&gt;&lt;div class="avatar"&gt;![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G)&lt;/div&gt;I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.&lt;/div&gt;
-</code></pre>
+<p>Recently I needed to add a search function for a <a href="http://cakephp.org/">CakePHP</a> application I am building. After googling the bejeezus out of it, I never found a solution that worked. Some required the use of a search table, which then needed to index all of your content, other's just didn't work at all.</p>
+
+<p>After much hacking around I came up with a solution that works for me. This may or may not solve your particular problem, but it may help get you started in the right direction.</p>
+
+<p>I'll be using a fairly standard User MVC for this demo.</p>
+
+<p>First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.</p>
+
+<script src="https://gist.github.com/1177028.js?file=example1.php"></script>
+
+
+<p>The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.</p>
+
+<p>Now in the controller, it's time to add the search action.</p>
+
+<script src="https://gist.github.com/1177028.js?file=example2.php"></script>
+
+
+<p>It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' => %1%) One last thing is to create the search.ctp</p>
+
+<script src="https://gist.github.com/1177028.js?file=example3.php"></script>
+
+
+<p>It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.</p>
+
+<p>So it may not be the cleanest solution in the world, but it works well, and is flexible enough so you can tweak it to many different situations. If you have a better way to search with CakePHP, please let me know in the comments. Or feel free to ask any questions.
+</article></p>
 
 </div>
 
@@ -82,5 +116,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,28 +62,103 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://www.flickr.com/photos/lancesh/2162074087/"><img src="http://content.travisberry.com/oggpixels.jpg" title="oggpixels" alt="" /></a>A while back I did a <a href="http://www.travisberry.com/2010/03/video-compression-show-down/">comparison of the popular mp4 compressors</a>. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.I try to make my content cross browser compatible, but for this one I have no choice. <strong>You must use Firefox or Chrome to fully view this post.</strong> The newer the version the better.<!--more-->Anyway, back to the post. I started with a small clip from the 720p version of <a href="http://orange.blender.org/">Elephants Dream</a>. It's a cool little short and I suggest going and watching it if you haven't already.So with this clip in hand I ran it through 6 different compressors. <br /><br /><a href="http://v2v.cc/~j/ffmpeg2theora/">ffmpeg2theora</a> (6.10 MB)- lots of settings
-- smallest file
-- moderate quality
-- moderate ease of use
-<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/2theora.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.ffmpeg.org/">FFmpeg</a> (6.19 MB)- same as ffmpeg2theora
-- no sound (can have sound if you encode separately and then combine)
-- has to be a size divisible by 16
-<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/ffmpeg.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://firefogg.org/">FireFogg</a> (18.87 MB)- decent settings
-- fairly easy to use
-- good quality at large size
-<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/firefogg.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.mirovideoconverter.com/">Miro Video Converter</a> (22.20 MB)- largest size
-- best quality
-- easy to use
-- can't resize
-- no settings for anything
-<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/miro.ogv" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://xiph.org/quicktime/">QuickTime</a> (17.37 MB)- good quality large size
-- same export as any other qt
-- moderate amounts of video settings, no audio settings
-<video width="640" height="360" id="video" controls="true">  <source src="http://content.travisberry.com/uploads/oggoutputs/qt.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video><br /><br /><a href="http://www.videolan.org/vlc/">VLC</a> (21.94 MB)- large size
-- serious streaming issues
-- small amount of settings
-<video width="640" height="360" id="video" controls="true">  <source src="http://www.travisberry.com/html5video/oggoutputs/vlc.ogg" type="video/ogg; codecs=\"theora, vorbis\"" /></video>and for comparison <br /><br />h264 (6.22 MB)<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/html5video/oggoutputs/h264.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/html5video/oggoutputs/h264.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/">In the end I would recommend ffmpeg2theora. If you're comfortable with the command line that is. Otherwise, everything except VLC would work for you. For the curious here are the commands I used.FFmpeg</embed><code>ffmpeg -i Elephants_Dream.mov -vcodec libtheora -b 700k -s 512x288 -acodec libvorbis -ab 96k -threads 6 test.ogg</code>ffmpeg2theora<code>ffmpeg2theora -V 700 -A 96 -H 44100 -K 24 -x 640 -y 360 --two-pass --optimize --speedlevel 0 --seek-index --soft-target --pp vdeblock:10/hdeblock:10 Elephants_Dream.mov</code>If you have any suggestions for improving these please let me know in the comments. <script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></object></p>
+<p><article class="post clearfix">
+  <h3>Best Ogg Theora Video Compressor</h3>
+  <a href="http://www.flickr.com/photos/lancesh/2162074087/" class="postImageLink"><img src="http://content.travisberry.com/oggpixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-04-25</h6></p>
+
+<p>A while back I did a <a href="http://www.travisberry.com/2010/03/video-compression-show-down/">comparison of the popular mp4 compressors</a>. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.</p>
+
+<p>I try to make my content cross browser compatible, but for this one I have no choice. <strong>You must use Firefox or Chrome to fully view this post.</strong> The newer the version the better.</p>
+
+<p>Anyway, back to the post. I started with a small clip from the 720p version of <a href="http://orange.blender.org/">Elephants Dream</a>. It's a cool little short and I suggest going and watching it if you haven't already.</p>
+
+<p>So with this clip in hand I ran it through 6 different compressors.</p>
+
+<p><a href="http://v2v.cc/~j/ffmpeg2theora/">ffmpeg2theora</a> (6.10 MB)- lots of settings</p>
+
+<ul>
+<li>smallest file</li>
+<li>moderate quality</li>
+<li>moderate ease of use</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/2theora.ogv"></source></video></p>
+
+<p><a href="http://www.ffmpeg.org/">FFmpeg</a> (6.19 MB)- same as ffmpeg2theora</p>
+
+<ul>
+<li>no sound (can have sound if you encode separately and then combine)</li>
+<li>has to be a size divisible by 16</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/ffmpeg.ogg"></source></video></p>
+
+<p><a href="http://firefogg.org/">FireFogg</a> (18.87 MB)- decent settings</p>
+
+<ul>
+<li>fairly easy to use</li>
+<li>good quality at large size</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/firefogg.ogv"></source></video></p>
+
+<p><a href="http://www.mirovideoconverter.com/">Miro Video Converter</a> (22.20 MB)- largest size</p>
+
+<ul>
+<li>best quality</li>
+<li>easy to use</li>
+<li>can't resize</li>
+<li>no settings for anything</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/miro.ogv"></source></video></p>
+
+<p><a href="http://xiph.org/quicktime/">QuickTime</a> (17.37 MB)- good quality large size</p>
+
+<ul>
+<li>same export as any other qt</li>
+<li>moderate amounts of video settings, no audio settings</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/qt.ogg"></source></video></p>
+
+<p><a href="http://www.videolan.org/vlc/">VLC</a> (21.94 MB)- large size</p>
+
+<ul>
+<li>serious streaming issues</li>
+<li>small amount of settings</li>
+</ul>
+
+
+<p><video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/vlc.ogg"></source></video></p>
+
+<p>and for comparison</p>
+
+<p>h264 (6.22 MB)</p>
+
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/html5video/oggoutputs/h264.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/html5video/oggoutputs/h264.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+
+
+<p>In the end I would recommend ffmpeg2theora. If you're comfortable with the command line that is. Otherwise, everything except VLC would work for you. For the curious here are the commands I used.</p>
+
+<p>FFmpeg</p>
+
+<script src="https://gist.github.com/1176975.js?file=example1.txt"></script>
+
+
+<p>ffmpeg2theora</p>
+
+<script src="https://gist.github.com/1176975.js?file=example2.txt"></script>
+
+
+<p>If you have any suggestions for improving these please let me know in the comments.
+</article></p>
 
 </div>
 
@@ -100,5 +181,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

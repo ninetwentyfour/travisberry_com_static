@@ -9,5 +9,21 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://www.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg"
+summary: "My article on WordPress' is_page() is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP. "
 ---
-[![](http://www.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg "paper_machine")](http://www.flickr.com/photos/14277117@N03/3865517102)My article on [WordPress' is_page()](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/) is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP. Well the downside is, you can't. The upside is that you can still perform a similar check<!--more-->[cc lang="php"]<?php$baseurl = 'http://www.example.com'; //set the base url of the site$pageYouWant = $baseurl."/the-rest-of-the-url"; //add the rest of the url you want to check against$currentPage = $baseurl.$_SERVER['REQUEST_URI'];// this gets the current page urlif($pageYouWant==$currentPage) {    //do something}?>[/cc]Not as smooth as is_page() but still a fairly simple way to check the page you are currently on. You can eaisly check if it is "=="/"!=", and add in as many â€œ&&â€/â€œ||â€ conditions as you want.As always, if you have a better way to do this, or use it in something cool, let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>If is_page() With Regular PHP</h3>
+  <a href="http://www.flickr.com/photos/14277117@N03/3865517102" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-10-02</h6>
+
+My article on [WordPress' is_page()](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/) is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP. 
+<div class="clearfix"></div>
+Well the downside is, you can't. The upside is that you can still perform a similar check
+
+<script src="https://gist.github.com/1177074.js?file=example1.php"></script>
+
+Not as smooth as is_page() but still a fairly simple way to check the page you are currently on. You can easily check if it is "=="/"!=", and add in as many "&&"/"||" conditions as you want.
+
+As always, if you have a better way to do this, or use it in something cool, let me know in the comments.
+
+</article>

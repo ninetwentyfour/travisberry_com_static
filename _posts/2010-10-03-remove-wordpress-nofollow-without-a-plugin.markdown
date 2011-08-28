@@ -9,5 +9,37 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://content.travisberry.com/do_follow.jpg"
+summary: "And even better, do so without modifying the WordPress core files. It’s really quite simple."
 ---
-[![](http://content.travisberry.com/do_follow.jpg "do_follow")](http://www.siliakatung.com/exhibition.htm)And even better, do so without modifying the WordPress core files. It's really quite simple.<!--more-->In your templates functions.php file add [cc lang="php"]function comment_author_link_mine( $comment_ID = 0 ) {    echo get_comment_author_link_mine( $comment_ID );}function get_comment_author_link_mine( $comment_ID = 0 ) {    /** @todo Only call these functions when they are needed. Include in if... else blocks */    $url    = get_comment_author_url( $comment_ID );    $author = get_comment_author( $comment_ID );    if ( empty( $url ) || 'http://' == $url )        $return = $author;    else        $return = "[$author]($url)";    return apply_filters('get_comment_author_link', $return);}[/cc]Then in your comments.php file, find and replace any mention of[cc lang="php"]<?php comment_author_link(); ?>[/cc]With[cc lang="php"]<?php comment_author_link_mine(); ?>[/cc]This simply replaces the core files "comment_author_link()" function with one of our own. The original has [cc lang="php"]$return = "[$author]($url)";[/cc]as the link. We simply remove the rel attribute and change it to[cc lang="php"]$return = "[$author]($url)";[/cc]and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.If you have tips for removing other plugins and using your own solution, let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Remove WordPress' NoFollow Without A Plugin</h3>
+  <a href="http://www.siliakatung.com/exhibition.htm" class="postImageLink"><img src="http://content.travisberry.com/do_follow.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-10-03</h6>
+
+And even better, do so without modifying the WordPress core files. It's really quite simple.
+<div class="clearfix"></div>
+In your templates functions.php file add 
+
+<script src="https://gist.github.com/1177082.js?file=example1.php"></script>
+
+Then in your comments.php file, find and replace any mention of
+
+<script src="https://gist.github.com/1177082.js?file=example2.php"></script>
+
+With
+
+<script src="https://gist.github.com/1177082.js?file=example3.php"></script>
+
+This simply replaces the core files "comment_author_link()" function with one of our own. The original has
+
+<script src="https://gist.github.com/1177082.js?file=example4.php"></script>
+
+as the link. We simply remove the rel attribute and change it to
+
+<script src="https://gist.github.com/1177082.js?file=example5.php"></script>
+
+and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.
+
+If you have tips for removing other plugins and using your own solution, let me know in the comments.
+
+</article>

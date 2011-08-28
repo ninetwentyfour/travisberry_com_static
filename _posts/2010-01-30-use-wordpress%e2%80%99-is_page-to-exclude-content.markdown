@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: "Use WordPress\xC3\xA2\xE2\x82\xAC\xE2\x84\xA2 is_page() To Exclude Content"
+title: "Use WordPress' is_page() To Exclude Content"
 wordpress_id: 582
 wordpress_url: http://www.travisberry.com/?p=582
 categories: 
@@ -9,5 +9,54 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg"
+summary: "After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages. As with everything there are several ways to accomplish this. I'll cover some of the easiest."
 ---
-[![](http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg "wordpressnotebookcircle")](http://www.flickr.com/photos/nbachiyski/2186228674/)After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages.As with everything there are several ways to accomplish this. I'll cover some of the easiest.<!--more-->The first way is the same as [including custom content](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.``&lt;?php if ( is_page('work') || is_page('contact')) { echo '&lt;div id="secondnav"&gt;&lt;div class="secondnavs"&gt;&lt;a href="http://www.travisberry.com/video/">Video&lt;/a>&lt;/div>&lt;div class="longsecondnavs"&gt;.&lt;/div&gt;&lt;/div&gt;' ; } ?&gt;``If you had three pages; 'work', 'contact', and 'blog', the above code would display the div 'secondnav' on every page but 'blog'.Another way is to use the above method but target it to the page you want excluded. So,``&lt;?php if ( is_page('blog')) { echo '&lt;link rel="stylesheet" href="http://whereeveryouputthenewcssfile.css" type="text/css" media="screen" /&gt;' ; } ?&gt;``Can be used to exclude a section of content. Let's say you still don't want to show the 'secondnav' div on the blog page. So create a new .css file. Name it whatever you like and put it where ever you like. Just replace the url in the example with a link to the new file.Inside the new .css file put this;``#secondnav{display:none !important;}``The 'secondnav' div will no be invisible on the 'blog' page.One final, less conditional way of doing this would be to create a new template for the page. Create a file called, 'nonav.php'.Copy and paste everything from your normal 'page.php' file and paste it into 'nonav.php'. Find the part you want removed and delete it from the file. Move to the very top of the 'nonav.php' file. Paste this into the file.``&lt;?php/*Template Name: NoNav*/?&gt;``Save the file and upload it to your current theme directory.Now in the WordPress admin area, edit the page you don't want the 'secondnav' div in. On the right side of the screen, there is a place that allows you to pick a template. Select the drop down menu and select your new template. Hit the update post button, and your page should no longer have the 'secondnav' div.There you go, a few way's to exclude content from certain pages. The best way to decide between excluding or including content is to go with whichever is the shortest. If you have 100 pages and 1 doesn't need something, exclude. If the 1 needs something, and the 100 don't, include.If you have other solutions, or any questions, let me know in the comments.**Edit:**[kylegetsspam](http://www.reddit.com/user/kylegetsspam) over on reddit pointed out another simple way of doing the same thing.Add,``&lt;?php body_class(); ?&gt;``To your body tag. Then add this to your main style sheet.``#page-id-2 #secondnav { display: none; }``**Edit 2:** To use regular PHP and not WordPress to exclude content, see [my post here](http://www.travisberry.com/2010/10/if-is_page-with-regular-php/).<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Use WordPress' is_page() To Exclude Content</h3>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-01-30</h6>
+
+After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages.
+
+As with everything there are several ways to accomplish this. I'll cover some of the easiest.
+<div class="clearfix"></div>
+The first way is the same as [including custom content](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.
+
+<script src="https://gist.github.com/1176902.js?file=example1.php"></script>
+
+If you had three pages; 'work', 'contact', and 'blog', the above code would display the div 'secondnav' on every page but 'blog'.
+
+Another way is to use the above method but target it to the page you want excluded. So,
+
+<script src="https://gist.github.com/1176902.js?file=example2.php"></script>
+
+Can be used to exclude a section of content. Let's say you still don't want to show the 'secondnav' div on the blog page. So create a new .css file. Name it whatever you like and put it where ever you like. Just replace the url in the example with a link to the new file.Inside the new .css file put this;
+
+<script src="https://gist.github.com/1176902.js?file=example3.css"></script>
+
+The 'secondnav' div will no be invisible on the 'blog' page.
+
+One final, less conditional way of doing this would be to create a new template for the page. Create a file called, 'nonav.php'.
+
+Copy and paste everything from your normal 'page.php' file and paste it into 'nonav.php'. Find the part you want removed and delete it from the file. Move to the very top of the 'nonav.php' file. Paste this into the file.
+
+<script src="https://gist.github.com/1176902.js?file=example4.php"></script>
+
+Save the file and upload it to your current theme directory.
+
+Now in the WordPress admin area, edit the page you don't want the 'secondnav' div in. On the right side of the screen, there is a place that allows you to pick a template. Select the drop down menu and select your new template. Hit the update post button, and your page should no longer have the 'secondnav' div.
+
+There you go, a few way's to exclude content from certain pages. The best way to decide between excluding or including content is to go with whichever is the shortest. If you have 100 pages and 1 doesn't need something, exclude. If the 1 needs something, and the 100 don't, include.
+
+If you have other solutions, or any questions, let me know in the comments.
+
+**Edit:**[kylegetsspam](http://www.reddit.com/user/kylegetsspam) over on reddit pointed out another simple way of doing the same thing. Add,
+
+<script src="https://gist.github.com/1176902.js?file=example5.php"></script>
+
+To your body tag. Then add this to your main style sheet.
+
+<script src="https://gist.github.com/1176902.js?file=example6.css"></script>
+
+**Edit 2:** To use regular PHP and not WordPress to exclude content, see [my post here](http://www.travisberry.com/2010/10/if-is_page-with-regular-php/).
+</article>

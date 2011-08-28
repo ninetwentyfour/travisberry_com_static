@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,87 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file"><img src="http://www.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" title="Train_Wreck" alt="" /></a>Hey! Have you heard? <a href="http://en.wikipedia.org/wiki/HTML5_video">HTML5 video</a> is going to revolutionize the way we use video on the web. No more dealing with Flash or Quicktime embeds. Video will now be as simple as adding an image. Ummm, no. It's not. It's not even close. That's not to say it's all bad, but boy howdy does it have a long way to go.<!--more-->Before I get to the bashing let's talk about what is good about HTML5 video.Well first off, it is in theory as easy as adding an image.<code>&amp;lt;video src="movie.ogg" controls="controls"&amp;gt;&amp;lt;/video&amp;gt;</code>Holy crap that is simple. Unfortunately your code will not end up looking like that. More on it in a bit.Another HUGE benefit is not having to use Flash. Anyone who has experience with Flash video knows how horrible it is. The embed codes are a nightmare and of course you're dealing with plugins that the user may or may not have.All around, HTML5 video should be a big improvement. Only problem is, it could be worse than the methods used today. Here's why.Codecs, codecs, codecs...Ugh, this is one of the biggest pains to deal with. Guess what, different browsers use different video codecs for HTML5 video. Firefox uses <a href="http://en.wikipedia.org/wiki/Theora">Ogg Theora</a> and Safari uses <a href="http://en.wikipedia.org/wiki/H.264/MPEG-4_AVC">H.264 MP4</a>. So in order for you to have a video play in multiple browsers <strong>you need to make at least two versions</strong>. That simple code above now turns into<code>&amp;lt;video width="320" height="240" controls&amp;gt;  &amp;lt;source src="NewOrleans2006.ogv" type='video/ogg; codecs="theora, vorbis"'&amp;gt;  &amp;lt;source src="NewOrleans2006.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'&amp;gt;&amp;lt;/video&amp;gt;</code>Not so simple anymore is it? Not horrible but not the elegant solution we were promised. This battle of the codecs has got to end. The argument boils down to the fact that H.264 and MP4 are proprietary of the <a href="http://en.wikipedia.org/wiki/Moving_Picture_Experts_Group">MPEG</a> consortium and Ogg Theora are open source. I get Mozilla's argument that they only support open standards, thus the use of Ogg in FireFox, but there is a giant elephant in the room that nobody is mentioning. It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, <a href="http://www.travisberry.com/copyright-and-the-internet/">travisberry.com/copyright-and-the-internet/</a> View it in FireFox and then in Safari. Notice the WAY smoother video in the Safari version. Yeah, me too.The solution I would really like to see (but I'm not holding my breath) is for MPEG to step up and realize that they have the opportunity to seize the online video market and release H.264 into the open source community. <strong>Drop all the dumb-ass licensing arrangements and give H.264 away.</strong>That is the first main issue with HTML5 video. The other huge issue is legacy browsers. Unless you are using the newest versions of FireFox, Chrome, or Safari, you probably can't see HTML5 video. So this causes us to have to add more code to make sure people can still see our content. This involves some kind of fallback to Flash video. The thing we were trying to avoid in the first place.I'll write this again for importance. <strong>You still have to include Flash video</strong> if you want your video to play across all browsers. Damn it!So now that super simple code to embed videos now looks like this to make sure it handles all browsers nicely. Note, this still won't show anything in FireFox 2 but it will show in IE. Most FF users tend to update on a regular basis so it's no huge deal.<code>&amp;lt;video width="640" height="360" id="video" poster="http://www.travisberry.com/html5video/videos/copyright/copyright-poster.jpg" controls="true"&amp;gt;&amp;lt;source src="http://www.travisberry.com/html5video/videos/copyright/copyright-desktop.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"' /&amp;gt;  &amp;lt;source src="http://www.travisberry.com/html5video/videos/copyright/copyright-iPhone-cell.3gp" type='video/3gpp; codecs="mp4v.20.8, samr"' /&amp;gt;  &amp;lt;source src="http://www.travisberry.com/html5video/videos/copyright/copyright-desktop3.ogv" type='video/ogg; codecs="theora, vorbis"' /&amp;gt;&amp;lt;object width="640" height="385"&amp;gt;&amp;lt;param name="movie" value="http://www.youtube.com/v/lFeI5SqGYJ8&amp;hl=en_US&amp;fs=1&amp;"&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;param name="allowFullScreen" value="true"&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;param name="allowscriptaccess" value="always"&amp;gt;&amp;lt;/param&gt;&amp;lt;embed src="http://www.youtube.com/v/lFeI5SqGYJ8&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;/object&amp;gt;&amp;lt;/video&amp;gt;</code>Notice instead of adding a flash video I added a youtube embed. I was tired of crunching out different codecs by this point so I said screw it and let youtube handle some of the work. (I also added an iPhone version so the code is a little longer than necessary, but not by much)Ok, so my super simple code has grown kind of large and unwieldy but no biggie, it works so I could live with this.Time to watch this bad boy in some browsers. Wait, WTF is going on? Why are my videos autobuffering in Chrome and Safari. This is bad. Real bad. What if I have 4 or 5 videos on one page? It's going to buffer all of them at once!?Yes it will. For reasons unknown, Chrome and Safari have decided to ignore the autobuffer attribute. <strong>They will autobuffer your video come hell or high water.</strong>Again, we can work around this using a javascript method. Daring Fireball has a <a href="http://daringfireball.net/misc/2009/12/user_guide_demos">good example</a> (view source to see how it works). Only problem with it is that in FireFox I was experiencing double audio when using the javascript solution. So that didn't work for me.The half-assed solution I came up with was to go ahead and let the video autobuffer. I used to have all of my example videos on one page. That was not cool with autobuffering. Now I have a navigation menu linking to each video on it's own page. Now when it autobuffers, it's not such a huge deal. (I figure if they clicked through to the video, at this point they are trying to watch)So in the end I was able to implement HTML5 video. It isn't pretty and far from perfect but it is possible. For now, I am going to continue to recommend most people go with a Flash video solution. It's just not worth the hassle for the average user. Let's hope the people in charge can save the &lt;video&gt; tag, it could be great, it's just not there yet.Have you tried to use HTML5 video? Let me know how it went in the comments.<strong>Edit:</strong>After some tweaking of the encode settings, I managed to get a decent output in Ogg. So I recant a bit on it being horrible, but it's still not quite as good as H.264Here are several other good resources that explore the use of HTML5 video.<a href="http://hardwarebug.org/2010/03/03/ogg-objections/">Ogg objections</a><a href="http://hardwarebug.org/2008/11/17/ogg-timestamps-explored/">Ogg timestamps explored</a><a href="http://code.google.com/p/html5media/">HTML5 video for everyone!</a><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video">The video element</a><a href="http://www.niallkennedy.com/blog/2010/02/html5-video-markup.html">HTML5 video markup, compatibility and playback</a><a href="http://diveintohtml5.org/video.html">Video on the Web</a><a href="http://daringfireball.net/2009/12/html5_video_unusable">Why the HTML5 â€˜Videoâ€™ Element Is Effectively Unusable, Even in Browsers Which Support It</a><script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></p>
+<p><article class="post clearfix">
+  <h3>On HTML5 Video</h3>
+  <a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-02-25</h6></p>
+
+<p>Hey! Have you heard? <a href="http://en.wikipedia.org/wiki/HTML5_video">HTML5 video</a> is going to revolutionize the way we use video on the web. No more dealing with Flash or Quicktime embeds. Video will now be as simple as adding an image. Ummm, no. It's not. It's not even close. That's not to say it's all bad, but boy howdy does it have a long way to go.</p>
+
+<p>Before I get to the bashing let's talk about what is good about HTML5 video.</p>
+
+<p>Well first off, it is in theory as easy as adding an image.</p>
+
+<script src="https://gist.github.com/1176926.js?file=example1.html"></script>
+
+
+<p>Holy crap that is simple. Unfortunately your code will not end up looking like that. More on it in a bit.</p>
+
+<p>Another HUGE benefit is not having to use Flash. Anyone who has experience with Flash video knows how horrible it is. The embed codes are a nightmare and of course you're dealing with plugins that the user may or may not have.</p>
+
+<p>All around, HTML5 video should be a big improvement. Only problem is, it could be worse than the methods used today. Here's why.</p>
+
+<p>Codecs, codecs, codecs...</p>
+
+<p>Ugh, this is one of the biggest pains to deal with. Guess what, different browsers use different video codecs for HTML5 video. Firefox uses <a href="http://en.wikipedia.org/wiki/Theora">Ogg Theora</a> and Safari uses <a href="http://en.wikipedia.org/wiki/H.264/MPEG-4_AVC">H.264 MP4</a>. So in order for you to have a video play in multiple browsers <strong>you need to make at least two versions</strong>.</p>
+
+<p>That simple code above now turns into</p>
+
+<script src="https://gist.github.com/1176926.js?file=example2.html"></script>
+
+
+<p>Not so simple anymore is it? Not horrible but not the elegant solution we were promised.</p>
+
+<p>This battle of the codecs has got to end. The argument boils down to the fact that H.264 and MP4 are proprietary of the <a href="http://en.wikipedia.org/wiki/Moving_Picture_Experts_Group">MPEG</a> consortium and Ogg Theora are open source.</p>
+
+<p>I get Mozilla's argument that they only support open standards, thus the use of Ogg in FireFox, but there is a giant elephant in the room that nobody is mentioning.</p>
+
+<p>It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, <a href="http://www.travisberry.com/copyright-and-the-internet/">travisberry.com/copyright-and-the-internet/</a></p>
+
+<p>View it in FireFox and then in Safari. Notice the WAY smoother video in the Safari version. Yeah, me too.</p>
+
+<p>The solution I would really like to see (but I'm not holding my breath) is for MPEG to step up and realize that they have the opportunity to seize the online video market and release H.264 into the open source community. <strong>Drop all the dumb-ass licensing arrangements and give H.264 away.</strong></p>
+
+<p>That is the first main issue with HTML5 video. The other huge issue is legacy browsers. Unless you are using the newest versions of FireFox, Chrome, or Safari, you probably can't see HTML5 video. So this causes us to have to add more code to make sure people can still see our content. This involves some kind of fallback to Flash video. The thing we were trying to avoid in the first place.</p>
+
+<p>I'll write this again for importance. <strong>You still have to include Flash video</strong> if you want your video to play across all browsers. Damn it!</p>
+
+<p>So now that super simple code to embed videos now looks like this to make sure it handles all browsers nicely. Note, this still won't show anything in FireFox 2 but it will show in IE. Most FF users tend to update on a regular basis so it's no huge deal.</p>
+
+<script src="https://gist.github.com/1176926.js?file=example3.html"></script>
+
+
+<p>Notice instead of adding a flash video I added a youtube embed. I was tired of crunching out different codecs by this point so I said screw it and let youtube handle some of the work. (I also added an iPhone version so the code is a little longer than necessary, but not by much)</p>
+
+<p>Ok, so my super simple code has grown kind of large and unwieldy but no biggie, it works so I could live with this.</p>
+
+<p>Time to watch this bad boy in some browsers. Wait, WTF is going on? Why are my videos autobuffering in Chrome and Safari. This is bad. Real bad. What if I have 4 or 5 videos on one page? It's going to buffer all of them at once!?</p>
+
+<p>Yes it will. For reasons unknown, Chrome and Safari have decided to ignore the autobuffer attribute. <strong>They will autobuffer your video come hell or high water.</strong></p>
+
+<p>Again, we can work around this using a javascript method. Daring Fireball has a <a href="http://daringfireball.net/misc/2009/12/user_guide_demos">good example</a> (view source to see how it works). Only problem with it is that in FireFox I was experiencing double audio when using the javascript solution. So that didn't work for me.</p>
+
+<p>The half-assed solution I came up with was to go ahead and let the video autobuffer. I used to have all of my example videos on one page. That was not cool with autobuffering. Now I have a navigation menu linking to each video on it's own page. Now when it autobuffers, it's not such a huge deal. (I figure if they clicked through to the video, at this point they are trying to watch)</p>
+
+<p>So in the end I was able to implement HTML5 video. It isn't pretty and far from perfect but it is possible. For now, I am going to continue to recommend most people go with a Flash video solution. It's just not worth the hassle for the average user. Let's hope the people in charge can save the &lt;video&gt; tag, it could be great, it's just not there yet.</p>
+
+<p>Have you tried to use HTML5 video? Let me know how it went in the comments.</p>
+
+<p><strong>Edit:</strong>After some tweaking of the encode settings, I managed to get a decent output in Ogg. So I recant a bit on it being horrible, but it's still not quite as good as H.264</p>
+
+<p>Here are several other good resources that explore the use of HTML5 video.</p>
+
+<ul>
+<li><a href="http://hardwarebug.org/2010/03/03/ogg-objections/">Ogg objections</a></li>
+<li><a href="http://hardwarebug.org/2008/11/17/ogg-timestamps-explored/">Ogg timestamps explored</a></li>
+<li><a href="http://code.google.com/p/html5media/">HTML5 video for everyone!</a></li>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video">The video element</a></li>
+<li><a href="http://www.niallkennedy.com/blog/2010/02/html5-video-markup.html">HTML5 video markup, compatibility and playback</a></li>
+<li><a href="http://diveintohtml5.org/video.html">Video on the Web</a></li>
+<li><a href="http://daringfireball.net/2009/12/html5_video_unusable">Why the HTML5 "Video" Element Is Effectively Unusable, Even in Browsers Which Support It</a>
+</article></li>
+</ul>
+
 
 </div>
 
@@ -79,5 +165,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

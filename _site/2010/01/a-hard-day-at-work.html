@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,14 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><img src="http://www.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg" title="Travis Berry" alt="Travis Berry" />Had a hard day of modeling at work the other day. Jordan at <a href="http://www.creative303.com">Creative 303</a> is a great photographer. Really kind of lazy on the blog post front. Hope to pick back up soon.</p>
+<p><article class="post clearfix">
+  <h3>A Hard Day At Work</h3>
+  <a href="http://www.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-01-02</h6></p>
+
+<p>Had a hard day of modeling at work the other day. Jordan at <a href="http://www.creative303.com">Creative 303</a> is a great photographer. Really kind of lazy on the blog post front. Hope to pick back up soon.</p>
+
+<p></article></p>
 
 </div>
 
@@ -79,5 +92,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

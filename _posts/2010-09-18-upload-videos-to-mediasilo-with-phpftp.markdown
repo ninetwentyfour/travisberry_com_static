@@ -9,5 +9,23 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg"
+summary: "In continuing with my last post on how to upload videos to Ooyala with PHP, here is one for MediaSilo. This ones a little different though in that it uses FTP as opposed to an API to upload the videos"
 ---
-[![](http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg "media_silo_pic")](http://www.flickr.com/photos/spiesteleviv/3654728245/)In continuing with my last post on [how to upload videos to Ooyala with PHP](http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.<!--more-->Alright, so let's get to the code.``<?php //MediaSilo Information    $server = "upload.mediasilo.com";    $ftp_user_name = "YOUR MEDIASILO LOGIN NAME AND HOSTNAME(e.g NAMEHOSTNAME";    $ftp_user_pass = "YOUR MEDIASILO LOGIN PASSWORD";    $dest = "THE WORKSPACE YOU WANT TO UPLOAD TO";                                    //Video Folder Information    $source_folder = "FULL PATH TO FOLDER. NO TRAILING SLASH (e.g. /var/www/videofolder)";    //Grabs everything in the source folder. You may want to set a file type like, ($source_folder."/*.flv")    $sources = glob($source_folder."/*.*");                    //Connect to FTP    set_time_limit(0);    $connection = ftp_connect($server);    $login = ftp_login($connection, $ftp_user_name, $ftp_user_pass);    //Check connection    if (!$connection || !$login) {        die('Connection attempt failed!');    }                    //If there are no files, don't FTP to MediaSilo    if (empty($sources)) {        //Close the FTP connection        ftp_close($connection);        $fileUploadMessage = "No files selected for upload";        echo $fileUploadMessage;    }else{        //If there are files FTP them to MediaSilo        foreach ($sources as $source){            //Put each video file on FTP server            $upload = ftp_put($connection, $dest."/".basename($source) , $source, FTP_BINARY);            //Check upload status            //Display message            if (!$upload) {                echo "Cannot upload: ".basename($source)." <br ?>";            }else{                echo "Upload complete: ".basename($source)." <br />";            }        }        //Close the FTP connection        ftp_close($connection);    //Videos should now be uploaded to MediaSilo    }?>``The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one. If you have any ideas on how to make this code better, or expand upon it, let me know in the comments.(One caveat to using FTP to upload to MediaSilo is that you do need to have at least a "Hollywood" level account, which is going to set you back $100 a month)<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Upload Videos To MediaSilo With PHP/FTP</h3>
+  <a href="http://www.flickr.com/photos/spiesteleviv/3654728245/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-09-18</h6>
+
+In continuing with my last post on [how to upload videos to Ooyala with PHP](http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
+
+Alright, so let's get to the code.
+
+<script src="https://gist.github.com/1177059.js?file=example1.php"></script>
+
+The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one. 
+
+If you have any ideas on how to make this code better, or expand upon it, let me know in the comments.
+
+(One caveat to using FTP to upload to MediaSilo is that you do need to have at least a “Hollywood” level account, which is going to set you back $100 a month)
+
+</article>

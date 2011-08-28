@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,26 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://gentleman.travisberry.com/"><img src="http://www.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg" title="gentlemanthemecap" alt="" /></a>Another new free theme. This WordPress theme is a simple and elegant theme, perfect for a simple text blog. <a href="http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master">Download A Copy</a> or<a href="http://gentleman.travisberry.com/">Visit A Demo</a><!--more-->From README.txtGentleman Wordpress Theme by Travis Berry is licensed under a Creative Commons Attribution 3.0 United States License.http://gentleman.travisberry.comThis theme is available for use for personal or commercial purposes. Please consider giving a link back to http://www.travisberry.com somewhere on your site.For questions email contact@travisberry.comDownload latest version from <a href="http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master">http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master</a></p>
+<p><article class="post clearfix">
+  <h3>Gentleman WordPress Theme</h3>
+  <a href="http://gentleman.travisberry.com/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-01-11</h6></p>
+
+<p>Another new free theme. This WordPress theme is a simple and elegant theme, perfect for a simple text blog. <a href="http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master">Download A Copy</a> or<a href="http://gentleman.travisberry.com/">Visit A Demo</a></p>
+
+<div class="clearfix"></div>
+
+
+<p>From README.txt</p>
+
+<p>Gentleman Wordpress Theme by Travis Berry is licensed under a Creative Commons Attribution 3.0 United States License.</p>
+
+<p>http://gentleman.travisberry.comThis theme is available for use for personal or commercial purposes. Please consider giving a link back to http://www.travisberry.com somewhere on your site.</p>
+
+<p>For questions email contact@travisberry.com</p>
+
+<p>Download latest version from <a href="http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master">http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master</a>
+</article></p>
 
 </div>
 
@@ -79,5 +104,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

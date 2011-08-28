@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -71,7 +77,8 @@
 
 <p>The final code looks something like this</p>
 
-<p><code>&amp;lt;OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"     WIDTH="320"     HEIGHT="240"    CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"&amp;gt;&amp;lt;PARAM name="SRC" VALUE="poster.mov"&amp;gt;&amp;lt;PARAM name="QTSRC" VALUE="rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov"&amp;gt;&amp;lt;PARAM name="AUTOPLAY" VALUE="true"&amp;gt;&amp;lt;PARAM name="CONTROLLER" VALUE="false"&amp;gt;    &amp;lt;embed src="poster.mov"    qtsrc="rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov"     width="320" height="240" target="myself" controller="false" autoplay="true"&amp;gt;    &amp;lt;/embed&amp;gt;&amp;lt;/OBJECT&amp;gt;</code></p>
+<script src="https://gist.github.com/1176830.js?file=quicktime.html"></script>
+
 
 <p>Here is my first test at an embeded .mov file streamed off a quicktime server.</p>
 
@@ -80,7 +87,8 @@
 
 <p>You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -</p>
 
-<p><code>&amp;lt;object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"&amp;gt;&amp;lt;param name="src" value="http://www.travisberry.com/videos/Comp51_3.mov"&amp;gt;&amp;lt;param name="autoplay" value="false"&amp;gt;&amp;lt;param name="type" value="video/quicktime" height="376" width="640"&amp;gt;&amp;lt;embed src="http://www.travisberry.com/videos/Comp51_3.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"&amp;gt;</code></p>
+<script src="https://gist.github.com/1176830.js?file=quicktime2.html"></script>
+
 
 <p>This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.</p>
 
@@ -110,5 +118,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

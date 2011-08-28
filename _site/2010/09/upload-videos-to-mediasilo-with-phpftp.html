@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,25 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://www.flickr.com/photos/spiesteleviv/3654728245/"><img src="http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" title="media_silo_pic" alt="" /></a>In continuing with my last post on <a href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/">how to upload videos to Ooyala with PHP</a>, here is one for <a href="http://www.mediasilo.com/">MediaSilo</a>. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.<!--more-->Alright, so let's get to the code.<code>&lt;?php //MediaSilo Information    $server = "upload.mediasilo.com";    $ftp_user_name = "YOUR MEDIASILO LOGIN NAME AND HOSTNAME(e.g NAMEHOSTNAME";    $ftp_user_pass = "YOUR MEDIASILO LOGIN PASSWORD";    $dest = "THE WORKSPACE YOU WANT TO UPLOAD TO";                                    //Video Folder Information    $source_folder = "FULL PATH TO FOLDER. NO TRAILING SLASH (e.g. /var/www/videofolder)";    //Grabs everything in the source folder. You may want to set a file type like, ($source_folder."/*.flv")    $sources = glob($source_folder."/*.*");                    //Connect to FTP    set_time_limit(0);    $connection = ftp_connect($server);    $login = ftp_login($connection, $ftp_user_name, $ftp_user_pass);    //Check connection    if (!$connection || !$login) {        die('Connection attempt failed!');    }                    //If there are no files, don't FTP to MediaSilo    if (empty($sources)) {        //Close the FTP connection        ftp_close($connection);        $fileUploadMessage = "No files selected for upload";        echo $fileUploadMessage;    }else{        //If there are files FTP them to MediaSilo        foreach ($sources as $source){            //Put each video file on FTP server            $upload = ftp_put($connection, $dest."/".basename($source) , $source, FTP_BINARY);            //Check upload status            //Display message            if (!$upload) {                echo "Cannot upload: ".basename($source)." &lt;br ?&gt;";            }else{                echo "Upload complete: ".basename($source)." &lt;br /&gt;";            }        }        //Close the FTP connection        ftp_close($connection);    //Videos should now be uploaded to MediaSilo    }?&gt;</code>The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one. If you have any ideas on how to make this code better, or expand upon it, let me know in the comments.(One caveat to using FTP to upload to MediaSilo is that you do need to have at least a "Hollywood" level account, which is going to set you back $100 a month)<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar"><img src="http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;d=identicon&amp;r=G" alt="" /></div>I'm just a guy interested in all things design and web related. You should <a href="http://www.travisberry.com/contact/">contact me</a> about about this article, for freelance work, or for any reason.</div></p>
+<p><article class="post clearfix">
+  <h3>Upload Videos To MediaSilo With PHP/FTP</h3>
+  <a href="http://www.flickr.com/photos/spiesteleviv/3654728245/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-09-18</h6></p>
+
+<p>In continuing with my last post on <a href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/">how to upload videos to Ooyala with PHP</a>, here is one for <a href="http://www.mediasilo.com/">MediaSilo</a>. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.</p>
+
+<p>Alright, so let's get to the code.</p>
+
+<script src="https://gist.github.com/1177059.js?file=example1.php"></script>
+
+
+<p>The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one.</p>
+
+<p>If you have any ideas on how to make this code better, or expand upon it, let me know in the comments.</p>
+
+<p>(One caveat to using FTP to upload to MediaSilo is that you do need to have at least a “Hollywood” level account, which is going to set you back $100 a month)</p>
+
+<p></article></p>
 
 </div>
 
@@ -79,5 +103,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

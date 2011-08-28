@@ -18,7 +18,13 @@
     <!--[if lte IE 7]>
     ie
     <![endif]-->
-    
+    <style>
+			.gist-meta{
+			  font-size:8px !important;
+			  text-shadow: none !important;
+			}
+
+		</style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     </head>
       <body>
@@ -56,7 +62,28 @@
 				  <div class="ie grid_7"></div>
 				  <![endif]-->
 					<div id="post">
-<p><a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg" title="mygithubpage" alt="mygithubpage" /></a>If you're looking for a simple <a href="http://wordpress.org/">WordPress</a> theme to use as a framework to modify, why not download mine? <!--more-->Built entirely from scratch by yours truly, my theme is super easy to understand and the css is easy to read and customize. You can grab a copy from my <a href="http://github.com/ninetwentyfour/TravisBerry_com">github page</a>. Just click on the <a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master">download link</a> and choose your preferred download format. I'm using github as opposed to hosting it here because the theme is still being worked on. Github makes it much easier to ensure everyone can get the latest copy.If you get a copy and have any questions, feel free to leave them in the comments.And if you're interested in a completely custom site, feel free to send me an <a href="mailto:contact@travisberry.com">email</a> and we can discuss your needs.<a href="http://creativecommons.org/licenses/by/3.0/us/"><img src="http://i.creativecommons.org/l/by/3.0/us/88x31.png" alt="Creative Commons License" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Wordpress Theme</span> by Travis Berry is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.Fonts subject to separate license.</p>
+<p><article class="post clearfix">
+  <h3>Download My WordPress Theme</h3>
+  <a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2009-12-07</h6></p>
+
+<p>This was my old wordpress theme. You can get my current site at <a href="https://github.com/ninetwentyfour/travisberry_com_static">https://github.com/ninetwentyfour/travisberry_com_static</a></p>
+
+<p>If you're looking for a simple <a href="http://wordpress.org/">WordPress</a> theme to use as a framework to modify, why not download mine?</p>
+
+<p>Built entirely from scratch by yours truly, my theme is super easy to understand and the css is easy to read and customize.</p>
+
+<div class="clearfix"></div>
+
+
+<p>You can grab a copy from my <a href="http://github.com/ninetwentyfour/TravisBerry_com">github page</a>. Just click on the <a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master">download link</a> and choose your preferred download format. I'm using github as opposed to hosting it here because the theme is still being worked on. Github makes it much easier to ensure everyone can get the latest copy.</p>
+
+<p>If you get a copy and have any questions, feel free to leave them in the comments.</p>
+
+<p>And if you're interested in a completely custom site, feel free to send me an <a href="mailto:contact@travisberry.com">email</a> and we can discuss your needs.</p>
+
+<p><a href="http://creativecommons.org/licenses/by/3.0/us/"><img src="http://i.creativecommons.org/l/by/3.0/us/88x31.png" alt="Creative Commons License" /></a><span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Wordpress Theme</span> by Travis Berry is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>. Fonts subject to separate license.
+</article></p>
 
 </div>
 
@@ -79,5 +106,47 @@
 				</footer> <!-- end footer -->
 				<div class="clear"></div>
 				</div> <!-- end wrapper -->
+				  <script>
+
+				(function ($) {
+				  // custom css expression for a case-insensitive contains()
+				  jQuery.expr[':'].Contains = function(a,i,m){
+				      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+
+
+				  function listFilter(header, list) { // header is any element, list is an unordered list
+				    // create and add the filter form to the header
+				    var form = $("<form>").attr({"id":"searchFrom","class":"filterform","action":"#"}),
+				        input = $("<input>").attr({"id":"search","class":"filterinput","type":"text","placeholder":"Search..."});
+				    $(form).append(input).appendTo(header);
+
+				    $(input)
+				      .change( function () {
+				        var filter = $(this).val();
+				        if(filter) {
+				          // this finds all links in a list that contain the input,
+				          // and hide the ones not containing the input while showing the ones that do
+				          $(list).find("h3:not(:Contains(" + filter + "))").parent().slideUp();
+				          $(list).find("h3:Contains(" + filter + ")").parent().slideDown();
+				        } else {
+				          $(list).find("article").slideDown();
+				        }
+				        return false;
+				      })
+				    .keyup( function () {
+				        // fire the above change event after every letter
+				        $(this).change();
+				    });
+				  }
+
+
+				  //ondomready
+				  $(function () {
+				    listFilter($("#search"), $("#list"));
+				  });
+				}(jQuery));
+
+				  </script>
 				</body>
 				</html>

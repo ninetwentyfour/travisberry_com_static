@@ -9,5 +9,111 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg"
+summary: "Just because Apache has large numbers, doesn’t mean it’s the best in terms of performance."
 ---
-[![](http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg "nginx_server")](http://www.flickr.com/photos/jurvetson/10438860/)In the word of servers, Apache is still the undisputed king. It's extendability and ability to run anything you can throw at it has led to it being the number one most used server in the world. Just because it has large numbers though, doesn't mean it's the best in terms of performance.<!--more-->When running a site with lots of traffic, Apache can quickly grow into a large beast. This can be overcome by throwing more machines (and money) at the problem, but for many companies and people, that simply isn't an option. Instead why not squeeze every piece of performance that you can out of your existing tech.Enter [Nginx](http://wiki.nginx.org/Main). â€œNginx is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption.â€ In other words, it will run faster and more efficiently than Apache.Installing Nginx on Ubuntu is fairly simple.A simple[cc lang="html"]sudo apt-get install nginx[/cc]will get you started. Now edit the file in _/etc/nginx/sites-available/default_change it to [cc lang="html"]# You may add here your# server {#       ...# }# statements for each of your virtual hostsserver {    listen   8080;    server_name  localhost;    access_log  /var/log/nginx/localhost.access.log;## Default location    location / {        root   /var/www;        index  index.php;    }## Images and static content is treated different    location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {      access_log        off;      expires           30d;      root /var/www;    }## Parse all .php file in the /var/www directory        location ~ .php$ {        fastcgi_split_path_info ^(.+\.php)(.*)$;        fastcgi_pass   backend;        fastcgi_index  index.php;        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;           include fastcgi_params;        fastcgi_param  QUERY_STRING     $query_string;        fastcgi_param  REQUEST_METHOD   $request_method;        fastcgi_param  CONTENT_TYPE     $content_type;        fastcgi_param  CONTENT_LENGTH   $content_length;        fastcgi_intercept_errors        on;        fastcgi_ignore_client_abort     off;        fastcgi_connect_timeout 60;        fastcgi_send_timeout 180;        fastcgi_read_timeout 180;         fastcgi_buffer_size 128k;        fastcgi_buffers 4 256k;        fastcgi_busy_buffers_size 256k;        fastcgi_temp_file_write_size 256k;    }## Disable viewing .htaccess & .htpassword    location ~ /\.ht {        deny  all;    }}upstream backend {        server 127.0.0.1:9000;}        #error_page  404  /404.html;        # redirect server error pages to the static page /50x.html        #        #error_page   500 502 503 504  /50x.html;        #location = /50x.html {        #       root   /var/www/nginx-default;        #}        # proxy the PHP scripts to Apache listening on 127.0.0.1:80        #        #location ~ \.php$ {                #proxy_pass   http://127.0.0.1;        #}        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000        #        #location ~ \.php$ {                #fastcgi_pass   127.0.0.1:9000;                #fastcgi_index  index.php;                #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;                #includefastcgi_params;# another virtual host using mix of IP-, name-, and port-based configuration##server {#listen   8000;#listen   somename:8080;#server_name  somename  alias  another.alias;#location / {#root   html;#index  index.html index.htm;#}#}# HTTPS server##server {#listen   443;#server_name  localhost;#ssl  on;#ssl_certificate  cert.pem;#ssl_certificate_key  cert.key;#ssl_session_timeout  5m;#ssl_protocols  SSLv3 TLSv1;#ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;#ssl_prefer_server_ciphers   on;#location / {#root   html;#index  index.html index.htm;#}#}[/cc]This assumes your root web folder is _/var/www_. You'll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.Now we need to get PHP installed so we can actually serve PHP files.As usual start with [cc lang="html"]sudo apt-get install php5-cli php5-common php5-suhosin[/cc]then[cc lang="html"]sudo apt-get install php5-fpm php5-cgi[/cc]You may have to add _deb http://php53.dotdeb.org stable all_ to your packages list for php5-fpm and php5-cgi to show up.Before configuring PHP let's install [eAccelerator](http://www.eaccelerator.net/). â€œeAccelerator is a free open-source PHP accelerator & optimizer. It increases the performance of PHP scripts by caching them in their compiled state, so that the overhead of compiling is almost completely eliminated. It also optimizes scripts to speed up their execution. eAccelerator typically reduces server load and increases the speed of your PHP code by 1-10 times.â€First[cc lang="html"]sudo apt-get install php5-dev[/cc]then[cc lang="html"]sudo apt-get install make[/cc]Now cd into _/tmp/_[cc lang="html"]wget http://bart.eaccelerator.net/source/0.9.6.1/eaccelerator-0.9.6.1.tar.bz2tar xvjf eaccelerator-0.9.6.1.tar.bz2cd eaccelerator-0.9.6.1/sudo phpizesudo ./configure â€“enable-eaccelerator=sharedsudo makesudo make install[/cc]Now edit _/etc/php5/fpm/php.ini_and right under the [PHP] block add[cc lang="html"]; eAccelerator configuration; Note that eAccelerator may also be installed as a PHP extension or as a zend_$; If you are using a thread safe build of PHP you must use; zend_extension_ts instead of zend_extension;extension                       = "/usr/lib/php5/20090626+lfs/eaccelerator.so"zend_extension                  = "/usr/lib/php5/20090626+lfs/eaccelerator.so"eaccelerator.shm_size           = "16"eaccelerator.cache_dir          = "/var/cache/eaccelerator"eaccelerator.enable             = "1"eaccelerator.optimizer          = "1"eaccelerator.check_mtime        = "1"eaccelerator.debug              = "0"eaccelerator.filter             = ""eaccelerator.shm_max            = "0"eaccelerator.shm_ttl            = "0"eaccelerator.shm_prune_period   = "0"eaccelerator.shm_only           = "0"eaccelerator.compress           = "1"eaccelerator.compress_level     = "9"eaccelerator.allowed_admin_path = "/var/www/eaccelerator"[/cc]Now restart PHP[cc lang="html"]sudo /etc/init.d/php5-fpm restart[/cc]Then restart Nginx[cc lang="html"]sudo /etc/init.d/nginx restart[/cc]Now if you hit http://localhost:8080/index.php you should see your site.The only thing left to setup at this point is [Varnish](http://www.varnish-cache.org/).â€œVarnish store web pages in memory so the web servers don't have to create the same web page over and over again. The web server only recreate a page when it is changed. Additionally Varnish can serve web pages much faster then any application server is capable of - giving the website a significant speed up.â€Install with[cc lang="html"]sudo apt-get install varnish[/cc]After install run[cc lang="html"]pkill varnishd[/cc]to make sure it's not running while we configure it.Now run[cc lang="html"]sudo varnishd -f /etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000[/cc]Varnish should now be running. Check by typing[cc lang="html"]varnishlog[/cc]If you see a series of lines then Varnish should be working.You can run one more test by going to your browser and reloading the page.If you see results like [cc lang="html"]12 SessionOpen  c 192.168.10.101 51732 :80   12 ReqStart     c 192.168.10.101 51732 1440203205   12 RxRequest    c GET   12 RxURL        c /favicon.ico   12 RxProtocol   c HTTP/1.1   12 RxHeader     c Host: www.ironyogistudios.com   12 RxHeader     c User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10   12 RxHeader     c Accept: image/png,image/*;q=0.8,*/*;q=0.5   12 RxHeader     c Accept-Language: en-us,en;q=0.5   12 RxHeader     c Accept-Encoding: gzip,deflate   12 RxHeader     c Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7   12 RxHeader     c Keep-Alive: 115   12 RxHeader     c Connection: keep-alive[/cc]Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in _/etc/varnish/default.vcl_. You can learn more about the setup and optimization of Varnish [here](http://www.varnish-cache.org/docs/2.1/index.html).You should now have a lighting fast PHP server. This setup is a pretty basic configuration so I'm sure by tweaking each individual component to your needs would get even more performance out of it. Compared to a base Apache config, though, this is fantastic.If you have some optimization techniques, or have any questions, let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</h3>
+  <a href="http://www.flickr.com/photos/jurvetson/10438860/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-10-17</h6>
+
+In the word of servers, Apache is still the undisputed king. It’s extendability and ability to run anything you can throw at it has led to it being the number one most used server in the world. Just because it has large numbers though, doesn’t mean it’s the best in terms of performance.
+
+When running a site with lots of traffic, Apache can quickly grow into a large beast. This can be overcome by throwing more machines (and money) at the problem, but for many companies and people, that simply isn’t an option. Instead why not squeeze every piece of performance that you can out of your existing tech.
+
+Enter Nginx. "Nginx is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption." In other words, it will run faster and more efficiently than Apache.
+
+Installing Nginx on Ubuntu is fairly simple.
+
+A simple
+
+<script src="https://gist.github.com/1177105.js?file=example1.txt"></script>
+
+will get you started. 
+
+Now edit the file in _/etc/nginx/sites-available/default_
+
+change it to
+
+<script src="https://gist.github.com/1177105.js?file=example2.txt"></script>
+
+This assumes your root web folder is _/var/www_. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.
+
+Now we need to get PHP installed so we can actually serve PHP files.
+
+As usual start with
+
+<script src="https://gist.github.com/1177105.js?file=example3.txt"></script>
+
+then
+
+<script src="https://gist.github.com/1177105.js?file=example4.txt"></script>
+
+You may have to add _deb http://php53.dotdeb.org stable all_ to your packages list for php5-fpm and php5-cgi to show up.
+
+Before configuring PHP let’s install eAccelerator. "eAccelerator is a free open-source PHP accelerator & optimizer. It increases the performance of PHP scripts by caching them in their compiled state, so that the overhead of compiling is almost completely eliminated. It also optimizes scripts to speed up their execution. eAccelerator typically reduces server load and increases the speed of your PHP code by 1-10 times."
+
+First
+
+<script src="https://gist.github.com/1177105.js?file=example6.txt"></script>
+
+then
+
+<script src="https://gist.github.com/1177105.js?file=example7.txt"></script>
+
+Now cd into _/tmp/_
+
+<script src="https://gist.github.com/1177105.js?file=example8.txt"></script>
+
+Now edit _/etc/php5/fpm/php.ini_
+
+and right under the [PHP] block add
+
+<script src="https://gist.github.com/1177105.js?file=example9.txt"></script>
+
+Now restart PHP
+
+<script src="https://gist.github.com/1177110.js?file=example10.txt"></script>
+
+Then restart Nginx
+
+<script src="https://gist.github.com/1177110.js?file=example11.txt"></script>
+
+Now if you hit http://localhost:8080/index.php you should see your site.
+
+The only thing left to setup at this point is Varnish.
+
+"Varnish store web pages in memory so the web servers don’t have to create the same web page over and over again. The web server only recreate a page when it is changed. Additionally Varnish can serve web pages much faster then any application server is capable of – giving the website a significant speed up."
+
+Install with
+
+<script src="https://gist.github.com/1177110.js?file=example12.txt"></script>
+
+After install run
+
+<script src="https://gist.github.com/1177110.js?file=example13.txt"></script>
+
+to make sure it’s not running while we configure it.
+
+Now run
+
+<script src="https://gist.github.com/1177110.js?file=example14.txt"></script>
+
+Varnish should now be running. Check by typing
+
+<script src="https://gist.github.com/1177110.js?file=example15.txt"></script>
+
+If you see a series of lines then Varnish should be working.
+
+You can run one more test by going to your browser and reloading the page.
+
+If you see results like
+
+<script src="https://gist.github.com/1177110.js?file=example16.txt"></script>
+
+Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.
+
+You should now have a lighting fast PHP server. This setup is a pretty basic configuration so I’m sure by tweaking each individual component to your needs would get even more performance out of it. Compared to a base Apache config, though, this is fantastic.
+
+If you have some optimization techniques, or have any questions, let me know in the comments.
+
+</article>
