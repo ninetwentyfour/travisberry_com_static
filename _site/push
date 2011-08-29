@@ -1,0 +1,3 @@
+jekyll
+
+s3cmd sync --acl-public --delete-removed _site/ s3://travisberry-static

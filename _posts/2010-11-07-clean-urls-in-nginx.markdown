@@ -9,5 +9,35 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://content.travisberry.com/soap.jpg"
+summary: "Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work."
 ---
-[![](http://content.travisberry.com/soap.jpg "soap")](http://www.flickr.com/photos/wwworks/612350664 /)Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://www.travisberry.com/example<!--more-->In Apache this is trivial. In Nginx, you can spend a couple days trying to get right. Turns out the solution is simple. If you use a block of code like this[cc lang="php"]## Parse all .php file in the /var/www directorylocation ~ \.php$       location ~ \.php$ {       fastcgi_split_path_info ^(.+\.php)(.*)$;        fastcgi_pass 127.0.0.1:9000;        fastcgi_index  index.php;        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;        include fastcgi_params;        fastcgi_param  QUERY_STRING     $query_string;        fastcgi_param  REQUEST_METHOD   $request_method;        fastcgi_param  CONTENT_TYPE     $content_type;        fastcgi_param  CONTENT_LENGTH   $content_length;        fastcgi_intercept_errors        on;        fastcgi_ignore_client_abort     off;        fastcgi_connect_timeout 60;        fastcgi_send_timeout 180;        fastcgi_read_timeout 180;        fastcgi_buffer_size 128k;        fastcgi_buffers 4 256k;        fastcgi_busy_buffers_size 256k;        fastcgi_temp_file_write_size 256k;    }[/cc]to turn on PHP, just replace the location with[cc lang="php"]location ~ $[/cc]and comment out[cc lang="php"]##fastcgi_split_path_info ^(.+\.php)(.*)$;[/cc]Your code block should now look like[cc lang="php"]## Parse all .php file in the /var/www directorylocation ~ \.php$       location ~ $ {       ##fastcgi_split_path_info ^(.+\.php)(.*)$;        fastcgi_pass 127.0.0.1:9000;        fastcgi_index  index.php;        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;        include fastcgi_params;        fastcgi_param  QUERY_STRING     $query_string;        fastcgi_param  REQUEST_METHOD   $request_method;        fastcgi_param  CONTENT_TYPE     $content_type;        fastcgi_param  CONTENT_LENGTH   $content_length;        fastcgi_intercept_errors        on;        fastcgi_ignore_client_abort     off;        fastcgi_connect_timeout 60;        fastcgi_send_timeout 180;        fastcgi_read_timeout 180;        fastcgi_buffer_size 128k;        fastcgi_buffers 4 256k;        fastcgi_busy_buffers_size 256k;        fastcgi_temp_file_write_size 256k;    }[/cc]Now instead of linking to /example.php, you can save the file with no extension, put it on your server, and link to /exampleNginx will now handle files without and extension as PHP files. This is a solution that will only fit a limited number of use cases, but compared to writing a rewrite wrapper, this is quick and easy.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Clean URL's in Nginx</h3>
+  <a href="http://www.flickr.com/photos/wwworks/612350664 /" class="postImageLink"><img src="http://content.travisberry.com/soap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: November 07, 2011</h6>
+
+Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://www.travisberry.com/example
+
+In Apache this is trivial. In Nginx, you can spend a couple days trying to get right. 
+
+Turns out the solution is simple. If you use a block of code like this
+
+<script src="https://gist.github.com/1177191.js?file=example1.txt"></script>
+
+to turn on PHP, just replace the location with
+
+<script src="https://gist.github.com/1177191.js?file=example2.txt"></script>
+
+and comment out
+
+<script src="https://gist.github.com/1177191.js?file=example3.txt"></script>
+
+Your code block should now look like
+
+<script src="https://gist.github.com/1177191.js?file=example4.txt"></script>
+
+Now instead of linking to /example.php, you can save the file with no extension, put it on your server, and link to /example
+
+Nginx will now handle files without and extension as PHP files. This is a solution that will only fit a limited number of use cases, but compared to writing a rewrite wrapper, this is quick and easy.
+
+</article>

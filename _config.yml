@@ -7,11 +7,12 @@ includes:    ./_includes
 
 pygments:    true
 markdown:    rdiscount
-permalink:   /:year/:month/:title.html
+permalink:   /:year/:month/:title
 pagination: true
 
 #base_url: http://www.travisberry.com
-base_url: http://localhost:4000
+#base_url: http://localhost:4000
+base_url: http://travisberry-static.s3-website-us-east-1.amazonaws.com
 description: "Travis Berry's blog about all thing video production and web design."
 root_desc: "Travis Berry's blog about all thing video production and web design."
 

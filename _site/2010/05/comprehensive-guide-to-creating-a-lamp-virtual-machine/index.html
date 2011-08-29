@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>How To Setup A LAMP Virtual Machine | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />  
+		<link href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/create-github-gist-with-ruby"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/write-text-anywhere-with-html5-canvas"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/03/a-day-in-the-life-of-me"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/02/fast-cakephp-search-with-indextank"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/new-time-tracking-web-app-homkora"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+			
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">     
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog.html"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work.html"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact.html"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>How To Setup A LAMP Virtual Machine</h3>
+  <a href="http://www.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-05-09</h6></p>
+
+<p>In an effort to develop in an environment closer to many production servers, many people have begun developing in virtual machines running on their host os. This article is a comprehensive guide to creating a LAMP virtual machine (plus a few other goodies).</p>
+
+<p>First you need the virtual machine software. Download <a href="http://www.virtualbox.org/wiki/Downloads">VirtualBox</a> and install it on your host os. Once installed go download the latest version of <a href="http://www.ubuntu.com/GetUbuntu/download">Ubuntu</a>. You want the desktop version, not the server. Save the .iso file to your desktop.</p>
+
+<h2>VirtualBox Setup &amp; Ubuntu Installation</h2>
+
+<p>Launch VirtualBox and create a new machine by clicking the button in the top left corner. Click next on the screen the comes up. Create a name for your new machine, and select Linux as your Operating System, and Ubuntu as you Version. Select a base amount of memory for the virtual machine to use. Use at least the default settings, but use as much as your system can spare. I recommend setting it to no more than 50% of your total RAM, unless you have lots to spare. Hit next. On the next screen select the option to create a new hard disk. This will launch the Create New Virtual Disk Wizard. Hit next. Select dynamically expanding storage and hit next. Select the size of the hard disk you want the virtual machine to have. This does take up real space on you computer. The default of 8 gigs should be sufficient for most. On the next screen hit finish. Then finish again.</p>
+
+<p>Now with your new machine highlighted, click the start button. This will launch two new windows, one of them being the First Run Wizard. Hit next on the first screen. Select CD/DVD ROM Device. Then click the little folder next to the drop down list. Hit add and select the Ubuntu .iso file you save to your desktop. Highlight it and hit select. Hit next on the Select Installation Media page. Finish.</p>
+
+<p>The Ubuntu .iso file will now start to run in the other window. When the install screen comes up select your language and hit the Install button, not the try button. On the next page select your time zone. Then pick your keyboard on the next screen. On the Prepare disk space page select the option to erase and use the entire disk then hit forward. Next fill out your user information. Make sure to set a password. On the next page hit install.</p>
+
+<p>If you find you cant get your mouse back out of the virtual machine, look in the bottom right corner of the window. It should give you a short cut or a ket on your keyboard that when pressed will return your mouse to the host os.</p>
+
+<p>When the installation is complete you will need to restart the computer. When it says, Please remove the disc and close the tray (if any) then press enter:, pull your mouse back out of the virtual machine and look at the bottom of the window. There should be an icon that looks like a CD. Click it and select unmount CD/DVD Device. Now click back in the Ubuntu window and hit enter. When the computer finishes restarting you will now have a working Ubuntu copy installed on your host os.</p>
+
+<p>You may or may not be able to connect to the internet through your virtual machine by default. Check by launching Firefox and seeing if you have a connection. If you do not. Close the virtual machine. You can select shutdown from the system options or just close the window and choose power down. In the virtual box window select your virtual machine from the list on the left hand side and select Settings. Select Network from the top menu. Under Adapter 1 make sure Enable Network Adapter is checked, but change the Attached To drop down list from NAT to bridged adapter. Hit OK and restart the machine. You should now be able to connect to the internet.</p>
+
+<p>Now that Ubuntu is installed and working it's time to start installing the LAMP stack. For those who don't know, LAMP stands for <a href="http://www.linux.org/">Linux</a>, <a href="http://www.apache.org/">Apache</a>, <a href="http://www.mysql.com/">MySQL</a>, and <a href="http://php.net/index.php">PHP</a>. This is a common setup among web developers, but you could also install Ruby or any other language. This one will focus just on the LAMP stack. (which is what you want if you use, wordpress, joomla, drupal, cakephp, or any of the other fine php packages)</p>
+
+<h2>Install Apache 2</h2>
+
+<p>Now open up Terminal (Applications > accessories > Terminal). Type in the following,</p>
+
+<script src="https://gist.github.com/1176993.js?file=example1.txt"></script>
+
+
+<p>Terminal will prompt for your password. Enter it in.(Terminal does not show your password as you type, so just type it in and hit enter).</p>
+
+<h2>Install PHP 5</h2>
+
+<p>Apache should now be installed on your system. Now it's time to install PHP 5. In terminal type,</p>
+
+<script src="https://gist.github.com/1176993.js?file=example2.txt"></script>
+
+
+<h2>Install MySQL</h2>
+
+<p>Now you have PHP 5 installed. To install MySQL type,</p>
+
+<script src="https://gist.github.com/1176993.js?file=example3.txt"></script>
+
+
+<p>Enter in a password when the install prompts you to.</p>
+
+<h2>Install phpMyAdmin</h2>
+
+<p>Now install <a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a> by typing</p>
+
+<script src="https://gist.github.com/1176993.js?file=example4.txt"></script>
+
+
+<p>When phpmyadmin asks which server to use select apache. It will then ask to create a database. Tell it to do so and enter in the password you set when installing MySQL.</p>
+
+<p>After installing all this you need to restart apache. To do so type</p>
+
+<script src="https://gist.github.com/1176993.js?file=example5.txt"></script>
+
+
+<h2>Test Installation</h2>
+
+<p>You should now have a working LAMP stack installed. To test everything is working, type in Terminal</p>
+
+<script src="https://gist.github.com/1176993.js?file=example6.txt"></script>
+
+
+<p>When the new window opens add</p>
+
+<script src="https://gist.github.com/1176993.js?file=example7.php"></script>
+
+
+<p>Save and close the window. Now open Firefox and go to http://localhost/</p>
+
+<p>You should see "It Works!", if you do, apache is working, then go to http://localhost/info.php</p>
+
+<p>If you see a long list of information about PHP 5 then it works as well.</p>
+
+<p>Now everything is working as it should, but the default setup isn't the best thing. We're going to do a little bit more to make it a development dream come true.</p>
+
+<h2>Fix Domain Name Error</h2>
+
+<p>First you may have noticed when we restarted apache that it gave an error about not being able to determine the fully qualified domain name. To fix this error open the terminal and type,</p>
+
+<script src="https://gist.github.com/1176993.js?file=example8.txt"></script>
+
+
+<p>Add to the file</p>
+
+<script src="https://gist.github.com/1176993.js?file=example9.txt"></script>
+
+
+<p>Save and exit. Now restart again. You should no longer see an error.</p>
+
+<h2>Install mod_rewrite</h2>
+
+<p>Now lets add an important PHP 5 module. mod_rewrite. Many systems use this to turn ugly urls like,</p>
+
+<p>example.com/?dkjfodocas223</p>
+
+<p>into</p>
+
+<p>example.com/about/</p>
+
+<p>You can enable the module by typing in the Terminal</p>
+
+<script src="https://gist.github.com/1176993.js?file=example10.txt"></script>
+
+
+<h2>Enable PHP 5 Error Displaying</h2>
+
+<p>Another helpful feature not enabled by default is error displaying in PHP. Now on a production server it is good to turn these off, but when developing, they can be handy to have on. To enable type</p>
+
+<script src="https://gist.github.com/1176996.js?file=example11.txt"></script>
+
+
+<p>Make sure the following lines read as follows</p>
+
+<script src="https://gist.github.com/1176996.js?file=example12.txt"></script>
+
+
+<h2>Setup Virtual Hosts</h2>
+
+<p>After errors are turned on, let's setup an example virtual host. Virtual hosts are what allow you to host multiple websites on one server. This will allow example.com and test.com to point to two different sites.</p>
+
+<p>To begin setting this up create two separate folders in /var/www/. Name one example.com and the other test.com. Create a simple index.html file in each, creating content that makes them easy to tell apart. Now cd to /etc/apache2/sites-enabled. Once there, type the following in Terminal</p>
+
+<script src="https://gist.github.com/1176996.js?file=example13.txt"></script>
+
+
+<p>Inside the file paste the following,</p>
+
+<script src="https://gist.github.com/1176996.js?file=example14.txt"></script>
+
+
+<p>Now create a link to the file in sites-available.</p>
+
+<script src="https://gist.github.com/1176996.js?file=example15.txt"></script>
+
+
+<p>Next let's create one for test.com</p>
+
+<script src="https://gist.github.com/1176996.js?file=example16.txt"></script>
+
+
+<p>Inside the file paste the following,</p>
+
+<script src="https://gist.github.com/1176996.js?file=example17.txt"></script>
+
+
+<p>Now create a link to the file in sites-available.</p>
+
+<script src="https://gist.github.com/1176996.js?file=example18.txt"></script>
+
+
+<p>Now your virtual hosts are ready to go, but first we need to tell the computer to listen for the addresses. To do that type the following,</p>
+
+<script src="https://gist.github.com/1176996.js?file=example19.txt"></script>
+
+
+<p>Then</p>
+
+<script src="https://gist.github.com/1176998.js?file=example20.txt"></script>
+
+
+<p>Create a new line under the first. In it add</p>
+
+<script src="https://gist.github.com/1176998.js?file=example21.txt"></script>
+
+
+<p>Create another line and this time add</p>
+
+<script src="https://gist.github.com/1176998.js?file=example22.txt"></script>
+
+
+<p>Save and close the file. Restart apache</p>
+
+<script src="https://gist.github.com/1176998.js?file=example23.txt"></script>
+
+
+<p>Now open Firefox and go to www.example.com. You should see your example.com index.html file. Now try www.test.com. If you see your test.com index.html file everything works as it should. Just repeat this process for any additional domains you would like to add.</p>
+
+<p>If you want to be able to view your virtual machine sites in a browser on your host os you need to do a similar thing as the last step. First find the local IP address of the virtual machine. You can find this by going to System > Administration > Network Tools. Select your Network Device from the drop down and look for the Ipv4 IP Address. Let's say mine is 192.168.10.4</p>
+
+<p>Now move back to your host os. Open a terminal session in it. Find your hosts file. In OSX it is /etc/ just like Linux. Now add lines like so,</p>
+
+<script src="https://gist.github.com/1176998.js?file=example24.txt"></script>
+
+
+<p>You should now be able to view your example sites in a browser on your host os.</p>
+
+<h2>Change Webroot Permissions</h2>
+
+<p>Everything is starting to work quite well for development but there are still a few extras worth setting up. The first is changing permissions of your web root. To make you the owner of the /var/www directory type this in Terminal</p>
+
+<script src="https://gist.github.com/1176998.js?file=example25.txt"></script>
+
+
+<h2>Install Git</h2>
+
+<p>This will now allow your user to easily create new folders and files. Next lets install my favorite version control system <a href="http://git-scm.com/">Git</a>. To install type this into Terminal</p>
+
+<script src="https://gist.github.com/1176998.js?file=example26.txt"></script>
+
+
+<h2>Install FTP</h2>
+
+<p>You can now use git to control the code you develop on the machine. Next let's add ftp support to make moving files between your host and guest operating systems a little easier. To install ftp support type,</p>
+
+<script src="https://gist.github.com/1176998.js?file=example27.txt"></script>
+
+
+<p>You can now open your favorite ftp application in your host os and connect to your virtual machine. Just use the IP (mine in this example is 192.168.10.4) and enter in your user name and password. Ta-da!</p>
+
+<hr />
+
+<p>There you go. You now have a complete and awesome new development virtual machine. If there are any questions, or if you know a better way to do something, please let me know in the comments.
+</article></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/javascript/search.js"></script>
+	</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />  
+		<link href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/create-github-gist-with-ruby"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/write-text-anywhere-with-html5-canvas"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/03/a-day-in-the-life-of-me"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/02/fast-cakephp-search-with-indextank"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/new-time-tracking-web-app-homkora"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+			
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">     
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog.html"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work.html"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact.html"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</h3>
+  <a href="http://www.flickr.com/photos/jurvetson/10438860/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-10-17</h6></p>
+
+<p>In the word of servers, Apache is still the undisputed king. It’s extendability and ability to run anything you can throw at it has led to it being the number one most used server in the world. Just because it has large numbers though, doesn’t mean it’s the best in terms of performance.</p>
+
+<p>When running a site with lots of traffic, Apache can quickly grow into a large beast. This can be overcome by throwing more machines (and money) at the problem, but for many companies and people, that simply isn’t an option. Instead why not squeeze every piece of performance that you can out of your existing tech.</p>
+
+<p>Enter Nginx. "Nginx is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption." In other words, it will run faster and more efficiently than Apache.</p>
+
+<p>Installing Nginx on Ubuntu is fairly simple.</p>
+
+<p>A simple</p>
+
+<script src="https://gist.github.com/1177105.js?file=example1.txt"></script>
+
+
+<p>will get you started.</p>
+
+<p>Now edit the file in <em>/etc/nginx/sites-available/default</em></p>
+
+<p>change it to</p>
+
+<script src="https://gist.github.com/1177105.js?file=example2.txt"></script>
+
+
+<p>This assumes your root web folder is <em>/var/www</em>. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.</p>
+
+<p>Now we need to get PHP installed so we can actually serve PHP files.</p>
+
+<p>As usual start with</p>
+
+<script src="https://gist.github.com/1177105.js?file=example3.txt"></script>
+
+
+<p>then</p>
+
+<script src="https://gist.github.com/1177105.js?file=example4.txt"></script>
+
+
+<p>You may have to add <em>deb http://php53.dotdeb.org stable all</em> to your packages list for php5-fpm and php5-cgi to show up.</p>
+
+<p>Before configuring PHP let’s install eAccelerator. "eAccelerator is a free open-source PHP accelerator &amp; optimizer. It increases the performance of PHP scripts by caching them in their compiled state, so that the overhead of compiling is almost completely eliminated. It also optimizes scripts to speed up their execution. eAccelerator typically reduces server load and increases the speed of your PHP code by 1-10 times."</p>
+
+<p>First</p>
+
+<script src="https://gist.github.com/1177105.js?file=example6.txt"></script>
+
+
+<p>then</p>
+
+<script src="https://gist.github.com/1177105.js?file=example7.txt"></script>
+
+
+<p>Now cd into <em>/tmp/</em></p>
+
+<script src="https://gist.github.com/1177105.js?file=example8.txt"></script>
+
+
+<p>Now edit <em>/etc/php5/fpm/php.ini</em></p>
+
+<p>and right under the [PHP] block add</p>
+
+<script src="https://gist.github.com/1177105.js?file=example9.txt"></script>
+
+
+<p>Now restart PHP</p>
+
+<script src="https://gist.github.com/1177110.js?file=example10.txt"></script>
+
+
+<p>Then restart Nginx</p>
+
+<script src="https://gist.github.com/1177110.js?file=example11.txt"></script>
+
+
+<p>Now if you hit http://localhost:8080/index.php you should see your site.</p>
+
+<p>The only thing left to setup at this point is Varnish.</p>
+
+<p>"Varnish store web pages in memory so the web servers don’t have to create the same web page over and over again. The web server only recreate a page when it is changed. Additionally Varnish can serve web pages much faster then any application server is capable of – giving the website a significant speed up."</p>
+
+<p>Install with</p>
+
+<script src="https://gist.github.com/1177110.js?file=example12.txt"></script>
+
+
+<p>After install run</p>
+
+<script src="https://gist.github.com/1177110.js?file=example13.txt"></script>
+
+
+<p>to make sure it’s not running while we configure it.</p>
+
+<p>Now run</p>
+
+<script src="https://gist.github.com/1177110.js?file=example14.txt"></script>
+
+
+<p>Varnish should now be running. Check by typing</p>
+
+<script src="https://gist.github.com/1177110.js?file=example15.txt"></script>
+
+
+<p>If you see a series of lines then Varnish should be working.</p>
+
+<p>You can run one more test by going to your browser and reloading the page.</p>
+
+<p>If you see results like</p>
+
+<script src="https://gist.github.com/1177110.js?file=example16.txt"></script>
+
+
+<p>Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.</p>
+
+<p>You should now have a lighting fast PHP server. This setup is a pretty basic configuration so I’m sure by tweaking each individual component to your needs would get even more performance out of it. Compared to a base Apache config, though, this is fantastic.</p>
+
+<p>If you have some optimization techniques, or have any questions, let me know in the comments.</p>
+
+<p></article></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/javascript/search.js"></script>
+	</body>
+</html>

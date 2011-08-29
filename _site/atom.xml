@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-08-28T14:11:50-06:00</updated>
+ <updated>2011-08-28T18:01:13-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -14,79 +14,512 @@
  
  <entry>
    <title>Create GitHub Gist With Ruby</title>
-   <link href="http://www.travisberry.com/2011/05/create-github-gist-with-ruby.html"/>
+   <link href="http://www.travisberry.com/2011/05/create-github-gist-with-ruby"/>
    <updated>2011-05-30T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2011/05/create-github-gist-with-ruby</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; title=&quot;gists&quot; alt=&quot;&quot; /&gt;If you didn't know already, &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; is freaking awesome. One of my favorite features is gists. Gists are a simple code pasting and sharing service. Also perfect for displaying code in blog posts.I've grown tired of dealing with libraries to make my code examples look good. Some don't work that well, changes aren't revisioned, and they all around kind of suck to mess with. So in an effort to fix all that, I have decided to start using gists for my code examples. &lt;!--more--&gt;I'm in the process of converting my site over to running &lt;a href=&quot;http://www.locomotivecms.com&quot;&gt;Locomotive CMS&lt;/a&gt; instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.&lt;script src=&quot;https://gist.github.com/998389.js?file=gist_helper.rb&quot;&gt;&lt;/script&gt;It's pretty simple and works like a champ for me. Obviously I had to write a lot more stuff to integrate with Locomotive CMS, but that is for another post.If you have questions or a better example, let me know in the comments.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Create GitHub Gist With Ruby&lt;/h3&gt;
+  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: May 30, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;If you didn't know already, &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; is freaking awesome. One of my favorite features is gists. Gists are a simple code pasting and sharing service. Also perfect for displaying code in blog posts.&lt;/p&gt;
+
+&lt;p&gt;I've grown tired of dealing with libraries to make my code examples look good. Some don't work that well, changes aren't revisioned, and they all around kind of suck to mess with. So in an effort to fix all that, I have decided to start using gists for my code examples.&lt;/p&gt;
+
+&lt;p&gt;I'm in the process of converting my site over to running &lt;a href=&quot;http://www.locomotivecms.com&quot;&gt;Locomotive CMS&lt;/a&gt; instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/998389.js?file=gist_helper.rb&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;It's pretty simple and works like a champ for me. Obviously I had to write a lot more stuff to integrate with Locomotive CMS, but that is for another post.&lt;/p&gt;
+
+&lt;p&gt;If you have questions or a better example, let me know in the comments.
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Write Text Anywhere With HTML5 Canvas</title>
-   <link href="http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas.html"/>
+   <link href="http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas"/>
    <updated>2011-05-26T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; title=&quot;canvas&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;When working on a project recently I came across the need to be able to add some text to a canvas element. This by itself wasn't particularly hard, as there are several examples of creating text editor apps with canvas, but those all forced the text into a row style grid like a text editor. What I needed was a little more freeform in that I wanted the user to click and the text to show at that point.After a little hacking around I came up with something that handled my needs and hopefully may help someone else in the future.(This doesn't look the best in the end, but you can easily add some css styles to make it look better)&lt;a href=&quot;http://www.travisberry.com/demos/canvas-text-demo/index.html&quot;&gt;Click Here To See Demo&lt;/a&gt; &lt;!--more--&gt;So first we need to create a canvas element[cc lang=&quot;html&quot;]&amp;lt;!DOCTYPE html SYSTEM&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;div id=&quot;main&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;!-- the canvas --&gt;&lt;/div&gt;&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;[/cc]Now we have the canvas element all set up we can start having some fun.Well not quite. First we need to set some dimensions for the canvas element. Without them, it doesn't have any way to know where to place our &quot;drawings&quot;.Add this into a css file[cc lang=&quot;css&quot;]#c {width: 640px;height: 360px;}[/cc]Now we can start adding drawings. One thing we are going to need for this is a text entry box. I debated trying to &quot;type&quot; directly into the canvas but decided against it. (for complexity reasons)The method I chose was to add a textarea to the position of the click in the canvas. The user will enter their text into the textarea popup and hit save. This will then draw the text to the screen.Let's go ahead and create a javascript function to handle the click and add the textarea and save button.[cc lang=&quot;javascript&quot;]//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project$('#c').mousedown(function(e){if ($('#textAreaPopUp').length == 0) {var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;var mouseY = e.pageY - this.offsetTop;//append a text area box to the canvas where the user clicked to enter in a commentvar textArea = &quot;&lt;div id=&quot;textAreaPopUp&quot; style=&quot;position:absolute;top:\&quot;+mouseY+\&quot;px;left:\&quot;+mouseX+\&quot;px;z-index:30;&quot;&gt;&lt;textarea id=&quot;textareaTest&quot; style=&quot;width:100px;height:50px;&quot;&gt;&lt;/textarea&gt;&quot;;var saveButton = &quot;&lt;input type=&quot;button&quot; value=&quot;save&quot; id=&quot;saveText&quot; onclick=&quot;saveTextFromArea(\&quot;+mouseY+\&quot;,\&quot;+mouseX+\&quot;);&quot; /&gt;&lt;/div&gt;&quot;;var appendString = textArea + saveButton;$(&quot;#main&quot;).append(appendString);} else {$('textarea#textareaTest').remove();$('#saveText').remove();$('#textAreaPopUp').remove();var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;var mouseY = e.pageY - this.offsetTop;//append a text area box to the canvas where the user clicked to enter in a commentvar textArea = &quot;&lt;div id=&quot;textAreaPopUp&quot; style=&quot;position:absolute;top:\&quot;+mouseY+\&quot;px;left:\&quot;+mouseX+\&quot;px;z-index:30;&quot;&gt;&lt;textarea id=&quot;textareaTest&quot; style=&quot;width:100px;height:50px;&quot;&gt;&lt;/textarea&gt;&quot;;var saveButton = &quot;&lt;input type=&quot;button&quot; value=&quot;save&quot; id=&quot;saveText&quot; onclick=&quot;saveTextFromArea(\&quot;+mouseY+\&quot;,\&quot;+mouseX+\&quot;);&quot; /&gt;&lt;/div&gt;&quot;;var appendString = textArea + saveButton;$(&quot;#main&quot;).append(appendString);}});[/cc]There's nothing too crazy in here. It does do a check and destroy the textarea if one is already displayed while the user clicks the canvas again.[cc lang=&quot;javascript&quot;]var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;var mouseY = e.pageY - this.offsetTop;[/cc]These are setting the position of the mouse click so we can use them to set the position to display the textarea at. It takes into account any offsets the canvas element may have as well.The rest is just appending the textarea to the main element in the page. The save button has an onclick event that we will deal with in a bit. Now we have to actually draw the entered text to the screen.[cc lang=&quot;javascript&quot;]function saveTextFromArea(y,x){//get the value of the textarea then destroy it and the save buttonvar text = $('textarea#textareaTest').val();$('textarea#textareaTest').remove();$('#saveText').remove();//get the canvas and add the text functionsvar canvas = document.getElementById('c');var ctx = canvas.getContext('2d');var cw = canvas.clientWidth;var ch = canvas.clientHeight;canvas.width = cw;canvas.height = ch;//break the text into arrays based on a text width of 100pxvar phraseArray = getLines(ctx,text,100);// this adds the text functions to the ctxCanvasTextFunctions.enable(ctx);var counter = 0;//set the font stylesvar font = &quot;sans&quot;;var fontsize = 16;ctx.strokeStyle = &quot;rgba(237,229,0,1)&quot;;ctx.shadowOffsetX = 2;ctx.shadowOffsetY = 2;ctx.shadowBlur = 1;ctx.shadowColor = &quot;rgba(0,0,0,1)&quot;;//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks$.each(phraseArray, function() {//set the placement in the canvasvar lineheight = fontsize * 1.5;var newline = ++counter;newline = newline * lineheight;var topPlacement = y - $(&quot;#c&quot;).position().top + newline;var leftPlacement = x - $(&quot;#c&quot;).position().left;text = this;//draw the textctx.drawText(font, fontsize, leftPlacement, topPlacement, text);ctx.save();ctx.restore();});//reset the drop shadow so any other drawing don't have themctx.shadowOffsetX = 0;ctx.shadowOffsetY = 0;ctx.shadowBlur = 0;ctx.shadowColor = &quot;rgba(0,0,0,0)&quot;;}[/cc]So this is fairly intense. It also uses a little library file from Jim Studt that you can find &lt;a href=&quot;http://www.federated.com/~jim/canvastext/&quot;&gt;here&lt;/a&gt;. Though I have modified mine a bit because of some conflicts it was causing me. You can grab my copy at &lt;a href=&quot;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&quot;&gt;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&lt;/a&gt;A few important parts in that code are[cc lang=&quot;javascript&quot;]//break the text into arrays based on a text width of 100pxvar phraseArray = getLines(ctx,text,100);[/cc]This is going to another function that we will write in a minute. Basically it is solving the problem of canvas text not having any idea how to word wrap. It will blow right off the page without this.[cc lang=&quot;javascript&quot;]// this adds the text functions to the ctxCanvasTextFunctions.enable(ctx);[/cc]This intializes the text library file.[cc lang=&quot;javascript&quot;]//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks$.each(phraseArray, function() {//set the placement in the canvasvar lineheight = fontsize * 1.5;var newline = ++counter;newline = newline * lineheight;var topPlacement = y - $(&quot;#c&quot;).position().top + newline;var leftPlacement = x - $(&quot;#c&quot;).position().left;text = this;//draw the textctx.drawText(font, fontsize, leftPlacement, topPlacement, text);ctx.save();ctx.restore();});[/cc]This is the block that actually draws the text to the screen. It takes each entry in the phraseArray and draws it to the screen moving it down by a line each time.The code to control the width of the text looks like this[cc lang=&quot;javascript&quot;]function getLines(ctx,phrase,maxPxLength) {//break the text area text into lines based on &quot;box&quot; widthvar wa=phrase.split(&quot; &quot;),phraseArray=[],lastPhrase=&quot;&quot;,l=maxPxLength,measure=0;ctx.font = &quot;16px sans-serif&quot;;for (var i=0;i&amp;lt;wa.length;i++) {var w=wa[i];measure=ctx.measureText(lastPhrase+w).width;if (measure&amp;lt;l) {lastPhrase+=(&quot; &quot;+w);}else {phraseArray.push(lastPhrase);lastPhrase=w;}if (i===wa.length-1) {phraseArray.push(lastPhrase);break;}}return phraseArray;}[/cc]This takes the canvas variable the original text and the width you want to limit it to then returns an array of pharses limited to the length you pass.Once you have all this done you should have a working example. My final code looks like this.[cc lang=&quot;html&quot;]&amp;lt;!DOCTYPE html SYSTEM&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body {background: #111;color:#eee;}#c {width: 640px;height: 360px;border:1px solid #111;float:left;background:#eee;}#main{width:650px;margin:auto;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div id=&quot;main&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;!-- the canvas --&gt;&lt;/div&gt;&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;text.js&quot;&gt;&lt;/script&gt;&lt;!-- Library to help text --&gt;&lt;script type=&quot;text/javascript&quot;&gt;$('#c').mousedown(function(e){if ($('#textAreaPopUp').length == 0) {var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;var mouseY = e.pageY - this.offsetTop;//append a text area box to the canvas where the user clicked to enter in a commentvar textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;var appendString = textArea + saveButton;$(&quot;#main&quot;).append(appendString);} else {$('textarea#textareaTest').remove();$('#saveText').remove();$('#textAreaPopUp').remove();var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;var mouseY = e.pageY - this.offsetTop;//append a text area box to the canvas where the user clicked to enter in a commentvar textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;var appendString = textArea + saveButton;$(&quot;#main&quot;).append(appendString);}});function saveTextFromArea(y,x){//get the value of the textarea then destroy it and the save buttonvar text = $('textarea#textareaTest').val();$('textarea#textareaTest').remove();$('#saveText').remove();$('#textAreaPopUp').remove();//get the canvas and add the text functionsvar canvas = document.getElementById('c');var ctx = canvas.getContext('2d');var cw = canvas.clientWidth;var ch = canvas.clientHeight;canvas.width = cw;canvas.height = ch;//break the text into arrays based on a text width of 100pxvar phraseArray = getLines(ctx,text,100);// this adds the text functions to the ctxCanvasTextFunctions.enable(ctx);var counter = 0;//set the font stylesvar font = &quot;sans&quot;;var fontsize = 16;ctx.strokeStyle = &quot;rgba(237,229,0,1)&quot;;ctx.shadowOffsetX = 2;ctx.shadowOffsetY = 2;ctx.shadowBlur = 1;ctx.shadowColor = &quot;rgba(0,0,0,1)&quot;;//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks$.each(phraseArray, function() {//set the placement in the canvasvar lineheight = fontsize * 1.5;var newline = ++counter;newline = newline * lineheight;var topPlacement = y - $(&quot;#c&quot;).position().top + newline;var leftPlacement = x - $(&quot;#c&quot;).position().left;text = this;//draw the textctx.drawText(font, fontsize, leftPlacement, topPlacement, text);ctx.save();ctx.restore();});//reset the drop shadow so any other drawing don't have themctx.shadowOffsetX = 0;ctx.shadowOffsetY = 0;ctx.shadowBlur = 0;ctx.shadowColor = &quot;rgba(0,0,0,0)&quot;;}function getLines(ctx,phrase,maxPxLength) {//break the text area text into lines based on &quot;box&quot; widthvar wa=phrase.split(&quot; &quot;),phraseArray=[],lastPhrase=&quot;&quot;,l=maxPxLength,measure=0;ctx.font = &quot;16px sans-serif&quot;;for (var i=0;i&amp;lt;wa.length;i++) {var w=wa[i];measure=ctx.measureText(lastPhrase+w).width;if (measure&amp;lt;l) {lastPhrase+=(&quot; &quot;+w);}else {phraseArray.push(lastPhrase);lastPhrase=w;}if (i===wa.length-1) {phraseArray.push(lastPhrase);break;}}return phraseArray;}&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;[/cc]This is a pretty basic and is missing a few things that would make it more helpful but it should give you a good start. Please feel free to leave questions or advice on better ways to do this in the comments.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Write Text Anywhere With HTML5 Canvas&lt;/h3&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: May 26, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;When working on a project recently I came across the need to be able to add some text to a canvas element. This by itself wasn't particularly hard, as there are several examples of creating text editor apps with canvas, but those all forced the text into a row style grid like a text editor. What I needed was a little more freeform in that I wanted the user to click and the text to show at that point.&lt;/p&gt;
+
+&lt;p&gt;After a little hacking around I came up with something that handled my needs and hopefully may help someone else in the future.&lt;/p&gt;
+
+&lt;p&gt;(This doesn't look the best in the end, but you can easily add some css styles to make it look better)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.travisberry.com/demos/canvas-text-demo/index.html&quot;&gt;Click Here To See Demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So first we need to create a canvas element&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example1.html&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now we have the canvas element all set up we can start having some fun.&lt;/p&gt;
+
+&lt;p&gt;Well not quite. First we need to set some dimensions for the canvas element. Without them, it doesn't have any way to know where to place our &quot;drawings&quot;.&lt;/p&gt;
+
+&lt;p&gt;Add this into a css file&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example2.css&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now we can start adding drawings. One thing we are going to need for this is a text entry box. I debated trying to &quot;type&quot; directly into the canvas but decided against it. (for complexity reasons)&lt;/p&gt;
+
+&lt;p&gt;The method I chose was to add a textarea to the position of the click in the canvas. The user will enter their text into the textarea popup and hit save. This will then draw the text to the screen.&lt;/p&gt;
+
+&lt;p&gt;Let's go ahead and create a javascript function to handle the click and add the textarea and save button.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example3.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;There’s nothing too crazy in here. It does do a check and destroy the textarea if one is already displayed while the user clicks the canvas again.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example4.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;These are setting the position of the mouse click so we can use them to set the position to display the textarea at. It takes into account any offsets the canvas element may have as well.&lt;/p&gt;
+
+&lt;p&gt;The rest is just appending the textarea to the main element in the page. The save button has an onclick event that we will deal with in a bit.&lt;/p&gt;
+
+&lt;p&gt;Now we have to actually draw the entered text to the screen.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example5.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;So this is fairly intense. It also uses a little library file from Jim Studt that you can find &lt;a href=&quot;http://www.federated.com/~jim/canvastext/&quot;&gt;here&lt;/a&gt;. Though I have modified mine a bit because of some conflicts it was causing me. You can grab my copy at &lt;a href=&quot;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&quot;&gt;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A few important parts in that code are&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example6.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This is going to another function that we will write in a minute. Basically it is solving the problem of canvas text not having any idea how to word wrap. It will blow right off the page without this.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example7.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This intializes the text library file.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example8.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This is the block that actually draws the text to the screen. It takes each entry in the phraseArray and draws it to the screen moving it down by a line each time.&lt;/p&gt;
+
+&lt;p&gt;The code to control the width of the text looks like this&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example9.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This takes the canvas variable the original text and the width you want to limit it to then returns an array of pharses limited to the length you pass.&lt;/p&gt;
+
+&lt;p&gt;Once you have all this done you should have a working example. My final code looks like this.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177318.js?file=example10.html&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This is a pretty basic and is missing a few things that would make it more helpful but it should give you a good start. Please feel free to leave questions or advice on better ways to do this in the comments.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>A Day In The Life Of Me</title>
-   <link href="http://www.travisberry.com/2011/03/a-day-in-the-life-of-me.html"/>
+   <link href="http://www.travisberry.com/2011/03/a-day-in-the-life-of-me"/>
    <updated>2011-03-04T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
-   <content type="html">&lt;p&gt;Super awesome timelapse at the office. &lt;video width=&quot;640&quot; height=&quot;480&quot; id=&quot;video&quot; controls=&quot;true&quot;&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.mp4&quot; type=&quot;video/mp4; codecs=\&quot;avc1.64001E, mp4a.40.2\&quot;&quot; /&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.ogv&quot; type=&quot;video/ogg; codecs=\&quot;theora, vorbis\&quot;&quot; /&gt;&lt;object width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot; /&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;embed src=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/video&gt;&lt;!--more--&gt;&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;A Day In The Life Of Me&lt;/h3&gt;
+  &lt;h6&gt;Published: March 03, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;Super awesome timelapse at the office.&lt;/p&gt;
+
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;480&quot; id=&quot;video&quot; controls=&quot;true&quot;&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.mp4&quot; type='video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;' /&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.ogv&quot; type='video/ogg; codecs=&quot;theora, vorbis&quot;' /&gt;&lt;object width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/video&gt;
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Fast CakePHP Search With IndexTank</title>
-   <link href="http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank.html"/>
+   <link href="http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank"/>
    <updated>2011-02-16T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; title=&quot;indextank&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;I've previously posted my &lt;a href=&quot;http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;!--more--&gt;You simply hand them the documents you want indexed and the give you back the ability to query against it.I'm not going to spend anytime explaining how IndexTank works, mainly because I barely understand it. Instead I will show you a simple way to get it to work with CakePHP.The code in this example is built around the code for &lt;a href=&quot;http://homkora.com&quot;&gt;Homkora&lt;/a&gt; in which the main two Objects are Projects and Timers. So to start grab the IndexTank library from &lt;a href=&quot;https://indextank.com/documentation/php-client&quot;&gt;https://indextank.com/documentation/php-client&lt;/a&gt; this would be a good page to read as well just to get an idea of what's going on.Take the file you downloaded (indextank_client.php in my case) and place it in app/vendors of your CakePHP application.Now open up your app_controller.php and add these four functions[cc lang=&quot;php&quot;]function createIndextankClient(){App::import('Vendor', 'indextank_client');$API_URL = 'YOUR API URL HERE';$client = new ApiClient($API_URL);return $client;}function addIndextank($indexType,$id,$data){//send project to indextank$client = $this-&gt;createIndextankClient();$index = $client-&gt;get_index($indexType);$doc_id = $id;$index-&gt;add_document($doc_id, $data);}function deleteIndextank($indexType,$id){//delete indextank document$client = $this-&gt;createIndextankClient();$index = $client-&gt;get_index($indexType);$index-&gt;delete_document($id);}function searchIndextank($indexType,$query){//search indextank$client = $this-&gt;createIndextankClient();$index = $client-&gt;get_index($indexType);$index-&gt;add_function(2, &quot;relevance&quot;);$res = $index-&gt;search($query);return $res;}[/cc]These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.Each one is built to be passed the variables it needs to make a connection to IndexTank.All the functions accept the $indexType variable which is where you set which index to perform actions against. In my case I have one for Projects and one for Timers.So now lets add some documents to our index.[cc lang=&quot;php&quot;]if ($this-&gt;Project-&gt;save($this-&gt;data)) {$this-&gt;Session-&gt;setFlash('The project has been saved', 'default', array('class' =&gt; 'flash_good'));$this-&gt;redirect(array('action' =&gt; 'index'));}[/cc]I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.Let's add the code to call our addIndextank() function in the app controller.[cc lang=&quot;php&quot;]if ($this-&gt;Project-&gt;save($this-&gt;data)) {//send project to index tank$indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$this-&gt;data['Project']['title'],'description'=&gt;$this-&gt;data['Project']['description'],'user_id'=&gt;$&lt;em&gt;SESSION['Auth']['User']['&lt;/em&gt;id']);$id = $this-&gt;Project-&gt;id;$this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData);$this-&gt;Session-&gt;setFlash('The project has been saved', 'default', array('class' =&gt; 'flash_good'));$this-&gt;redirect(array('action' =&gt; 'index'));}[/cc]Let go over what's going on here.[cc lang=&quot;php&quot;]$indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$this-&gt;data['Project']['title'],'description'=&gt;$this-&gt;data['Project']['description'],'user_id'=&gt;$&lt;em&gt;SESSION['Auth']['User']['&lt;/em&gt;id']);[/cc]This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.[cc lang=&quot;php&quot;]$id = $this-&gt;Project-&gt;id;[/cc]Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.[cc lang=&quot;php&quot;]$this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData);[/cc]This line is the call to the addIndextank function. The &quot;HomkoraProjects&quot; is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.Now when you add a new Project you should also be adding a new document to IndexTank.Now if you delete the Project it's best to delete to document in the index as well. So let's add some code to our projects controller delete() function.Starting with[cc lang=&quot;php&quot;]if ($this-&gt;Project-&gt;delete($id)) {$this-&gt;Session-&gt;setFlash('Project deleted', 'default', array('class' =&gt; 'flash_good'));$this-&gt;redirect(array('action'=&gt;'index'));}[/cc]We can add a simple call like[cc lang=&quot;php&quot;]if ($this-&gt;Project-&gt;delete($id)) {$this-&gt;deleteIndextank(&quot;HomkoraProjects&quot;,$id);$this-&gt;Session-&gt;setFlash('Project deleted', 'default', array('class' =&gt; 'flash_good'));$this-&gt;redirect(array('action'=&gt;'index'));}[/cc]Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)Alright, now you can add and remove documents from your index, but what good are they without being able to search against them.In my projects controller I added the following function[cc lang=&quot;php&quot;]function search(){$query = $this-&gt;data['Project']['search'];$res = $this-&gt;searchIndextank(&quot;HomkoraProjects&quot;,$query);$i = 0;foreach($res-&gt;results as $doc_id){$params = array('conditions' =&gt; array('_id' =&gt; $doc_id-&gt;docid));$projects[$i++] = $this-&gt;Project-&gt;find('first',$params);}$this-&gt;set('projects', $projects);}[/cc][cc lang=&quot;php&quot;]$query = $this-&gt;data['Project']['search'];[/cc]I pass the search term through a form and set it as the $query variable.[cc lang=&quot;php&quot;]$res = $this-&gt;searchIndextank(&quot;HomkoraProjects&quot;,$query);[/cc]Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.You'll notice in the searchIndextank() I return the data $res and in the search() function I set it to $res.Once I get the results from IndexTank I can use them to search for the Projects in my database. Here I set them all the the $projects array and prepare them for display in the view.I know you're thinking, if you are getting the data from the database anyway - why use IndexTank? Well with only a few records, you aren't going to get a much faster result, but with lots of records, IndexTank will return the results faster plus it allows you to cut down on your database calls. Their ability to rank results and search based on numerous factors is pretty good and better than what the average person can write in most cases.I'm using a pretty bare bones searchIndextank() function but this should get you started. I'm quite impressed with the results so far and I'm continuing to find better ways to work with their index.If you know a better way to set this up, or have questions, let me know in the comments.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Fast CakePHP Search With IndexTank&lt;/h3&gt;
+  &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: February 16, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I've previously posted my &lt;a href=&quot;http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
+
+&lt;p&gt;You simply hand them the documents you want indexed and the give you back the ability to query against it.&lt;/p&gt;
+
+&lt;p&gt;I'm not going to spend anytime explaining how IndexTank works, mainly because I barely understand it. Instead I will show you a simple way to get it to work with CakePHP.&lt;/p&gt;
+
+&lt;p&gt;The code in this example is built around the code for &lt;a href=&quot;http://homkora.com&quot;&gt;Homkora&lt;/a&gt; in which the main two Objects are Projects and Timers. So to start grab the IndexTank library from &lt;a href=&quot;https://indextank.com/documentation/php-client&quot;&gt;https://indextank.com/documentation/php-client&lt;/a&gt; this would be a good page to read as well just to get an idea of what's going on.&lt;/p&gt;
+
+&lt;p&gt;Take the file you downloaded (indextank_client.php in my case) and place it in app/vendors of your CakePHP application.&lt;/p&gt;
+
+&lt;p&gt;Now open up your app_controller.php and add these four functions&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example1.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.&lt;/p&gt;
+
+&lt;p&gt;Each one is built to be passed the variables it needs to make a connection to IndexTank.&lt;/p&gt;
+
+&lt;p&gt;All the functions accept the $indexType variable which is where you set which index to perform actions against. In my case I have one for Projects and one for Timers.&lt;/p&gt;
+
+&lt;p&gt;So now lets add some documents to our index.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example2.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.&lt;/p&gt;
+
+&lt;p&gt;Let's add the code to call our addIndextank() function in the app controller.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example3.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Let go over what's going on here.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example4.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.&lt;/p&gt;
+
+&lt;p&gt;The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example5.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example6.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This line is the call to the addIndextank function. The &quot;HomkoraProjects&quot; is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.&lt;/p&gt;
+
+&lt;p&gt;Now when you add a new Project you should also be adding a new document to IndexTank.&lt;/p&gt;
+
+&lt;p&gt;Now if you delete the Project it's best to delete to document in the index as well. So let's add some code to our projects controller delete() function.&lt;/p&gt;
+
+&lt;p&gt;Starting with&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example7.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;We can add a simple call like&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example8.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)&lt;/p&gt;
+
+&lt;p&gt;Alright, now you can add and remove documents from your index, but what good are they without being able to search against them.&lt;/p&gt;
+
+&lt;p&gt;In my projects controller I added the following function&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177288.js?file=example9.php&quot;&gt;&lt;/script&gt;
+
+
+
+
+&lt;script src=&quot;https://gist.github.com/1177293.js?file=example10.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I pass the search term through a form and set it as the $query variable.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177293.js?file=example11.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.&lt;/p&gt;
+
+&lt;p&gt;You'll notice in the searchIndextank() I return the data $res and in the search() function I set it to $res.&lt;/p&gt;
+
+&lt;p&gt;Once I get the results from IndexTank I can use them to search for the Projects in my database. Here I set them all the the $projects array and prepare them for display in the view.&lt;/p&gt;
+
+&lt;p&gt;I know you're thinking, if you are getting the data from the database anyway - why use IndexTank?&lt;/p&gt;
+
+&lt;p&gt;Well with only a few records, you aren't going to get a much faster result, but with lots of records, IndexTank will return the results faster plus it allows you to cut down on your database calls. Their ability to rank results and search based on numerous factors is pretty good and better than what the average person can write in most cases.&lt;/p&gt;
+
+&lt;p&gt;I'm using a pretty bare bones searchIndextank() function but this should get you started. I'm quite impressed with the results so far and I'm continuing to find better ways to work with their index.&lt;/p&gt;
+
+&lt;p&gt;If you know a better way to set this up, or have questions, let me know in the comments.
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Haml, Sass, Markdown, and CakePHP - Oh My!</title>
-   <link href="http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my.html"/>
+   <link href="http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"/>
    <updated>2011-01-11T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; title=&quot;haml-sass&quot; alt=&quot;&quot; /&gt;I've recently begun using &lt;a href=&quot;http://haml-lang.com/&quot;&gt;Haml&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; instead of good ol' HTML and CSS. If you haven't heard of them, &quot;Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to&quot;, and &quot;Sass makes CSS fun again&quot;. The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.While I don't have anything against Ruby, it's not my language of choice. I use PHP for just about everything backend and most of my apps and sites are built upon CakePHP, my favorite framework.Luckily there are ports of Haml and Sass for use with PHP. There are several out there, but I went with PHamlP mainly because it has a CakePHP plugin available for download.The install instructions for the plugin are greatly lacking, or at least I couldn't get them to work out of the box, so I decided to document how I went about getting it working and rocking out.&lt;!--more--&gt;Oh, and as a bonus, we are going to setup &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; too.So to start &lt;a href=&quot;http://code.google.com/p/phamlp/downloads/list&quot;&gt;grab a copy of PHamlP&lt;/a&gt; and find a CakePHP project you would like to add it to. Unzip the file and you should be looking at a Installation.txt, license.txt, vendors, views, and webroot folders.Copy the files in each folder to their corresponding folders in /app in your Cake project. (e.g. vendors =&gt; vendors | views =&gt; views | webroot =&gt; webroot)Now for all the wonderful configuring.&lt;strong&gt;HAML&lt;/strong&gt;Let's start with getting just Haml working for the time being.Open up your app_controller.php and add the following line[cc lang=&quot;php&quot;]var $view = 'Haml';[/cc]Now open up /config/core.php and scroll to the bottom. Add[cc lang=&quot;php&quot;]Configure::write('Haml.format', 'html5');Configure::write('Haml.filterDir', VIEWS.'filters');[/cc]The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.Now open up the haml.php file you added to views. Find the line that says[cc lang=&quot;php&quot;]App::import('Vendor', 'HamlParser', array('file'=&gt;'phamlp'.DS.'haml'.DS.'HamlParser.php'));[/cc]and change it to[cc lang=&quot;php&quot;]App::import('Vendor', 'HamlParser', array('file'=&gt;'haml'.DS.'HamlParser.php'));[/cc]This assumes you copied the vendors contents to vendors in CakePHP.After that, you should have Haml up and running. I find the best way to test without changing all you layouts and views is to test with a page, then move on to replacing the rest of your views.&lt;strong&gt;SASS&lt;/strong&gt;Let's tackle the Sass.One important decision to make right off the bat is if you want to use the older .sass format or the newer .scss version. Now according to the docs, it shouldn't matter, you just create whatever type you want and it handles the rest. Well I didn't find this to work, and I had to change some code to support .scss files. So for the purpose of this tutorial I will show how to get those to work, but I'll flag the step to skip if you want to use the older .sassWith that out of the way, time to start the config.Open the core.php file back up and go to the Haml code we added earlier. Under that add[cc lang=&quot;php&quot;]Configure::write('Sass.style', 'compressed');Configure::write('Asset.filter.css', 'sass.php');[/cc]The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.Now open up sass.php and find the line that looks like[cc lang=&quot;php&quot;]App::import('Vendor', 'SassParser', array('file'=&gt;'phamlp'.DS.'sass'.DS.'SassParser.php'));[/cc]Replace it with[cc lang=&quot;php&quot;]App::import('Vendor', 'SassParser', array('file'=&gt;'sass'.DS.'SassParser.php'));[/cc]After that you should be able to start putting .sass files into your css directory and they will compile to css.However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like[cc lang=&quot;php&quot;]header(&quot;Content-Type: text/css&quot;);header(&quot;Expires: &quot; . gmdate(&quot;D, j M Y H:i:s&quot;, time() + DAY) . &quot; GMT&quot;);header(&quot;Cache-Control: cache&quot;); // HTTP/1.1header(&quot;Pragma: cache&quot;);        // HTTP/1.0[/cc]with[cc lang=&quot;php&quot;]ob_start (&quot;ob_gzhandler&quot;);header(&quot;Content-Type: text/css&quot;);$seconds_to_cache = 31556926;$ts = gmdate(&quot;D, d M Y H:i:s&quot;, time() + $seconds_to_cache) . &quot; GMT&quot;;header(&quot;Expires: $ts&quot;);header(&quot;Pragma: cache&quot;);header(&quot;Cache-Control: maxage=$seconds_to_cache&quot;);[/cc]Then add a line to the bottom of the file with this[cc lang=&quot;php&quot;]ob_end_flush();[/cc]Your compiled css files should now transfer gzipped.Now lets add support for the newer .scss file. If you want to use .sass you can skip this part.Find the line[cc lang=&quot;php&quot;]$sassFile = str_replace('.css', '.sass', $cssFile);[/cc]and replace it with[cc lang=&quot;php&quot;]$sassFile = str_replace('.css', '.scss', $cssFile);[/cc]You can now use .scss files instead of .sassHaml and Sass should be up and running now.&lt;strong&gt;MARKDOWN&lt;/strong&gt;However, some people make the argument that you shouldn't use Haml to style the content of your page. By content, they are referring to the main text of the page. The &quot;meat&quot; so to speak. For a good read on the subject, check out this post. http://chriseppstein.github.com/blog/2010/02/08/haml-sucks-for-content/Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to[cc lang=&quot;php&quot;]:markdownHere is some markdown===[/cc]inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/Make sure to grab the EXTRA's version.Add a folder to vendors called markdown. Place the download files into it.Now open up the HamlMarkdownFilter.php inside the views/filters folder.Change[cc lang=&quot;php&quot;]App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'phamlp'.DS.'haml'.DS.'filters'.DS.'&lt;em&gt;HamlMarkdownFilter.php'));[/cc]To[cc lang=&quot;php&quot;]App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'haml'.DS.'filters'.DS.'&lt;/em&gt;HamlMarkdownFilter.php'));[/cc]Now open up the &lt;em&gt;HamlMarkdownFilter.php file inside /vendors/haml/filtersChange[cc lang=&quot;php&quot;]protected $vendorClass = 'MarkdownExtra_Parser';[/cc]To[cc lang=&quot;php&quot;]protected $vendorClass = 'Markdown_Parser';[/cc]also change[cc lang=&quot;php&quot;]return '&amp;lt;?php'.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown&lt;/em&gt;&lt;strong&gt;=new '.$this-&gt;vendorClass.'();echo  $markdown&lt;/strong&gt;&lt;em&gt;-&gt;safeTransform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';[/cc]To[cc lang=&quot;php&quot;]return '&amp;lt;?php'.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown&lt;/em&gt;&lt;strong&gt;=new '.$this-&gt;vendorClass.'();echo  $markdown&lt;/strong&gt;_-&gt;transform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';[/cc]Now throw some Markdown into you Haml files and prepare to be amazed.I'm not sure why I had to change so much to get this setup to work. If you compare the Installation.txt to this post, you will see mine takes much more work. Don't take that as a dig on the developers though, there could be many reasons their interactions didn't work for me. I just figured if I had this hard of a time, someone else may run into similar issues and I could save them some time with this write up.If I am an idiot and there is a way simpler way to get this working, let me know in the comments. You can also view a project I've set this up with on &lt;a href=&quot;https://github.com/ninetwentyfour/Homkora&quot;&gt;github&lt;/a&gt;.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Haml, Sass, Markdown, and CakePHP - Oh My!&lt;/h3&gt;
+  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: January 11, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I've recently begun using &lt;a href=&quot;http://haml-lang.com/&quot;&gt;Haml&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; instead of good ol' HTML and CSS. If you haven't heard of them, &quot;Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to&quot;, and &quot;Sass makes CSS fun again&quot;. The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.&lt;/p&gt;
+
+&lt;p&gt;While I don't have anything against Ruby, it's not my language of choice. I use PHP for just about everything backend and most of my apps and sites are built upon CakePHP, my favorite framework.&lt;/p&gt;
+
+&lt;p&gt;Luckily there are ports of Haml and Sass for use with PHP. There are several out there, but I went with PHamlP mainly because it has a CakePHP plugin available for download.&lt;/p&gt;
+
+&lt;p&gt;The install instructions for the plugin are greatly lacking, or at least I couldn't get them to work out of the box, so I decided to document how I went about getting it working and rocking out.&lt;/p&gt;
+
+&lt;p&gt;Oh, and as a bonus, we are going to setup &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;So to start &lt;a href=&quot;http://code.google.com/p/phamlp/downloads/list&quot;&gt;grab a copy of PHamlP&lt;/a&gt; and find a CakePHP project you would like to add it to. Unzip the file and you should be looking at a Installation.txt, license.txt, vendors, views, and webroot folders.&lt;/p&gt;
+
+&lt;p&gt;Copy the files in each folder to their corresponding folders in /app in your Cake project. (e.g. vendors =&gt; vendors | views =&gt; views | webroot =&gt; webroot)&lt;/p&gt;
+
+&lt;p&gt;Now for all the wonderful configuring.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HAML&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's start with getting just Haml working for the time being.&lt;/p&gt;
+
+&lt;p&gt;Open up your app_controller.php and add the following line&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example1.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now open up /config/core.php and scroll to the bottom. Add&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example2.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.&lt;/p&gt;
+
+&lt;p&gt;Now open up the haml.php file you added to views. Find the line that says&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example3.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;and change it to&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example4.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This assumes you copied the vendors contents to vendors in CakePHP.&lt;/p&gt;
+
+&lt;p&gt;After that, you should have Haml up and running. I find the best way to test without changing all you layouts and views is to test with a page, then move on to replacing the rest of your views.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SASS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's tackle the Sass.&lt;/p&gt;
+
+&lt;p&gt;One important decision to make right off the bat is if you want to use the older .sass format or the newer .scss version. Now according to the docs, it shouldn't matter, you just create whatever type you want and it handles the rest. Well I didn't find this to work, and I had to change some code to support .scss files. So for the purpose of this tutorial I will show how to get those to work, but I'll flag the step to skip if you want to use the older .sass&lt;/p&gt;
+
+&lt;p&gt;With that out of the way, time to start the config.&lt;/p&gt;
+
+&lt;p&gt;Open the core.php file back up and go to the Haml code we added earlier. Under that add&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example5.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.&lt;/p&gt;
+
+&lt;p&gt;Now open up sass.php and find the line that looks like&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example6.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Replace it with&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example7.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;After that you should be able to start putting .sass files into your css directory and they will compile to css.&lt;/p&gt;
+
+&lt;p&gt;However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example8.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;with&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177229.js?file=example9.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Then add a line to the bottom of the file with this&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example10.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Your compiled css files should now transfer gzipped.&lt;/p&gt;
+
+&lt;p&gt;Now lets add support for the newer .scss file. If you want to use .sass you can skip this part.&lt;/p&gt;
+
+&lt;p&gt;Find the line&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example11.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;and replace it with&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example12.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;You can now use .scss files instead of .sass&lt;/p&gt;
+
+&lt;p&gt;Haml and Sass should be up and running now.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MARKDOWN&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;However, some people make the argument that you shouldn't use Haml to style the content of your page. By content, they are referring to the main text of the page. The &quot;meat&quot; so to speak. For a good read on the subject, check out this post. http://chriseppstein.github.com/blog/2010/02/08/haml-sucks-for-content/&lt;/p&gt;
+
+&lt;p&gt;Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example13.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/&lt;/p&gt;
+
+&lt;p&gt;Make sure to grab the EXTRA's version.&lt;/p&gt;
+
+&lt;p&gt;Add a folder to vendors called markdown. Place the download files into it.&lt;/p&gt;
+
+&lt;p&gt;Now open up the HamlMarkdownFilter.php inside the views/filters folder.&lt;/p&gt;
+
+&lt;p&gt;Change&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example14.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;To&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example15.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now open up the _HamlMarkdownFilter.php file inside /vendors/haml/filters&lt;/p&gt;
+
+&lt;p&gt;Change&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example16.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;To&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example17.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;also change&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example18.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;To&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177233.js?file=example19.php&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now throw some Markdown into you Haml files and prepare to be amazed.&lt;/p&gt;
+
+&lt;p&gt;I'm not sure why I had to change so much to get this setup to work. If you compare the Installation.txt to this post, you will see mine takes much more work. Don't take that as a dig on the developers though, there could be many reasons their instructions didn't work for me. I just figured if I had this hard of a time, someone else may run into similar issues and I could save them some time with this write up.&lt;/p&gt;
+
+&lt;p&gt;If I am an idiot and there is a way simpler way to get this working, let me know in the comments. You can also view a project I've set this up with on &lt;a href=&quot;https://github.com/ninetwentyfour/Homkora&quot;&gt;github&lt;/a&gt;.
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>New Time Tracking Web App - Homkora</title>
-   <link href="http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora.html"/>
+   <link href="http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora"/>
    <updated>2011-01-01T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; title=&quot;homkora-cap&quot; alt=&quot;&quot; /&gt;I have recently launched the beta my new side project Homkora. &lt;!--more--&gt;Homkora is a &lt;a href=&quot;http://homkora.com&quot;&gt;time tracking web app&lt;/a&gt; that aims to be as simple as possible. I was not happy with any of the offerings I found so I made my own. It let's you make projects and timers. That's it. You can check the code out at &lt;a href=&quot;https://github.com/ninetwentyfour/Homkora&quot;&gt;github&lt;/a&gt;.Sign up for the beta &lt;a href=&quot;http://homkora.com/sign-up&quot;&gt;here&lt;/a&gt;. Try it out and let me know what you think in the comments.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;New Time Tracking Web App - Homkora&lt;/h3&gt;
+  &lt;a href=&quot;http://homkora.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: January 01, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I have recently launched the beta my new side project Homkora.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Homkora is a &lt;a href=&quot;http://homkora.com&quot;&gt;time tracking web app&lt;/a&gt; that aims to be as simple as possible. I was not happy with any of the offerings I found so I made my own. It let's you make projects and timers. That's it. You can check the code out at &lt;a href=&quot;https://github.com/ninetwentyfour/Homkora&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sign up for the beta &lt;a href=&quot;http://homkora.com/sign-up&quot;&gt;here&lt;/a&gt;. Try it out and let me know what you think in the comments.
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Free Single Page HTML/CSS Template</title>
-   <link href="http://www.travisberry.com/2010/12/free-single-page-htmlcss-template.html"/>
+   <link href="http://www.travisberry.com/2010/12/free-single-page-htmlcss-template"/>
    <updated>2010-12-19T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/12/free-single-page-htmlcss-template</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; title=&quot;simple-dark-screencap&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;I have just completed a new HTML CSS template for you to download. The site is made for those who need a simple single page web presence. The site is easy to modify and get setup. &lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot;&gt;Check out the demo.&lt;/a&gt;&lt;!--more--&gt;You can visit the github page &lt;a href=&quot;https://github.com/ninetwentyfour/Simple-Dark-HTML-Template&quot;&gt;here&lt;/a&gt;, or you can grab the zip direct &lt;a href=&quot;http://github.com/ninetwentyfour/Simple-Dark-HTML-Template/zipball/master&quot;&gt;here&lt;/a&gt;.If you like it, or use it somewhere, let me know in the comments.From README:[cc lang=&quot;html&quot;]Simple Dark HTML Template by Travis Berry (http://www.travisberry.com) is licensed under a Creative Commons Attribution 3.0 United States License.View Demo Here: http://www.travisberry.com/simple-dark-html-template/index.htmlSocial Icons found here: http://webtreats.mysitemyway.com/glossy-black-social-media-icons/Fonts from http://www.theleagueofmoveabletype.com/fonts/8-goudy-bookletter-1911 and http://www.theleagueofmoveabletype.com/fonts/7-league-gothic This theme is available for use for personal or commercial purposes. Please consider giving a link back to http://www.travisberry.com somewhere on your site. Download latest version from http://github.com/ninetwentyfour/Simple-Dark-HTML-Template/zipball/masterSETUP:This is a single page website. By default there are only three slides. You can add or remove slides as you want. For more info on adding or removing slides see here: http://flowplayer.org/tools/scrollable/index.html#pluginsChange the info in each of the divs following the &lt;!--Example Section--&gt; comments.Change the name inside the h1 tag in the &lt;!--Home Section--&gt; and replace the content div text.Change the links to your social media profiles in the &lt;!--Social Network Section--&gt; Add or remove networks as needed. You can see the complete list of icons in the img folder.The &lt;!--Contact Section--&gt; includes a form for you to hook up. Just set the action to whatever you want. I would use a simple PHP email script.For questions email contact@travisberry.comI'm in no way responsible for anything you do with this. If this breaks anything of yours, I'm not responsible for that either.[/cc]&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Free Single Page HTML/CSS Template&lt;/h3&gt;
+  &lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: December 12, 2011&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I have just completed a new HTML CSS template for you to download. The site is made for those who need a simple single page web presence. The site is easy to modify and get setup. &lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot;&gt;Check out the demo.&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can visit the github page &lt;a href=&quot;https://github.com/ninetwentyfour/Simple-Dark-HTML-Template&quot;&gt;here&lt;/a&gt;, or you can grab the zip direct &lt;a href=&quot;http://github.com/ninetwentyfour/Simple-Dark-HTML-Template/zipball/master&quot;&gt;here&lt;/a&gt;.If you like it, or use it somewhere, let me know in the comments.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Clean URL's in Nginx</title>
-   <link href="http://www.travisberry.com/2010/11/clean-urls-in-nginx.html"/>
+   <link href="http://www.travisberry.com/2010/11/clean-urls-in-nginx"/>
    <updated>2010-11-07T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/11/clean-urls-in-nginx</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664%20/&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/soap.jpg&quot; title=&quot;soap&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://www.travisberry.com/example&lt;!--more--&gt;In Apache this is trivial. In Nginx, you can spend a couple days trying to get right. Turns out the solution is simple. If you use a block of code like this[cc lang=&quot;php&quot;]## Parse all .php file in the /var/www directorylocation ~ .php$       location ~ .php$ {       fastcgi_split_path_info ^(.+.php)(.&lt;em&gt;)$;        fastcgi_pass 127.0.0.1:9000;        fastcgi_index  index.php;        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;        include fastcgi_params;        fastcgi_param  QUERY_STRING     $query_string;        fastcgi_param  REQUEST_METHOD   $request_method;        fastcgi_param  CONTENT_TYPE     $content_type;        fastcgi_param  CONTENT_LENGTH   $content_length;        fastcgi_intercept_errors        on;        fastcgi_ignore_client_abort     off;        fastcgi_connect_timeout 60;        fastcgi_send_timeout 180;        fastcgi_read_timeout 180;        fastcgi_buffer_size 128k;        fastcgi_buffers 4 256k;        fastcgi_busy_buffers_size 256k;        fastcgi_temp_file_write_size 256k;    }[/cc]to turn on PHP, just replace the location with[cc lang=&quot;php&quot;]location ~ $[/cc]and comment out[cc lang=&quot;php&quot;]##fastcgi_split_path_info ^(.+.php)(.&lt;/em&gt;)$;[/cc]Your code block should now look like[cc lang=&quot;php&quot;]## Parse all .php file in the /var/www directorylocation ~ .php$       location ~ $ {       ##fastcgi_split_path_info ^(.+.php)(.*)$;        fastcgi_pass 127.0.0.1:9000;        fastcgi_index  index.php;        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;        include fastcgi_params;        fastcgi_param  QUERY_STRING     $query_string;        fastcgi_param  REQUEST_METHOD   $request_method;        fastcgi_param  CONTENT_TYPE     $content_type;        fastcgi_param  CONTENT_LENGTH   $content_length;        fastcgi_intercept_errors        on;        fastcgi_ignore_client_abort     off;        fastcgi_connect_timeout 60;        fastcgi_send_timeout 180;        fastcgi_read_timeout 180;        fastcgi_buffer_size 128k;        fastcgi_buffers 4 256k;        fastcgi_busy_buffers_size 256k;        fastcgi_temp_file_write_size 256k;    }[/cc]Now instead of linking to /example.php, you can save the file with no extension, put it on your server, and link to /exampleNginx will now handle files without and extension as PHP files. This is a solution that will only fit a limited number of use cases, but compared to writing a rewrite wrapper, this is quick and easy.&lt;script&gt;utmx_section(&quot;contact1&quot;)&lt;/script&gt;&lt;div id=&quot;contactme&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;&lt;img src=&quot;http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;I'm just a guy interested in all things design and web related. You should &lt;a href=&quot;http://www.travisberry.com/contact/&quot;&gt;contact me&lt;/a&gt; about about this article, for freelance work, or for any reason.&lt;/div&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Clean URL's in Nginx&lt;/h3&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: November 07, 2011&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://www.travisberry.com/example&lt;/p&gt;
+
+&lt;p&gt;In Apache this is trivial. In Nginx, you can spend a couple days trying to get right.&lt;/p&gt;
+
+&lt;p&gt;Turns out the solution is simple. If you use a block of code like this&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177191.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;to turn on PHP, just replace the location with&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177191.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;and comment out&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177191.js?file=example3.txt&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Your code block should now look like&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/1177191.js?file=example4.txt&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Now instead of linking to /example.php, you can save the file with no extension, put it on your server, and link to /example&lt;/p&gt;
+
+&lt;p&gt;Nginx will now handle files without and extension as PHP files. This is a solution that will only fit a limited number of use cases, but compared to writing a rewrite wrapper, this is quick and easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</title>
-   <link href="http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish.html"/>
+   <link href="http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish"/>
    <updated>2010-10-17T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -215,7 +648,7 @@
  
  <entry>
    <title>Remove WordPress' NoFollow Without A Plugin</title>
-   <link href="http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin.html"/>
+   <link href="http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin"/>
    <updated>2010-10-03T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -263,7 +696,7 @@
  
  <entry>
    <title>If is_page() With Regular PHP</title>
-   <link href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php.html"/>
+   <link href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php"/>
    <updated>2010-10-02T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/10/if-is_page-with-regular-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -291,7 +724,7 @@
  
  <entry>
    <title>Use PHP To Zip Folders For Download</title>
-   <link href="http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download.html"/>
+   <link href="http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download"/>
    <updated>2010-09-23T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -333,7 +766,7 @@
  
  <entry>
    <title>Upload Videos To MediaSilo With PHP/FTP</title>
-   <link href="http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp.html"/>
+   <link href="http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp"/>
    <updated>2010-09-18T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -360,7 +793,7 @@
  
  <entry>
    <title>Upload A Video To Ooyala With PHP</title>
-   <link href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php.html"/>
+   <link href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php"/>
    <updated>2010-09-11T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -387,7 +820,7 @@
  
  <entry>
    <title>Reasons And Tips For Automated Motion Workflow</title>
-   <link href="http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow.html"/>
+   <link href="http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow"/>
    <updated>2010-08-07T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -452,7 +885,7 @@
  
  <entry>
    <title>Create A Ghetto, But Functional, Search Function For CakePHP</title>
-   <link href="http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp.html"/>
+   <link href="http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp"/>
    <updated>2010-06-21T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -492,7 +925,7 @@
  
  <entry>
    <title>How To Setup A LAMP Virtual Machine</title>
-   <link href="http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine.html"/>
+   <link href="http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine"/>
    <updated>2010-05-09T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -722,7 +1155,7 @@
  
  <entry>
    <title>Best Ogg Theora Video Compressor</title>
-   <link href="http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor.html"/>
+   <link href="http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor"/>
    <updated>2010-04-25T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -827,7 +1260,7 @@
  
  <entry>
    <title>Adding Internet Streaming To FFmpeg Outputs</title>
-   <link href="http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs.html"/>
+   <link href="http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs"/>
    <updated>2010-04-17T00:00:00-06:00</updated>
    <id>http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -851,7 +1284,7 @@
  
  <entry>
    <title>Video Compression Show Down</title>
-   <link href="http://www.travisberry.com/2010/03/video-compression-show-down.html"/>
+   <link href="http://www.travisberry.com/2010/03/video-compression-show-down"/>
    <updated>2010-03-11T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/03/video-compression-show-down</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -955,7 +1388,7 @@
  
  <entry>
    <title>On HTML5 Video</title>
-   <link href="http://www.travisberry.com/2010/02/on-html5-video.html"/>
+   <link href="http://www.travisberry.com/2010/02/on-html5-video"/>
    <updated>2010-02-25T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/02/on-html5-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1044,7 +1477,7 @@
  
  <entry>
    <title>Create Simple A/B Tests In WordPress</title>
-   <link href="http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress.html"/>
+   <link href="http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress"/>
    <updated>2010-02-19T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1151,7 +1584,7 @@
  
  <entry>
    <title>10 Easy Solutions For Contact Forms</title>
-   <link href="http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms.html"/>
+   <link href="http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms"/>
    <updated>2010-02-15T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1191,7 +1624,7 @@
  
  <entry>
    <title>Use WordPress' is_page() To Exclude Content</title>
-   <link href="http://www.travisberry.com/2010/01/use-wordpress%25e2%2580%2599-is_page-to-exclude-content.html"/>
+   <link href="http://www.travisberry.com/2010/01/use-wordpress%25e2%2580%2599-is_page-to-exclude-content"/>
    <updated>2010-01-30T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/use-wordpress%e2%80%99-is_page-to-exclude-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1257,7 +1690,7 @@
  
  <entry>
    <title>Don't Be Afraid To Self Promote</title>
-   <link href="http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote.html"/>
+   <link href="http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote"/>
    <updated>2010-01-17T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1283,7 +1716,7 @@
  
  <entry>
    <title>Say It Aint So! Time For A New Contact Form</title>
-   <link href="http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form.html"/>
+   <link href="http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form"/>
    <updated>2010-01-12T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1310,7 +1743,7 @@
  
  <entry>
    <title>Use WordPress' is_page() To Display Custom Content</title>
-   <link href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content.html"/>
+   <link href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1366,7 +1799,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Gentleman WordPress Theme</title>
-   <link href="http://www.travisberry.com/2010/01/gentleman-wordpress-theme.html"/>
+   <link href="http://www.travisberry.com/2010/01/gentleman-wordpress-theme"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/gentleman-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1394,7 +1827,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>A Hard Day At Work</title>
-   <link href="http://www.travisberry.com/2010/01/a-hard-day-at-work.html"/>
+   <link href="http://www.travisberry.com/2010/01/a-hard-day-at-work"/>
    <updated>2010-01-02T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2010/01/a-hard-day-at-work</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1410,7 +1843,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Happy Holidays</title>
-   <link href="http://www.travisberry.com/2009/12/happy-holidays.html"/>
+   <link href="http://www.travisberry.com/2009/12/happy-holidays"/>
    <updated>2009-12-25T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/happy-holidays</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1425,7 +1858,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>New Free WordPress Theme: Dark Wood</title>
-   <link href="http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood.html"/>
+   <link href="http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1451,7 +1884,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Improve YSlow Score With .htaccess</title>
-   <link href="http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess.html"/>
+   <link href="http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1493,7 +1926,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>This Makes Me Want To Quit Video</title>
-   <link href="http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video.html"/>
+   <link href="http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1513,7 +1946,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Simplifying Video Aspect Ratios</title>
-   <link href="http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios.html"/>
+   <link href="http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1548,7 +1981,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Tooting My Own Horn</title>
-   <link href="http://www.travisberry.com/2009/12/tooting-my-own-horn.html"/>
+   <link href="http://www.travisberry.com/2009/12/tooting-my-own-horn"/>
    <updated>2009-12-14T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/tooting-my-own-horn</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1566,7 +1999,7 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Another Free WordPress Theme</title>
-   <link href="http://www.travisberry.com/2009/12/another-free-wordpress-theme.html"/>
+   <link href="http://www.travisberry.com/2009/12/another-free-wordpress-theme"/>
    <updated>2009-12-12T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/another-free-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1597,7 +2030,7 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Making display:none; Javascript Accessible</title>
-   <link href="http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible.html"/>
+   <link href="http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible"/>
    <updated>2009-12-11T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1649,7 +2082,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Chrome and Thunderbird 3 Review</title>
-   <link href="http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review.html"/>
+   <link href="http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review"/>
    <updated>2009-12-09T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1695,7 +2128,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Download My WordPress Theme</title>
-   <link href="http://www.travisberry.com/2009/12/download-my-wordpress-theme.html"/>
+   <link href="http://www.travisberry.com/2009/12/download-my-wordpress-theme"/>
    <updated>2009-12-07T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/download-my-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1725,7 +2158,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>The Worst Is Over</title>
-   <link href="http://www.travisberry.com/2009/12/the-worst-is-over.html"/>
+   <link href="http://www.travisberry.com/2009/12/the-worst-is-over"/>
    <updated>2009-12-05T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/12/the-worst-is-over</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1747,7 +2180,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Sound FX Tip - Muffled Sounds</title>
-   <link href="http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds.html"/>
+   <link href="http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds"/>
    <updated>2009-11-29T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1777,7 +2210,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Awesome News Mashup Sites</title>
-   <link href="http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites.html"/>
+   <link href="http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites"/>
    <updated>2009-11-25T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1810,7 +2243,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Resources To Learn After Effects Expressions</title>
-   <link href="http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions.html"/>
+   <link href="http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions"/>
    <updated>2009-11-23T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1844,7 +2277,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Running A Git Repo on DreamHost</title>
-   <link href="http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost.html"/>
+   <link href="http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -1935,7 +2368,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Handy List of Terminal Commands</title>
-   <link href="http://www.travisberry.com/2009/11/handy-list-of-terminal-commands.html"/>
+   <link href="http://www.travisberry.com/2009/11/handy-list-of-terminal-commands"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/handy-list-of-terminal-commands</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2011,7 +2444,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Resources for Web Type</title>
-   <link href="http://www.travisberry.com/2009/11/5-resources-for-web-type.html"/>
+   <link href="http://www.travisberry.com/2009/11/5-resources-for-web-type"/>
    <updated>2009-11-17T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/5-resources-for-web-type</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2040,7 +2473,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Set Up a Domain, Host, and Email Quickly</title>
-   <link href="http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly.html"/>
+   <link href="http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly"/>
    <updated>2009-11-16T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2088,7 +2521,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>YouTube Gets 1080p</title>
-   <link href="http://www.travisberry.com/2009/11/youtube-gets-1080p.html"/>
+   <link href="http://www.travisberry.com/2009/11/youtube-gets-1080p"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/youtube-gets-1080p</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2119,7 +2552,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Great CMYK Art</title>
-   <link href="http://www.travisberry.com/2009/11/great-cmyk-art.html"/>
+   <link href="http://www.travisberry.com/2009/11/great-cmyk-art"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/great-cmyk-art</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2149,7 +2582,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Handy Plugins for 5 Kick-Ass Free Apps</title>
-   <link href="http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps.html"/>
+   <link href="http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2231,7 +2664,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Setting Up Quicktime Streaming</title>
-   <link href="http://www.travisberry.com/2009/11/setting-up-quicktime-streaming.html"/>
+   <link href="http://www.travisberry.com/2009/11/setting-up-quicktime-streaming"/>
    <updated>2009-11-14T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/setting-up-quicktime-streaming</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
@@ -2273,7 +2706,7 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Creating Navigation Highlights</title>
-   <link href="http://www.travisberry.com/2009/11/creating-navigation-highlights.html"/>
+   <link href="http://www.travisberry.com/2009/11/creating-navigation-highlights"/>
    <updated>2009-11-13T00:00:00-07:00</updated>
    <id>http://www.travisberry.com/2009/11/creating-navigation-highlights</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Upload A Video To Ooyala With PHP | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />  
+		<link href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/create-github-gist-with-ruby"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/write-text-anywhere-with-html5-canvas"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/03/a-day-in-the-life-of-me"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/02/fast-cakephp-search-with-indextank"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/new-time-tracking-web-app-homkora"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+			
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">     
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog.html"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work.html"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact.html"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>Upload A Video To Ooyala With PHP</h3>
+  <a href="http://www.cl.cam.ac.uk/Relics/archive_photos.html" class="postImageLink"><img src="http://content.travisberry.com/ooyala_upload.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-09-11</h6></p>
+
+<p><strong>EDIT</strong>: <a href="https://github.com/ninetwentyfour/Ooyala-Uploader">You can find a better/updated Ooyala class here</a>.</p>
+
+<p><a href="http://www.ooyala.com/">Ooyala</a> is a fairly popular video hosting platform. We have started using them where I work, and they seem to be doing a really good job so far. One of the advantages of Ooyala is their nice API. They have some <a href="http://www.ooyala.com/support/docs/backlot_api#example">example code</a> for you to use, but one feature that was lacking was uploading. They also have a widget that does do uploading but it is handled through Flash, something I wanted to avoid.</p>
+
+<p>This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)</p>
+
+<script src="https://gist.github.com/1177051.js?file=example1.php"></script>
+
+
+<p>Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.</p>
+
+<p>I’m sure there is an easier way to do this, so if you know how to improve this, please let me know in the comments.</p>
+
+<p></article></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/javascript/search.js"></script>
+	</body>
+</html>

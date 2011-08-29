@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Use WordPress' is_page() To Display Custom Content | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />  
+		<link href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/create-github-gist-with-ruby"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/write-text-anywhere-with-html5-canvas"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/03/a-day-in-the-life-of-me"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/02/fast-cakephp-search-with-indextank"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/new-time-tracking-web-app-homkora"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+			
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">     
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog.html"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work.html"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact.html"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>Use WordPress' is_page() To Display Custom Content</h3>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-01-11</h6></p>
+
+<p>Something that comes up on a regular basis is how to display certain content on different pages or if certain conditions are met. One way to accomplish this would be to create separate templates for each page. However, if you have a bunch of pages this can quickly become a pain. The other way to accomplish this would be to use WordPress' is_page() function to display content when you want.</p>
+
+<p>First let's take a look at what the function is. According to the codex</p>
+
+<blockquote>
+This Conditional Tag checks if Pages are being displayed. This is a boolean function, meaning it returns either TRUE or FALSE.
+</blockquote>
+
+
+<p></p>
+
+<p>Ok, that's not the most helpful description ever. A simpler explanation would be that the tag checks the name of the page and returns TRUE or FALSE. This means you can put a nice little echo in there and have it display whatever you want.</p>
+
+<p>So let's say you have one page.php file. This is the template you use on every page on your site. On your about page you would like to add a secondary navigation. I don't know why you want to, let's just say you do. This navigation sits above the content area, so you can't just add it into your page through the WordPress wysiwyg editor. Again, you could create a new template for the page, but that is boring. Instead, where you want the second navigation to be, enter this into your page.php file.</p>
+
+<script src="https://gist.github.com/1176883.js?file=example1.php"></script>
+
+
+<p>The code is asking if the page is named "about", if it is, it echo's the div "secondnav". If the page isn't called "about" then it echo's nothing and nothing is displayed. It's that simple. If you want the nav to display on the "about"and "contact"page add this</p>
+
+<script src="https://gist.github.com/1176883.js?file=example2.php"></script>
+
+
+<p>One place I find myself using this a lot is loading javascript only on pages that need it. One problem of adding javascript links to your footer.php file is that they are called on everypage whether you need them or not. The simple way to call them only when need is to add them like this</p>
+
+<script src="https://gist.github.com/1176883.js?file=example3.php"></script>
+
+
+<p>This works well for pages, but for your blog page and single posts you will need a different function.</p>
+
+<p>For your blog page use <code>is_home()</code></p>
+
+<p>For your single posts use <code>is_single()</code></p>
+
+<p>WordPress provides a slew of other tags as well including</p>
+
+<p><code>is_home(), is_front_page(), is_search(), is_404(), is_singular(), is_page(), is_attachment(), is_local_attachment(), is_single(), is_sticky(), is_archive(), is_category(), is_tag(), is_author(), is_date(), is_year(), is_month(), is_day(), is_time(), is_admin(), is_preview(), is_paged(), is_page_template(), is plugin active(), is_plugin_page(), is_new_day(), is_feed(), is_trackback(), is_comments_popup(), comments_open(), pings_open(), is_taxonomy(), is_taxonomy_hierarchical(), is_term(), is_user_logged_in(), is_blog_installed(), is_active_sidebar(), is_dynamic_sidebar(), is_active_widget()</code></p>
+
+<p>As you can see, you can target pretty specific events and conditions. So have fun experimenting with conditional tags and if you come up with something cool, let me know in the comments.</p>
+
+<p><strong>Edit:</strong> To use regular PHP and not WordPress to include content, see <a href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php/">my post here</a>.</p>
+
+<p></article></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/javascript/search.js"></script>
+	</body>
+</html>

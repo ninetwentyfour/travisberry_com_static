@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Use WordPress' is_page() To Exclude Content | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://travisberry.heroku.com/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />  
+		<link href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/create-github-gist-with-ruby"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/05/write-text-anywhere-with-html5-canvas"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="Write Text Anywhere With HTML5 Canvas" title="Write Text Anywhere With HTML5 Canvas" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/03/a-day-in-the-life-of-me"><img src="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg" alt="A Day In The Life Of Me" title="A Day In The Life Of Me" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/02/fast-cakephp-search-with-indextank"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="Fast CakePHP Search With IndexTank" title="Fast CakePHP Search With IndexTank" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="Haml, Sass, Markdown, and CakePHP - Oh My!" title="Haml, Sass, Markdown, and CakePHP - Oh My!" width=20 height=20 /></a>
+			
+				<a href="http://travisberry-static.s3-website-us-east-1.amazonaws.com/2011/01/new-time-tracking-web-app-homkora"><img src="http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="New Time Tracking Web App - Homkora" title="New Time Tracking Web App - Homkora" width=20 height=20 /></a>
+			
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">     
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog.html"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work.html"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact.html"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>Use WordPress' is_page() To Exclude Content</h3>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: 2010-01-30</h6></p>
+
+<p>After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages.</p>
+
+<p>As with everything there are several ways to accomplish this. I'll cover some of the easiest.</p>
+
+<div class="clearfix"></div>
+
+
+<p>The first way is the same as <a href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/">including custom content</a>. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.</p>
+
+<script src="https://gist.github.com/1176902.js?file=example1.php"></script>
+
+
+<p>If you had three pages; 'work', 'contact', and 'blog', the above code would display the div 'secondnav' on every page but 'blog'.</p>
+
+<p>Another way is to use the above method but target it to the page you want excluded. So,</p>
+
+<script src="https://gist.github.com/1176902.js?file=example2.php"></script>
+
+
+<p>Can be used to exclude a section of content. Let's say you still don't want to show the 'secondnav' div on the blog page. So create a new .css file. Name it whatever you like and put it where ever you like. Just replace the url in the example with a link to the new file.Inside the new .css file put this;</p>
+
+<script src="https://gist.github.com/1176902.js?file=example3.css"></script>
+
+
+<p>The 'secondnav' div will no be invisible on the 'blog' page.</p>
+
+<p>One final, less conditional way of doing this would be to create a new template for the page. Create a file called, 'nonav.php'.</p>
+
+<p>Copy and paste everything from your normal 'page.php' file and paste it into 'nonav.php'. Find the part you want removed and delete it from the file. Move to the very top of the 'nonav.php' file. Paste this into the file.</p>
+
+<script src="https://gist.github.com/1176902.js?file=example4.php"></script>
+
+
+<p>Save the file and upload it to your current theme directory.</p>
+
+<p>Now in the WordPress admin area, edit the page you don't want the 'secondnav' div in. On the right side of the screen, there is a place that allows you to pick a template. Select the drop down menu and select your new template. Hit the update post button, and your page should no longer have the 'secondnav' div.</p>
+
+<p>There you go, a few way's to exclude content from certain pages. The best way to decide between excluding or including content is to go with whichever is the shortest. If you have 100 pages and 1 doesn't need something, exclude. If the 1 needs something, and the 100 don't, include.</p>
+
+<p>If you have other solutions, or any questions, let me know in the comments.</p>
+
+<p><strong>Edit:</strong><a href="http://www.reddit.com/user/kylegetsspam">kylegetsspam</a> over on reddit pointed out another simple way of doing the same thing. Add,</p>
+
+<script src="https://gist.github.com/1176902.js?file=example5.php"></script>
+
+
+<p>To your body tag. Then add this to your main style sheet.</p>
+
+<script src="https://gist.github.com/1176902.js?file=example6.css"></script>
+
+
+<p><strong>Edit 2:</strong> To use regular PHP and not WordPress to exclude content, see <a href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php/">my post here</a>.
+</article></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>30 May 2011</span> &raquo; <a href="/2011/05/create-github-gist-with-ruby">Create GitHub Gist With Ruby</a></li>
+    
+      <li><span>26 May 2011</span> &raquo; <a href="/2011/05/write-text-anywhere-with-html5-canvas">Write Text Anywhere With HTML5 Canvas</a></li>
+    
+      <li><span>04 Mar 2011</span> &raquo; <a href="/2011/03/a-day-in-the-life-of-me">A Day In The Life Of Me</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/javascript/search.js"></script>
+	</body>
+</html>

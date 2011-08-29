@@ -9,5 +9,96 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg"
+summary: "This time I’m going to show you a much better method, mainly by offloading the work to people who really know how to do search."
 ---
-[![](http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg "indextank")](http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG)I've previously posted my [ghetto CakePHP search function](http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.<!--more-->You simply hand them the documents you want indexed and the give you back the ability to query against it.I'm not going to spend anytime explaining how IndexTank works, mainly because I barely understand it. Instead I will show you a simple way to get it to work with CakePHP.The code in this example is built around the code for [Homkora](http://homkora.com) in which the main two Objects are Projects and Timers. So to start grab the IndexTank library from [https://indextank.com/documentation/php-client](https://indextank.com/documentation/php-client) this would be a good page to read as well just to get an idea of what's going on.Take the file you downloaded (indextank_client.php in my case) and place it in app/vendors of your CakePHP application.Now open up your app_controller.php and add these four functions[cc lang="php"]function createIndextankClient(){App::import('Vendor', 'indextank_client');$API_URL = 'YOUR API URL HERE';$client = new ApiClient($API_URL);return $client;}function addIndextank($indexType,$id,$data){//send project to indextank$client = $this->createIndextankClient();$index = $client->get_index($indexType);$doc_id = $id;$index->add_document($doc_id, $data);}function deleteIndextank($indexType,$id){//delete indextank document$client = $this->createIndextankClient();$index = $client->get_index($indexType);$index->delete_document($id);}function searchIndextank($indexType,$query){//search indextank$client = $this->createIndextankClient();$index = $client->get_index($indexType);$index->add_function(2, "relevance");$res = $index->search($query);return $res;}[/cc]These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.Each one is built to be passed the variables it needs to make a connection to IndexTank.All the functions accept the $indexType variable which is where you set which index to perform actions against. In my case I have one for Projects and one for Timers.So now lets add some documents to our index.[cc lang="php"]if ($this->Project->save($this->data)) {$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));$this->redirect(array('action' => 'index'));}[/cc]I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.Let's add the code to call our addIndextank() function in the app controller.[cc lang="php"]if ($this->Project->save($this->data)) {//send project to index tank$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);$id = $this->Project->id;$this->addIndextank("HomkoraProjects",$id,$indexData);$this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));$this->redirect(array('action' => 'index'));}[/cc]Let go over what's going on here.[cc lang="php"]$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);[/cc]This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.[cc lang="php"]$id = $this->Project->id;[/cc]Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.[cc lang="php"]$this->addIndextank("HomkoraProjects",$id,$indexData);[/cc]This line is the call to the addIndextank function. The "HomkoraProjects" is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.Now when you add a new Project you should also be adding a new document to IndexTank.Now if you delete the Project it's best to delete to document in the index as well. So let's add some code to our projects controller delete() function.Starting with[cc lang="php"]if ($this->Project->delete($id)) {$this->Session->setFlash('Project deleted', 'default', array('class' => 'flash_good'));$this->redirect(array('action'=>'index'));}[/cc]We can add a simple call like[cc lang="php"]if ($this->Project->delete($id)) {$this->deleteIndextank("HomkoraProjects",$id);$this->Session->setFlash('Project deleted', 'default', array('class' => 'flash_good'));$this->redirect(array('action'=>'index'));}[/cc]Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)Alright, now you can add and remove documents from your index, but what good are they without being able to search against them.In my projects controller I added the following function[cc lang="php"]function search(){$query = $this->data['Project']['search'];$res = $this->searchIndextank("HomkoraProjects",$query);$i = 0;foreach($res->results as $doc_id){$params = array('conditions' => array('_id' => $doc_id->docid));$projects[$i++] = $this->Project->find('first',$params);}$this->set('projects', $projects);}[/cc][cc lang="php"]$query = $this->data['Project']['search'];[/cc]I pass the search term through a form and set it as the $query variable.[cc lang="php"]$res = $this->searchIndextank("HomkoraProjects",$query);[/cc]Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.You'll notice in the searchIndextank() I return the data $res and in the search() function I set it to $res.Once I get the results from IndexTank I can use them to search for the Projects in my database. Here I set them all the the $projects array and prepare them for display in the view.I know you're thinking, if you are getting the data from the database anyway - why use IndexTank? Well with only a few records, you aren't going to get a much faster result, but with lots of records, IndexTank will return the results faster plus it allows you to cut down on your database calls. Their ability to rank results and search based on numerous factors is pretty good and better than what the average person can write in most cases.I'm using a pretty bare bones searchIndextank() function but this should get you started. I'm quite impressed with the results so far and I'm continuing to find better ways to work with their index.If you know a better way to set this up, or have questions, let me know in the comments.<script>utmx_section("contact1")</script><div id="contactme"><div class="avatar">![](http://www.gravatar.com/avatar/c9e8248c1237949b66a735bed64ae841?s=32&d=identicon&r=G)</div>I'm just a guy interested in all things design and web related. You should [contact me](http://www.travisberry.com/contact/) about about this article, for freelance work, or for any reason.</div>
+<article class="post clearfix">
+  <h3>Fast CakePHP Search With IndexTank</h3>
+  <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <h6>Published: February 16, 2012</h6>
+
+I've previously posted my [ghetto CakePHP search function](http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.
+
+You simply hand them the documents you want indexed and the give you back the ability to query against it.
+
+I'm not going to spend anytime explaining how IndexTank works, mainly because I barely understand it. Instead I will show you a simple way to get it to work with CakePHP.
+
+The code in this example is built around the code for [Homkora](http://homkora.com) in which the main two Objects are Projects and Timers. So to start grab the IndexTank library from [https://indextank.com/documentation/php-client](https://indextank.com/documentation/php-client) this would be a good page to read as well just to get an idea of what's going on.
+
+Take the file you downloaded (indextank_client.php in my case) and place it in app/vendors of your CakePHP application.
+
+Now open up your app_controller.php and add these four functions
+
+<script src="https://gist.github.com/1177288.js?file=example1.php"></script>
+
+These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.
+
+Each one is built to be passed the variables it needs to make a connection to IndexTank.
+
+All the functions accept the $indexType variable which is where you set which index to perform actions against. In my case I have one for Projects and one for Timers.
+
+So now lets add some documents to our index.
+
+<script src="https://gist.github.com/1177288.js?file=example2.php"></script>
+
+I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.
+
+Let's add the code to call our addIndextank() function in the app controller.
+
+<script src="https://gist.github.com/1177288.js?file=example3.php"></script>
+
+Let go over what's going on here.
+
+<script src="https://gist.github.com/1177288.js?file=example4.php"></script>
+
+This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.
+
+The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.
+
+<script src="https://gist.github.com/1177288.js?file=example5.php"></script>
+
+Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.
+
+<script src="https://gist.github.com/1177288.js?file=example6.php"></script>
+
+This line is the call to the addIndextank function. The "HomkoraProjects" is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.
+
+Now when you add a new Project you should also be adding a new document to IndexTank.
+
+Now if you delete the Project it's best to delete to document in the index as well. So let's add some code to our projects controller delete() function.
+
+Starting with
+
+<script src="https://gist.github.com/1177288.js?file=example7.php"></script>
+
+We can add a simple call like
+
+<script src="https://gist.github.com/1177288.js?file=example8.php"></script>
+
+Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)
+
+Alright, now you can add and remove documents from your index, but what good are they without being able to search against them.
+
+In my projects controller I added the following function
+
+<script src="https://gist.github.com/1177288.js?file=example9.php"></script>
+
+<script src="https://gist.github.com/1177293.js?file=example10.php"></script>
+
+I pass the search term through a form and set it as the $query variable.
+
+<script src="https://gist.github.com/1177293.js?file=example11.php"></script>
+
+Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.
+
+You'll notice in the searchIndextank() I return the data $res and in the search() function I set it to $res.
+
+Once I get the results from IndexTank I can use them to search for the Projects in my database. Here I set them all the the $projects array and prepare them for display in the view.
+
+I know you're thinking, if you are getting the data from the database anyway - why use IndexTank? 
+
+Well with only a few records, you aren't going to get a much faster result, but with lots of records, IndexTank will return the results faster plus it allows you to cut down on your database calls. Their ability to rank results and search based on numerous factors is pretty good and better than what the average person can write in most cases.
+
+I'm using a pretty bare bones searchIndextank() function but this should get you started. I'm quite impressed with the results so far and I'm continuing to find better ways to work with their index.
+
+If you know a better way to set this up, or have questions, let me know in the comments.
+</article>
