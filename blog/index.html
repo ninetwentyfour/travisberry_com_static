@@ -1,0 +1,18 @@
+---
+layout: static
+title: Blog
+description: Travis Berry's blog about all thing video production and web design.
+---
+<div id="main" class="grid_8 alpha">
+	<div id="search" class="clearfix"></div>
+	<div id="list">
+		{% for post in site.posts %}
+			<article class="post clearfix">
+				<h3><a href="{{ site.base_url}}{{ post.url }}">{{ post.title }}</a></h3>
+				<a href="{{ post.image }}" class="postImageLink"><img src="{{ post.image }}" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+				<h6>Published: {{ post.date | date: "%B %d, %Y" }}</h6>
+				<p>{{ post.summary }}</p> <a href="{{ site.base_url}}{{ post.url }}" class="more-link"> Read More...</a>
+			</article>
+		{% endfor %}
+	</div>
+</div>
