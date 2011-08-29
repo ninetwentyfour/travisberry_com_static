@@ -32,3 +32,5 @@ TODO
 - add noscript and old browser warnings
 
 - possibly add search bar into top bar so its always visible / add a top flag that comes out once you scroll so far
+
+- fix style bug no work images with green href
