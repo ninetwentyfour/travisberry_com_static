@@ -3,7 +3,7 @@ Jekyll made static site
 TODO
 ====
 
-- add expires headers to static files on s3
+- add expires headers to static files on s3 also add content types
 
 - move all old assets from server to s3
 
@@ -29,3 +29,4 @@ TODO
 
 - add analytics code
 
+- add noscript and old browser warnings
