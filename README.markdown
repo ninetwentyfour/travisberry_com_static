@@ -17,17 +17,17 @@ TODO
 
 - double check all links and urls to see if they match
 
-- setup s3 bucket to go to cloudfront
+- <del>setup s3 bucket to go to cloudfront</del>
 
 - <del>fix all image urls to new bucket</del>
 
 - remove nofollow and robots tag from layout
 
-- update rss link
+- <del>update rss link</del>
 
 - update feedburner
 
-- add analytics code
+- <del>add analytics code</del>
 
 - add noscript and old browser warnings
 

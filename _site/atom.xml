@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Travis Berry</title>
- <link href="http://oldstatic.travisberry.com/atom.xml" rel="self"/>
- <link href="http://oldstatic.travisberry.com/"/>
- <updated>2011-08-29T20:24:21-06:00</updated>
+ <link href="http://www.travisberry.com/atom.xml" rel="self"/>
+ <link href="http://www.travisberry.com/"/>
+ <updated>2011-08-29T20:44:39-06:00</updated>
  <id>http://oldstatic.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
