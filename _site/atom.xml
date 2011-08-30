@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Travis Berry</title>
- <link href="http://www.travisberry.com/atom.xml" rel="self"/>
- <link href="http://www.travisberry.com/"/>
- <updated>2011-08-28T21:09:11-06:00</updated>
- <id>http://www.travisberry.com/</id>
+ <link href="http://oldstatic.travisberry.com/atom.xml" rel="self"/>
+ <link href="http://oldstatic.travisberry.com/"/>
+ <updated>2011-08-29T20:22:01-06:00</updated>
+ <id>http://oldstatic.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
@@ -14,12 +14,12 @@
  
  <entry>
    <title>Create GitHub Gist With Ruby</title>
-   <link href="http://www.travisberry.com/2011/05/create-github-gist-with-ruby"/>
+   <link href="http://oldstatic.travisberry.com/2011/05/create-github-gist-with-ruby"/>
    <updated>2011-05-30T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2011/05/create-github-gist-with-ruby</id>
+   <id>http://oldstatic.travisberry.com/2011/05/create-github-gist-with-ruby</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create GitHub Gist With Ruby&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: May 30, 2012&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;If you didn't know already, &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; is freaking awesome. One of my favorite features is gists. Gists are a simple code pasting and sharing service. Also perfect for displaying code in blog posts.&lt;/p&gt;
@@ -40,12 +40,12 @@
  
  <entry>
    <title>Write Text Anywhere With HTML5 Canvas</title>
-   <link href="http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas"/>
+   <link href="http://oldstatic.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas"/>
    <updated>2011-05-26T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas</id>
+   <id>http://oldstatic.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Write Text Anywhere With HTML5 Canvas&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: May 26, 2012&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;When working on a project recently I came across the need to be able to add some text to a canvas element. This by itself wasn't particularly hard, as there are several examples of creating text editor apps with canvas, but those all forced the text into a row style grid like a text editor. What I needed was a little more freeform in that I wanted the user to click and the text to show at that point.&lt;/p&gt;
@@ -54,7 +54,7 @@
 
 &lt;p&gt;(This doesn't look the best in the end, but you can easily add some css styles to make it look better)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.travisberry.com/demos/canvas-text-demo/index.html&quot;&gt;Click Here To See Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://oldstatic.travisberry.com/demos/canvas-text-demo/index.html&quot;&gt;Click Here To See Demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;So first we need to create a canvas element&lt;/p&gt;
 
@@ -132,31 +132,31 @@
  
  <entry>
    <title>A Day In The Life Of Me</title>
-   <link href="http://www.travisberry.com/2011/03/a-day-in-the-life-of-me"/>
+   <link href="http://oldstatic.travisberry.com/2011/03/a-day-in-the-life-of-me"/>
    <updated>2011-03-04T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
+   <id>http://oldstatic.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;A Day In The Life Of Me&lt;/h3&gt;
   &lt;h6&gt;Published: March 03, 2012&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Super awesome timelapse at the office.&lt;/p&gt;
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;480&quot; id=&quot;video&quot; controls=&quot;true&quot;&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.mp4&quot; type='video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;' /&gt;&lt;source src=&quot;http://www.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.ogv&quot; type='video/ogg; codecs=&quot;theora, vorbis&quot;' /&gt;&lt;object width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/video&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;480&quot; id=&quot;video&quot; controls=&quot;true&quot;&gt;&lt;source src=&quot;http://oldstatic.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.mp4&quot; type='video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;' /&gt;&lt;source src=&quot;http://oldstatic.travisberry.com/html5video/videos/timelapseWork/timelapse3-4-11.ogv&quot; type='video/ogg; codecs=&quot;theora, vorbis&quot;' /&gt;&lt;object width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/jqccnLh_Dhs?fs=1&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;480&quot; height=&quot;480&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/video&gt;
 &lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Fast CakePHP Search With IndexTank</title>
-   <link href="http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank"/>
+   <link href="http://oldstatic.travisberry.com/2011/02/fast-cakephp-search-with-indextank"/>
    <updated>2011-02-16T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank</id>
+   <id>http://oldstatic.travisberry.com/2011/02/fast-cakephp-search-with-indextank</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Fast CakePHP Search With IndexTank&lt;/h3&gt;
-  &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: February 16, 2012&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;I've previously posted my &lt;a href=&quot;http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
+&lt;p&gt;I've previously posted my &lt;a href=&quot;http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
 
 &lt;p&gt;You simply hand them the documents you want indexed and the give you back the ability to query against it.&lt;/p&gt;
 
@@ -260,12 +260,12 @@
  
  <entry>
    <title>Haml, Sass, Markdown, and CakePHP - Oh My!</title>
-   <link href="http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"/>
+   <link href="http://oldstatic.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"/>
    <updated>2011-01-11T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my</id>
+   <id>http://oldstatic.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Haml, Sass, Markdown, and CakePHP - Oh My!&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: January 11, 2012&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I've recently begun using &lt;a href=&quot;http://haml-lang.com/&quot;&gt;Haml&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; instead of good ol' HTML and CSS. If you haven't heard of them, &quot;Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to&quot;, and &quot;Sass makes CSS fun again&quot;. The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.&lt;/p&gt;
@@ -434,12 +434,12 @@
  
  <entry>
    <title>New Time Tracking Web App - Homkora</title>
-   <link href="http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora"/>
+   <link href="http://oldstatic.travisberry.com/2011/01/new-time-tracking-web-app-homkora"/>
    <updated>2011-01-01T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora</id>
+   <id>http://oldstatic.travisberry.com/2011/01/new-time-tracking-web-app-homkora</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;New Time Tracking Web App - Homkora&lt;/h3&gt;
-  &lt;a href=&quot;http://homkora.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://homkora.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: January 01, 2012&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I have recently launched the beta my new side project Homkora.&lt;/p&gt;
@@ -456,15 +456,15 @@
  
  <entry>
    <title>Free Single Page HTML/CSS Template</title>
-   <link href="http://www.travisberry.com/2010/12/free-single-page-htmlcss-template"/>
+   <link href="http://oldstatic.travisberry.com/2010/12/free-single-page-htmlcss-template"/>
    <updated>2010-12-19T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/12/free-single-page-htmlcss-template</id>
+   <id>http://oldstatic.travisberry.com/2010/12/free-single-page-htmlcss-template</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Free Single Page HTML/CSS Template&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/simple-dark-html-template/index.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: December 12, 2011&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;I have just completed a new HTML CSS template for you to download. The site is made for those who need a simple single page web presence. The site is easy to modify and get setup. &lt;a href=&quot;http://www.travisberry.com/simple-dark-html-template/index.html&quot;&gt;Check out the demo.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have just completed a new HTML CSS template for you to download. The site is made for those who need a simple single page web presence. The site is easy to modify and get setup. &lt;a href=&quot;http://oldstatic.travisberry.com/simple-dark-html-template/index.html&quot;&gt;Check out the demo.&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
@@ -477,15 +477,15 @@
  
  <entry>
    <title>Clean URL's in Nginx</title>
-   <link href="http://www.travisberry.com/2010/11/clean-urls-in-nginx"/>
+   <link href="http://oldstatic.travisberry.com/2010/11/clean-urls-in-nginx"/>
    <updated>2010-11-07T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/11/clean-urls-in-nginx</id>
+   <id>http://oldstatic.travisberry.com/2010/11/clean-urls-in-nginx</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Clean URL's in Nginx&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: November 07, 2011&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://www.travisberry.com/example&lt;/p&gt;
+&lt;p&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://oldstatic.travisberry.com/example&lt;/p&gt;
 
 &lt;p&gt;In Apache this is trivial. In Nginx, you can spend a couple days trying to get right.&lt;/p&gt;
 
@@ -519,12 +519,12 @@
  
  <entry>
    <title>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</title>
-   <link href="http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish"/>
+   <link href="http://oldstatic.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish"/>
    <updated>2010-10-17T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish</id>
+   <id>http://oldstatic.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/10438860/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/10438860/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-10-17&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;In the word of servers, Apache is still the undisputed king. It’s extendability and ability to run anything you can throw at it has led to it being the number one most used server in the world. Just because it has large numbers though, doesn’t mean it’s the best in terms of performance.&lt;/p&gt;
@@ -648,9 +648,9 @@
  
  <entry>
    <title>Remove WordPress' NoFollow Without A Plugin</title>
-   <link href="http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin"/>
+   <link href="http://oldstatic.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin"/>
    <updated>2010-10-03T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
+   <id>http://oldstatic.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Remove WordPress' NoFollow Without A Plugin&lt;/h3&gt;
   &lt;a href=&quot;http://www.siliakatung.com/exhibition.htm&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/do_follow.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -696,15 +696,15 @@
  
  <entry>
    <title>If is_page() With Regular PHP</title>
-   <link href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php"/>
+   <link href="http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php"/>
    <updated>2010-10-02T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/10/if-is_page-with-regular-php</id>
+   <id>http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;If is_page() With Regular PHP&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/14277117@N03/3865517102&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/14277117@N03/3865517102&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-10-02&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;My article on &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;WordPress' is_page()&lt;/a&gt; is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP.&lt;/p&gt;
+&lt;p&gt;My article on &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;WordPress' is_page()&lt;/a&gt; is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP.&lt;/p&gt;
 
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
@@ -724,9 +724,9 @@
  
  <entry>
    <title>Use PHP To Zip Folders For Download</title>
-   <link href="http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download"/>
+   <link href="http://oldstatic.travisberry.com/2010/09/use-php-to-zip-folders-for-download"/>
    <updated>2010-09-23T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
+   <id>http://oldstatic.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use PHP To Zip Folders For Download&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/striatic/443918201/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/zip_files.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -766,15 +766,15 @@
  
  <entry>
    <title>Upload Videos To MediaSilo With PHP/FTP</title>
-   <link href="http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp"/>
+   <link href="http://oldstatic.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp"/>
    <updated>2010-09-18T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp</id>
+   <id>http://oldstatic.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Upload Videos To MediaSilo With PHP/FTP&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/spiesteleviv/3654728245/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/spiesteleviv/3654728245/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-09-18&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;In continuing with my last post on &lt;a href=&quot;http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/&quot;&gt;how to upload videos to Ooyala with PHP&lt;/a&gt;, here is one for &lt;a href=&quot;http://www.mediasilo.com/&quot;&gt;MediaSilo&lt;/a&gt;. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.&lt;/p&gt;
+&lt;p&gt;In continuing with my last post on &lt;a href=&quot;http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/&quot;&gt;how to upload videos to Ooyala with PHP&lt;/a&gt;, here is one for &lt;a href=&quot;http://www.mediasilo.com/&quot;&gt;MediaSilo&lt;/a&gt;. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.&lt;/p&gt;
 
 &lt;p&gt;Alright, so let's get to the code.&lt;/p&gt;
 
@@ -793,9 +793,9 @@
  
  <entry>
    <title>Upload A Video To Ooyala With PHP</title>
-   <link href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php"/>
+   <link href="http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php"/>
    <updated>2010-09-11T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
+   <id>http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Upload A Video To Ooyala With PHP&lt;/h3&gt;
   &lt;a href=&quot;http://www.cl.cam.ac.uk/Relics/archive_photos.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/ooyala_upload.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -820,12 +820,12 @@
  
  <entry>
    <title>Reasons And Tips For Automated Motion Workflow</title>
-   <link href="http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow"/>
+   <link href="http://oldstatic.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow"/>
    <updated>2010-08-07T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow</id>
+   <id>http://oldstatic.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Reasons And Tips For Automated Motion Workflow&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/whsimages/998243013/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/whsimages/998243013/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-08-07&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;In many video projects there is some style of graphic, lower third, or bumper that is used numerous time throughout the piece, only requiring a text change. Or you will have clients that sell templatized videos, who just need someone to change the default text overlays inside the base video.&lt;/p&gt;
@@ -885,9 +885,9 @@
  
  <entry>
    <title>Create A Ghetto, But Functional, Search Function For CakePHP</title>
-   <link href="http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp"/>
+   <link href="http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp"/>
    <updated>2010-06-21T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
+   <id>http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create A Ghetto, But Functional, Search Function For CakePHP&lt;/h3&gt;
   &lt;a href=&quot;http://store.steampowered.com/app/400/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/portalcake2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -925,12 +925,12 @@
  
  <entry>
    <title>How To Setup A LAMP Virtual Machine</title>
-   <link href="http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine"/>
+   <link href="http://oldstatic.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine"/>
    <updated>2010-05-09T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine</id>
+   <id>http://oldstatic.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;How To Setup A LAMP Virtual Machine&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-05-09&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;In an effort to develop in an environment closer to many production servers, many people have begun developing in virtual machines running on their host os. This article is a comprehensive guide to creating a LAMP virtual machine (plus a few other goodies).&lt;/p&gt;
@@ -1155,15 +1155,15 @@
  
  <entry>
    <title>Best Ogg Theora Video Compressor</title>
-   <link href="http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor"/>
+   <link href="http://oldstatic.travisberry.com/2010/04/best-ogg-theora-video-compressor"/>
    <updated>2010-04-25T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
+   <id>http://oldstatic.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Best Ogg Theora Video Compressor&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/lancesh/2162074087/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/oggpixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-04-25&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;A while back I did a &lt;a href=&quot;http://www.travisberry.com/2010/03/video-compression-show-down/&quot;&gt;comparison of the popular mp4 compressors&lt;/a&gt;. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.&lt;/p&gt;
+&lt;p&gt;A while back I did a &lt;a href=&quot;http://oldstatic.travisberry.com/2010/03/video-compression-show-down/&quot;&gt;comparison of the popular mp4 compressors&lt;/a&gt;. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.&lt;/p&gt;
 
 &lt;p&gt;I try to make my content cross browser compatible, but for this one I have no choice. &lt;strong&gt;You must use Firefox or Chrome to fully view this post.&lt;/strong&gt; The newer the version the better.&lt;/p&gt;
 
@@ -1190,7 +1190,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://www.travisberry.com/html5video/oggoutputs/ffmpeg.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/html5video/oggoutputs/ffmpeg.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://firefogg.org/&quot;&gt;FireFogg&lt;/a&gt; (18.87 MB)- decent settings&lt;/p&gt;
 
@@ -1212,7 +1212,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://www.travisberry.com/html5video/oggoutputs/miro.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/html5video/oggoutputs/miro.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://xiph.org/quicktime/&quot;&gt;QuickTime&lt;/a&gt; (17.37 MB)- good quality large size&lt;/p&gt;
 
@@ -1232,13 +1232,13 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://www.travisberry.com/html5video/oggoutputs/vlc.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/html5video/oggoutputs/vlc.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;and for comparison&lt;/p&gt;
 
 &lt;p&gt;h264 (6.22 MB)&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/html5video/oggoutputs/h264.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/html5video/oggoutputs/h264.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/html5video/oggoutputs/h264.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/html5video/oggoutputs/h264.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;In the end I would recommend ffmpeg2theora. If you're comfortable with the command line that is. Otherwise, everything except VLC would work for you. For the curious here are the commands I used.&lt;/p&gt;
@@ -1260,12 +1260,12 @@
  
  <entry>
    <title>Adding Internet Streaming To FFmpeg Outputs</title>
-   <link href="http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs"/>
+   <link href="http://oldstatic.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs"/>
    <updated>2010-04-17T00:00:00-06:00</updated>
-   <id>http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs</id>
+   <id>http://oldstatic.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Adding Internet Streaming To FFmpeg Outputs&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-04-17&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Just a quick post. After deciding that FFmpeg was my video compressor of choice, I ran into a small problem. The videos that are outputted don't begin playing immediately when embedded in a web page. This is a pretty big setback.&lt;/p&gt;
@@ -1284,9 +1284,9 @@
  
  <entry>
    <title>Video Compression Show Down</title>
-   <link href="http://www.travisberry.com/2010/03/video-compression-show-down"/>
+   <link href="http://oldstatic.travisberry.com/2010/03/video-compression-show-down"/>
    <updated>2010-03-11T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/03/video-compression-show-down</id>
+   <id>http://oldstatic.travisberry.com/2010/03/video-compression-show-down</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Video Compression Show Down&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/reckon/3262118500/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/03/videopixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1330,22 +1330,22 @@
 
 &lt;p&gt;Compressor: Size - 4.8 MB&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;Toast: Size - 4.7 MB&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;Regular QuickTime export: Size - 4.5 MB&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videocompressiontests/demoforweb32fromqt.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/videocompressiontests/demoforweb32fromqt.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb32fromqt.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/videocompressiontests/demoforweb32fromqt.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;FFmpeg: Size - 3.7 MB&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videocompressiontests/test11.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/videocompressiontests/test11.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/videocompressiontests/test11.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/videocompressiontests/test11.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;The clear and obvious winner is &lt;a href=&quot;http://ffmpeg.org/&quot;&gt;FFmpeg&lt;/a&gt;. Notice that is the smallest file size as well. The other compressors do decent jobs, don't get me wrong, but you need to double or triple the file size to reach the same quality.&lt;/p&gt;
@@ -1388,12 +1388,12 @@
  
  <entry>
    <title>On HTML5 Video</title>
-   <link href="http://www.travisberry.com/2010/02/on-html5-video"/>
+   <link href="http://oldstatic.travisberry.com/2010/02/on-html5-video"/>
    <updated>2010-02-25T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/02/on-html5-video</id>
+   <id>http://oldstatic.travisberry.com/2010/02/on-html5-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;On HTML5 Video&lt;/h3&gt;
-  &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-02-25&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Hey! Have you heard? &lt;a href=&quot;http://en.wikipedia.org/wiki/HTML5_video&quot;&gt;HTML5 video&lt;/a&gt; is going to revolutionize the way we use video on the web. No more dealing with Flash or Quicktime embeds. Video will now be as simple as adding an image. Ummm, no. It's not. It's not even close. That's not to say it's all bad, but boy howdy does it have a long way to go.&lt;/p&gt;
@@ -1426,7 +1426,7 @@
 
 &lt;p&gt;I get Mozilla's argument that they only support open standards, thus the use of Ogg in FireFox, but there is a giant elephant in the room that nobody is mentioning.&lt;/p&gt;
 
-&lt;p&gt;It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, &lt;a href=&quot;http://www.travisberry.com/copyright-and-the-internet/&quot;&gt;travisberry.com/copyright-and-the-internet/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, &lt;a href=&quot;http://oldstatic.travisberry.com/copyright-and-the-internet/&quot;&gt;travisberry.com/copyright-and-the-internet/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;View it in FireFox and then in Safari. Notice the WAY smoother video in the Safari version. Yeah, me too.&lt;/p&gt;
 
@@ -1477,9 +1477,9 @@
  
  <entry>
    <title>Create Simple A/B Tests In WordPress</title>
-   <link href="http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress"/>
+   <link href="http://oldstatic.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress"/>
    <updated>2010-02-19T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
+   <id>http://oldstatic.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create Simple A/B Tests In WordPress&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/133261764/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/02/abtest1.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1505,39 +1505,39 @@
 
 &lt;p&gt;Ok, with all your text ready to go we can now start setting up the experiment. Go to &lt;a href=&quot;http://www.google.com/websiteoptimizer&quot;&gt;www.google.com/websiteoptimizer&lt;/a&gt; and sign up for an account. I used my gmail account with all my other services attached to it to make things a little easier.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266539675736.jpg&quot; title=&quot;Website-Optimizer_1266539675736&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266539675736.jpg&quot; title=&quot;Website-Optimizer_1266539675736&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once your all signed up you'll end up at a page like this,&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536670466.jpg&quot; title=&quot;Website-Optimizer_1266536670466&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536670466.jpg&quot; title=&quot;Website-Optimizer_1266536670466&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here click the &lt;strong&gt;Create another experiment&lt;/strong&gt; link near the top left. Yours may say &lt;strong&gt;Create a new experiment&lt;/strong&gt; depending if you've ever done this before or not. As you can see in the pics, I've done this a few times already.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536889392.jpg&quot; title=&quot;Website-Optimizer_1266536889392&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536889392.jpg&quot; title=&quot;Website-Optimizer_1266536889392&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On the next page you can choose between an â€œ&lt;strong&gt;A/B Experiment - The simplest way to start testing fast&lt;/strong&gt;&quot; or a &lt;strong&gt;Multivariate Experiment - The most robust way to test lots of ideas&lt;/strong&gt;&quot;.&lt;/p&gt;
 
 &lt;p&gt;Choose &lt;strong&gt;Multivariate Experiment - The most robust way to test lots of ideas&lt;/strong&gt;&quot;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536999518.jpg&quot; title=&quot;Website-Optimizer_1266536999518&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536999518.jpg&quot; title=&quot;Website-Optimizer_1266536999518&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Check the box on the next page and click &lt;strong&gt;create&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266537040200.jpg&quot; title=&quot;Website-Optimizer_1266537040200&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266537040200.jpg&quot; title=&quot;Website-Optimizer_1266537040200&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we're getting somewhere. Here name your experiment in the first text box. Name it something easy to remember and understand. I'm calling mine &quot;contactbox&quot;&lt;/p&gt;
 
-&lt;p&gt;In the next box put the url of the page that the author box is going to be one. Mine is &quot;http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms/&quot;&lt;/p&gt;
+&lt;p&gt;In the next box put the url of the page that the author box is going to be one. Mine is &quot;http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms/&quot;&lt;/p&gt;
 
-&lt;p&gt;The box below is the url of the goal page. Mine is &quot;http://www.travisberry.com/contact/&quot;&lt;/p&gt;
+&lt;p&gt;The box below is the url of the goal page. Mine is &quot;http://oldstatic.travisberry.com/contact/&quot;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537264751.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266537264751&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537264751.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266537264751&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click &lt;strong&gt;You will install and validate the JavaScript tags&lt;/strong&gt; on the next page.&lt;/p&gt;
 
 &lt;p&gt;The next page will look like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537309676.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266537309676&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537309676.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266537309676&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can leave it alone for a second and instead open up a new tab. Download the &lt;strong&gt;Google Website Optimizer&lt;/strong&gt; plugin from &lt;a href=&quot;http://wordpress.org/extend/plugins/google-website-optimizer-for-wordpress/&quot;&gt;http://wordpress.org/extend/plugins/google-website-optimizer-for-wordpress/&lt;/a&gt;&lt;/p&gt;
 
@@ -1547,7 +1547,7 @@
 
 &lt;p&gt;Now, go and edit the post or page you listed as your starting point.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/BerryWordPress_1266537527627.jpg&quot; title=&quot;BerryWordPress_1266537527627&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/BerryWordPress_1266537527627.jpg&quot; title=&quot;BerryWordPress_1266537527627&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Notice there is now a new section added below the wysiwyg editor. Switch back to your google tab and copy the &lt;strong&gt;Control Script&lt;/strong&gt;. Move back to your WordPress admin area and paste the code in the &lt;strong&gt;Control Script&lt;/strong&gt; box. Repeat for the &lt;strong&gt;Tracking Script&lt;/strong&gt;.&lt;/p&gt;
 
@@ -1567,11 +1567,11 @@
 
 &lt;p&gt;Scroll to the bottom and click &lt;strong&gt;Validate Pages&lt;/strong&gt;. If everything went well you should get confirmation and be allowed to click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538416866.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266538416866&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538416866.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266538416866&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This page is where we get to start adding the variations. Click &lt;strong&gt;Add new variation&lt;/strong&gt; and enter in your second variation you wrote back in the beginning. Keep adding until you've added everything you wrote, then hit &lt;strong&gt;Save and Continue&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538830910.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266538830910&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538830910.jpg&quot; title=&quot;Website-Optimizer---contactbox2_1266538830910&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From here you can launch the experiment and watch as your traffic is split and analyzed. Results will take a while depending on your level of traffic, but expect to wait at least a day before you can see anything.&lt;/p&gt;
 
@@ -1584,9 +1584,9 @@
  
  <entry>
    <title>10 Easy Solutions For Contact Forms</title>
-   <link href="http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms"/>
+   <link href="http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms"/>
    <updated>2010-02-15T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
+   <id>http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;10 Easy Solutions For Contact Forms&lt;/h3&gt;
   &lt;a href=&quot;http://content.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1624,9 +1624,9 @@
  
  <entry>
    <title>Use WordPress' is_page() To Exclude Content</title>
-   <link href="http://www.travisberry.com/2010/01/use-wordpress%25e2%2580%2599-is_page-to-exclude-content"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content"/>
    <updated>2010-01-30T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/use-wordpress%e2%80%99-is_page-to-exclude-content</id>
+   <id>http://oldstatic.travisberry.com/2010/01/use-wordpress'-is_page-to-exclude-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Exclude Content&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1639,7 +1639,7 @@
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The first way is the same as &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;including custom content&lt;/a&gt;. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.&lt;/p&gt;
+&lt;p&gt;The first way is the same as &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;including custom content&lt;/a&gt;. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/1176902.js?file=example1.php&quot;&gt;&lt;/script&gt;
 
@@ -1683,19 +1683,19 @@
 &lt;script src=&quot;https://gist.github.com/1176902.js?file=example6.css&quot;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;&lt;strong&gt;Edit 2:&lt;/strong&gt; To use regular PHP and not WordPress to exclude content, see &lt;a href=&quot;http://www.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.
+&lt;p&gt;&lt;strong&gt;Edit 2:&lt;/strong&gt; To use regular PHP and not WordPress to exclude content, see &lt;a href=&quot;http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.
 &lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Don't Be Afraid To Self Promote</title>
-   <link href="http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/dont-be-afraid-to-self-promote"/>
    <updated>2010-01-17T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote</id>
+   <id>http://oldstatic.travisberry.com/2010/01/dont-be-afraid-to-self-promote</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Don't Be Afraid To Self Promote&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-17&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Self promoting your work can be a fine line to walk. Don't do it at all, and people won't take you seriously because you give the impression you don't take your work seriously. Do it too much and you run the risk of looking like a blowhard jerk. However, if you manage to find a good balance the rewards can be great.&lt;/p&gt;
@@ -1707,7 +1707,7 @@
 
 &lt;p&gt;The number of sites I promote my work on is still relatively small. I also try to really interact on the site and promote others work as well as my own. This helps avoid the blowhard jerk label you can receive by only promoting your work. Plus when others begin to notice you consistently promoting their work, they start to do it to your stuff.&lt;/p&gt;
 
-&lt;p&gt;Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;latest post&lt;/a&gt;. So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.&lt;/p&gt;
+&lt;p&gt;Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;latest post&lt;/a&gt;. So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.&lt;/p&gt;
 
 &lt;p&gt;If you've had positive, or negative, experience with self promotion let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -1716,9 +1716,9 @@
  
  <entry>
    <title>Say It Aint So! Time For A New Contact Form</title>
-   <link href="http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form"/>
    <updated>2010-01-12T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
+   <id>http://oldstatic.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Say It Aint So! Time For A New Contact Form&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/ngmmemuda/4171221241/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/01/despair.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1743,12 +1743,12 @@
  
  <entry>
    <title>Use WordPress' is_page() To Display Custom Content</title>
-   <link href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content</id>
+   <id>http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Display Custom Content&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-11&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Something that comes up on a regular basis is how to display certain content on different pages or if certain conditions are met. One way to accomplish this would be to create separate templates for each page. However, if you have a bunch of pages this can quickly become a pain. The other way to accomplish this would be to use WordPress' is_page() function to display content when you want.&lt;/p&gt;
@@ -1791,7 +1791,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
 
 &lt;p&gt;As you can see, you can target pretty specific events and conditions. So have fun experimenting with conditional tags and if you come up with something cool, let me know in the comments.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; To use regular PHP and not WordPress to include content, see &lt;a href=&quot;http://www.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; To use regular PHP and not WordPress to include content, see &lt;a href=&quot;http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
@@ -1799,12 +1799,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Gentleman WordPress Theme</title>
-   <link href="http://www.travisberry.com/2010/01/gentleman-wordpress-theme"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/gentleman-wordpress-theme"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/gentleman-wordpress-theme</id>
+   <id>http://oldstatic.travisberry.com/2010/01/gentleman-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Gentleman WordPress Theme&lt;/h3&gt;
-  &lt;a href=&quot;http://gentleman.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://gentleman.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-11&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Another new free theme. This WordPress theme is a simple and elegant theme, perfect for a simple text blog. &lt;a href=&quot;http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master&quot;&gt;Download A Copy&lt;/a&gt; or&lt;a href=&quot;http://gentleman.travisberry.com/&quot;&gt;Visit A Demo&lt;/a&gt;&lt;/p&gt;
@@ -1816,7 +1816,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
 
 &lt;p&gt;Gentleman Wordpress Theme by Travis Berry is licensed under a Creative Commons Attribution 3.0 United States License.&lt;/p&gt;
 
-&lt;p&gt;http://gentleman.travisberry.comThis theme is available for use for personal or commercial purposes. Please consider giving a link back to http://www.travisberry.com somewhere on your site.&lt;/p&gt;
+&lt;p&gt;http://gentleman.travisberry.comThis theme is available for use for personal or commercial purposes. Please consider giving a link back to http://oldstatic.travisberry.com somewhere on your site.&lt;/p&gt;
 
 &lt;p&gt;For questions email contact@travisberry.com&lt;/p&gt;
 
@@ -1827,12 +1827,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>A Hard Day At Work</title>
-   <link href="http://www.travisberry.com/2010/01/a-hard-day-at-work"/>
+   <link href="http://oldstatic.travisberry.com/2010/01/a-hard-day-at-work"/>
    <updated>2010-01-02T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/a-hard-day-at-work</id>
+   <id>http://oldstatic.travisberry.com/2010/01/a-hard-day-at-work</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;A Hard Day At Work&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-02&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Had a hard day of modeling at work the other day. Jordan at &lt;a href=&quot;http://www.creative303.com&quot;&gt;Creative 303&lt;/a&gt; is a great photographer. Really kind of lazy on the blog post front. Hope to pick back up soon.&lt;/p&gt;
@@ -1843,12 +1843,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Happy Holidays</title>
-   <link href="http://www.travisberry.com/2009/12/happy-holidays"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/happy-holidays"/>
    <updated>2009-12-25T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/happy-holidays</id>
+   <id>http://oldstatic.travisberry.com/2009/12/happy-holidays</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Happy Holidays&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/mr_t_in_dc/4159310486/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/christmas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/mr_t_in_dc/4159310486/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/christmas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-25&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I just wanted to put up a quick post wishing everyone a happy holiday. The last year has been great for me, and I look forward to next year being even better. To all the people in my life that have had a positive impact, I just want to say thank you.
@@ -1858,12 +1858,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>New Free WordPress Theme: Dark Wood</title>
-   <link href="http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood</id>
+   <id>http://oldstatic.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;New Free WordPress Theme: Dark Wood&lt;/h3&gt;
-  &lt;a href=&quot;http://darkwood.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://darkwood.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-20&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I have just released a new Wordpress theme. The theme is dark and modern, perfect for a portfolio site. Theme features an accordion style menu, and slider example galleries.&lt;/p&gt;
@@ -1884,12 +1884,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Improve YSlow Score With .htaccess</title>
-   <link href="http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/improve-yslow-score-with-htaccess"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess</id>
+   <id>http://oldstatic.travisberry.com/2009/12/improve-yslow-score-with-htaccess</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Improve YSlow Score With .htaccess&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/markjsebastian/3114597691/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/markjsebastian/3114597691/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-20&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;How fast your site loads is a huge factor in how many visits you get. One of the biggest names in performance testing is &lt;a href=&quot;http://developer.yahoo.com/yslow/&quot;&gt;YSlow&lt;/a&gt;. A high score on YSlow is a good indicator that your site is performing well. Many of the scores can be improved with a little bit of tweaking to your .htaccess file.&lt;/p&gt;
@@ -1926,9 +1926,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>This Makes Me Want To Quit Video</title>
-   <link href="http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/this-makes-me-want-to-quit-video"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
+   <id>http://oldstatic.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;This Makes Me Want To Quit Video&lt;/h3&gt;
   &lt;a href=&quot;http://content.travisberry.com/natalieVideoThunb.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/natalieVideoThunb.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1946,12 +1946,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Simplifying Video Aspect Ratios</title>
-   <link href="http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/simplifying-video-aspect-ratios"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios</id>
+   <id>http://oldstatic.travisberry.com/2009/12/simplifying-video-aspect-ratios</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Simplifying Video Aspect Ratios&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/janramroth/1298370325/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/janramroth/1298370325/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-16&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Video aspect ratio can be a confusing beast. Is it 4:3 or 16:9? Are the pixels square or some sort of rectangle? All of these things are important to consider when creating video files and assets for video. Make a mistake and all of a sudden that circle is more of an oval. So I'm here to help you simplify and make heads from tails in video aspect ratio.&lt;/p&gt;
@@ -1981,12 +1981,12 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Tooting My Own Horn</title>
-   <link href="http://www.travisberry.com/2009/12/tooting-my-own-horn"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/tooting-my-own-horn"/>
    <updated>2009-12-14T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/tooting-my-own-horn</id>
+   <id>http://oldstatic.travisberry.com/2009/12/tooting-my-own-horn</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Tooting My Own Horn&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-14&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;
@@ -1999,12 +1999,12 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Another Free WordPress Theme</title>
-   <link href="http://www.travisberry.com/2009/12/another-free-wordpress-theme"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/another-free-wordpress-theme"/>
    <updated>2009-12-12T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/another-free-wordpress-theme</id>
+   <id>http://oldstatic.travisberry.com/2009/12/another-free-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Another Free WordPress Theme&lt;/h3&gt;
-  &lt;a href=&quot;http://github.com/ninetwentyfour/DrifterEntertainment_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://github.com/ninetwentyfour/DrifterEntertainment_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-12&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I have recently completed a new WordPress theme for &lt;a href=&quot;http://www.drifterentertainment.com&quot; target=&quot;blank&quot;&gt;Drifter Entertainment&lt;/a&gt;.&lt;span id=&quot;more-381&quot;&gt;&lt;/span&gt; Again I have decided to give it away for free. The theme is simple allowing your content to stand out. The theme is built to Drifter Entertainments custom needs, so you will have to edit the source files.&lt;/p&gt;
@@ -2030,12 +2030,12 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Making display:none; Javascript Accessible</title>
-   <link href="http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/making-displaynone-javascript-accessible"/>
    <updated>2009-12-11T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible</id>
+   <id>http://oldstatic.travisberry.com/2009/12/making-displaynone-javascript-accessible</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Making display:none; Javascript Accessible&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/dmitry-baranovskiy/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/javascript.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/dmitry-baranovskiy/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/javascript.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-11&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;
@@ -2082,12 +2082,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Chrome and Thunderbird 3 Review</title>
-   <link href="http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/chrome-and-thunderbird-3-review"/>
    <updated>2009-12-09T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review</id>
+   <id>http://oldstatic.travisberry.com/2009/12/chrome-and-thunderbird-3-review</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Download My WordPress Theme&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-07&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;It was a big day the other day with both Chrome and Thunderbird 3 being released. Chrome has been out on  Windows for a year, but this is the first official release for Mac. Thunderbird has been around for a while but this is the first big release in years. I downloaded and gave both a test run.&lt;/p&gt;
@@ -2095,11 +2095,11 @@ When creating a collapsible navigation for a client, I came across the problem o
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/chrome.jpg&quot; title=&quot;chrome&quot; alt=&quot;chrome&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/chrome.jpg&quot; title=&quot;chrome&quot; alt=&quot;chrome&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Chrome&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;So much potential. The key with Chrome is to remember this is still a beta release and it shows. Most things work fine, but occasionally you will find errors. For instance, on &lt;a href=&quot;http://www.travisberry.com/video/&quot;&gt;my videos page&lt;/a&gt;, the video will play, but there is no controller shown. There is also no support for extensions yet, so no extra add ons for you.&lt;/p&gt;
+&lt;p&gt;So much potential. The key with Chrome is to remember this is still a beta release and it shows. Most things work fine, but occasionally you will find errors. For instance, on &lt;a href=&quot;http://oldstatic.travisberry.com/video/&quot;&gt;my videos page&lt;/a&gt;, the video will play, but there is no controller shown. There is also no support for extensions yet, so no extra add ons for you.&lt;/p&gt;
 
 &lt;p&gt;The best thing about Chrome is the speed. Pages are much faster than other browsers and the launch time is quick as well.&lt;/p&gt;
 
@@ -2107,7 +2107,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;All in all Chrome, at this point, is best served as a secondary browser. For now I'm sticking with the Fox, at least until Chrome matures a little bit more.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/thunderbird.jpg&quot; title=&quot;thunderbird&quot; alt=&quot;thunderbird&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderbird.jpg&quot; title=&quot;thunderbird&quot; alt=&quot;thunderbird&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.mozillamessaging.com/en-US/thunderbird/&quot;&gt;Thunderbird 3&lt;/a&gt;&lt;/p&gt;
 
@@ -2128,12 +2128,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Download My WordPress Theme</title>
-   <link href="http://www.travisberry.com/2009/12/download-my-wordpress-theme"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/download-my-wordpress-theme"/>
    <updated>2009-12-07T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/download-my-wordpress-theme</id>
+   <id>http://oldstatic.travisberry.com/2009/12/download-my-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Download My WordPress Theme&lt;/h3&gt;
-  &lt;a href=&quot;http://github.com/ninetwentyfour/TravisBerry_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://github.com/ninetwentyfour/TravisBerry_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-07&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;This was my old wordpress theme. You can get my current site at &lt;a href=&quot;https://github.com/ninetwentyfour/travisberry_com_static&quot;&gt;https://github.com/ninetwentyfour/travisberry_com_static&lt;/a&gt;&lt;/p&gt;
@@ -2158,12 +2158,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>The Worst Is Over</title>
-   <link href="http://www.travisberry.com/2009/12/the-worst-is-over"/>
+   <link href="http://oldstatic.travisberry.com/2009/12/the-worst-is-over"/>
    <updated>2009-12-05T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/12/the-worst-is-over</id>
+   <id>http://oldstatic.travisberry.com/2009/12/the-worst-is-over</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;The Worst Is Over&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-05&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Holy cow! The hardest quarter of school is over. So for the last 6 months I have had to create 5 commercials, a 5 minute fiction piece, and a 5 min non-fiction piece.&lt;/p&gt;
@@ -2180,12 +2180,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Sound FX Tip - Muffled Sounds</title>
-   <link href="http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/sound-fx-tip-muffled-sounds"/>
    <updated>2009-11-29T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds</id>
+   <id>http://oldstatic.travisberry.com/2009/11/sound-fx-tip-muffled-sounds</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Sound FX Tip - Muffled Sounds&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/mourner/3306939463/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/mourner/3306939463/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-29&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;When I was working on a video project this week I came across the need to have my sound effects sound like they are coming through a cell phone and from inside a box.&lt;/p&gt;
@@ -2197,11 +2197,11 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;To make something sound like it is coming out of a crappy cell phone speaker put a high pass filter on it. You may have to tweak the settings a little bit to get the effect you want, but that is it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/highpass.jpg&quot; title=&quot;highpass&quot; alt=&quot;highpass&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/highpass.jpg&quot; title=&quot;highpass&quot; alt=&quot;highpass&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To solve the other problem of needing a sound to sound like it's coming from inside a box, use a low pass filter. Again, you may need to tweak the settings to get your desired results.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/lowpass.jpg&quot; title=&quot;lowpass&quot; alt=&quot;lowpass&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/lowpass.jpg&quot; title=&quot;lowpass&quot; alt=&quot;lowpass&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I love when solutions to problems are as simple as this. If you know of any other quick audio tips, let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -2210,12 +2210,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Awesome News Mashup Sites</title>
-   <link href="http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/5-awesome-news-mashup-sites"/>
    <updated>2009-11-25T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites</id>
+   <id>http://oldstatic.travisberry.com/2009/11/5-awesome-news-mashup-sites</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Awesome News Mashup Sites&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/shironekoeuro/4040697914/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/shironekoeuro/4040697914/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-25&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;There are so many great news sites out there. From traditional news, to bloggers, to social submission sites, following them all can be overwhelming. Luckily there are mashups that bring all these wonderful sites to one place. This makes keeping track of the latest and greatest much easier.&lt;/p&gt;
@@ -2243,12 +2243,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Resources To Learn After Effects Expressions</title>
-   <link href="http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions"/>
    <updated>2009-11-23T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions</id>
+   <id>http://oldstatic.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Resources To Learn After Effects Expressions&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-23&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;After Effects is an incredibly powerful motion graphics editor. One of the more powerful things inside of After Effects is expressions. Expressions give you much greater control over your animations and can automate things that are not possible with key frames and filters alone.&lt;/p&gt;
@@ -2277,12 +2277,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Running A Git Repo on DreamHost</title>
-   <link href="http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/running-a-git-repo-on-dreamhost"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost</id>
+   <id>http://oldstatic.travisberry.com/2009/11/running-a-git-repo-on-dreamhost</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Running A Git Repo on DreamHost&lt;/h3&gt;
-  &lt;a href=&quot;http://git-scm.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://git-scm.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-20&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; is freaking awesome. I'm not sure how I lived without it. For those who don't know, Git is a version control system.&lt;/p&gt;
@@ -2368,12 +2368,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Handy List of Terminal Commands</title>
-   <link href="http://www.travisberry.com/2009/11/handy-list-of-terminal-commands"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/handy-list-of-terminal-commands"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/handy-list-of-terminal-commands</id>
+   <id>http://oldstatic.travisberry.com/2009/11/handy-list-of-terminal-commands</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Handy List of Terminal Commands&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-20&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;This list is more for my personal reference than anything but you may find some useful information here.&lt;/p&gt;
@@ -2444,12 +2444,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Resources for Web Type</title>
-   <link href="http://www.travisberry.com/2009/11/5-resources-for-web-type"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/5-resources-for-web-type"/>
    <updated>2009-11-17T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/5-resources-for-web-type</id>
+   <id>http://oldstatic.travisberry.com/2009/11/5-resources-for-web-type</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Resources for Web Type&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-17&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Typography has come a long way in recent years. From everything being done in Arial, to using images to fake different fonts, the web has grown up. People now expect to be able to style their websites like they could style a photoshop mock up. These resources will help you accomplish that goal.&lt;!--more--&gt;&lt;/p&gt;
@@ -2473,12 +2473,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Set Up a Domain, Host, and Email Quickly</title>
-   <link href="http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly"/>
    <updated>2009-11-16T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly</id>
+   <id>http://oldstatic.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Set Up a Domain, Host, and Email Quickly&lt;/h3&gt;
-  &lt;a href=&quot;http://godaddy.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://godaddy.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-16&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I've had a few people ask me to do this in the last couple days so I thought I would do a write up to help save some time.&lt;/p&gt;
@@ -2490,11 +2490,11 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;It is really important that you keep track of your account login information. This really applies to all of the login info you're about to get.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/dreamhostscreencap-640x461.jpg&quot; title=&quot;dreamhostscreencap&quot; alt=&quot;dreamhostscreencap&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/dreamhostscreencap-640x461.jpg&quot; title=&quot;dreamhostscreencap&quot; alt=&quot;dreamhostscreencap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So after you have registered your domain name it is time to get a host. I use &lt;a href=&quot;http://www.dreamhost.com&quot;&gt;DreamHost&lt;/a&gt; and they are about as good and cheap as you're going to find. The key with this is, you only have to buy one hosting plan, you can then run as many domains off it as you want. So sign up for a DreamHost account and get it all setup by following their instructions.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/adddomaincap-640x211.jpg&quot; title=&quot;adddomaincap&quot; alt=&quot;adddomaincap&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/adddomaincap-640x211.jpg&quot; title=&quot;adddomaincap&quot; alt=&quot;adddomaincap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On the left side of your screen will be a &quot;Domains&quot; button. Click it and then &quot;add a domain&quot;. Enter in the domain you just registered with godaddy. Scroll down and make sure you check, &quot;Host email with google&quot;. This will allow you to have gmail run your email. Much better than other options.&lt;/p&gt;
 
@@ -2504,13 +2504,13 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;Now check the email account you used to setup the DreamHost. They should send you an email containing the ftp login information. Ftp into your account using your ftp program of choice. I use cyberduck, you can download it &lt;a href=&quot;http://cyberduck.ch/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/googleappscreencap-640x273.jpg&quot; title=&quot;googleappscreencap&quot; alt=&quot;googleappscreencap&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/googleappscreencap-640x273.jpg&quot; title=&quot;googleappscreencap&quot; alt=&quot;googleappscreencap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you can login to your account through ftp go over to &lt;a href=&quot;http://www.google.com/a&quot;&gt;google.com/a&lt;/a&gt; and sign up for a standard account. Enter in your information and when they ask how you would like to confirm owner ship choose upload an html file. Copy the text they give you and save it as the file name they specify. Take this file and upload it to your server through the ftp program.&lt;/p&gt;
 
 &lt;p&gt;Check to see if you can view the file on your site and then click through to continue the google apps setup. Once you have reached the dashboard click activate email. You will now be able to setup as many email accounts you want. (up to 50) This will allow you to have contact@yourdomainname.com To enable imap support click on your inbox, click on settings, imap/pop3 forwarding -&gt; scroll down and click enable imap.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/mailscreencap.jpg&quot; title=&quot;mailscreencap&quot; alt=&quot;mailscreencap&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/mailscreencap.jpg&quot; title=&quot;mailscreencap&quot; alt=&quot;mailscreencap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you use mail in OSx you can add the account by clicking add account -&gt; enter in your name and new email address -&gt; enter imap.gmail.com as your incoming server -&gt; use authentication with your full email address as your name and the password for the account -&gt; enter smtp.gmail.com as the outgoing server again using authentication. Take account live and you should be all setup.&lt;/p&gt;
 
@@ -2521,12 +2521,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>YouTube Gets 1080p</title>
-   <link href="http://www.travisberry.com/2009/11/youtube-gets-1080p"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/youtube-gets-1080p"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/youtube-gets-1080p</id>
+   <id>http://oldstatic.travisberry.com/2009/11/youtube-gets-1080p</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;YouTube Gets 1080p&lt;/h3&gt;
-  &lt;a href=&quot;http://youtube.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://youtube.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-15&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://youtube.com&quot;&gt;YouTube&lt;/a&gt; is the worlds largest online video site. They have been slow to the game when it comes to HD video but they seem to be trying to take the lead as of late. &lt;!--more--&gt;&lt;/p&gt;
@@ -2543,7 +2543,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;This is a screencap of the compressed mess that is one of my early uploads.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/compressedvideoyoutube-640x385.jpg&quot; title=&quot;compressedvideoyoutube&quot; alt=&quot;compressedvideoyoutube&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/compressedvideoyoutube-640x385.jpg&quot; title=&quot;compressedvideoyoutube&quot; alt=&quot;compressedvideoyoutube&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Have you uploaded a 1080p video? Post a link to it in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -2552,12 +2552,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Great CMYK Art</title>
-   <link href="http://www.travisberry.com/2009/11/great-cmyk-art"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/great-cmyk-art"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/great-cmyk-art</id>
+   <id>http://oldstatic.travisberry.com/2009/11/great-cmyk-art</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Great CMYK Art&lt;/h3&gt;
-  &lt;a href=&quot;http://wow-dg.deviantart.com/art/cmyk-back-to-basics-42258028&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://wow-dg.deviantart.com/art/cmyk-back-to-basics-42258028&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-15&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;There is a great post over at &lt;a href=&quot;http://www.printradar.com/2009/11/14/21-awesome-piece-of-digital-cmyk-art/&quot;&gt;PrintRadar&lt;/a&gt; highlighting some cool designs using CMYK as their color palate. There are some really stunning examples listed.&lt;!--more--&gt;&lt;/p&gt;
@@ -2569,11 +2569,11 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;&lt;a href=&quot;http://cloning.deviantart.com/art/Fashion-victim-52491862&quot;&gt;Fashion victim by cloning&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://cloning.deviantart.com/art/Fashion-victim-52491862&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/cmyk_fashion_victim_by_cloning.jpg&quot; title=&quot;cmyk_fashion_victim_by_cloning&quot; alt=&quot;cmyk_fashion_victim_by_cloning&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cloning.deviantart.com/art/Fashion-victim-52491862&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyk_fashion_victim_by_cloning.jpg&quot; title=&quot;cmyk_fashion_victim_by_cloning&quot; alt=&quot;cmyk_fashion_victim_by_cloning&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://rajdesigns.deviantart.com/art/CMYK-Explosion-83455797&quot;&gt;CMYK Explosion by rajdesigns&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://rajdesigns.deviantart.com/art/CMYK-Explosion-83455797&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/11/cmyk_explosion_by_rajdesigns.jpg&quot; title=&quot;cmyk_explosion_by_rajdesigns&quot; alt=&quot;cmyk_explosion_by_rajdesigns&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://rajdesigns.deviantart.com/art/CMYK-Explosion-83455797&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyk_explosion_by_rajdesigns.jpg&quot; title=&quot;cmyk_explosion_by_rajdesigns&quot; alt=&quot;cmyk_explosion_by_rajdesigns&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Head over to &lt;a href=&quot;http://www.printradar.com/2009/11/14/21-awesome-piece-of-digital-cmyk-art/&quot;&gt;PrintRadar&lt;/a&gt; and check out the rest.Any other great CMYK art out there? Let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -2582,12 +2582,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Handy Plugins for 5 Kick-Ass Free Apps</title>
-   <link href="http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps</id>
+   <id>http://oldstatic.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Handy Plugins for 5 Kick-Ass Free Apps&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/villeneuve53/2191206080/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/plugins.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/villeneuve53/2191206080/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/plugins.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-15&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I'm a fan of open free technology. Not only is it useful but it's free. For beginning artists and designers, that's key. So here is a list of kick-ass free applications and some plugins that help extend their functionality.&lt;/p&gt;
@@ -2664,12 +2664,12 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Setting Up Quicktime Streaming</title>
-   <link href="http://www.travisberry.com/2009/11/setting-up-quicktime-streaming"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/setting-up-quicktime-streaming"/>
    <updated>2009-11-14T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/setting-up-quicktime-streaming</id>
+   <id>http://oldstatic.travisberry.com/2009/11/setting-up-quicktime-streaming</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Setting Up Quicktime Streaming&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/mwichary/2319091169/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/mwichary/2319091169/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-11-14&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I usually use a third-party service such as &lt;a href=&quot;http://vimeo.com&quot;&gt;vimeo&lt;/a&gt; to host and stream my video. However, after moving to my new awesome host, &lt;a href=&quot;http://www.dreamhost.com/&quot;&gt;DreamHost&lt;/a&gt;, I discovered that they had an option to enable quicktime streaming. I poked around the support wiki and decided to test it out. &lt;!--more--&gt;&lt;/p&gt;
@@ -2687,7 +2687,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;Here is my first test at an embeded .mov file streamed off a quicktime server.&lt;/p&gt;
 
-&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videos/Comp51_3.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;false&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://www.travisberry.com/videos/Comp51_3.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot; /&gt;&lt;/object&gt;
+&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;&lt;param name=&quot;src&quot; value=&quot;http://oldstatic.travisberry.com/videos/Comp51_3.mov&quot; /&gt;&lt;param name=&quot;autoplay&quot; value=&quot;false&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;&lt;embed src=&quot;http://oldstatic.travisberry.com/videos/Comp51_3.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot; /&gt;&lt;/object&gt;
 
 
 &lt;p&gt;You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -&lt;/p&gt;
@@ -2706,14 +2706,15 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Creating Navigation Highlights</title>
-   <link href="http://www.travisberry.com/2009/11/creating-navigation-highlights"/>
+   <link href="http://oldstatic.travisberry.com/2009/11/creating-navigation-highlights"/>
    <updated>2009-11-13T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2009/11/creating-navigation-highlights</id>
+   <id>http://oldstatic.travisberry.com/2009/11/creating-navigation-highlights</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Creating Navigation Highlights&lt;/h3&gt;
-  &lt;a href=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://www.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: 2009-11-13&lt;/h6&gt;
-When creating this site I decided I wanted to have the navigation bar have a different color highlight the current page. I dived in thinking it would be a simple problem. Turns out I was wrong.&lt;!--more--&gt;&lt;/p&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: 2009-11-13&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;When creating this site I decided I wanted to have the navigation bar have a different color highlight the current page. I dived in thinking it would be a simple problem. Turns out I was wrong.&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;It's not impossible but it's not easy. As you can see above, I eventually got it to work. &lt;a href=&quot;http://www.vanseodesign.com/wordpress/hightlight-current-page-wordpress/&quot;&gt;This article&lt;/a&gt; was of immense help. Just follow along and hope for the best.&lt;/p&gt;
 

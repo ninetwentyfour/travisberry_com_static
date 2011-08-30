@@ -2,18 +2,18 @@
 layout: post
 title: Create GitHub Gist With Ruby
 wordpress_id: 1381
-wordpress_url: http://www.travisberry.com/?p=1381
+wordpress_url: http://oldstatic.travisberry.com/?p=1381
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg"
 summary: "One of my favorite github features is gists. Gists are a simple code pasting and sharing service."
 ---
 <article class="post clearfix">
   <h3>Create GitHub Gist With Ruby</h3>
-  <a href="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: May 30, 2012</h6>
 
 If you didn't know already, [GitHub](https://github.com/) is freaking awesome. One of my favorite features is gists. Gists are a simple code pasting and sharing service. Also perfect for displaying code in blog posts.

@@ -2,21 +2,21 @@
 layout: post
 title: Fast CakePHP Search With IndexTank
 wordpress_id: 1317
-wordpress_url: http://www.travisberry.com/?p=1317
+wordpress_url: http://oldstatic.travisberry.com/?p=1317
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg"
 summary: "This time I’m going to show you a much better method, mainly by offloading the work to people who really know how to do search."
 ---
 <article class="post clearfix">
   <h3>Fast CakePHP Search With IndexTank</h3>
-  <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: February 16, 2012</h6>
 
-I've previously posted my [ghetto CakePHP search function](http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.
+I've previously posted my [ghetto CakePHP search function](http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.
 
 You simply hand them the documents you want indexed and the give you back the ability to query against it.
 

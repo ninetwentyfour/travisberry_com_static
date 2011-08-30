@@ -2,7 +2,7 @@
 layout: post
 title: Using CakePHP Schema
 wordpress_id: 1029
-wordpress_url: http://www.travisberry.com/?p=1029
+wordpress_url: http://oldstatic.travisberry.com/?p=1029
 categories: 
 - title: Uncategorized
   slug: uncategorized

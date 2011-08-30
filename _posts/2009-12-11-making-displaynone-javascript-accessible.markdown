@@ -2,18 +2,18 @@
 layout: post
 title: Making display:none; Javascript Accessible
 wordpress_id: 365
-wordpress_url: http://www.travisberry.com/?p=365
+wordpress_url: http://oldstatic.travisberry.com/?p=365
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/12/javascript.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/javascript.jpg"
 summary: "When creating a collapsible navigation for a client, I came across the problem of having my navigation remaining hidden if someone has javascript disabled. Needless to say, this was a big problem"
 ---
 <article class="post clearfix">
   <h3>Making display:none; Javascript Accessible</h3>
-  <a href="http://www.flickr.com/photos/dmitry-baranovskiy/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/javascript.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/dmitry-baranovskiy/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/javascript.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-11</h6>
 <p>
 When creating a collapsible navigation for a client, I came across the problem of having my navigation remaining hidden if someone has javascript disabled. Needless to say, this was a big problem. There is no secondary navigation on the site, so without it, there is NO navigation.<span id="more-365"></span></p>

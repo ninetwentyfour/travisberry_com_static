@@ -2,18 +2,18 @@
 layout: post
 title: Running A Git Repo on DreamHost
 wordpress_id: 179
-wordpress_url: http://www.travisberry.com/?p=179
+wordpress_url: http://oldstatic.travisberry.com/?p=179
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg"
 summary: "Git is freaking awesome. I’m not sure how I lived without it. For those who don’t know, Git is a version control system."
 ---
 <article class="post clearfix">
   <h3>Running A Git Repo on DreamHost</h3>
-  <a href="http://git-scm.com/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://git-scm.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-20</h6>
 
 [Git](http://git-scm.com/) is freaking awesome. I'm not sure how I lived without it. For those who don't know, Git is a version control system.

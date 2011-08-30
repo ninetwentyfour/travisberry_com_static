@@ -2,7 +2,7 @@
 layout: post
 title: Create Simple A/B Tests In WordPress
 wordpress_id: 679
-wordpress_url: http://www.travisberry.com/?p=679
+wordpress_url: http://oldstatic.travisberry.com/?p=679
 categories: 
 - title: Uncategorized
   slug: uncategorized
@@ -32,39 +32,39 @@ Now write several versions of your author text, with wording that encourages peo
 
 Ok, with all your text ready to go we can now start setting up the experiment. Go to [www.google.com/websiteoptimizer](http://www.google.com/websiteoptimizer) and sign up for an account. I used my gmail account with all my other services attached to it to make things a little easier. 
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266539675736.jpg "Website-Optimizer_1266539675736")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266539675736.jpg "Website-Optimizer_1266539675736")
 
 Once your all signed up you'll end up at a page like this,
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536670466.jpg "Website-Optimizer_1266536670466")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536670466.jpg "Website-Optimizer_1266536670466")
 
 Here click the **Create another experiment** link near the top left. Yours may say **Create a new experiment** depending if you've ever done this before or not. As you can see in the pics, I've done this a few times already. 
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536889392.jpg "Website-Optimizer_1266536889392")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536889392.jpg "Website-Optimizer_1266536889392")
 
 On the next page you can choose between an â€œ**A/B Experiment - The simplest way to start testing fast**" or a **Multivariate Experiment - The most robust way to test lots of ideas**".
 
 Choose **Multivariate Experiment - The most robust way to test lots of ideas**".
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536999518.jpg "Website-Optimizer_1266536999518")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266536999518.jpg "Website-Optimizer_1266536999518")
 
 Check the box on the next page and click **create**
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266537040200.jpg "Website-Optimizer_1266537040200")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer_1266537040200.jpg "Website-Optimizer_1266537040200")
 
 Now we're getting somewhere. Here name your experiment in the first text box. Name it something easy to remember and understand. I'm calling mine "contactbox" 
 
-In the next box put the url of the page that the author box is going to be one. Mine is "http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms/"
+In the next box put the url of the page that the author box is going to be one. Mine is "http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms/"
 
-The box below is the url of the goal page. Mine is "http://www.travisberry.com/contact/"
+The box below is the url of the goal page. Mine is "http://oldstatic.travisberry.com/contact/"
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537264751.jpg "Website-Optimizer---contactbox2_1266537264751")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537264751.jpg "Website-Optimizer---contactbox2_1266537264751")
 
 Click **You will install and validate the JavaScript tags** on the next page.
 
 The next page will look like this
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537309676.jpg "Website-Optimizer---contactbox2_1266537309676")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266537309676.jpg "Website-Optimizer---contactbox2_1266537309676")
 
 You can leave it alone for a second and instead open up a new tab. Download the **Google Website Optimizer** plugin from [http://wordpress.org/extend/plugins/google-website-optimizer-for-wordpress/](http://wordpress.org/extend/plugins/google-website-optimizer-for-wordpress/)
 
@@ -74,7 +74,7 @@ Hang in there, we're getting closer.
 
 Now, go and edit the post or page you listed as your starting point. 
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/BerryWordPress_1266537527627.jpg "BerryWordPress_1266537527627")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/BerryWordPress_1266537527627.jpg "BerryWordPress_1266537527627")
 
 Notice there is now a new section added below the wysiwyg editor. Switch back to your google tab and copy the **Control Script**. Move back to your WordPress admin area and paste the code in the **Control Script** box. Repeat for the **Tracking Script**. 
 
@@ -92,11 +92,11 @@ Now change the "**Insert your section name here**" to something easy to deal wit
 
 Scroll to the bottom and click **Validate Pages**. If everything went well you should get confirmation and be allowed to click **Continue**.
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538416866.jpg "Website-Optimizer---contactbox2_1266538416866")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538416866.jpg "Website-Optimizer---contactbox2_1266538416866")
 
 This page is where we get to start adding the variations. Click **Add new variation** and enter in your second variation you wrote back in the beginning. Keep adding until you've added everything you wrote, then hit **Save and Continue**
 
-![](http://www.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538830910.jpg "Website-Optimizer---contactbox2_1266538830910")
+![](http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Website-Optimizer-contactbox2_1266538830910.jpg "Website-Optimizer---contactbox2_1266538830910")
 
 From here you can launch the experiment and watch as your traffic is split and analyzed. Results will take a while depending on your level of traffic, but expect to wait at least a day before you can see anything.
 

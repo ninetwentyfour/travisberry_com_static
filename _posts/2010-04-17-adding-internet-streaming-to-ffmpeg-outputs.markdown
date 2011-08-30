@@ -2,18 +2,18 @@
 layout: post
 title: Adding Internet Streaming To FFmpeg Outputs
 wordpress_id: 908
-wordpress_url: http://www.travisberry.com/?p=908
+wordpress_url: http://oldstatic.travisberry.com/?p=908
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg"
 summary: "Just a quick post. After deciding that FFmpeg was my video compressor of choice, I ran into a small problem. The videos that are outputted don't begin playing immediately when embedded in a web page. This is a pretty big setback."
 ---
 <article class="post clearfix">
   <h3>Adding Internet Streaming To FFmpeg Outputs</h3>
-  <a href="http://www.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-04-17</h6>
 
 Just a quick post. After deciding that FFmpeg was my video compressor of choice, I ran into a small problem. The videos that are outputted don't begin playing immediately when embedded in a web page. This is a pretty big setback.

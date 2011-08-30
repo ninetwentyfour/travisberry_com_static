@@ -2,18 +2,18 @@
 layout: post
 title: Download My WordPress Theme
 wordpress_id: 316
-wordpress_url: http://www.travisberry.com/?p=316
+wordpress_url: http://oldstatic.travisberry.com/?p=316
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg"
 summary: "If you're looking for a simple WordPress theme to use as a framework to modify, why not download mine?"
 ---
 <article class="post clearfix">
   <h3>Download My WordPress Theme</h3>
-  <a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://github.com/ninetwentyfour/TravisBerry_com/archives/master" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-07</h6>
 
 This was my old wordpress theme. You can get my current site at [https://github.com/ninetwentyfour/travisberry_com_static](https://github.com/ninetwentyfour/travisberry_com_static)

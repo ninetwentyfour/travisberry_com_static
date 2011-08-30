@@ -2,7 +2,7 @@
 layout: post
 title: Upload A Video To Ooyala With PHP
 wordpress_id: 1057
-wordpress_url: http://www.travisberry.com/?p=1057
+wordpress_url: http://oldstatic.travisberry.com/?p=1057
 categories: 
 - title: Uncategorized
   slug: uncategorized

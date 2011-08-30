@@ -2,18 +2,18 @@
 layout: post
 title: Handy List of Terminal Commands
 wordpress_id: 194
-wordpress_url: http://www.travisberry.com/?p=194
+wordpress_url: http://oldstatic.travisberry.com/?p=194
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg"
 summary: "This list is more for my personal reference than anything but you may find some useful information here."
 ---
 <article class="post clearfix">
   <h3>Handy List of Terminal Commands</h3>
-  <a href="http://www.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-20</h6>
 
 This list is more for my personal reference than anything but you may find some useful information here.

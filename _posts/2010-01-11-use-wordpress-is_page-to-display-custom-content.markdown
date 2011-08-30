@@ -2,18 +2,18 @@
 layout: post
 title: Use WordPress' is_page() To Display Custom Content
 wordpress_id: 527
-wordpress_url: http://www.travisberry.com/?p=527
+wordpress_url: http://oldstatic.travisberry.com/?p=527
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg"
 summary: "Something that comes up on a regular basis is how to display certain content on different pages or if certain conditions are met."
 ---
 <article class="post clearfix">
   <h3>Use WordPress' is_page() To Display Custom Content</h3>
-  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-01-11</h6>
 
 Something that comes up on a regular basis is how to display certain content on different pages or if certain conditions are met. One way to accomplish this would be to create separate templates for each page. However, if you have a bunch of pages this can quickly become a pain. The other way to accomplish this would be to use WordPress' is_page() function to display content when you want.
@@ -50,6 +50,6 @@ WordPress provides a slew of other tags as well including
 
 As you can see, you can target pretty specific events and conditions. So have fun experimenting with conditional tags and if you come up with something cool, let me know in the comments.
 
-**Edit:** To use regular PHP and not WordPress to include content, see [my post here](http://www.travisberry.com/2010/10/if-is_page-with-regular-php/).
+**Edit:** To use regular PHP and not WordPress to include content, see [my post here](http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/).
 
 </article>

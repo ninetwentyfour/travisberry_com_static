@@ -5,7 +5,7 @@ TODO
 
 - add expires headers to static files on s3 also add content types
 
-- move all old assets from server to s3
+- <del>move all old assets from server to s3</del>
 
 - minify all files
 
@@ -19,7 +19,7 @@ TODO
 
 - setup s3 bucket to go to cloudfront
 
-- fix all image urls to new bucket
+- <del>fix all image urls to new bucket</del>
 
 - remove nofollow and robots tag from layout
 
@@ -33,4 +33,4 @@ TODO
 
 - possibly add search bar into top bar so its always visible / add a top flag that comes out once you scroll so far
 
-- fix style bug no work images with green href
+- <del>fix style bug no work images with green href</del>

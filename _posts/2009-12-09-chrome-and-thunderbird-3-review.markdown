@@ -2,28 +2,28 @@
 layout: post
 title: Chrome and Thunderbird 3 Review
 wordpress_id: 353
-wordpress_url: http://www.travisberry.com/?p=353
+wordpress_url: http://oldstatic.travisberry.com/?p=353
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg"
 summary: "It was a big day the other day with both Chrome and Thunderbird 3 being released. I downloaded and gave both a test run."
 ---
 <article class="post clearfix">
   <h3>Download My WordPress Theme</h3>
-  <a href="http://www.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-07</h6>
 
 It was a big day the other day with both Chrome and Thunderbird 3 being released. Chrome has been out on  Windows for a year, but this is the first official release for Mac. Thunderbird has been around for a while but this is the first big release in years. I downloaded and gave both a test run.
 <div class="clearfix"></div>
 
-![chrome](http://www.travisberry.com/wp-content/uploads/2009/12/chrome.jpg "chrome")
+![chrome](http://oldstatic.travisberry.com/wp-content/uploads/2009/12/chrome.jpg "chrome")
 
 [Chrome](http://www.google.com/chrome)
 
-So much potential. The key with Chrome is to remember this is still a beta release and it shows. Most things work fine, but occasionally you will find errors. For instance, on [my videos page](http://www.travisberry.com/video/), the video will play, but there is no controller shown. There is also no support for extensions yet, so no extra add ons for you. 
+So much potential. The key with Chrome is to remember this is still a beta release and it shows. Most things work fine, but occasionally you will find errors. For instance, on [my videos page](http://oldstatic.travisberry.com/video/), the video will play, but there is no controller shown. There is also no support for extensions yet, so no extra add ons for you. 
 
 The best thing about Chrome is the speed. Pages are much faster than other browsers and the launch time is quick as well. 
 
@@ -31,7 +31,7 @@ Anyone who does web design knows about the greatness of firebug, and Chrome trie
 
 All in all Chrome, at this point, is best served as a secondary browser. For now I'm sticking with the Fox, at least until Chrome matures a little bit more.
 
-![thunderbird](http://www.travisberry.com/wp-content/uploads/2009/12/thunderbird.jpg "thunderbird")
+![thunderbird](http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderbird.jpg "thunderbird")
 
 [Thunderbird 3](http://www.mozillamessaging.com/en-US/thunderbird/)
 

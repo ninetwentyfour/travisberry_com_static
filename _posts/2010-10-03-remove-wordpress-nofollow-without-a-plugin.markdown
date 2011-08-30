@@ -2,7 +2,7 @@
 layout: post
 title: Remove WordPress' NoFollow Without A Plugin
 wordpress_id: 1214
-wordpress_url: http://www.travisberry.com/?p=1214
+wordpress_url: http://oldstatic.travisberry.com/?p=1214
 categories: 
 - title: Uncategorized
   slug: uncategorized

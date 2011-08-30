@@ -2,7 +2,7 @@
 layout: post
 title: This Makes Me Want To Quit Video
 wordpress_id: 436
-wordpress_url: http://www.travisberry.com/?p=436
+wordpress_url: http://oldstatic.travisberry.com/?p=436
 categories: 
 - title: Uncategorized
   slug: uncategorized

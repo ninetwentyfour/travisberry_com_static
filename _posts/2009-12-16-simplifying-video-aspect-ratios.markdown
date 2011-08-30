@@ -2,18 +2,18 @@
 layout: post
 title: Simplifying Video Aspect Ratios
 wordpress_id: 415
-wordpress_url: http://www.travisberry.com/?p=415
+wordpress_url: http://oldstatic.travisberry.com/?p=415
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg"
 summary: "Video aspect ratio can be a confusing beast. Is it 4:3 or 16:9? Are the pixels square or some sort of rectangle? All of these things are important to consider when creating video files and assets for video."
 ---
 <article class="post clearfix">
   <h3>Simplifying Video Aspect Ratios</h3>
-  <a href="http://www.flickr.com/photos/janramroth/1298370325/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/janramroth/1298370325/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-16</h6>
 
 Video aspect ratio can be a confusing beast. Is it 4:3 or 16:9? Are the pixels square or some sort of rectangle? All of these things are important to consider when creating video files and assets for video. Make a mistake and all of a sudden that circle is more of an oval. So I'm here to help you simplify and make heads from tails in video aspect ratio.

@@ -2,7 +2,7 @@
 layout: post
 title: Use PHP To Zip Folders For Download
 wordpress_id: 1144
-wordpress_url: http://www.travisberry.com/?p=1144
+wordpress_url: http://oldstatic.travisberry.com/?p=1144
 categories: 
 - title: Uncategorized
   slug: uncategorized

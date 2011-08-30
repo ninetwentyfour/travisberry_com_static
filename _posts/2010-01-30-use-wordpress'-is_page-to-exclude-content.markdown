@@ -2,7 +2,7 @@
 layout: post
 title: "Use WordPress' is_page() To Exclude Content"
 wordpress_id: 582
-wordpress_url: http://www.travisberry.com/?p=582
+wordpress_url: http://oldstatic.travisberry.com/?p=582
 categories: 
 - title: Uncategorized
   slug: uncategorized
@@ -20,7 +20,7 @@ After my last post involving including custom content, I've received questions a
 
 As with everything there are several ways to accomplish this. I'll cover some of the easiest.
 <div class="clearfix"></div>
-The first way is the same as [including custom content](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.
+The first way is the same as [including custom content](http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.
 
 <script src="https://gist.github.com/1176902.js?file=example1.php"></script>
 
@@ -58,5 +58,5 @@ To your body tag. Then add this to your main style sheet.
 
 <script src="https://gist.github.com/1176902.js?file=example6.css"></script>
 
-**Edit 2:** To use regular PHP and not WordPress to exclude content, see [my post here](http://www.travisberry.com/2010/10/if-is_page-with-regular-php/).
+**Edit 2:** To use regular PHP and not WordPress to exclude content, see [my post here](http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/).
 </article>

@@ -2,7 +2,7 @@
 layout: post
 title: Auto Draft
 wordpress_id: 1377
-wordpress_url: http://www.travisberry.com/?p=1377
+wordpress_url: http://oldstatic.travisberry.com/?p=1377
 categories: []
 
 tags: []

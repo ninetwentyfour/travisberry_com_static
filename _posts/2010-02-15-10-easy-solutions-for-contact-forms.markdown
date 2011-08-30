@@ -2,7 +2,7 @@
 layout: post
 title: 10 Easy Solutions For Contact Forms
 wordpress_id: 605
-wordpress_url: http://www.travisberry.com/?p=605
+wordpress_url: http://oldstatic.travisberry.com/?p=605
 categories: 
 - title: Uncategorized
   slug: uncategorized

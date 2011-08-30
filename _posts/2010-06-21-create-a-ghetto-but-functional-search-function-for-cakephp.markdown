@@ -2,7 +2,7 @@
 layout: post
 title: Create A Ghetto, But Functional, Search Function For CakePHP
 wordpress_id: 1012
-wordpress_url: http://www.travisberry.com/?p=1012
+wordpress_url: http://oldstatic.travisberry.com/?p=1012
 categories: 
 - title: Uncategorized
   slug: uncategorized

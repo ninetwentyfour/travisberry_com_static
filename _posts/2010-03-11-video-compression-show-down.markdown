@@ -2,7 +2,7 @@
 layout: post
 title: Video Compression Show Down
 wordpress_id: 845
-wordpress_url: http://www.travisberry.com/?p=845
+wordpress_url: http://oldstatic.travisberry.com/?p=845
 categories: 
 - title: Uncategorized
   slug: uncategorized
@@ -51,19 +51,19 @@ So anyway, here are the results.
 
 Compressor: Size - 4.8 MB
 
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://oldstatic.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://oldstatic.travisberry.com/videocompressiontests/demoforweb33fromcompressor.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
 	
 Toast: Size - 4.7 MB
 
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://oldstatic.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://oldstatic.travisberry.com/videocompressiontests/demoforweb3fromtoast.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
 	
 Regular QuickTime export: Size - 4.5 MB
 
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/videocompressiontests/demoforweb32fromqt.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/videocompressiontests/demoforweb32fromqt.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://oldstatic.travisberry.com/videocompressiontests/demoforweb32fromqt.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://oldstatic.travisberry.com/videocompressiontests/demoforweb32fromqt.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
 	
 FFmpeg: Size - 3.7 MB
 
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/videocompressiontests/test11.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/videocompressiontests/test11.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://oldstatic.travisberry.com/videocompressiontests/test11.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://oldstatic.travisberry.com/videocompressiontests/test11.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
 	
 The clear and obvious winner is [FFmpeg](http://ffmpeg.org/). Notice that is the smallest file size as well. The other compressors do decent jobs, don't get me wrong, but you need to double or triple the file size to reach the same quality.
 

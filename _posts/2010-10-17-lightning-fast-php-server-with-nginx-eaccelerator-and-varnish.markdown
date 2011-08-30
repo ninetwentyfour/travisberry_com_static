@@ -2,18 +2,18 @@
 layout: post
 title: Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish
 wordpress_id: 1233
-wordpress_url: http://www.travisberry.com/?p=1233
+wordpress_url: http://oldstatic.travisberry.com/?p=1233
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg"
 summary: "Just because Apache has large numbers, doesn’t mean it’s the best in terms of performance."
 ---
 <article class="post clearfix">
   <h3>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</h3>
-  <a href="http://www.flickr.com/photos/jurvetson/10438860/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/jurvetson/10438860/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-10-17</h6>
 
 In the word of servers, Apache is still the undisputed king. It’s extendability and ability to run anything you can throw at it has led to it being the number one most used server in the world. Just because it has large numbers though, doesn’t mean it’s the best in terms of performance.

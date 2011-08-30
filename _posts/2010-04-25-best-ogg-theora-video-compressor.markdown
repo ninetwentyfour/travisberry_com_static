@@ -2,7 +2,7 @@
 layout: post
 title: Best Ogg Theora Video Compressor
 wordpress_id: 917
-wordpress_url: http://www.travisberry.com/?p=917
+wordpress_url: http://oldstatic.travisberry.com/?p=917
 categories: 
 - title: Uncategorized
   slug: uncategorized
@@ -16,7 +16,7 @@ summary: "A while back I did a comparison of the popular mp4 compressors. Specif
   <a href="http://www.flickr.com/photos/lancesh/2162074087/" class="postImageLink"><img src="http://content.travisberry.com/oggpixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-04-25</h6>
 
-A while back I did a [comparison of the popular mp4 compressors](http://www.travisberry.com/2010/03/video-compression-show-down/). Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.
+A while back I did a [comparison of the popular mp4 compressors](http://oldstatic.travisberry.com/2010/03/video-compression-show-down/). Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.
 
 I try to make my content cross browser compatible, but for this one I have no choice. **You must use Firefox or Chrome to fully view this post.** The newer the version the better.
 
@@ -37,7 +37,7 @@ So with this clip in hand I ran it through 6 different compressors.
 - no sound (can have sound if you encode separately and then combine) 
 - has to be a size divisible by 16
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/ffmpeg.ogg"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/html5video/oggoutputs/ffmpeg.ogg"></source></video>
 
 [FireFogg](http://firefogg.org/) (18.87 MB)- decent settings
 
@@ -53,7 +53,7 @@ So with this clip in hand I ran it through 6 different compressors.
 - can't resize
 - no settings for anything
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/miro.ogv"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/html5video/oggoutputs/miro.ogv"></source></video>
 
 [QuickTime](http://xiph.org/quicktime/) (17.37 MB)- good quality large size
 
@@ -67,13 +67,13 @@ So with this clip in hand I ran it through 6 different compressors.
 - serious streaming issues
 - small amount of settings
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://www.travisberry.com/html5video/oggoutputs/vlc.ogg"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/html5video/oggoutputs/vlc.ogg"></source></video>
 
 and for comparison 
 
 h264 (6.22 MB)
 
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://www.travisberry.com/html5video/oggoutputs/h264.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://www.travisberry.com/html5video/oggoutputs/h264.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640"><param name="src" value="http://oldstatic.travisberry.com/html5video/oggoutputs/h264.mov" /><param name="autoplay" value="true" /><param name="type" value="video/quicktime" height="376" width="640" /><embed src="http://oldstatic.travisberry.com/html5video/oggoutputs/h264.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>
 	
 In the end I would recommend ffmpeg2theora. If you're comfortable with the command line that is. Otherwise, everything except VLC would work for you. For the curious here are the commands I used.
 

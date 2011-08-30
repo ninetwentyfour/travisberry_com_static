@@ -2,7 +2,7 @@
 layout: post
 title: Sometimes, I Just Want To Give Google A Hug
 wordpress_id: 489
-wordpress_url: http://www.travisberry.com/?p=489
+wordpress_url: http://oldstatic.travisberry.com/?p=489
 categories: 
 - title: Uncategorized
   slug: uncategorized

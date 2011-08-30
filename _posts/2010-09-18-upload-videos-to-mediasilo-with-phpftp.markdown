@@ -2,21 +2,21 @@
 layout: post
 title: Upload Videos To MediaSilo With PHP/FTP
 wordpress_id: 1094
-wordpress_url: http://www.travisberry.com/?p=1094
+wordpress_url: http://oldstatic.travisberry.com/?p=1094
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg"
 summary: "In continuing with my last post on how to upload videos to Ooyala with PHP, here is one for MediaSilo. This ones a little different though in that it uses FTP as opposed to an API to upload the videos"
 ---
 <article class="post clearfix">
   <h3>Upload Videos To MediaSilo With PHP/FTP</h3>
-  <a href="http://www.flickr.com/photos/spiesteleviv/3654728245/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/spiesteleviv/3654728245/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-09-18</h6>
 
-In continuing with my last post on [how to upload videos to Ooyala with PHP](http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
+In continuing with my last post on [how to upload videos to Ooyala with PHP](http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
 
 Alright, so let's get to the code.
 

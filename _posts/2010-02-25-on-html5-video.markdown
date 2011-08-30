@@ -2,18 +2,18 @@
 layout: post
 title: On HTML5 Video
 wordpress_id: 812
-wordpress_url: http://www.travisberry.com/?p=812
+wordpress_url: http://oldstatic.travisberry.com/?p=812
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg"
 summary: "Hey! Have you heard? HTML5 video is going to revolutionize the way we use video on the web."
 ---
 <article class="post clearfix">
   <h3>On HTML5 Video</h3>
-  <a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-02-25</h6>
 
 Hey! Have you heard? [HTML5 video](http://en.wikipedia.org/wiki/HTML5_video) is going to revolutionize the way we use video on the web. No more dealing with Flash or Quicktime embeds. Video will now be as simple as adding an image. Ummm, no. It's not. It's not even close. That's not to say it's all bad, but boy howdy does it have a long way to go.
@@ -44,7 +44,7 @@ This battle of the codecs has got to end. The argument boils down to the fact th
 
 I get Mozilla's argument that they only support open standards, thus the use of Ogg in FireFox, but there is a giant elephant in the room that nobody is mentioning. 
 
-It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, [travisberry.com/copyright-and-the-internet/](http://www.travisberry.com/copyright-and-the-internet/) 
+It's that Ogg Theora as a codec is in it's infancy compared to H.264 and really kind of sucks in comparison. You can compare the two on my page, [travisberry.com/copyright-and-the-internet/](http://oldstatic.travisberry.com/copyright-and-the-internet/) 
 
 View it in FireFox and then in Safari. Notice the WAY smoother video in the Safari version. Yeah, me too.
 

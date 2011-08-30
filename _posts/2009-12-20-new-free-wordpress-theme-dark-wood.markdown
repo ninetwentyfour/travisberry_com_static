@@ -2,18 +2,18 @@
 layout: post
 title: "New Free WordPress Theme: Dark Wood"
 wordpress_id: 471
-wordpress_url: http://www.travisberry.com/?p=471
+wordpress_url: http://oldstatic.travisberry.com/?p=471
 categories: 
 - title: Uncategorized
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://www.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg"
+image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg"
 summary: "I have just released a new WordPress theme. The theme is dark and modern, perfect for a portfolio site. Theme features an accordion style menu, and slider example galleries. "
 ---
 <article class="post clearfix">
   <h3>New Free WordPress Theme: Dark Wood</h3>
-  <a href="http://darkwood.travisberry.com/" class="postImageLink"><img src="http://www.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://darkwood.travisberry.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-20</h6>
 
 I have just released a new Wordpress theme. The theme is dark and modern, perfect for a portfolio site. Theme features an accordion style menu, and slider example galleries. 

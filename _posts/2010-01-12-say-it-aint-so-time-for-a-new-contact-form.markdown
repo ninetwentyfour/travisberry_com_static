@@ -2,7 +2,7 @@
 layout: post
 title: Say It Aint So! Time For A New Contact Form
 wordpress_id: 549
-wordpress_url: http://www.travisberry.com/?p=549
+wordpress_url: http://oldstatic.travisberry.com/?p=549
 categories: 
 - title: Uncategorized
   slug: uncategorized
