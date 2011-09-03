@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">
+			  <url>
+			    <loc>http://www.travisberry.com/</loc>
+			    <lastmod>2011-09-03T14:19:20-06:00</lastmod>
+			    <changefreq>weekly</changefreq>
+			    <priority>1.0</priority>
+			  </url>
+			  <url>
+			    <loc>http://www.travisberry.com/blog/</loc>
+			    <lastmod>2011-09-03T14:19:20-06:00</lastmod>
+			    <changefreq>weekly</changefreq>
+			    <priority>0.8</priority>
+			  </url>
+				<url>
+			    <loc>http://www.travisberry.com/work/</loc>
+			    <lastmod>2011-09-03T14:19:20-06:00</lastmod>
+			    <changefreq>weekly</changefreq>
+			    <priority>0.8</priority>
+			  </url>
+				<url>
+			    <loc>http://www.travisberry.com/contact/</loc>
+			    <lastmod>2011-09-03T14:19:20-06:00</lastmod>
+			    <changefreq>weekly</changefreq>
+			    <priority>0.8</priority>
+			  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/05/create-github-gist-with-ruby/</loc>
+<lastmod>2011-05-30T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas/</loc>
+<lastmod>2011-05-26T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2011/05/canvas.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/03/a-day-in-the-life-of-me/</loc>
+<lastmod>2011-03-04T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank/</loc>
+<lastmod>2011-02-16T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my/</loc>
+<lastmod>2011-01-11T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora/</loc>
+<lastmod>2011-01-01T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/12/free-single-page-htmlcss-template/</loc>
+<lastmod>2010-12-19T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/11/clean-urls-in-nginx/</loc>
+<lastmod>2010-11-07T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/soap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish/</loc>
+<lastmod>2010-10-17T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin/</loc>
+<lastmod>2010-10-03T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/do_follow.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/10/if-is_page-with-regular-php/</loc>
+<lastmod>2010-10-02T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download/</loc>
+<lastmod>2010-09-23T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/zip_files.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp/</loc>
+<lastmod>2010-09-18T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/</loc>
+<lastmod>2010-09-11T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/ooyala_upload.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow/</loc>
+<lastmod>2010-08-07T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/</loc>
+<lastmod>2010-06-21T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/portalcake2.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine/</loc>
+<lastmod>2010-05-09T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor/</loc>
+<lastmod>2010-04-25T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/oggpixels.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs/</loc>
+<lastmod>2010-04-17T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/03/video-compression-show-down/</loc>
+<lastmod>2010-03-11T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/uploads/2010/03/videopixels.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/02/on-html5-video/</loc>
+<lastmod>2010-02-25T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress/</loc>
+<lastmod>2010-02-19T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/uploads/2010/02/abtest1.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms/</loc>
+<lastmod>2010-02-15T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content/</loc>
+<lastmod>2010-01-30T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote/</loc>
+<lastmod>2010-01-17T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form/</loc>
+<lastmod>2010-01-12T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/uploads/2010/01/despair.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/</loc>
+<lastmod>2010-01-11T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/gentleman-wordpress-theme/</loc>
+<lastmod>2010-01-11T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2010/01/a-hard-day-at-work/</loc>
+<lastmod>2010-01-02T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/happy-holidays/</loc>
+<lastmod>2009-12-25T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/christmas.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood/</loc>
+<lastmod>2009-12-20T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess/</loc>
+<lastmod>2009-12-20T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video/</loc>
+<lastmod>2009-12-16T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/natalieVideoThunb.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios/</loc>
+<lastmod>2009-12-16T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/tooting-my-own-horn/</loc>
+<lastmod>2009-12-14T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/another-free-wordpress-theme/</loc>
+<lastmod>2009-12-12T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible/</loc>
+<lastmod>2009-12-11T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/javascript.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review/</loc>
+<lastmod>2009-12-09T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/download-my-wordpress-theme/</loc>
+<lastmod>2009-12-07T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/12/the-worst-is-over/</loc>
+<lastmod>2009-12-05T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds/</loc>
+<lastmod>2009-11-29T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites/</loc>
+<lastmod>2009-11-25T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions/</loc>
+<lastmod>2009-11-23T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost/</loc>
+<lastmod>2009-11-20T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/handy-list-of-terminal-commands/</loc>
+<lastmod>2009-11-20T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/5-resources-for-web-type/</loc>
+<lastmod>2009-11-17T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly/</loc>
+<lastmod>2009-11-16T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/youtube-gets-1080p/</loc>
+<lastmod>2009-11-15T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/great-cmyk-art/</loc>
+<lastmod>2009-11-15T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps/</loc>
+<lastmod>2009-11-15T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/plugins.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/setting-up-quicktime-streaming/</loc>
+<lastmod>2009-11-14T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg</image:loc> 
+    </image:image>
+  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2009/11/creating-navigation-highlights/</loc>
+<lastmod>2009-11-13T00:00:00-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png</image:loc> 
+    </image:image>
+  </url>
+	
+</urlset>
