@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/oggpixels.jpg"
+image: "http://oldstatic.travisberry.com/oggpixels.jpg"
 summary: "A while back I did a comparison of the popular mp4 compressors. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we’re comparing compressors for Ogg Theora."
 ---
 <article class="post clearfix">
   <h3>Best Ogg Theora Video Compressor</h3>
-  <a href="http://www.flickr.com/photos/lancesh/2162074087/" class="postImageLink"><img src="http://content.travisberry.com/oggpixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/lancesh/2162074087/" class="postImageLink"><img src="http://oldstatic.travisberry.com/oggpixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-04-25</h6>
 
 A while back I did a [comparison of the popular mp4 compressors](http://oldstatic.travisberry.com/2010/03/video-compression-show-down/). Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.
@@ -30,7 +30,7 @@ So with this clip in hand I ran it through 6 different compressors.
 - moderate quality
 - moderate ease of use
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/2theora.ogv"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/uploads/oggoutputs/2theora.ogv"></source></video>
 
 [FFmpeg](http://www.ffmpeg.org/) (6.19 MB)- same as ffmpeg2theora
 
@@ -44,7 +44,7 @@ So with this clip in hand I ran it through 6 different compressors.
 - fairly easy to use
 - good quality at large size
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/firefogg.ogv"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/uploads/oggoutputs/firefogg.ogv"></source></video>
 
 [Miro Video Converter](http://www.mirovideoconverter.com/) (22.20 MB)- largest size
 
@@ -60,7 +60,7 @@ So with this clip in hand I ran it through 6 different compressors.
 - same export as any other qt
 - moderate amounts of video settings, no audio settings
 
-<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://content.travisberry.com/uploads/oggoutputs/qt.ogg"></source></video>
+<video width="640" height="360" controls="true" id="video" tabindex="0"><source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://oldstatic.travisberry.com/uploads/oggoutputs/qt.ogg"></source></video>
 
 [VLC](http://www.videolan.org/vlc/) (21.94 MB)- large size
 

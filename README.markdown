@@ -39,4 +39,4 @@ TODO
 
 - <del>fix style bug no work images with green href</del>
 
-- Check for canonical link fix 
+- <del>Check for canonical link fix</del>

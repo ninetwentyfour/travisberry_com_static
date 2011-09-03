@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/ooyala_upload.jpg"
+image: "http://oldstatic.travisberry.com/ooyala_upload.jpg"
 summary: "Ooyala is a fairly popular video hosting platform. We have started using them where I work, and they seem to be doing a really good job so far."
 ---
 <article class="post clearfix">
   <h3>Upload A Video To Ooyala With PHP</h3>
-  <a href="http://www.cl.cam.ac.uk/Relics/archive_photos.html" class="postImageLink"><img src="http://content.travisberry.com/ooyala_upload.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.cl.cam.ac.uk/Relics/archive_photos.html" class="postImageLink"><img src="http://oldstatic.travisberry.com/ooyala_upload.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-09-11</h6>
 
 **EDIT**: [You can find a better/updated Ooyala class here](https://github.com/ninetwentyfour/Ooyala-Uploader).

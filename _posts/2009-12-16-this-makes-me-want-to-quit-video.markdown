@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/natalieVideoThunb.jpg"
+image: "http://oldstatic.travisberry.com/natalieVideoThunb.jpg"
 summary: "WTF?! How? Who? What?"
 ---
 <article class="post clearfix">
   <h3>This Makes Me Want To Quit Video</h3>
-  <a href="http://content.travisberry.com/natalieVideoThunb.jpg" class="postImageLink"><img src="http://content.travisberry.com/natalieVideoThunb.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/natalieVideoThunb.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/natalieVideoThunb.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-12-16</h6>
 
 WTF?! How? Who? What? My [teacher](http://studiolascala.com/) sent me this, it's from a **photography student** who just took his first video class. This is from a freaking **Fundamentals of Editing** class. I can't believe how good this kid is. He has great things in his future. Oh, and he did the music and sang the song too. Fantastic.

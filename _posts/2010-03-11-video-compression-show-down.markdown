@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/uploads/2010/03/videopixels.jpg"
+image: "http://oldstatic.travisberry.com/uploads/2010/03/videopixels.jpg"
 summary: "Video compression is an absolutely critical component that has allowed online video to take off in recent years. Advancing from super pixelated 320x240 video, to rich and vibrant 1080p has required massive improvements in compression technology."
 ---
 <article class="post clearfix">
   <h3>Video Compression Show Down</h3>
-  <a href="http://www.flickr.com/photos/reckon/3262118500/" class="postImageLink"><img src="http://content.travisberry.com/uploads/2010/03/videopixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/reckon/3262118500/" class="postImageLink"><img src="http://oldstatic.travisberry.com/uploads/2010/03/videopixels.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-03-11</h6>
 
 Video compression is an absolutely critical component that has allowed online video to take off in recent years. Advancing from super pixelated 320x240 video, to rich and vibrant 1080p has required massive improvements in compression technology.

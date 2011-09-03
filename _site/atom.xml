@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-03T12:52:42-06:00</updated>
+ <updated>2011-09-03T13:48:13-06:00</updated>
  <id>http://oldstatic.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -482,7 +482,7 @@
    <id>http://oldstatic.travisberry.com/2010/11/clean-urls-in-nginx</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Clean URL's in Nginx&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: November 07, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://oldstatic.travisberry.com/example&lt;/p&gt;
@@ -653,7 +653,7 @@
    <id>http://oldstatic.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Remove WordPress' NoFollow Without A Plugin&lt;/h3&gt;
-  &lt;a href=&quot;http://www.siliakatung.com/exhibition.htm&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/do_follow.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.siliakatung.com/exhibition.htm&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/do_follow.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-10-03&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;And even better, do so without modifying the WordPress core files. It's really quite simple.&lt;/p&gt;
@@ -729,7 +729,7 @@
    <id>http://oldstatic.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use PHP To Zip Folders For Download&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/striatic/443918201/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/zip_files.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/striatic/443918201/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/zip_files.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-09-23&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Uploading files with PHP is covered to death on the internet. The other side of that, downloading files, is not covered nearly as much.&lt;/p&gt;
@@ -798,7 +798,7 @@
    <id>http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Upload A Video To Ooyala With PHP&lt;/h3&gt;
-  &lt;a href=&quot;http://www.cl.cam.ac.uk/Relics/archive_photos.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/ooyala_upload.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.cl.cam.ac.uk/Relics/archive_photos.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/ooyala_upload.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-09-11&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;EDIT&lt;/strong&gt;: &lt;a href=&quot;https://github.com/ninetwentyfour/Ooyala-Uploader&quot;&gt;You can find a better/updated Ooyala class here&lt;/a&gt;.&lt;/p&gt;
@@ -890,7 +890,7 @@
    <id>http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create A Ghetto, But Functional, Search Function For CakePHP&lt;/h3&gt;
-  &lt;a href=&quot;http://store.steampowered.com/app/400/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/portalcake2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://store.steampowered.com/app/400/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/portalcake2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-06-21&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Recently I needed to add a search function for a &lt;a href=&quot;http://cakephp.org/&quot;&gt;CakePHP&lt;/a&gt; application I am building. After googling the bejeezus out of it, I never found a solution that worked. Some required the use of a search table, which then needed to index all of your content, other's just didn't work at all.&lt;/p&gt;
@@ -1160,7 +1160,7 @@
    <id>http://oldstatic.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Best Ogg Theora Video Compressor&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/lancesh/2162074087/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/oggpixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/lancesh/2162074087/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/oggpixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-04-25&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;A while back I did a &lt;a href=&quot;http://oldstatic.travisberry.com/2010/03/video-compression-show-down/&quot;&gt;comparison of the popular mp4 compressors&lt;/a&gt;. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.&lt;/p&gt;
@@ -1180,7 +1180,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://content.travisberry.com/uploads/oggoutputs/2theora.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/uploads/oggoutputs/2theora.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.ffmpeg.org/&quot;&gt;FFmpeg&lt;/a&gt; (6.19 MB)- same as ffmpeg2theora&lt;/p&gt;
 
@@ -1200,7 +1200,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://content.travisberry.com/uploads/oggoutputs/firefogg.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/uploads/oggoutputs/firefogg.ogv&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.mirovideoconverter.com/&quot;&gt;Miro Video Converter&lt;/a&gt; (22.20 MB)- largest size&lt;/p&gt;
 
@@ -1222,7 +1222,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://content.travisberry.com/uploads/oggoutputs/qt.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;true&quot; id=&quot;video&quot; tabindex=&quot;0&quot;&gt;&lt;source type=&quot;video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;&quot; src=&quot;http://oldstatic.travisberry.com/uploads/oggoutputs/qt.ogg&quot;&gt;&lt;/source&gt;&lt;/video&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.videolan.org/vlc/&quot;&gt;VLC&lt;/a&gt; (21.94 MB)- large size&lt;/p&gt;
 
@@ -1289,7 +1289,7 @@
    <id>http://oldstatic.travisberry.com/2010/03/video-compression-show-down</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Video Compression Show Down&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/reckon/3262118500/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/03/videopixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/reckon/3262118500/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/03/videopixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-03-11&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Video compression is an absolutely critical component that has allowed online video to take off in recent years. Advancing from super pixelated 320x240 video, to rich and vibrant 1080p has required massive improvements in compression technology.&lt;/p&gt;
@@ -1482,7 +1482,7 @@
    <id>http://oldstatic.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create Simple A/B Tests In WordPress&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/133261764/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/02/abtest1.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/133261764/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/02/abtest1.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-02-19&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the best things you can implement in your site right now is A/B testing. According to good old &lt;a href=&quot;http://en.wikipedia.org/wiki/A/B_testing&quot;&gt;Wikipedia&lt;/a&gt;, A/B testing is;&lt;/p&gt;
@@ -1589,7 +1589,7 @@
    <id>http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;10 Easy Solutions For Contact Forms&lt;/h3&gt;
-  &lt;a href=&quot;http://content.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-02-15&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Contact forms are an integral part of many websites. The construction of which can range from super simple to highly complex. As with most things, I prefer the easy solution. Here is a list of 10 contact form solutions that are super simple.&lt;/p&gt;
@@ -1629,7 +1629,7 @@
    <id>http://oldstatic.travisberry.com/2010/01/use-wordpress'-is_page-to-exclude-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Exclude Content&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-30&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages.&lt;/p&gt;
@@ -1721,7 +1721,7 @@
    <id>http://oldstatic.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Say It Aint So! Time For A New Contact Form&lt;/h3&gt;
-  &lt;a href=&quot;http://www.flickr.com/photos/ngmmemuda/4171221241/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/uploads/2010/01/despair.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/ngmmemuda/4171221241/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/01/despair.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-01-12&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;So it may be time to ditch my favorite WordPress plugin, &lt;a href=&quot;http://contactform7.com/&quot;&gt;Contact Form 7&lt;/a&gt;, and find something new.&lt;/p&gt;
@@ -1931,7 +1931,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
    <id>http://oldstatic.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;This Makes Me Want To Quit Video&lt;/h3&gt;
-  &lt;a href=&quot;http://content.travisberry.com/natalieVideoThunb.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://content.travisberry.com/natalieVideoThunb.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://oldstatic.travisberry.com/natalieVideoThunb.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/natalieVideoThunb.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2009-12-16&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;WTF?! How? Who? What? My &lt;a href=&quot;http://studiolascala.com/&quot;&gt;teacher&lt;/a&gt; sent me this, it's from a &lt;strong&gt;photography student&lt;/strong&gt; who just took his first video class. This is from a freaking &lt;strong&gt;Fundamentals of Editing&lt;/strong&gt; class. I can't believe how good this kid is. He has great things in his future. Oh, and he did the music and sang the song too. Fantastic.&lt;/p&gt;

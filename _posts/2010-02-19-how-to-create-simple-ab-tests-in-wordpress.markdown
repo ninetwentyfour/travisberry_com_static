@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/uploads/2010/02/abtest1.jpg"
+image: "http://oldstatic.travisberry.com/uploads/2010/02/abtest1.jpg"
 summary: "One of the best things you can implement in your site right now is A/B testing."
 ---
 <article class="post clearfix">
   <h3>Create Simple A/B Tests In WordPress</h3>
-  <a href="http://www.flickr.com/photos/jurvetson/133261764/" class="postImageLink"><img src="http://content.travisberry.com/uploads/2010/02/abtest1.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/jurvetson/133261764/" class="postImageLink"><img src="http://oldstatic.travisberry.com/uploads/2010/02/abtest1.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-02-19</h6>
 
 One of the best things you can implement in your site right now is A/B testing. According to good old [Wikipedia](http://en.wikipedia.org/wiki/A/B_testing), A/B testing is;

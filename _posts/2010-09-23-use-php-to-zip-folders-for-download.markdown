@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://content.travisberry.com/zip_files.jpg"
+image: "http://oldstatic.travisberry.com/zip_files.jpg"
 summary: "Uploading files with PHP is covered to death on the internet. The other side of that, downloading files, is not covered nearly as much."
 ---
 <article class="post clearfix">
   <h3>Use PHP To Zip Folders For Download</h3>
-  <a href="http://www.flickr.com/photos/striatic/443918201/" class="postImageLink"><img src="http://content.travisberry.com/zip_files.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/striatic/443918201/" class="postImageLink"><img src="http://oldstatic.travisberry.com/zip_files.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-09-23</h6>
 
 Uploading files with PHP is covered to death on the internet. The other side of that, downloading files, is not covered nearly as much. 
