@@ -22,7 +22,9 @@ summary: "Ooyala is a fairly popular video hosting platform. We have started usi
 
 This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)
 
+<div class="gistFallback">
 {% gist 1177051 example1.php %}
+</div>
 
 Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.
 

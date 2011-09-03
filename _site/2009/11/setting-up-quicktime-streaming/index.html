@@ -67,19 +67,16 @@
 
 <p>The final code looks something like this</p>
 
-<script src='https://gist.github.com/1176830.js?file=quicktime.html'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176830.js?file=quicktime.html'></script><noscript><pre><code>&lt;OBJECT CLASSID=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; WIDTH=&quot;320&quot; HEIGHT=&quot;240&quot; CODEBASE=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot;&gt;
+    &lt;PARAM name=&quot;SRC&quot; VALUE=&quot;poster.mov&quot;&gt;
+    &lt;PARAM name=&quot;QTSRC&quot; VALUE=&quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&quot;&gt;
+    &lt;PARAM name=&quot;AUTOPLAY&quot; VALUE=&quot;true&quot;&gt;
+    &lt;PARAM name=&quot;CONTROLLER&quot; VALUE=&quot;false&quot;&gt;
+    &lt;embed src=&quot;poster.mov&quot; qtsrc=&quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&quot; width=&quot;320&quot; height=&quot;240&quot; target=&quot;myself&quot; controller=&quot;false&quot; autoplay=&quot;true&quot;&gt;&lt;/embed&gt;
+&lt;/OBJECT&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;OBJECT CLASSID=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; WIDTH=&quot;320&quot; HEIGHT=&quot;240&quot; CODEBASE=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot;&gt;</p>
-
-<pre><code>&amp;lt;PARAM name=&amp;quot;SRC&amp;quot; VALUE=&amp;quot;poster.mov&amp;quot;&amp;gt;
-&amp;lt;PARAM name=&amp;quot;QTSRC&amp;quot; VALUE=&amp;quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&amp;quot;&amp;gt;
-&amp;lt;PARAM name=&amp;quot;AUTOPLAY&amp;quot; VALUE=&amp;quot;true&amp;quot;&amp;gt;
-&amp;lt;PARAM name=&amp;quot;CONTROLLER&amp;quot; VALUE=&amp;quot;false&amp;quot;&amp;gt;
-&amp;lt;embed src=&amp;quot;poster.mov&amp;quot; qtsrc=&amp;quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&amp;quot; width=&amp;quot;320&amp;quot; height=&amp;quot;240&amp;quot; target=&amp;quot;myself&amp;quot; controller=&amp;quot;false&amp;quot; autoplay=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;
-</code></pre>
-
-<p>&lt;/OBJECT&gt;</code></pre></noscript></p>
 
 <p>Here is my first test at an embeded .mov file streamed off a quicktime server.</p>
 
@@ -88,17 +85,14 @@
 
 <p>You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -</p>
 
-<script src='https://gist.github.com/1176830.js?file=quicktime2.html'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176830.js?file=quicktime2.html'></script><noscript><pre><code>&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;
+    &lt;param name=&quot;src&quot; value=&quot;http://www.travisberry.com/videos/Comp51_3.mov&quot; /&gt;
+    &lt;param name=&quot;autoplay&quot; value=&quot;false&quot; /&gt;&lt;param name=&quot;type&quot; value=&quot;video/quicktime&quot; height=&quot;376&quot; width=&quot;640&quot; /&gt;
+    &lt;embed src=&quot;http://www.travisberry.com/videos/Comp51_3.mov&quot; height=&quot;376&quot; width=&quot;640&quot; autoplay=&quot;false&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot; /&gt;
+&lt;/object&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;object classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot; height=&quot;376&quot; width=&quot;640&quot;&gt;</p>
-
-<pre><code>&amp;lt;param name=&amp;quot;src&amp;quot; value=&amp;quot;http://www.travisberry.com/videos/Comp51_3.mov&amp;quot; /&amp;gt;
-&amp;lt;param name=&amp;quot;autoplay&amp;quot; value=&amp;quot;false&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;type&amp;quot; value=&amp;quot;video/quicktime&amp;quot; height=&amp;quot;376&amp;quot; width=&amp;quot;640&amp;quot; /&amp;gt;
-&amp;lt;embed src=&amp;quot;http://www.travisberry.com/videos/Comp51_3.mov&amp;quot; height=&amp;quot;376&amp;quot; width=&amp;quot;640&amp;quot; autoplay=&amp;quot;false&amp;quot; type=&amp;quot;video/quicktime&amp;quot; pluginspage=&amp;quot;http://www.apple.com/quicktime/download/&amp;quot; /&amp;gt;
-</code></pre>
-
-<p>&lt;/object&gt;</code></pre></noscript></p>
 
 <p>This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.</p>
 

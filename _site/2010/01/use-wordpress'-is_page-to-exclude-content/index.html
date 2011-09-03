@@ -66,45 +66,36 @@
 
 <p>The first way is the same as <a href="http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/">including custom content</a>. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.</p>
 
-<script src='https://gist.github.com/1176902.js?file=example1.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example1.php'></script><noscript><pre><code>&lt;?php 
+    if ( is_page('work') || is_page('contact')) { 
+        echo '&lt;div id=&quot;secondnav&quot;&gt;&lt;div class=&quot;secondnavs&quot;&gt;&lt;a href=&quot;http://www.travisberry.com/video/&quot;&gt;Video&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;longsecondnavs&quot;&gt;.&lt;/div&gt;&lt;/div&gt;'; 
+    } 
+?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php</p>
-
-<pre><code>if ( is_page('work') || is_page('contact')) { 
-    echo '&amp;lt;div id=&amp;quot;secondnav&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;secondnavs&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://www.travisberry.com/video/&amp;quot;&amp;gt;Video&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;longsecondnavs&amp;quot;&amp;gt;.&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;'; 
-} 
-</code></pre>
-
-<p>?&gt;</code></pre></noscript></p>
 
 <p>If you had three pages; 'work', 'contact', and 'blog', the above code would display the div 'secondnav' on every page but 'blog'.</p>
 
 <p>Another way is to use the above method but target it to the page you want excluded. So,</p>
 
-<script src='https://gist.github.com/1176902.js?file=example2.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example2.php'></script><noscript><pre><code>&lt;?php 
+    if ( is_page('blog')) { 
+        echo '&lt;link rel=&quot;stylesheet&quot; href=&quot;http://whereeveryouputthenewcssfile.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;'; 
+    } 
+?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php</p>
-
-<pre><code>if ( is_page('blog')) { 
-    echo '&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;http://whereeveryouputthenewcssfile.css&amp;quot; type=&amp;quot;text/css&amp;quot; media=&amp;quot;screen&amp;quot; /&amp;gt;'; 
-} 
-</code></pre>
-
-<p>?&gt;</code></pre></noscript></p>
 
 <p>Can be used to exclude a section of content. Let's say you still don't want to show the 'secondnav' div on the blog page. So create a new .css file. Name it whatever you like and put it where ever you like. Just replace the url in the example with a link to the new file.Inside the new .css file put this;</p>
 
-<script src='https://gist.github.com/1176902.js?file=example3.css'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example3.css'></script><noscript><pre><code>#secondnav{
+    display:none !important;
+}</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>#secondnav{</p>
-
-<pre><code>display:none !important;
-</code></pre>
-
-<p>}</code></pre></noscript></p>
 
 <p>The 'secondnav' div will no be invisible on the 'blog' page.</p>
 
@@ -112,17 +103,14 @@
 
 <p>Copy and paste everything from your normal 'page.php' file and paste it into 'nonav.php'. Find the part you want removed and delete it from the file. Move to the very top of the 'nonav.php' file. Paste this into the file.</p>
 
-<script src='https://gist.github.com/1176902.js?file=example4.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example4.php'></script><noscript><pre><code>&lt;?php
+/*
+    Template Name: NoNav
+*/
+?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php
-/*</p>
-
-<pre><code>Template Name: NoNav
-</code></pre>
-
-<p>*/
-?&gt;</code></pre></noscript></p>
 
 <p>Save the file and upload it to your current theme directory.</p>
 
@@ -134,27 +122,21 @@
 
 <p><strong>Edit:</strong><a href="http://www.reddit.com/user/kylegetsspam">kylegetsspam</a> over on reddit pointed out another simple way of doing the same thing. Add,</p>
 
-<script src='https://gist.github.com/1176902.js?file=example5.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example5.php'></script><noscript><pre><code>&lt;?php 
+    body_class(); 
+?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php</p>
-
-<pre><code>body_class(); 
-</code></pre>
-
-<p>?&gt;</code></pre></noscript></p>
 
 <p>To your body tag. Then add this to your main style sheet.</p>
 
-<script src='https://gist.github.com/1176902.js?file=example6.css'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176902.js?file=example6.css'></script><noscript><pre><code>#page-id-2 #secondnav { 
+    display: none; 
+}</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>#page-id-2 #secondnav {</p>
-
-<pre><code>display: none; 
-</code></pre>
-
-<p>}</code></pre></noscript></p>
 
 <p><strong>Edit 2:</strong> To use regular PHP and not WordPress to exclude content, see <a href="http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/">my post here</a>.
 </article></p>

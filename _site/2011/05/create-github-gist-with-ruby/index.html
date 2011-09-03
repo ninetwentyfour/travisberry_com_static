@@ -63,33 +63,31 @@
 
 <p>I'm in the process of converting my site over to running <a href="http://www.locomotivecms.com">Locomotive CMS</a> instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.</p>
 
-<script src='https://gist.github.com/998389.js?file=gist_helper.rb'></script>
-
-
-<p><noscript><pre><code>  require 'net/http'
+<div class="gistFallback">
+<script src='https://gist.github.com/998389.js?file=gist_helper.rb'></script><noscript><pre><code>  require 'net/http'
   require 'uri'
-  require 'json'</p>
-
-<p>  def get_gist(fileName,content)</p>
-
-<pre><code>res = Net::HTTP.post_form(URI.parse('http://gist.github.com/api/v1/json/new'),
-  { 'files[#{fileName}]' =&amp;gt; content,
-    'login' =&amp;gt; 'USER NAME HERE',
-    'token' =&amp;gt; 'API TOKEN HERE',
-    'description' =&amp;gt; 'This is a test description'
-    })
-parsed_json = JSON(res.body)
-parsed_json['gists'].each do |key, val|
-  key.each do |k, v|
-    if &amp;quot;#{k}&amp;quot; == 'repo'
-      repo = &amp;quot;#{v}&amp;quot;
+  require 'json'
+  
+  def get_gist(fileName,content)
+    res = Net::HTTP.post_form(URI.parse('http://gist.github.com/api/v1/json/new'),
+      { 'files[#{fileName}]' =&gt; content,
+        'login' =&gt; 'USER NAME HERE',
+        'token' =&gt; 'API TOKEN HERE',
+        'description' =&gt; 'This is a test description'
+        })
+    parsed_json = JSON(res.body)
+    parsed_json['gists'].each do |key, val|
+      key.each do |k, v|
+        if &quot;#{k}&quot; == 'repo'
+          repo = &quot;#{v}&quot;
+        end
+      end
     end
-  end
-end
-return &amp;quot;&amp;lt;script src=\&amp;quot;https://gist.github.com/#{repo}.js\&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;quot;
-</code></pre>
+    return &quot;&lt;script src=\&quot;https://gist.github.com/#{repo}.js\&quot;&gt;&lt;/script&gt;&quot;
+    
+  end</code></pre></noscript>
+</div>
 
-<p>  end</code></pre></noscript></p>
 
 <p>It's pretty simple and works like a champ for me. Obviously I had to write a lot more stuff to integrate with Locomotive CMS, but that is for another post.</p>
 

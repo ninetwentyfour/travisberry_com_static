@@ -73,13 +73,19 @@ So for simplicities sake I present to you my super awesome FFmpeg compression co
 
 For a single pass render:
 
+<div class="gistFallback">
 {% gist 1176952 example1.txt %}
+</div>
 
 For a two pass render:
 
+<div class="gistFallback">
 {% gist 1176952 example2.txt %}
+</div>
 
+<div class="gistFallback">
 {% gist 1176952 example3.txt %}
+</div>
 
 Run the first command, then run the second for a two pass render. I used a two pass render in the test above.To better understand what all those setting mean, I recommend taking a look at this site[http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping](http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping)
 

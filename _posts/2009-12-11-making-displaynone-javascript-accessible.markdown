@@ -18,12 +18,12 @@ summary: "When creating a collapsible navigation for a client, I came across the
 <p>
 When creating a collapsible navigation for a client, I came across the problem of having my navigation remaining hidden if someone has javascript disabled. Needless to say, this was a big problem. There is no secondary navigation on the site, so without it, there is NO navigation.<span id="more-365"></span></p>
 <p>The problem came from the fact that the element is set to</p>
-<p>{% gist 1176865 example1.css %}</p>
+<p><div class="gistFallback">{% gist 1176865 example1.css %}</div></p>
 <p>Which is fine and dandy if you have javascript enabled. If you don&#8217;t, all you see is a list of headers.</p>
 
 <p>Luckily there is an easy solution. Create another css file. I named mine, nojs.css</p>
 <p>In the css file add this, (Change the selector to which ever one you have set to display:none;)</p>
-<p>{% gist 1176865 example2.css %}</p>
+<p><div class="gistFallback">{% gist 1176865 example2.css %}</div></p>
 <p>Place the file somewhere on your server and move back to your html.</p>
 <p>Add a &lt;noscript&gt; tag and in between create a link to the new css file.</p>
 

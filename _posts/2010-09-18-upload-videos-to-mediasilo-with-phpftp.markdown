@@ -20,7 +20,9 @@ In continuing with my last post on [how to upload videos to Ooyala with PHP](htt
 <div class="clearfix"></div>
 Alright, so let's get to the code.
 
+<div class="gistFallback">
 {% gist 1177059 example1.php %}
+</div>
 
 The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one. 
 

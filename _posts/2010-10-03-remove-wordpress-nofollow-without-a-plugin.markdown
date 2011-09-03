@@ -20,23 +20,33 @@ And even better, do so without modifying the WordPress core files. It's really q
 <div class="clearfix"></div>
 In your templates functions.php file add 
 
+<div class="gistFallback">
 {% gist 1177082 example1.php %}
+</div>
 
 Then in your comments.php file, find and replace any mention of
 
+<div class="gistFallback">
 {% gist 1177082 example2.php %}
+</div>
 
 With
 
+<div class="gistFallback">
 {% gist 1177082 example3.php %}
+</div>
 
 This simply replaces the core files "comment_author_link()" function with one of our own. The original has
 
+<div class="gistFallback">
 {% gist 1177082 example4.php %}
+</div>
 
 as the link. We simply remove the rel attribute and change it to
 
+<div class="gistFallback">
 {% gist 1177082 example5.php %}
+</div>
 
 and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.
 

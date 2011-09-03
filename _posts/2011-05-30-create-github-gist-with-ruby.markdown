@@ -23,7 +23,9 @@ I've grown tired of dealing with libraries to make my code examples look good. S
 
 I'm in the process of converting my site over to running [Locomotive CMS](http://www.locomotivecms.com) instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.
 
+<div class="gistFallback">
 {% gist 998389 gist_helper.rb %}
+</div>
 
 It's pretty simple and works like a champ for me. Obviously I had to write a lot more stuff to integrate with Locomotive CMS, but that is for another post.
 

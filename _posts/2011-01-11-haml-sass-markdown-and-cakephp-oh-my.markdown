@@ -39,21 +39,29 @@ Let's start with getting just Haml working for the time being.
 
 Open up your app_controller.php and add the following line
 
+<div class="gistFallback">
 {% gist 1177229 example1.php %}
+</div>
 
 Now open up /config/core.php and scroll to the bottom. Add
 
+<div class="gistFallback">
 {% gist 1177229 example2.php %}
+</div>
 
 The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.
 
 Now open up the haml.php file you added to views. Find the line that says
 
+<div class="gistFallback">
 {% gist 1177229 example3.php %}
+</div>
 
 and change it to
 
+<div class="gistFallback">
 {% gist 1177229 example4.php %}
+</div>
 
 This assumes you copied the vendors contents to vendors in CakePHP.
 
@@ -69,31 +77,42 @@ With that out of the way, time to start the config.
 
 Open the core.php file back up and go to the Haml code we added earlier. Under that add
 
+<div class="gistFallback">
 {% gist 1177229 example5.php %}
+</div>
 
 The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.
 
 Now open up sass.php and find the line that looks like
-
+<div class="gistFallback">
 {% gist 1177229 example6.php %}
+</div>
 
 Replace it with
 
+<div class="gistFallback">
 {% gist 1177229 example7.php %}
+</div>
 
 After that you should be able to start putting .sass files into your css directory and they will compile to css.
 
 However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like
 
+<div class="gistFallback">
 {% gist 1177229 example8.php %}
+</div>
 
 with
 
+<div class="gistFallback">
 {% gist 1177229 example9.php %}
+</div>
 
 Then add a line to the bottom of the file with this
 
+<div class="gistFallback">
 {% gist 1177233 example10.php %}
+</div>
 
 Your compiled css files should now transfer gzipped.
 
@@ -101,11 +120,15 @@ Now lets add support for the newer .scss file. If you want to use .sass you can 
 
 Find the line
 
+<div class="gistFallback">
 {% gist 1177233 example11.php %}
+</div>
 
 and replace it with
 
+<div class="gistFallback">
 {% gist 1177233 example12.php %}
+</div>
 
 You can now use .scss files instead of .sass
 
@@ -117,7 +140,9 @@ However, some people make the argument that you shouldn't use Haml to style the 
 
 Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to
 
+<div class="gistFallback">
 {% gist 1177233 example13.php %}
+</div>
 
 inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/
 
@@ -129,29 +154,41 @@ Now open up the HamlMarkdownFilter.php inside the views/filters folder.
 
 Change
 
+<div class="gistFallback">
 {% gist 1177233 example14.php %}
+</div>
 
 To
 
+<div class="gistFallback">
 {% gist 1177233 example15.php %}
+</div>
 
 Now open up the _HamlMarkdownFilter.php file inside /vendors/haml/filters
 
 Change
 
+<div class="gistFallback">
 {% gist 1177233 example16.php %}
+</div>
 
 To
 
+<div class="gistFallback">
 {% gist 1177233 example17.php %}
+</div>
 
 also change
 
+<div class="gistFallback">
 {% gist 1177233 example18.php %}
+</div>
 
 To
 
+<div class="gistFallback">
 {% gist 1177233 example19.php %}
+</div>
 
 Now throw some Markdown into you Haml files and prepare to be amazed.
 

@@ -70,51 +70,48 @@
 
 <p>This code is based on the assumption that there is a folder called something like <em>user_uploads</em> with a sub-folder for each user, something like <em>Travis_Berry</em></p>
 
-<script src='https://gist.github.com/1177068.js?file=example1.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177068.js?file=example1.php'></script><noscript><pre><code>&lt;?php
+    //Get the directory to zip
+    $filename_no_ext= $_GET['directtozip'];
 
+    // we deliver a zip file
+    header(&quot;Content-Type: archive/zip&quot;);
 
-<p><noscript><pre><code>&lt;?php</p>
+    // filename for the browser to save the zip file
+    header(&quot;Content-Disposition: attachment; filename=$filename_no_ext&quot;.&quot;.zip&quot;);
 
-<pre><code>//Get the directory to zip
-$filename_no_ext= $_GET['directtozip'];
+    // get a tmp name for the .zip
+    $tmp_zip = tempnam (&quot;tmp&quot;, &quot;tempname&quot;) . &quot;.zip&quot;;
 
-// we deliver a zip file
-header(&amp;quot;Content-Type: archive/zip&amp;quot;);
+    //change directory so the zip file doesnt have a tree structure in it.
+    chdir('user_uploads/'.$_GET['directtozip']);
+   
+    // zip the stuff (dir and all in there) into the tmp_zip file
+    exec('zip '.$tmp_zip.' *');
+   
+    // calc the length of the zip. it is needed for the progress bar of the browser
+    $filesize = filesize($tmp_zip);
+    header(&quot;Content-Length: $filesize&quot;);
 
-// filename for the browser to save the zip file
-header(&amp;quot;Content-Disposition: attachment; filename=$filename_no_ext&amp;quot;.&amp;quot;.zip&amp;quot;);
+    // deliver the zip file
+    $fp = fopen(&quot;$tmp_zip&quot;,&quot;r&quot;);
+    echo fpassthru($fp);
 
-// get a tmp name for the .zip
-$tmp_zip = tempnam (&amp;quot;tmp&amp;quot;, &amp;quot;tempname&amp;quot;) . &amp;quot;.zip&amp;quot;;
+    // clean up the tmp zip file
+    unlink($tmp_zip);
+?&gt;</code></pre></noscript>
+</div>
 
-//change directory so the zip file doesnt have a tree structure in it.
-chdir('user_uploads/'.$_GET['directtozip']);
-
-// zip the stuff (dir and all in there) into the tmp_zip file
-exec('zip '.$tmp_zip.' *');
-
-// calc the length of the zip. it is needed for the progress bar of the browser
-$filesize = filesize($tmp_zip);
-header(&amp;quot;Content-Length: $filesize&amp;quot;);
-
-// deliver the zip file
-$fp = fopen(&amp;quot;$tmp_zip&amp;quot;,&amp;quot;r&amp;quot;);
-echo fpassthru($fp);
-
-// clean up the tmp zip file
-unlink($tmp_zip);
-</code></pre>
-
-<p>?&gt;</code></pre></noscript></p>
 
 <p>Save this code as zip_folders.php</p>
 
 <p>Then when you want to provide a link to download a users uploads as a zip file, you link to it like,</p>
 
-<script src='https://gist.github.com/1177068.js?file=example2.html'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177068.js?file=example2.html'></script><noscript><pre><code>&lt;a href=&quot;zip_folders.php?directtozip=THE USERS DIRECTORY&quot;&gt;Download All As Zip&lt;/a&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;a href=&quot;zip_folders.php?directtozip=THE USERS DIRECTORY&quot;&gt;Download All As Zip&lt;/a&gt;</code></pre></noscript></p>
 
 <p>That will cause a download prompt to appear for the user when clicking on the link.</p>
 

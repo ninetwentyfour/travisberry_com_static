@@ -26,13 +26,17 @@ I found a solution [here](http://www.trash.net/~ck/ontheflyzip/), but it require
 
 This code is based on the assumption that there is a folder called something like _user_uploads_ with a sub-folder for each user, something like _Travis_Berry_
 
+<div class="gistFallback">
 {% gist 1177068 example1.php %}
+</div>
 	
 Save this code as zip_folders.php
 
 Then when you want to provide a link to download a users uploads as a zip file, you link to it like,
 
+<div class="gistFallback">
 {% gist 1177068 example2.html %}
+</div>
 
 That will cause a download prompt to appear for the user when clicking on the link.
 

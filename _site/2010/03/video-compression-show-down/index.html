@@ -121,22 +121,24 @@
 
 <p>For a single pass render:</p>
 
-<script src='https://gist.github.com/1176952.js?file=example1.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176952.js?file=example1.txt'></script><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 outputmovie.mp4</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 outputmovie.mp4</code></pre></noscript></p>
 
 <p>For a two pass render:</p>
 
-<script src='https://gist.github.com/1176952.js?file=example2.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176952.js?file=example2.txt'></script><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -an -threads 6 -f mp4 -pass 1 /dev/null</code></pre></noscript>
+</div>
 
 
-<p><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -an -threads 6 -f mp4 -pass 1 /dev/null</code></pre></noscript></p>
-
-<script src='https://gist.github.com/1176952.js?file=example3.txt'></script>
 
 
-<p><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 -pass 2 outputmovie.mp4</code></pre></noscript></p>
+<div class="gistFallback">
+<script src='https://gist.github.com/1176952.js?file=example3.txt'></script><noscript><pre><code>ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 -pass 2 outputmovie.mp4</code></pre></noscript>
+</div>
+
 
 <p>Run the first command, then run the second for a two pass render. I used a two pass render in the test above.To better understand what all those setting mean, I recommend taking a look at this site<a href="http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping">http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping</a></p>
 

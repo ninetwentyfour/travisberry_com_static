@@ -67,10 +67,10 @@
 
 <p>A simple</p>
 
-<script src='https://gist.github.com/1177105.js?file=example1.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example1.txt'></script><noscript><pre><code>sudo apt-get install nginx</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install nginx</code></pre></noscript></p>
 
 <p>will get you started.</p>
 
@@ -78,162 +78,121 @@
 
 <p>change it to</p>
 
-<script src='https://gist.github.com/1177105.js?file=example2.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example2.txt'></script><noscript><pre><code># You may add here your
+# server {
+#       ...
+# }
+# statements for each of your virtual hosts
 
+server {
+    listen   8080;
+    server_name  localhost;
+    access_log  /var/log/nginx/localhost.access.log;
+## Default location
+    location / {
+        root   /var/www;
+        index  index.php;
+    }
 
-<p><noscript><pre><code># You may add here your</p>
+## Images and static content is treated different
+    location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {
+      access_log        off;
+      expires           30d;
+      root /var/www;
+    }
+## Parse all .php file in the /var/www directory
+        location ~ .php$ {
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass   backend;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
+        include fastcgi_params;
+        fastcgi_param  QUERY_STRING     $query_string;
+        fastcgi_param  REQUEST_METHOD   $request_method;
+        fastcgi_param  CONTENT_TYPE     $content_type;
+        fastcgi_param  CONTENT_LENGTH   $content_length;
+        fastcgi_intercept_errors        on;
+        fastcgi_ignore_client_abort     off;
+        fastcgi_connect_timeout 60;
+        fastcgi_send_timeout 180;
+        fastcgi_read_timeout 180;
+        fastcgi_buffer_size 128k;
+        fastcgi_buffers 4 256k;
+        fastcgi_busy_buffers_size 256k;
+        fastcgi_temp_file_write_size 256k;
+    }
 
-<h1>server {</h1>
-
-<h1>...</h1>
-
-<h1>}</h1>
-
-<h1>statements for each of your virtual hosts</h1>
-
-<p>server {</p>
-
-<pre><code>listen   8080;
-server_name  localhost;
-access_log  /var/log/nginx/localhost.access.log;
-</code></pre>
-
-<h2>Default location</h2>
-
-<pre><code>location / {
-    root   /var/www;
-    index  index.php;
+## Disable viewing .htaccess &amp; .htpassword
+   location ~ /\.ht {
+       deny  all;
+    }
 }
-</code></pre>
-
-<h2>Images and static content is treated different</h2>
-
-<pre><code>location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {
-  access_log        off;
-  expires           30d;
-  root /var/www;
+upstream backend {
+        server 127.0.0.1:9000;
 }
-</code></pre>
 
-<h2>Parse all .php file in the /var/www directory</h2>
+        #error_page  404  /404.html;
 
-<pre><code>    location ~ .php$ {
-    fastcgi_split_path_info ^(.+\.php)(.*)$;
-    fastcgi_pass   backend;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
-    include fastcgi_params;
-    fastcgi_param  QUERY_STRING     $query_string;
-    fastcgi_param  REQUEST_METHOD   $request_method;
-    fastcgi_param  CONTENT_TYPE     $content_type;
-    fastcgi_param  CONTENT_LENGTH   $content_length;
-    fastcgi_intercept_errors        on;
-    fastcgi_ignore_client_abort     off;
-    fastcgi_connect_timeout 60;
-    fastcgi_send_timeout 180;
-    fastcgi_read_timeout 180;
-    fastcgi_buffer_size 128k;
-    fastcgi_buffers 4 256k;
-    fastcgi_busy_buffers_size 256k;
-    fastcgi_temp_file_write_size 256k;
-}
-</code></pre>
+        # redirect server error pages to the static page /50x.html
+        #
+        #error_page   500 502 503 504  /50x.html;
+        #location = /50x.html {
+        #       root   /var/www/nginx-default;
+        #}
 
-<h2>Disable viewing .htaccess &amp; .htpassword</h2>
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+                #proxy_pass   http://127.0.0.1;
+        #}
 
-<p>   location ~ /.ht {</p>
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+                #fastcgi_pass   127.0.0.1:9000;
+                #fastcgi_index  index.php;
+                #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+                #includefastcgi_params;
 
-<pre><code>   deny  all;
-}
-</code></pre>
 
-<p>}
-upstream backend {</p>
 
-<pre><code>    server 127.0.0.1:9000;
-</code></pre>
+# another virtual host using mix of IP-, name-, and port-based configuration
+#
+#server {
+#listen   8000;
+#listen   somename:8080;
+#server_name  somename  alias  another.alias;
 
-<p>}</p>
+#location / {
+#root   html;
+#index  index.html index.htm;
+#}
+#}
 
-<pre><code>    #error_page  404  /404.html;
 
-    # redirect server error pages to the static page /50x.html
-    #
-    #error_page   500 502 503 504  /50x.html;
-    #location = /50x.html {
-    #       root   /var/www/nginx-default;
-    #}
+# HTTPS server
+#
+#server {
+#listen   443;
+#server_name  localhost;
+#ssl  on;
+#ssl_certificate  cert.pem;
+#ssl_certificate_key  cert.key;
 
-    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-    #
-    #location ~ \.php$ {
-            #proxy_pass   http://127.0.0.1;
-    #}
+#ssl_session_timeout  5m;
 
-    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-    #
-    #location ~ \.php$ {
-            #fastcgi_pass   127.0.0.1:9000;
-            #fastcgi_index  index.php;
-            #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-            #includefastcgi_params;
-</code></pre>
+#ssl_protocols  SSLv3 TLSv1;
+#ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
+#ssl_prefer_server_ciphers   on;
 
-<h1>another virtual host using mix of IP-, name-, and port-based configuration</h1>
+#location / {
+#root   html;
+#index  index.html index.htm;
+#}
+#}</code></pre></noscript>
+</div>
 
-<p>#</p>
-
-<h1>server {</h1>
-
-<h1>listen   8000;</h1>
-
-<h1>listen   somename:8080;</h1>
-
-<h1>server_name  somename  alias  another.alias;</h1>
-
-<h1>location / {</h1>
-
-<h1>root   html;</h1>
-
-<h1>index  index.html index.htm;</h1>
-
-<h1>}</h1>
-
-<h1>}</h1>
-
-<h1>HTTPS server</h1>
-
-<p>#</p>
-
-<h1>server {</h1>
-
-<h1>listen   443;</h1>
-
-<h1>server_name  localhost;</h1>
-
-<h1>ssl  on;</h1>
-
-<h1>ssl_certificate  cert.pem;</h1>
-
-<h1>ssl_certificate_key  cert.key;</h1>
-
-<h1>ssl_session_timeout  5m;</h1>
-
-<h1>ssl_protocols  SSLv3 TLSv1;</h1>
-
-<h1>ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;</h1>
-
-<h1>ssl_prefer_server_ciphers   on;</h1>
-
-<h1>location / {</h1>
-
-<h1>root   html;</h1>
-
-<h1>index  index.html index.htm;</h1>
-
-<h1>}</h1>
-
-<h1>}</code></pre></noscript></h1>
 
 <p>This assumes your root web folder is <em>/var/www</em>. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.</p>
 
@@ -241,17 +200,17 @@ upstream backend {</p>
 
 <p>As usual start with</p>
 
-<script src='https://gist.github.com/1177105.js?file=example3.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example3.txt'></script><noscript><pre><code>sudo apt-get install php5-cli php5-common php5-suhosin</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install php5-cli php5-common php5-suhosin</code></pre></noscript></p>
 
 <p>then</p>
 
-<script src='https://gist.github.com/1177105.js?file=example4.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example4.txt'></script><noscript><pre><code>sudo apt-get install php5-fpm php5-cgi</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install php5-fpm php5-cgi</code></pre></noscript></p>
 
 <p>You may have to add <em>deb http://php53.dotdeb.org stable all</em> to your packages list for php5-fpm and php5-cgi to show up.</p>
 
@@ -259,45 +218,43 @@ upstream backend {</p>
 
 <p>First</p>
 
-<script src='https://gist.github.com/1177105.js?file=example6.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example6.txt'></script><noscript><pre><code>sudo apt-get install php5-dev</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install php5-dev</code></pre></noscript></p>
 
 <p>then</p>
 
-<script src='https://gist.github.com/1177105.js?file=example7.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example7.txt'></script><noscript><pre><code>sudo apt-get install make</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install make</code></pre></noscript></p>
 
 <p>Now cd into <em>/tmp/</em></p>
 
-<script src='https://gist.github.com/1177105.js?file=example8.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example8.txt'></script><noscript><pre><code>wget http://bart.eaccelerator.net/source/0.9.6.1/eaccelerator-0.9.6.1.tar.bz2
 
+tar xvjf eaccelerator-0.9.6.1.tar.bz2
 
-<p><noscript><pre><code>wget http://bart.eaccelerator.net/source/0.9.6.1/eaccelerator-0.9.6.1.tar.bz2</p>
+cd eaccelerator-0.9.6.1/
 
-<p>tar xvjf eaccelerator-0.9.6.1.tar.bz2</p>
+sudo phpize
 
-<p>cd eaccelerator-0.9.6.1/</p>
+sudo ./configure –enable-eaccelerator=shared
 
-<p>sudo phpize</p>
+sudo make
 
-<p>sudo ./configure –enable-eaccelerator=shared</p>
+sudo make install</code></pre></noscript>
+</div>
 
-<p>sudo make</p>
-
-<p>sudo make install</code></pre></noscript></p>
 
 <p>Now edit <em>/etc/php5/fpm/php.ini</em></p>
 
 <p>and right under the [PHP] block add</p>
 
-<script src='https://gist.github.com/1177105.js?file=example9.txt'></script>
-
-
-<p><noscript><pre><code>; eAccelerator configuration
+<div class="gistFallback">
+<script src='https://gist.github.com/1177105.js?file=example9.txt'></script><noscript><pre><code>; eAccelerator configuration
 ; Note that eAccelerator may also be installed as a PHP extension or as a zend_$
 ; If you are using a thread safe build of PHP you must use
 ; zend_extension_ts instead of zend_extension
@@ -316,21 +273,23 @@ eaccelerator.shm_prune_period   = &quot;0&quot;
 eaccelerator.shm_only           = &quot;0&quot;
 eaccelerator.compress           = &quot;1&quot;
 eaccelerator.compress_level     = &quot;9&quot;
-eaccelerator.allowed_admin_path = &quot;/var/www/eaccelerator&quot;</code></pre></noscript></p>
+eaccelerator.allowed_admin_path = &quot;/var/www/eaccelerator&quot;</code></pre></noscript>
+</div>
+
 
 <p>Now restart PHP</p>
 
-<script src='https://gist.github.com/1177110.js?file=example10.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example10.txt'></script><noscript><pre><code>sudo /etc/init.d/php5-fpm restart</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo /etc/init.d/php5-fpm restart</code></pre></noscript></p>
 
 <p>Then restart Nginx</p>
 
-<script src='https://gist.github.com/1177110.js?file=example11.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example11.txt'></script><noscript><pre><code>sudo /etc/init.d/nginx restart</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo /etc/init.d/nginx restart</code></pre></noscript></p>
 
 <p>Now if you hit http://localhost:8080/index.php you should see your site.</p>
 
@@ -340,33 +299,33 @@ eaccelerator.allowed_admin_path = &quot;/var/www/eaccelerator&quot;</code></pre>
 
 <p>Install with</p>
 
-<script src='https://gist.github.com/1177110.js?file=example12.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example12.txt'></script><noscript><pre><code>sudo apt-get install varnish</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo apt-get install varnish</code></pre></noscript></p>
 
 <p>After install run</p>
 
-<script src='https://gist.github.com/1177110.js?file=example13.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example13.txt'></script><noscript><pre><code>pkill varnishd</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>pkill varnishd</code></pre></noscript></p>
 
 <p>to make sure it’s not running while we configure it.</p>
 
 <p>Now run</p>
 
-<script src='https://gist.github.com/1177110.js?file=example14.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example14.txt'></script><noscript><pre><code>sudo varnishd -f /etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>sudo varnishd -f /etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000</code></pre></noscript></p>
 
 <p>Varnish should now be running. Check by typing</p>
 
-<script src='https://gist.github.com/1177110.js?file=example15.txt'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example15.txt'></script><noscript><pre><code>varnishlog</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>varnishlog</code></pre></noscript></p>
 
 <p>If you see a series of lines then Varnish should be working.</p>
 
@@ -374,22 +333,22 @@ eaccelerator.allowed_admin_path = &quot;/var/www/eaccelerator&quot;</code></pre>
 
 <p>If you see results like</p>
 
-<script src='https://gist.github.com/1177110.js?file=example16.txt'></script>
-
-
-<p><noscript><pre><code>12 SessionOpen  c 192.168.10.101 51732 :80
+<div class="gistFallback">
+<script src='https://gist.github.com/1177110.js?file=example16.txt'></script><noscript><pre><code>12 SessionOpen  c 192.168.10.101 51732 :80
    12 ReqStart     c 192.168.10.101 51732 1440203205
    12 RxRequest    c GET
    12 RxURL        c /favicon.ico
    12 RxProtocol   c HTTP/1.1
    12 RxHeader     c Host: www.ironyogistudios.com
    12 RxHeader     c User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10
-   12 RxHeader     c Accept: image/png,image/<em>;q=0.8,</em>/<em>;q=0.5
+   12 RxHeader     c Accept: image/png,image/*;q=0.8,*/*;q=0.5
    12 RxHeader     c Accept-Language: en-us,en;q=0.5
    12 RxHeader     c Accept-Encoding: gzip,deflate
-   12 RxHeader     c Accept-Charset: ISO-8859-1,utf-8;q=0.7,</em>;q=0.7
+   12 RxHeader     c Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
    12 RxHeader     c Keep-Alive: 115
-   12 RxHeader     c Connection: keep-alive</code></pre></noscript></p>
+   12 RxHeader     c Connection: keep-alive</code></pre></noscript>
+</div>
+
 
 <p>Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.</p>
 

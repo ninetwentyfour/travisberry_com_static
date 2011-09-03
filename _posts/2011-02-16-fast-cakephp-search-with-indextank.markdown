@@ -29,7 +29,9 @@ Take the file you downloaded (indextank_client.php in my case) and place it in a
 
 Now open up your app_controller.php and add these four functions
 
+<div class="gistFallback">
 {% gist 1177288 example1.php %}
+</div>
 
 These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.
 
@@ -39,27 +41,37 @@ All the functions accept the $indexType variable which is where you set which in
 
 So now lets add some documents to our index.
 
+<div class="gistFallback">
 {% gist 1177288 example2.php %}
+</div>
 
 I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.
 
 Let's add the code to call our addIndextank() function in the app controller.
 
+<div class="gistFallback">
 {% gist 1177288 example3.php %}
+</div>
 
 Let go over what's going on here.
 
+<div class="gistFallback">
 {% gist 1177288 example4.php %}
+</div>
 
 This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.
 
 The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.
 
+<div class="gistFallback">
 {% gist 1177288 example5.php %}
+</div>
 
 Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.
 
+<div class="gistFallback">
 {% gist 1177288 example6.php %}
+</div>
 
 This line is the call to the addIndextank function. The "HomkoraProjects" is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.
 
@@ -69,11 +81,15 @@ Now if you delete the Project it's best to delete to document in the index as we
 
 Starting with
 
+<div class="gistFallback">
 {% gist 1177288 example7.php %}
+</div>
 
 We can add a simple call like
 
+<div class="gistFallback">
 {% gist 1177288 example8.php %}
+</div>
 
 Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)
 
@@ -81,13 +97,19 @@ Alright, now you can add and remove documents from your index, but what good are
 
 In my projects controller I added the following function
 
+<div class="gistFallback">
 {% gist 1177288 example9.php %}
+</div>
 
+<div class="gistFallback">
 {% gist 1177293 example10.php %}
+</div>
 
 I pass the search term through a form and set it as the $query variable.
 
+<div class="gistFallback">
 {% gist 1177293 example11.php %}
+</div>
 
 Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.
 

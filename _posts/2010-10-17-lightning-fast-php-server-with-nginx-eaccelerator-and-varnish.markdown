@@ -26,7 +26,9 @@ Installing Nginx on Ubuntu is fairly simple.
 
 A simple
 
+<div class="gistFallback">
 {% gist 1177105 example1.txt %}
+</div>
 
 will get you started. 
 
@@ -34,7 +36,9 @@ Now edit the file in _/etc/nginx/sites-available/default_
 
 change it to
 
+<div class="gistFallback">
 {% gist 1177105 example2.txt %}
+</div>
 
 This assumes your root web folder is _/var/www_. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.
 
@@ -42,11 +46,15 @@ Now we need to get PHP installed so we can actually serve PHP files.
 
 As usual start with
 
+<div class="gistFallback">
 {% gist 1177105 example3.txt %}
+</div>
 
 then
 
+<div class="gistFallback">
 {% gist 1177105 example4.txt %}
+</div>
 
 You may have to add _deb http://php53.dotdeb.org stable all_ to your packages list for php5-fpm and php5-cgi to show up.
 
@@ -54,29 +62,41 @@ Before configuring PHP let’s install eAccelerator. "eAccelerator is a free ope
 
 First
 
+<div class="gistFallback">
 {% gist 1177105 example6.txt %}
+</div>
 
 then
 
+<div class="gistFallback">
 {% gist 1177105 example7.txt %}
+</div>
 
 Now cd into _/tmp/_
 
+<div class="gistFallback">
 {% gist 1177105 example8.txt %}
+</div>
 
 Now edit _/etc/php5/fpm/php.ini_
 
 and right under the [PHP] block add
 
+<div class="gistFallback">
 {% gist 1177105 example9.txt %}
+</div>
 
 Now restart PHP
 
+<div class="gistFallback">
 {% gist 1177110 example10.txt %}
+</div>
 
 Then restart Nginx
 
+<div class="gistFallback">
 {% gist 1177110 example11.txt %}
+</div>
 
 Now if you hit http://localhost:8080/index.php you should see your site.
 
@@ -86,21 +106,29 @@ The only thing left to setup at this point is Varnish.
 
 Install with
 
+<div class="gistFallback">
 {% gist 1177110 example12.txt %}
+</div>
 
 After install run
 
+<div class="gistFallback">
 {% gist 1177110 example13.txt %}
+</div>
 
 to make sure it’s not running while we configure it.
 
 Now run
 
+<div class="gistFallback">
 {% gist 1177110 example14.txt %}
+</div>
 
 Varnish should now be running. Check by typing
 
+<div class="gistFallback">
 {% gist 1177110 example15.txt %}
+</div>
 
 If you see a series of lines then Varnish should be working.
 
@@ -108,7 +136,9 @@ You can run one more test by going to your browser and reloading the page.
 
 If you see results like
 
+<div class="gistFallback">
 {% gist 1177110 example16.txt %}
+</div>
 
 Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.
 

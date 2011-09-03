@@ -26,7 +26,9 @@ You take this url and use an &lt;object&gt; code to embed the movie in a page.
 
 The final code looks something like this
 
+<div class="gistFallback">
 {% gist 1176830 quicktime.html %}
+</div>
 
 Here is my first test at an embeded .mov file streamed off a quicktime server.
 
@@ -34,7 +36,9 @@ Here is my first test at an embeded .mov file streamed off a quicktime server.
 
 You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -
 
+<div class="gistFallback">
 {% gist 1176830 quicktime2.html %}
+</div>
 
 This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.
 

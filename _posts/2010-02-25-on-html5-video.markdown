@@ -22,7 +22,9 @@ Before I get to the bashing let's talk about what is good about HTML5 video.
 
 Well first off, it is in theory as easy as adding an image.
 
+<div class="gistFallback">
 {% gist 1176926 example1.html %}
+</div>
 
 Holy crap that is simple. Unfortunately your code will not end up looking like that. More on it in a bit.
 
@@ -36,7 +38,9 @@ Ugh, this is one of the biggest pains to deal with. Guess what, different browse
 
 That simple code above now turns into
 
+<div class="gistFallback">
 {% gist 1176926 example2.html %}
+</div>
 
 Not so simple anymore is it? Not horrible but not the elegant solution we were promised. 
 
@@ -56,7 +60,9 @@ I'll write this again for importance. **You still have to include Flash video** 
 
 So now that super simple code to embed videos now looks like this to make sure it handles all browsers nicely. Note, this still won't show anything in FireFox 2 but it will show in IE. Most FF users tend to update on a regular basis so it's no huge deal.
 
+<div class="gistFallback">
 {% gist 1176926 example3.html %}
+</div>
 
 Notice instead of adding a flash video I added a youtube embed. I was tired of crunching out different codecs by this point so I said screw it and let youtube handle some of the work. (I also added an iPhone version so the code is a little longer than necessary, but not by much)
 

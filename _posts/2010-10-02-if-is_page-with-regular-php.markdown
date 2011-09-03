@@ -20,7 +20,9 @@ My article on [WordPress' is_page()](http://oldstatic.travisberry.com/2010/01/us
 <div class="clearfix"></div>
 Well the downside is, you can't. The upside is that you can still perform a similar check
 
+<div class="gistFallback">
 {% gist 1177074 example1.php %}
+</div>
 
 Not as smooth as is_page() but still a fairly simple way to check the page you are currently on. You can easily check if it is "=="/"!=", and add in as many "&&"/"||" conditions as you want.
 

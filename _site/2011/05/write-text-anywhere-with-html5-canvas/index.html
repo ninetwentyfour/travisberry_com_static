@@ -67,23 +67,20 @@
 
 <p>So first we need to create a canvas element</p>
 
-<script src='https://gist.github.com/1177318.js?file=example1.html'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example1.html'></script><noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;main&quot;&gt;
+            &lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;!-- the canvas --&gt;
+        &lt;/div&gt;
+        &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;</p>
-
-<pre><code>&amp;lt;head&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-    &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
-        &amp;lt;canvas id=&amp;quot;c&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;lt;!-- the canvas --&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;script src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;/body&amp;gt;
-</code></pre>
-
-<p>&lt;/html&gt;</code></pre></noscript></p>
 
 <p>Now we have the canvas element all set up we can start having some fun.</p>
 
@@ -91,16 +88,13 @@
 
 <p>Add this into a css file</p>
 
-<script src='https://gist.github.com/1177318.js?file=example2.css'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example2.css'></script><noscript><pre><code>#c {
+    width: 640px;
+    height: 360px;
+}</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>#c {</p>
-
-<pre><code>width: 640px;
-height: 360px;
-</code></pre>
-
-<p>}</code></pre></noscript></p>
 
 <p>Now we can start adding drawings. One thing we are going to need for this is a text entry box. I debated trying to "type" directly into the canvas but decided against it. (for complexity reasons)</p>
 
@@ -108,43 +102,40 @@ height: 360px;
 
 <p>Let's go ahead and create a javascript function to handle the click and add the textarea and save button.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example3.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example3.js'></script><noscript><pre><code>//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project
+$('#c').mousedown(function(e){
+    if ($('#textAreaPopUp').length == 0) {
+        var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
+        var mouseY = e.pageY - this.offsetTop;
+        //append a text area box to the canvas where the user clicked to enter in a comment
+        var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
+        var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+        var appendString = textArea + saveButton;
+        $(&quot;#main&quot;).append(appendString);
+    } else {
+        $('textarea#textareaTest').remove();
+        $('#saveText').remove();
+        $('#textAreaPopUp').remove();
+        var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
+        var mouseY = e.pageY - this.offsetTop;
+        //append a text area box to the canvas where the user clicked to enter in a comment
+        var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
+        var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+        var appendString = textArea + saveButton;
+        $(&quot;#main&quot;).append(appendString);
+    }
+});</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project
-$('#c').mousedown(function(e){</p>
-
-<pre><code>if ($('#textAreaPopUp').length == 0) {
-    var mouseX = e.pageX - this.offsetLeft + $(&amp;quot;#c&amp;quot;).position().left;
-    var mouseY = e.pageY - this.offsetTop;
-    //append a text area box to the canvas where the user clicked to enter in a comment
-    var textArea = &amp;quot;&amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;quot;+mouseY+&amp;quot;px;left:&amp;quot;+mouseX+&amp;quot;px;z-index:30;'&amp;gt;&amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;gt;&amp;lt;/textarea&amp;gt;&amp;quot;;
-    var saveButton = &amp;quot;&amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;quot;+mouseY+&amp;quot;,&amp;quot;+mouseX+&amp;quot;);'&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;;
-    var appendString = textArea + saveButton;
-    $(&amp;quot;#main&amp;quot;).append(appendString);
-} else {
-    $('textarea#textareaTest').remove();
-    $('#saveText').remove();
-    $('#textAreaPopUp').remove();
-    var mouseX = e.pageX - this.offsetLeft + $(&amp;quot;#c&amp;quot;).position().left;
-    var mouseY = e.pageY - this.offsetTop;
-    //append a text area box to the canvas where the user clicked to enter in a comment
-    var textArea = &amp;quot;&amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;quot;+mouseY+&amp;quot;px;left:&amp;quot;+mouseX+&amp;quot;px;z-index:30;'&amp;gt;&amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;gt;&amp;lt;/textarea&amp;gt;&amp;quot;;
-    var saveButton = &amp;quot;&amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;quot;+mouseY+&amp;quot;,&amp;quot;+mouseX+&amp;quot;);'&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;;
-    var appendString = textArea + saveButton;
-    $(&amp;quot;#main&amp;quot;).append(appendString);
-}
-</code></pre>
-
-<p>});</code></pre></noscript></p>
 
 <p>There’s nothing too crazy in here. It does do a check and destroy the textarea if one is already displayed while the user clicks the canvas again.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example4.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example4.js'></script><noscript><pre><code>var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
+var mouseY = e.pageY - this.offsetTop;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
-var mouseY = e.pageY - this.offsetTop;</code></pre></noscript></p>
 
 <p>These are setting the position of the mouse click so we can use them to set the position to display the textarea at. It takes into account any offsets the canvas element may have as well.</p>
 
@@ -152,270 +143,258 @@ var mouseY = e.pageY - this.offsetTop;</code></pre></noscript></p>
 
 <p>Now we have to actually draw the entered text to the screen.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example5.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example5.js'></script><noscript><pre><code>function saveTextFromArea(y,x){
+    //get the value of the textarea then destroy it and the save button
+    var text = $('textarea#textareaTest').val();
+    $('textarea#textareaTest').remove();
+    $('#saveText').remove();
+    //get the canvas and add the text functions
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    var cw = canvas.clientWidth;
+    var ch = canvas.clientHeight;
+    canvas.width = cw;
+    canvas.height = ch;
+    //break the text into arrays based on a text width of 100px
+    var phraseArray = getLines(ctx,text,100);
+    // this adds the text functions to the ctx
+    CanvasTextFunctions.enable(ctx);
+    var counter = 0;
+    //set the font styles
+    var font = &quot;sans&quot;;
+    var fontsize = 16;
+    ctx.strokeStyle = &quot;rgba(237,229,0,1)&quot;;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 1;
+    ctx.shadowColor = &quot;rgba(0,0,0,1)&quot;;
+    //draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+    $.each(phraseArray, function() {
+        //set the placement in the canvas
+        var lineheight = fontsize * 1.5;
+        var newline = ++counter;
+        newline = newline * lineheight;
+        var topPlacement = y - $(&quot;#c&quot;).position().top + newline;
+        var leftPlacement = x - $(&quot;#c&quot;).position().left;
+        text = this;
+        //draw the text
+        ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+        ctx.save();
+        ctx.restore();
+    });
+    //reset the drop shadow so any other drawing don't have them
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = &quot;rgba(0,0,0,0)&quot;;
+}</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>function saveTextFromArea(y,x){</p>
-
-<pre><code>//get the value of the textarea then destroy it and the save button
-var text = $('textarea#textareaTest').val();
-$('textarea#textareaTest').remove();
-$('#saveText').remove();
-//get the canvas and add the text functions
-var canvas = document.getElementById('c');
-var ctx = canvas.getContext('2d');
-var cw = canvas.clientWidth;
-var ch = canvas.clientHeight;
-canvas.width = cw;
-canvas.height = ch;
-//break the text into arrays based on a text width of 100px
-var phraseArray = getLines(ctx,text,100);
-// this adds the text functions to the ctx
-CanvasTextFunctions.enable(ctx);
-var counter = 0;
-//set the font styles
-var font = &amp;quot;sans&amp;quot;;
-var fontsize = 16;
-ctx.strokeStyle = &amp;quot;rgba(237,229,0,1)&amp;quot;;
-ctx.shadowOffsetX = 2;
-ctx.shadowOffsetY = 2;
-ctx.shadowBlur = 1;
-ctx.shadowColor = &amp;quot;rgba(0,0,0,1)&amp;quot;;
-//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
-$.each(phraseArray, function() {
-    //set the placement in the canvas
-    var lineheight = fontsize * 1.5;
-    var newline = ++counter;
-    newline = newline * lineheight;
-    var topPlacement = y - $(&amp;quot;#c&amp;quot;).position().top + newline;
-    var leftPlacement = x - $(&amp;quot;#c&amp;quot;).position().left;
-    text = this;
-    //draw the text
-    ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
-    ctx.save();
-    ctx.restore();
-});
-//reset the drop shadow so any other drawing don't have them
-ctx.shadowOffsetX = 0;
-ctx.shadowOffsetY = 0;
-ctx.shadowBlur = 0;
-ctx.shadowColor = &amp;quot;rgba(0,0,0,0)&amp;quot;;
-</code></pre>
-
-<p>}</code></pre></noscript></p>
 
 <p>So this is fairly intense. It also uses a little library file from Jim Studt that you can find <a href="http://www.federated.com/~jim/canvastext/">here</a>. Though I have modified mine a bit because of some conflicts it was causing me. You can grab my copy at <a href="https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js">https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js</a></p>
 
 <p>A few important parts in that code are</p>
 
-<script src='https://gist.github.com/1177318.js?file=example6.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example6.js'></script><noscript><pre><code>//break the text into arrays based on a text width of 100px
+var phraseArray = getLines(ctx,text,100);</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>//break the text into arrays based on a text width of 100px
-var phraseArray = getLines(ctx,text,100);</code></pre></noscript></p>
 
 <p>This is going to another function that we will write in a minute. Basically it is solving the problem of canvas text not having any idea how to word wrap. It will blow right off the page without this.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example7.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example7.js'></script><noscript><pre><code>// this adds the text functions to the ctx
+CanvasTextFunctions.enable(ctx);</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>// this adds the text functions to the ctx
-CanvasTextFunctions.enable(ctx);</code></pre></noscript></p>
 
 <p>This intializes the text library file.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example8.js'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example8.js'></script><noscript><pre><code>//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+$.each(phraseArray, function() {
+    //set the placement in the canvas
+    var lineheight = fontsize * 1.5;
+    var newline = ++counter;
+    newline = newline * lineheight;
+    var topPlacement = y - $(&quot;#c&quot;).position().top + newline;
+    var leftPlacement = x - $(&quot;#c&quot;).position().left;
+    text = this;
+    //draw the text
+    ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+    ctx.save();
+    ctx.restore();
+});</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
-$.each(phraseArray, function() {</p>
-
-<pre><code>//set the placement in the canvas
-var lineheight = fontsize * 1.5;
-var newline = ++counter;
-newline = newline * lineheight;
-var topPlacement = y - $(&amp;quot;#c&amp;quot;).position().top + newline;
-var leftPlacement = x - $(&amp;quot;#c&amp;quot;).position().left;
-text = this;
-//draw the text
-ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
-ctx.save();
-ctx.restore();
-</code></pre>
-
-<p>});</code></pre></noscript></p>
 
 <p>This is the block that actually draws the text to the screen. It takes each entry in the phraseArray and draws it to the screen moving it down by a line each time.</p>
 
 <p>The code to control the width of the text looks like this</p>
 
-<script src='https://gist.github.com/1177318.js?file=example9.js'></script>
-
-
-<p><noscript><pre><code>function getLines(ctx,phrase,maxPxLength) {</p>
-
-<pre><code>//break the text area text into lines based on &amp;quot;box&amp;quot; width
-var wa=phrase.split(&amp;quot; &amp;quot;),
-phraseArray=[],
-lastPhrase=&amp;quot;&amp;quot;,
-l=maxPxLength,
-measure=0;
-ctx.font = &amp;quot;16px sans-serif&amp;quot;;
-for (var i=0;i&amp;lt;wa.length;i++) {
-    var w=wa[i];
-    measure=ctx.measureText(lastPhrase+w).width;
-    if (measure&amp;lt;l) {
-        lastPhrase+=(&amp;quot; &amp;quot;+w);
-    }else {
-        phraseArray.push(lastPhrase);
-        lastPhrase=w;
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example9.js'></script><noscript><pre><code>function getLines(ctx,phrase,maxPxLength) {
+    //break the text area text into lines based on &quot;box&quot; width
+    var wa=phrase.split(&quot; &quot;),
+    phraseArray=[],
+    lastPhrase=&quot;&quot;,
+    l=maxPxLength,
+    measure=0;
+    ctx.font = &quot;16px sans-serif&quot;;
+    for (var i=0;i&lt;wa.length;i++) {
+        var w=wa[i];
+        measure=ctx.measureText(lastPhrase+w).width;
+        if (measure&lt;l) {
+            lastPhrase+=(&quot; &quot;+w);
+        }else {
+            phraseArray.push(lastPhrase);
+            lastPhrase=w;
+        }
+        if (i===wa.length-1) {
+            phraseArray.push(lastPhrase);
+            break;
     }
-    if (i===wa.length-1) {
-        phraseArray.push(lastPhrase);
-        break;
-}
-}
-return phraseArray;
-</code></pre>
+    }
+    return phraseArray;
+}</code></pre></noscript>
+</div>
 
-<p>}</code></pre></noscript></p>
 
 <p>This takes the canvas variable the original text and the width you want to limit it to then returns an array of pharses limited to the length you pass.</p>
 
 <p>Once you have all this done you should have a working example. My final code looks like this.</p>
 
-<script src='https://gist.github.com/1177318.js?file=example10.html'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177318.js?file=example10.html'></script><noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            body {
+                background: #111;
+                color:#eee;
+            }
+            #c {
+                width: 640px;
+                height: 360px;
+                border:1px solid #111;
+                float:left;
+                background:#eee;
+            }
+            #main{
+                width:650px;
+                margin:auto;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;main&quot;&gt;
+            &lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;!-- the canvas --&gt;
+        &lt;/div&gt;
+        &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;text.js&quot;&gt;&lt;/script&gt;&lt;!-- Library to help text --&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            $('#c').mousedown(function(e){
+                if ($('#textAreaPopUp').length == 0) {
+                    var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
+                    var mouseY = e.pageY - this.offsetTop;
 
-
-<p><noscript><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;</p>
-
-<pre><code>&amp;lt;head&amp;gt;
-    &amp;lt;style&amp;gt;
-        body {
-            background: #111;
-            color:#eee;
-        }
-        #c {
-            width: 640px;
-            height: 360px;
-            border:1px solid #111;
-            float:left;
-            background:#eee;
-        }
-        #main{
-            width:650px;
-            margin:auto;
-        }
-    &amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-    &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
-        &amp;lt;canvas id=&amp;quot;c&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;lt;!-- the canvas --&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;script src=&amp;quot;http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;text.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;!-- Library to help text --&amp;gt;
-    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-        $('#c').mousedown(function(e){
-            if ($('#textAreaPopUp').length == 0) {
-                var mouseX = e.pageX - this.offsetLeft + $(&amp;quot;#c&amp;quot;).position().left;
-                var mouseY = e.pageY - this.offsetTop;
-
-                //append a text area box to the canvas where the user clicked to enter in a comment
-                var textArea = &amp;quot;&amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;quot;+mouseY+&amp;quot;px;left:&amp;quot;+mouseX+&amp;quot;px;z-index:30;'&amp;gt;&amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;gt;&amp;lt;/textarea&amp;gt;&amp;quot;;
-                var saveButton = &amp;quot;&amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;quot;+mouseY+&amp;quot;,&amp;quot;+mouseX+&amp;quot;);'&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;;
-                var appendString = textArea + saveButton;
-                $(&amp;quot;#main&amp;quot;).append(appendString);
-            } else {
+                    //append a text area box to the canvas where the user clicked to enter in a comment
+                    var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
+                    var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+                    var appendString = textArea + saveButton;
+                    $(&quot;#main&quot;).append(appendString);
+                } else {
+                    $('textarea#textareaTest').remove();
+                    $('#saveText').remove();
+                    $('#textAreaPopUp').remove();
+                    var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
+                    var mouseY = e.pageY - this.offsetTop;
+                    //append a text area box to the canvas where the user clicked to enter in a comment
+                    var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
+                    var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+                    var appendString = textArea + saveButton;
+                    $(&quot;#main&quot;).append(appendString);
+                }
+            });
+           
+            function saveTextFromArea(y,x){
+                //get the value of the textarea then destroy it and the save button
+                var text = $('textarea#textareaTest').val();
                 $('textarea#textareaTest').remove();
                 $('#saveText').remove();
                 $('#textAreaPopUp').remove();
-                var mouseX = e.pageX - this.offsetLeft + $(&amp;quot;#c&amp;quot;).position().left;
-                var mouseY = e.pageY - this.offsetTop;
-                //append a text area box to the canvas where the user clicked to enter in a comment
-                var textArea = &amp;quot;&amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;quot;+mouseY+&amp;quot;px;left:&amp;quot;+mouseX+&amp;quot;px;z-index:30;'&amp;gt;&amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;gt;&amp;lt;/textarea&amp;gt;&amp;quot;;
-                var saveButton = &amp;quot;&amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;quot;+mouseY+&amp;quot;,&amp;quot;+mouseX+&amp;quot;);'&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;;
-                var appendString = textArea + saveButton;
-                $(&amp;quot;#main&amp;quot;).append(appendString);
+                //get the canvas and add the text functions
+                var canvas = document.getElementById('c');
+                var ctx = canvas.getContext('2d');
+                var cw = canvas.clientWidth;
+                var ch = canvas.clientHeight;
+                canvas.width = cw;
+                canvas.height = ch;
+                //break the text into arrays based on a text width of 100px
+                var phraseArray = getLines(ctx,text,100);
+                // this adds the text functions to the ctx
+                CanvasTextFunctions.enable(ctx);
+                var counter = 0;
+                //set the font styles
+                var font = &quot;sans&quot;;
+                var fontsize = 16;
+                ctx.strokeStyle = &quot;rgba(237,229,0,1)&quot;;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                ctx.shadowBlur = 1;
+                ctx.shadowColor = &quot;rgba(0,0,0,1)&quot;;
+                //draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+                $.each(phraseArray, function() {
+                    //set the placement in the canvas
+                    var lineheight = fontsize * 1.5;
+                    var newline = ++counter;
+                    newline = newline * lineheight;
+                    var topPlacement = y - $(&quot;#c&quot;).position().top + newline;
+                    var leftPlacement = x - $(&quot;#c&quot;).position().left;
+                    text = this;
+                    //draw the text
+                    ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+                    ctx.save();
+                    ctx.restore();
+                });
+                //reset the drop shadow so any other drawing don't have them
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+                ctx.shadowBlur = 0;
+                ctx.shadowColor = &quot;rgba(0,0,0,0)&quot;;
             }
-        });
-
-        function saveTextFromArea(y,x){
-            //get the value of the textarea then destroy it and the save button
-            var text = $('textarea#textareaTest').val();
-            $('textarea#textareaTest').remove();
-            $('#saveText').remove();
-            $('#textAreaPopUp').remove();
-            //get the canvas and add the text functions
-            var canvas = document.getElementById('c');
-            var ctx = canvas.getContext('2d');
-            var cw = canvas.clientWidth;
-            var ch = canvas.clientHeight;
-            canvas.width = cw;
-            canvas.height = ch;
-            //break the text into arrays based on a text width of 100px
-            var phraseArray = getLines(ctx,text,100);
-            // this adds the text functions to the ctx
-            CanvasTextFunctions.enable(ctx);
-            var counter = 0;
-            //set the font styles
-            var font = &amp;quot;sans&amp;quot;;
-            var fontsize = 16;
-            ctx.strokeStyle = &amp;quot;rgba(237,229,0,1)&amp;quot;;
-            ctx.shadowOffsetX = 2;
-            ctx.shadowOffsetY = 2;
-            ctx.shadowBlur = 1;
-            ctx.shadowColor = &amp;quot;rgba(0,0,0,1)&amp;quot;;
-            //draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
-            $.each(phraseArray, function() {
-                //set the placement in the canvas
-                var lineheight = fontsize * 1.5;
-                var newline = ++counter;
-                newline = newline * lineheight;
-                var topPlacement = y - $(&amp;quot;#c&amp;quot;).position().top + newline;
-                var leftPlacement = x - $(&amp;quot;#c&amp;quot;).position().left;
-                text = this;
-                //draw the text
-                ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
-                ctx.save();
-                ctx.restore();
-            });
-            //reset the drop shadow so any other drawing don't have them
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
-            ctx.shadowBlur = 0;
-            ctx.shadowColor = &amp;quot;rgba(0,0,0,0)&amp;quot;;
-        }
-
-        function getLines(ctx,phrase,maxPxLength) {
-            //break the text area text into lines based on &amp;quot;box&amp;quot; width
-            var wa=phrase.split(&amp;quot; &amp;quot;),
-            phraseArray=[],
-            lastPhrase=&amp;quot;&amp;quot;,
-            l=maxPxLength,
-            measure=0;
-            ctx.font = &amp;quot;16px sans-serif&amp;quot;;
-            for (var i=0;i&amp;lt;wa.length;i++) {
-                var w=wa[i];
-                measure=ctx.measureText(lastPhrase+w).width;
-                if (measure&amp;lt;l) {
-                    lastPhrase+=(&amp;quot; &amp;quot;+w);
-                }else {
-                    phraseArray.push(lastPhrase);
-                    lastPhrase=w;
+           
+            function getLines(ctx,phrase,maxPxLength) {
+                //break the text area text into lines based on &quot;box&quot; width
+                var wa=phrase.split(&quot; &quot;),
+                phraseArray=[],
+                lastPhrase=&quot;&quot;,
+                l=maxPxLength,
+                measure=0;
+                ctx.font = &quot;16px sans-serif&quot;;
+                for (var i=0;i&lt;wa.length;i++) {
+                    var w=wa[i];
+                    measure=ctx.measureText(lastPhrase+w).width;
+                    if (measure&lt;l) {
+                        lastPhrase+=(&quot; &quot;+w);
+                    }else {
+                        phraseArray.push(lastPhrase);
+                        lastPhrase=w;
+                    }
+                    if (i===wa.length-1) {
+                        phraseArray.push(lastPhrase);
+                        break;
+                    }
                 }
-                if (i===wa.length-1) {
-                    phraseArray.push(lastPhrase);
-                    break;
-                }
+                return phraseArray;
             }
-            return phraseArray;
-        }
-    &amp;lt;/script&amp;gt;
-&amp;lt;/body&amp;gt;
-</code></pre>
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre></noscript>
+</div>
 
-<p>&lt;/html&gt;</code></pre></noscript></p>
 
 <p>This is a pretty basic and is missing a few things that would make it more helpful but it should give you a good start. Please feel free to leave questions or advice on better ways to do this in the comments.</p>
 

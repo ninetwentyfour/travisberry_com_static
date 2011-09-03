@@ -64,60 +64,54 @@
 
 <p>In your templates functions.php file add</p>
 
-<script src='https://gist.github.com/1177082.js?file=example1.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177082.js?file=example1.php'></script><noscript><pre><code>&lt;?php
+function comment_author_link_mine( $comment_ID = 0 ) {
+    echo get_comment_author_link_mine( $comment_ID );
+}
 
+function get_comment_author_link_mine( $comment_ID = 0 ) {
+    /** @todo Only call these functions when they are needed. Include in if... else blocks */
+    $url    = get_comment_author_url( $comment_ID );
+    $author = get_comment_author( $comment_ID );
 
-<p><noscript><pre><code>&lt;?php
-function comment_author_link_mine( $comment_ID = 0 ) {</p>
+    if ( empty( $url ) || 'http://' == $url )
+        $return = $author;
+    else
+        $return = &quot;&lt;a href='$url' class='comment_url'&gt;$author&lt;/a&gt;&quot;;
+    return apply_filters('get_comment_author_link', $return);
+}
+?&gt;</code></pre></noscript>
+</div>
 
-<pre><code>echo get_comment_author_link_mine( $comment_ID );
-</code></pre>
-
-<p>}</p>
-
-<p>function get_comment_author_link_mine( $comment_ID = 0 ) {</p>
-
-<pre><code>/** @todo Only call these functions when they are needed. Include in if... else blocks */
-$url    = get_comment_author_url( $comment_ID );
-$author = get_comment_author( $comment_ID );
-
-if ( empty( $url ) || 'http://' == $url )
-    $return = $author;
-else
-    $return = &amp;quot;&amp;lt;a href='$url' class='comment_url'&amp;gt;$author&amp;lt;/a&amp;gt;&amp;quot;;
-return apply_filters('get_comment_author_link', $return);
-</code></pre>
-
-<p>}
-?&gt;</code></pre></noscript></p>
 
 <p>Then in your comments.php file, find and replace any mention of</p>
 
-<script src='https://gist.github.com/1177082.js?file=example2.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177082.js?file=example2.php'></script><noscript><pre><code>&lt;?php comment_author_link(); ?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php comment_author_link(); ?&gt;</code></pre></noscript></p>
 
 <p>With</p>
 
-<script src='https://gist.github.com/1177082.js?file=example3.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177082.js?file=example3.php'></script><noscript><pre><code>&lt;?php comment_author_link_mine(); ?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php comment_author_link_mine(); ?&gt;</code></pre></noscript></p>
 
 <p>This simply replaces the core files "comment_author_link()" function with one of our own. The original has</p>
 
-<script src='https://gist.github.com/1177082.js?file=example4.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177082.js?file=example4.php'></script><noscript><pre><code>$return = &quot;&lt;a href='$url' rel='external nofollow' class='url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>$return = &quot;&lt;a href='$url' rel='external nofollow' class='url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript></p>
 
 <p>as the link. We simply remove the rel attribute and change it to</p>
 
-<script src='https://gist.github.com/1177082.js?file=example5.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177082.js?file=example5.php'></script><noscript><pre><code>$return = &quot;&lt;a href='$url' class='comment_url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>$return = &quot;&lt;a href='$url' class='comment_url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript></p>
 
 <p>and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.</p>
 

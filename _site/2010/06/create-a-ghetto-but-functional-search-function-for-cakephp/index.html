@@ -65,87 +65,75 @@
 
 <p>First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.</p>
 
-<script src='https://gist.github.com/1177028.js?file=example1.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177028.js?file=example1.php'></script><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;
+    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url('/users/search'); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;label for=&quot;searchuser&quot;&gt;Search Users:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;searchuser&quot; /&gt;
+    Search By:
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.id&quot;  checked&gt; User ID
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.email&quot;  checked&gt; User Email
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;Entity.name&quot;&gt; Entity Name
+    &lt;?php
+        echo $form-&gt;end('Search');
+    ?&gt;
+&lt;/div&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;</p>
-
-<pre><code>&amp;lt;form id=&amp;quot;orderform&amp;quot; action=&amp;quot;&amp;lt;?php echo $html-&amp;gt;url('/users/search'); ?&amp;gt;&amp;quot; method=&amp;quot;post&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;
-&amp;lt;label for=&amp;quot;searchuser&amp;quot;&amp;gt;Search Users:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;searchuser&amp;quot; /&amp;gt;
-Search By:
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;User.id&amp;quot;  checked&amp;gt; User ID
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;User.email&amp;quot;  checked&amp;gt; User Email
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;Entity.name&amp;quot;&amp;gt; Entity Name
-&amp;lt;?php
-    echo $form-&amp;gt;end('Search');
-?&amp;gt;
-</code></pre>
-
-<p>&lt;/div&gt;</code></pre></noscript></p>
 
 <p>The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.</p>
 
 <p>Now in the controller, it's time to add the search action.</p>
 
-<script src='https://gist.github.com/1177028.js?file=example2.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177028.js?file=example2.php'></script><noscript><pre><code>&lt;?php
+function search() {
+    $searchtype = $_POST['searchtype'];
+    $value = $_POST['searchuser'];
+    $results = $this-&gt;User-&gt;find('all', array('fields' =&gt; array(
+                                                                'User.id',
+                                                                'User.email',
+                                                                'Entity.name',
+                                                                'User.created',
+                                                                'User.modified'
+                                                                ),
+                                                'order' =&gt; 'User.id ASC',
+                                                'conditions' =&gt; array($searchtype . ' ' . 'LIKE' =&gt; '%'.$value.'%')
+                                            ));
+    $this-&gt;set('results', $results);
+}
+?&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;?php
-function search() {</p>
-
-<pre><code>$searchtype = $_POST['searchtype'];
-$value = $_POST['searchuser'];
-$results = $this-&amp;gt;User-&amp;gt;find('all', array('fields' =&amp;gt; array(
-                                                            'User.id',
-                                                            'User.email',
-                                                            'Entity.name',
-                                                            'User.created',
-                                                            'User.modified'
-                                                            ),
-                                            'order' =&amp;gt; 'User.id ASC',
-                                            'conditions' =&amp;gt; array($searchtype . ' ' . 'LIKE' =&amp;gt; '%'.$value.'%')
-                                        ));
-$this-&amp;gt;set('results', $results);
-</code></pre>
-
-<p>}
-?&gt;</code></pre></noscript></p>
 
 <p>It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' => %1%) One last thing is to create the search.ctp</p>
 
-<script src='https://gist.github.com/1177028.js?file=example3.php'></script>
+<div class="gistFallback">
+<script src='https://gist.github.com/1177028.js?file=example3.php'></script><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;
+    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url('/users/search'); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;label for=&quot;searchuser&quot;&gt;Search Users:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;searchuser&quot; /&gt;
+    Search By:
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.id&quot;  checked&gt; User ID
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.email&quot;  checked&gt; User Email
+    &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;Entity.name&quot;&gt; Entity Name
+    &lt;?php echo $form-&gt;end('Search'); ?&gt;
+&lt;/div&gt;
+&lt;div id=&quot;contentbox&quot;&gt;
+    &lt;h2&gt;Manage Users&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Email&lt;/th&gt;&lt;th&gt;Entity Name&lt;/th&gt;
+        &lt;/thead&gt;
+        &lt;?php foreach($results as $user) : ?&gt;  
+            &lt;tr&gt;
+                &lt;td&gt;&lt;?php echo $user['User']['id'] ?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?php echo $user['User']['email'] ?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?php echo $user['Entity']['name'] ?&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre></noscript>
+</div>
 
-
-<p><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;</p>
-
-<pre><code>&amp;lt;form id=&amp;quot;orderform&amp;quot; action=&amp;quot;&amp;lt;?php echo $html-&amp;gt;url('/users/search'); ?&amp;gt;&amp;quot; method=&amp;quot;post&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;
-&amp;lt;label for=&amp;quot;searchuser&amp;quot;&amp;gt;Search Users:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;searchuser&amp;quot; /&amp;gt;
-Search By:
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;User.id&amp;quot;  checked&amp;gt; User ID
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;User.email&amp;quot;  checked&amp;gt; User Email
-&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;searchtype&amp;quot; value=&amp;quot;Entity.name&amp;quot;&amp;gt; Entity Name
-&amp;lt;?php echo $form-&amp;gt;end('Search'); ?&amp;gt;
-</code></pre>
-
-<p>&lt;/div&gt;
-&lt;div id=&quot;contentbox&quot;&gt;</p>
-
-<pre><code>&amp;lt;h2&amp;gt;Manage Users&amp;lt;/h2&amp;gt;
-&amp;lt;table&amp;gt;
-    &amp;lt;thead&amp;gt;
-        &amp;lt;th&amp;gt;ID&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Email&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Entity Name&amp;lt;/th&amp;gt;
-    &amp;lt;/thead&amp;gt;
-    &amp;lt;?php foreach($results as $user) : ?&amp;gt;  
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;?php echo $user['User']['id'] ?&amp;gt;&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;?php echo $user['User']['email'] ?&amp;gt;&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;?php echo $user['Entity']['name'] ?&amp;gt;&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;?php endforeach; ?&amp;gt;
-&amp;lt;/table&amp;gt;
-</code></pre>
-
-<p>&lt;/div&gt;</code></pre></noscript></p>
 
 <p>It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.</p>
 

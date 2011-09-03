@@ -82,13 +82,17 @@ DO NOT put the "Conversion Script" on this page. Instead go to your goal page, c
 
 Now go back and edit your post again. Scroll to where you want your author box to be in your post. Once there paste the code
 
+<div class="gistFallback">
 {% gist 1176915 example1.html %}
+</div>
 
 Followed by the text you want to use in you author box. Only put one version in at this point.
 
 At the end of the text paste this
 
+<div class="gistFallback">
 {% gist 1176915 example2.html %}
+</div>
 
 Now change the "**Insert your section name here**" to something easy to deal with.Once you have everything in WordPress go back to the google tab.
 

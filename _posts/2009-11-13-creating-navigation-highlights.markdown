@@ -22,5 +22,7 @@ It's not impossible but it's not easy. As you can see above, I eventually got it
 
 One final tip, if your home page is different from the blog page, use the is_page('originalpagename') not is_home() and use is_home() for the blog page. Update: This is the code I used for those interested.
 
+<div class="gistFallback">
 {% gist 1176823 highlightedNav.php %}
+</div>
 </article>

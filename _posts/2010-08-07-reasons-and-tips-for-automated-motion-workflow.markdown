@@ -54,7 +54,9 @@ One thing we came across and spent many hours trouble shooting was the crashing 
 
 We finally discovered the solution.
 
+<div class="gistFallback">
 {% gist 1177036 example1.xml %}
+</div>
 
 This is part of the Motion XML file. _Website_ is the text being replaced. Above that is a length set in styleRun. This is normally set to the length of the placeholder text. In this case it would be 7. If you replace the word with one that is longer you have no problem. The Motion file will render like a champ. If it's shorter all hell breaks loose. So the fix is as simple as changing them all to 1. No more crashing.
 
