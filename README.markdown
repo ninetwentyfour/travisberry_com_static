@@ -7,7 +7,7 @@ TODO
 
 - New favicon
 
-- sitemap
+- <del>sitemap</del>
 
 - <del>move all old assets from server to s3</del>
 
