@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/homkora-cap_thumb.jpg"
 summary: "I have recently launched the beta my new side project Homkora."
 ---
 <article class="post clearfix">

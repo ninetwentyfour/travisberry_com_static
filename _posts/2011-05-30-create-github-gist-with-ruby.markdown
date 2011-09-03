@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/gists_thumb.jpg"
 summary: "One of my favorite github features is gists. Gists are a simple code pasting and sharing service."
 ---
 <article class="post clearfix">

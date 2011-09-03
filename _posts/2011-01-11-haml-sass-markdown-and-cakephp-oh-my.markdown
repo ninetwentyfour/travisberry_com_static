@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/haml-sass_thumb.jpg"
 summary: "I've recently begun using Haml and Sass instead of good ol' HTML and CSS. "
 ---
 <article class="post clearfix">

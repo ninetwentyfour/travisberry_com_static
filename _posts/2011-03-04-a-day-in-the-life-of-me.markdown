@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://static.travisberry.com/sites/4ddebc054a2ab10001000007/assets/4de4286bd48c1200010000c7/selfhomecrop2.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/selfhomecrop2_thumb.jpg"
 summary: "Super awesome timelapse at the office."
 ---
 <article class="post clearfix">

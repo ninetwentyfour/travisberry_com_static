@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/05/canvas.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/canvas_thumb.jpg"
 summary: "When working on a project recently I came across the need to be able to add some text to a canvas element."
 ---
 <article class="post clearfix">

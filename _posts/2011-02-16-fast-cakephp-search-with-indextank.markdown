@@ -9,6 +9,7 @@ categories:
   autoslug: uncategorized
 tags: []
 image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/indextank_thumb.jpg"
 summary: "This time I’m going to show you a much better method, mainly by offloading the work to people who really know how to do search."
 ---
 <article class="post clearfix">
