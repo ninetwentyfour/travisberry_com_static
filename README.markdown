@@ -5,6 +5,10 @@ TODO
 
 - add expires headers to static files on s3 also add content types
 
+- New favicon
+
+- sitemap
+
 - <del>move all old assets from server to s3</del>
 
 - <del>minify all files</del>

@@ -2,7 +2,6 @@
   font-family: 'LektonRegular';
   src: url('../fonts/Lekton-Regular-webfont.eot');
   src: url('../fonts/Lekton-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Lekton-Regular-webfont.woff') format('woff'),
     url('../fonts/Lekton-Regular-webfont.ttf') format('truetype'),
     url('../fonts/Lekton-Regular-webfont.svg#LektonRegular') format('svg');
   font-weight: normal;
@@ -14,7 +13,6 @@
   font-family: 'MolengoRegular';
   src: url('../fonts/Molengo-Regular-webfont.eot');
   src: url('../fonts/Molengo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Molengo-Regular-webfont.woff') format('woff'),
     url('../fonts/Molengo-Regular-webfont.ttf') format('truetype'),
     url('../fonts/Molengo-Regular-webfont.svg#MolengoRegular') format('svg');
   font-weight: normal;
@@ -53,7 +51,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
   padding-bottom:30px;
 }
 body {
-  background: #3b224d url(http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/images/bg-3.png) repeat;
+  background: #3b224d url(http://static-assets.travisberry.com/images/bg-3.png) repeat;
   color: #DDCEE6;
   font-family: 'LektonRegular','Lucida Console', Monaco, monospace;
   font-size:14px/24px;
@@ -151,7 +149,7 @@ blockquote p {
 }
 /* Content */
 #content {
-  background: url(http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/images/content_bg.png) repeat; /* Fallback for browser that doesn't support rgba */
+  background: url(http://static-assets.travisberry.com/images/content_bg.png) repeat; /* Fallback for browser that doesn't support rgba */
   background: rgba(204, 204, 204, .1);
   border: 1px dotted #f96682;
   border-left: none; border-right: none;
@@ -417,7 +415,7 @@ img.alignright { margin-left: 15px; }
   top: 0;
   width: 100%;
   z-index: 10;
-  background: url("http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/images/bg.png") repeat scroll rgba(1, 1, 1, .5);
+  background: url("http://static-assets.travisberry.com/images/bg.png") repeat scroll rgba(1, 1, 1, .5);
   -moz-box-shadow: 0 0 5px 5px #000;
   -webkit-box-shadow: 0 0 5px 5px#000;
   box-shadow: 0 0 5px 5px #000;
