@@ -22,15 +22,15 @@ In Apache this is trivial. In Nginx, you can spend a couple days trying to get r
 
 Turns out the solution is simple. If you use a block of code like this
 
-<script src="https://gist.github.com/1177191.js?file=example1.txt"></script>
+{% gist 1177191 example1.txt %}
 
 to turn on PHP, just replace the location with
 
-<script src="https://gist.github.com/1177191.js?file=example2.txt"></script>
+{% gist 1177191 example2.txt %}
 
 and comment out
 
-<script src="https://gist.github.com/1177191.js?file=example3.txt"></script>
+{% gist 1177191 example3.txt %}
 
 Your code block should now look like
 

@@ -1,0 +1,1 @@
+App::import('Vendor', 'HamlParser', array('file'=>'haml'.DS.'HamlParser.php'));

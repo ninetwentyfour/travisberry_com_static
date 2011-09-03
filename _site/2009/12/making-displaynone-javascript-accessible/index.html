@@ -64,7 +64,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 <p>The problem came from the fact that the element is set to</p>
 
 
-<p><script src="https://gist.github.com/1176865.js?file=example1.css"></script></p>
+<p><script src='https://gist.github.com/1176865.js?file=example1.css'></script><noscript><pre><code>.menu_body{ display:none; }</code></pre></noscript></p>
 
 
 <p>Which is fine and dandy if you have javascript enabled. If you don&#8217;t, all you see is a list of headers.</p>
@@ -78,7 +78,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 <p>In the css file add this, (Change the selector to which ever one you have set to display:none;)</p>
 
 
-<p><script src="https://gist.github.com/1176865.js?file=example2.css"></script></p>
+<p><script src='https://gist.github.com/1176865.js?file=example2.css'></script><noscript><pre><code>.menu_body { display:inline !important; }</code></pre></noscript></p>
 
 
 <p>Place the file somewhere on your server and move back to your html.</p>

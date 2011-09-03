@@ -1,0 +1,11 @@
+Header unset ETag
+
+FileETag None
+
+<FilesMatch "\.(css|js)$">
+	SetOutputFilter DEFLATE
+</FilesMatch>
+
+<FilesMatch "\.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+	Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"
+</FilesMatch>

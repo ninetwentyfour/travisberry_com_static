@@ -1,0 +1,2 @@
+Configure::write('Haml.format', 'html5');
+Configure::write('Haml.filterDir', VIEWS.'filters');

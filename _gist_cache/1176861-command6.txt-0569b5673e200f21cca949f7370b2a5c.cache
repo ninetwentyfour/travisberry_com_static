@@ -1,0 +1,5 @@
+mkdir newfolder
+
+cd newfolder
+
+git clone http://yourusername@www.yoursite.com/git/gittest/

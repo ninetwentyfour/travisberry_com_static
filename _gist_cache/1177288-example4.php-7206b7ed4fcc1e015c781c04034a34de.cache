@@ -1,0 +1,3 @@
+<?php
+$indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+?>

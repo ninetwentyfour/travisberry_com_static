@@ -1,0 +1,13 @@
+wget http://bart.eaccelerator.net/source/0.9.6.1/eaccelerator-0.9.6.1.tar.bz2
+
+tar xvjf eaccelerator-0.9.6.1.tar.bz2
+
+cd eaccelerator-0.9.6.1/
+
+sudo phpize
+
+sudo ./configure –enable-eaccelerator=shared
+
+sudo make
+
+sudo make install

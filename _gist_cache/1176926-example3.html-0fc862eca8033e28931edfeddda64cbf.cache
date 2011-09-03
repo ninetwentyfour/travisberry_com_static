@@ -1,0 +1,11 @@
+<video width="640" height="360" id="video" poster="http://www.travisberry.com/html5video/videos/copyright/copyright-poster.jpg" controls="true">
+	<source src="http://www.travisberry.com/html5video/videos/copyright/copyright-desktop.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"' />
+	<source src="http://www.travisberry.com/html5video/videos/copyright/copyright-iPhone-cell.3gp" type='video/3gpp; codecs="mp4v.20.8, samr"' />
+	<source src="http://www.travisberry.com/html5video/videos/copyright/copyright-desktop3.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	<object width="640" height="385">
+		<param name="movie" value="http://www.youtube.com/v/lFeI5SqGYJ8&hl=en_US&fs=1&"></param>
+		<param name="allowFullScreen" value="true"></param>
+		<param name="allowscriptaccess" value="always"></param>
+		<embed src="http://www.youtube.com/v/lFeI5SqGYJ8&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed>
+	</object>
+</video>

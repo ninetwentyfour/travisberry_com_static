@@ -63,8 +63,155 @@
 
 <p>This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)</p>
 
-<script src="https://gist.github.com/1177051.js?file=example1.php"></script>
+<script src='https://gist.github.com/1177051.js?file=example1.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+/<em><em>
+</em>Publish video to ooyala
+</em>/
+function publish(){// this kicks off the massive publish functions</p>
+
+<pre><code>$labels = $_POST['label'];
+$file = $_POST['video_file'];
+$dir = $file;
+$name = explode(&amp;quot;/&amp;quot;, $dir );
+$name = array_reverse($name );//this get just the name of the file and not
+//the whole path for the name and title of the video
+$nameforshow = $name[0];
+$label = '/'.$labels;
+$filesize = filesize($dir);
+$expires = time() + 900;
+$upload = OrdersController::upload(array('expires' =&amp;gt; $expires,
+                                         'file_size' =&amp;gt; $filesize,
+                                         'file_name' =&amp;gt; $name[0],
+                                         'title' =&amp;gt; $name[0]),$dir,$label);
+                                        //send this to the upload function
+</code></pre>
+
+<p>}</p>
+
+<p>function upload($params,$dir,$label){//this passes to the send request function</p>
+
+<pre><code>                                //for the first time
+return OrdersController::send_request('create_video', $params,$dir,
+                                      $label,'');
+</code></pre>
+
+<p>}</p>
+
+<p>function upload_complete($params,$label2){//this gets hit after posting the</p>
+
+<pre><code>                                    //video to ooyala
+$label3 = $label2;
+$dir ='';
+$label = '';
+return OrdersController::send_request('upload_complete', $params,
+                                      '','',$label3);
+                        //goes back to send request for the second time
+</code></pre>
+
+<p>}</p>
+
+<p>function assign_label($params){//this starts creating and assigning labels</p>
+
+<pre><code>return OrdersController::send_request2('labels', $params);//this kicks off
+                                                        //send request 2
+</code></pre>
+
+<p>}</p>
+
+<p>function send_request($request_type, $params,$dir,$label,$label3){</p>
+
+<pre><code>// first time through this hits the create video url and returns a url
+//to post the video to. second time through we hit the upload complete url
+$ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
+$ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
+if (!array_key_exists('expires', $params)) {
+    $params['expires'] = time() + 900;
+}
+$string_to_sign = $ooyala_scode;
+$url = 'http://api.ooyala.com/ingestion/'.$request_type.'?pcode='.$ooyala_pcode;
+$keys = array_keys($params);
+sort($keys);
+foreach ($keys as $key) {
+    $string_to_sign .= $key.'='.$params[$key];
+    $url .= '&amp;amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+}
+$digest = hash('sha256', $string_to_sign, true);
+$signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
+$url .= '&amp;amp;signature='.rawurlencode($signature);
+if ($request_type == 'create_video') {// if type is create video then
+                                //parse the returned xml for the post url
+    $xml = simplexml_load_file($url);
+    foreach($xml-&amp;gt;children() as $child){
+        if($child-&amp;gt;getName()=='embedCode'){
+            $embed_code = $child;
+        }
+        if($child-&amp;gt;getname()=='urls'){
+            $upload_url = $child-&amp;gt;children();
+            $file= $dir;
+            $label2 = $label;
+            $ch = curl_init($upload_url);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, array('file'=&amp;gt;&amp;quot;@$file&amp;quot;));
+            //post the file
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $postResult = curl_exec($ch);
+            curl_close($ch);
+            if ($postResult != ''){
+                $upload_complete = OrdersController::upload_complete(array
+                                    ('embed_code' =&amp;gt; $embed_code),$label2);
+                //after posting you have to hit the upload complete url
+                //to get ooyala to process the video.
+                //so kick this up to the upload complete function
+            }
+        }
+    }
+}else{
+    if ($request_type == 'upload_complete') {
+        // hit the upload complete url
+        $ch = curl_init($url);
+        $postResult2 = curl_exec($ch);
+        curl_close($ch);
+        $add_label = OrdersController::assign_label(array(
+        'embedCodes' =&amp;gt; $params['embed_code'], 'labels' =&amp;gt; $label3,
+        'mode'=&amp;gt;'assignLabels'));
+        // this kicks back up to assign label function to add a label
+        //to the video
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<p>function send_request2($request_type, $params)
+// this creates the url to hit to add a label to the last uploaded video
+{</p>
+
+<pre><code>$ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
+$ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
+//Add an expire time of 15 minutes unless otherwise specified
+if (!array_key_exists('expires', $params)) {
+    $params['expires'] = time() + 900;
+}
+$string_to_sign = $ooyala_scode;
+$url = 'http://api.ooyala.com/partner/'.$request_type.'?pcode='.$ooyala_pcode;
+$keys = array_keys($params);
+sort($keys);
+foreach ($keys as $key) {
+    $string_to_sign .= $key.'='.$params[$key];
+    $url .= '&amp;amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+}
+$digest = hash('sha256', $string_to_sign, true);
+$signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
+$url .= '&amp;amp;signature='.rawurlencode($signature);
+$ch = curl_init($url);
+$postResult3 = curl_exec($ch);
+curl_close($ch);//now the video is done and uploaded to ooyala
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.</p>
 

@@ -139,13 +139,17 @@
 
 <p>FFmpeg</p>
 
-<script src="https://gist.github.com/1176975.js?file=example1.txt"></script>
+<script src='https://gist.github.com/1176975.js?file=example1.txt'></script>
 
+
+<p><noscript><pre><code>ffmpeg -i Elephants_Dream.mov -vcodec libtheora -b 700k -s 512x288 -acodec libvorbis -ab 96k -threads 6 test.ogg</code></pre></noscript></p>
 
 <p>ffmpeg2theora</p>
 
-<script src="https://gist.github.com/1176975.js?file=example2.txt"></script>
+<script src='https://gist.github.com/1176975.js?file=example2.txt'></script>
 
+
+<p><noscript><pre><code>ffmpeg2theora -V 700 -A 96 -H 44100 -K 24 -x 640 -y 360 --two-pass --optimize --speedlevel 0 --seek-index --soft-target --pp vdeblock:10/hdeblock:10 Elephants_Dream.mov</code></pre></noscript></p>
 
 <p>If you have any suggestions for improving these please let me know in the comments.
 </article></p>

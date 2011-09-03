@@ -79,25 +79,34 @@
 
 <p>Open up your app_controller.php and add the following line</p>
 
-<script src="https://gist.github.com/1177229.js?file=example1.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example1.php'></script>
 
+
+<p><noscript><pre><code>var $view = 'Haml';</code></pre></noscript></p>
 
 <p>Now open up /config/core.php and scroll to the bottom. Add</p>
 
-<script src="https://gist.github.com/1177229.js?file=example2.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example2.php'></script>
 
+
+<p><noscript><pre><code>Configure::write('Haml.format', 'html5');
+Configure::write('Haml.filterDir', VIEWS.'filters');</code></pre></noscript></p>
 
 <p>The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.</p>
 
 <p>Now open up the haml.php file you added to views. Find the line that says</p>
 
-<script src="https://gist.github.com/1177229.js?file=example3.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example3.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'HamlParser', array('file'=&gt;'phamlp'.DS.'haml'.DS.'HamlParser.php'));</code></pre></noscript></p>
 
 <p>and change it to</p>
 
-<script src="https://gist.github.com/1177229.js?file=example4.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example4.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'HamlParser', array('file'=&gt;'haml'.DS.'HamlParser.php'));</code></pre></noscript></p>
 
 <p>This assumes you copied the vendors contents to vendors in CakePHP.</p>
 
@@ -113,37 +122,59 @@
 
 <p>Open the core.php file back up and go to the Haml code we added earlier. Under that add</p>
 
-<script src="https://gist.github.com/1177229.js?file=example5.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example5.php'></script>
 
+
+<p><noscript><pre><code>Configure::write('Sass.style', 'compressed');
+Configure::write('Asset.filter.css', 'sass.php');</code></pre></noscript></p>
 
 <p>The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.</p>
 
 <p>Now open up sass.php and find the line that looks like</p>
 
-<script src="https://gist.github.com/1177229.js?file=example6.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example6.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'SassParser', array('file'=&gt;'phamlp'.DS.'sass'.DS.'SassParser.php'));</code></pre></noscript></p>
 
 <p>Replace it with</p>
 
-<script src="https://gist.github.com/1177229.js?file=example7.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example7.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'SassParser', array('file'=&gt;'sass'.DS.'SassParser.php'));</code></pre></noscript></p>
 
 <p>After that you should be able to start putting .sass files into your css directory and they will compile to css.</p>
 
 <p>However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like</p>
 
-<script src="https://gist.github.com/1177229.js?file=example8.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example8.php'></script>
 
+
+<p><noscript><pre><code>header(&quot;Content-Type: text/css&quot;);
+header(&quot;Expires: &quot; . gmdate(&quot;D, j M Y H:i:s&quot;, time() + DAY) . &quot; GMT&quot;);
+header(&quot;Cache-Control: cache&quot;); // HTTP/1.1
+header(&quot;Pragma: cache&quot;);        // HTTP/1.0</code></pre></noscript></p>
 
 <p>with</p>
 
-<script src="https://gist.github.com/1177229.js?file=example9.php"></script>
+<script src='https://gist.github.com/1177229.js?file=example9.php'></script>
 
+
+<p><noscript><pre><code>ob_start (&quot;ob_gzhandler&quot;);
+header(&quot;Content-Type: text/css&quot;);
+$seconds_to_cache = 31556926;
+$ts = gmdate(&quot;D, d M Y H:i:s&quot;, time() + $seconds_to_cache) . &quot; GMT&quot;;
+header(&quot;Expires: $ts&quot;);
+header(&quot;Pragma: cache&quot;);
+header(&quot;Cache-Control: maxage=$seconds_to_cache&quot;);</code></pre></noscript></p>
 
 <p>Then add a line to the bottom of the file with this</p>
 
-<script src="https://gist.github.com/1177233.js?file=example10.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example10.php'></script>
 
+
+<p><noscript><pre><code>ob_end_flush();</code></pre></noscript></p>
 
 <p>Your compiled css files should now transfer gzipped.</p>
 
@@ -151,13 +182,17 @@
 
 <p>Find the line</p>
 
-<script src="https://gist.github.com/1177233.js?file=example11.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example11.php'></script>
 
+
+<p><noscript><pre><code>$sassFile = str_replace('.css', '.sass', $cssFile);</code></pre></noscript></p>
 
 <p>and replace it with</p>
 
-<script src="https://gist.github.com/1177233.js?file=example12.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example12.php'></script>
 
+
+<p><noscript><pre><code>$sassFile = str_replace('.css', '.scss', $cssFile);</code></pre></noscript></p>
 
 <p>You can now use .scss files instead of .sass</p>
 
@@ -169,8 +204,14 @@
 
 <p>Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to</p>
 
-<script src="https://gist.github.com/1177233.js?file=example13.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example13.php'></script>
 
+
+<p><noscript><pre><code>:markdown</p>
+
+<pre><code>Here is some markdown
+===&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+</code></pre>
 
 <p>inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/</p>
 
@@ -182,35 +223,47 @@
 
 <p>Change</p>
 
-<script src="https://gist.github.com/1177233.js?file=example14.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example14.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'phamlp'.DS.'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));</code></pre></noscript></p>
 
 <p>To</p>
 
-<script src="https://gist.github.com/1177233.js?file=example15.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example15.php'></script>
 
+
+<p><noscript><pre><code>App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));</code></pre></noscript></p>
 
 <p>Now open up the _HamlMarkdownFilter.php file inside /vendors/haml/filters</p>
 
 <p>Change</p>
 
-<script src="https://gist.github.com/1177233.js?file=example16.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example16.php'></script>
 
+
+<p><noscript><pre><code>protected $vendorClass = 'MarkdownExtra_Parser';</code></pre></noscript></p>
 
 <p>To</p>
 
-<script src="https://gist.github.com/1177233.js?file=example17.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example17.php'></script>
 
+
+<p><noscript><pre><code>protected $vendorClass = 'Markdown_Parser';</code></pre></noscript></p>
 
 <p>also change</p>
 
-<script src="https://gist.github.com/1177233.js?file=example18.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example18.php'></script>
 
+
+<p><noscript><pre><code>return '&lt;?php   '.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown<strong><em>=new '.$this-&gt;vendorClass.'();echo  $markdown</em></strong>-&gt;safeTransform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';</code></pre></noscript></p>
 
 <p>To</p>
 
-<script src="https://gist.github.com/1177233.js?file=example19.php"></script>
+<script src='https://gist.github.com/1177233.js?file=example19.php'></script>
 
+
+<p><noscript><pre><code>return '&lt;?php   '.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown<strong><em>=new '.$this-&gt;vendorClass.'();echo  $markdown</em></strong>-&gt;transform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';</code></pre></noscript></p>
 
 <p>Now throw some Markdown into you Haml files and prepare to be amazed.</p>
 

@@ -81,8 +81,10 @@
 
 <p>Now open up Terminal (Applications > accessories > Terminal). Type in the following,</p>
 
-<script src="https://gist.github.com/1176993.js?file=example1.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example1.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install apache2</code></pre></noscript></p>
 
 <p>Terminal will prompt for your password. Enter it in.(Terminal does not show your password as you type, so just type it in and hit enter).</p>
 
@@ -90,15 +92,19 @@
 
 <p>Apache should now be installed on your system. Now it's time to install PHP 5. In terminal type,</p>
 
-<script src="https://gist.github.com/1176993.js?file=example2.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example2.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install php5 libapache2-mod-php5</code></pre></noscript></p>
 
 <h2>Install MySQL</h2>
 
 <p>Now you have PHP 5 installed. To install MySQL type,</p>
 
-<script src="https://gist.github.com/1176993.js?file=example3.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example3.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install mysql-server</code></pre></noscript></p>
 
 <p>Enter in a password when the install prompts you to.</p>
 
@@ -106,27 +112,35 @@
 
 <p>Now install <a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a> by typing</p>
 
-<script src="https://gist.github.com/1176993.js?file=example4.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example4.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install libapache2-mod-auth-mysql php5-mysql phpmyadmin</code></pre></noscript></p>
 
 <p>When phpmyadmin asks which server to use select apache. It will then ask to create a database. Tell it to do so and enter in the password you set when installing MySQL.</p>
 
 <p>After installing all this you need to restart apache. To do so type</p>
 
-<script src="https://gist.github.com/1176993.js?file=example5.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example5.txt'></script>
 
+
+<p><noscript><pre><code>sudo /etc/init.d/apache2 restart</code></pre></noscript></p>
 
 <h2>Test Installation</h2>
 
 <p>You should now have a working LAMP stack installed. To test everything is working, type in Terminal</p>
 
-<script src="https://gist.github.com/1176993.js?file=example6.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example6.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit /var/www/info.php</code></pre></noscript></p>
 
 <p>When the new window opens add</p>
 
-<script src="https://gist.github.com/1176993.js?file=example7.php"></script>
+<script src='https://gist.github.com/1176993.js?file=example7.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php phpinfo(); ?&gt;</code></pre></noscript></p>
 
 <p>Save and close the window. Now open Firefox and go to http://localhost/</p>
 
@@ -140,13 +154,17 @@
 
 <p>First you may have noticed when we restarted apache that it gave an error about not being able to determine the fully qualified domain name. To fix this error open the terminal and type,</p>
 
-<script src="https://gist.github.com/1176993.js?file=example8.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example8.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit /etc/apache2/httpd.conf</code></pre></noscript></p>
 
 <p>Add to the file</p>
 
-<script src="https://gist.github.com/1176993.js?file=example9.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example9.txt'></script>
 
+
+<p><noscript><pre><code>ServerName localhost</code></pre></noscript></p>
 
 <p>Save and exit. Now restart again. You should no longer see an error.</p>
 
@@ -162,20 +180,34 @@
 
 <p>You can enable the module by typing in the Terminal</p>
 
-<script src="https://gist.github.com/1176993.js?file=example10.txt"></script>
+<script src='https://gist.github.com/1176993.js?file=example10.txt'></script>
 
+
+<p><noscript><pre><code>sudo a2enmod rewrite</code></pre></noscript></p>
 
 <h2>Enable PHP 5 Error Displaying</h2>
 
 <p>Another helpful feature not enabled by default is error displaying in PHP. Now on a production server it is good to turn these off, but when developing, they can be handy to have on. To enable type</p>
 
-<script src="https://gist.github.com/1176996.js?file=example11.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example11.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit /etc/php5/apache2/php.ini</code></pre></noscript></p>
 
 <p>Make sure the following lines read as follows</p>
 
-<script src="https://gist.github.com/1176996.js?file=example12.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example12.txt'></script>
 
+
+<p><noscript><pre><code>display_errors = On</p>
+
+<p>display_startup_errors = On</p>
+
+<p>log_errors = On</p>
+
+<p>error_log = /pickadirectorytostoreerrors/phperror.log</p>
+
+<p>error_reporting = E_ALL &amp; E_STRICT</code></pre></noscript></p>
 
 <h2>Setup Virtual Hosts</h2>
 
@@ -183,58 +215,124 @@
 
 <p>To begin setting this up create two separate folders in /var/www/. Name one example.com and the other test.com. Create a simple index.html file in each, creating content that makes them easy to tell apart. Now cd to /etc/apache2/sites-enabled. Once there, type the following in Terminal</p>
 
-<script src="https://gist.github.com/1176996.js?file=example13.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example13.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit example.com</code></pre></noscript></p>
 
 <p>Inside the file paste the following,</p>
 
-<script src="https://gist.github.com/1176996.js?file=example14.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example14.txt'></script>
 
+
+<p><noscript><pre><code>&lt;VirtualHost *:80&gt;
+ServerAdmin your@email.com
+ServerAlias www.example.com
+DocumentRoot /var/www/example.com</p>
+
+<pre><code>    &amp;lt;Directory /&amp;gt;
+            Options FollowSymLinks
+            AllowOverride All
+    &amp;lt;/Directory&amp;gt;
+    &amp;lt;Directory /var/www/example.com/&amp;gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    &amp;lt;/Directory&amp;gt;
+    ErrorLog /var/www/example.com/logs/example-error.log
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+</code></pre>
+
+<p> CustomLog /var/www/example.com/logs/example-access.log combined
+&lt;/VirtualHost&gt;</code></pre></noscript></p>
 
 <p>Now create a link to the file in sites-available.</p>
 
-<script src="https://gist.github.com/1176996.js?file=example15.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example15.txt'></script>
 
+
+<p><noscript><pre><code>sudo ln -s /etc/apache2/sites-available/example.com</code></pre></noscript></p>
 
 <p>Next let's create one for test.com</p>
 
-<script src="https://gist.github.com/1176996.js?file=example16.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example16.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit test.com</code></pre></noscript></p>
 
 <p>Inside the file paste the following,</p>
 
-<script src="https://gist.github.com/1176996.js?file=example17.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example17.txt'></script>
 
+
+<p><noscript><pre><code>&lt;VirtualHost *:80&gt;
+ServerAdmin your@email.com
+ServerAlias www.test.com
+DocumentRoot /var/www/test.com</p>
+
+<pre><code>    &amp;lt;Directory /&amp;gt;
+            Options FollowSymLinks
+            AllowOverride All
+    &amp;lt;/Directory&amp;gt;
+    &amp;lt;Directory /var/www/test.com/&amp;gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    &amp;lt;/Directory&amp;gt;
+    ErrorLog /var/www/test.com/logs/example-error.log
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+</code></pre>
+
+<p> CustomLog /var/www/test.com/logs/example-access.log combined
+&lt;/VirtualHost&gt;</code></pre></noscript></p>
 
 <p>Now create a link to the file in sites-available.</p>
 
-<script src="https://gist.github.com/1176996.js?file=example18.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example18.txt'></script>
 
+
+<p><noscript><pre><code>sudo ln -s /etc/apache2/sites-available/test.com</code></pre></noscript></p>
 
 <p>Now your virtual hosts are ready to go, but first we need to tell the computer to listen for the addresses. To do that type the following,</p>
 
-<script src="https://gist.github.com/1176996.js?file=example19.txt"></script>
+<script src='https://gist.github.com/1176996.js?file=example19.txt'></script>
 
+
+<p><noscript><pre><code>cd /etc/</code></pre></noscript></p>
 
 <p>Then</p>
 
-<script src="https://gist.github.com/1176998.js?file=example20.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example20.txt'></script>
 
+
+<p><noscript><pre><code>gksudo gedit hosts</code></pre></noscript></p>
 
 <p>Create a new line under the first. In it add</p>
 
-<script src="https://gist.github.com/1176998.js?file=example21.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example21.txt'></script>
 
+
+<p><noscript><pre><code>127.0.0.1  localhost www.example.com</code></pre></noscript></p>
 
 <p>Create another line and this time add</p>
 
-<script src="https://gist.github.com/1176998.js?file=example22.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example22.txt'></script>
 
+
+<p><noscript><pre><code>127.0.0.1  localhost www.test.com</code></pre></noscript></p>
 
 <p>Save and close the file. Restart apache</p>
 
-<script src="https://gist.github.com/1176998.js?file=example23.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example23.txt'></script>
 
+
+<p><noscript><pre><code>sudo /etc/init.d/apache2 restart</code></pre></noscript></p>
 
 <p>Now open Firefox and go to www.example.com. You should see your example.com index.html file. Now try www.test.com. If you see your test.com index.html file everything works as it should. Just repeat this process for any additional domains you would like to add.</p>
 
@@ -242,8 +340,11 @@
 
 <p>Now move back to your host os. Open a terminal session in it. Find your hosts file. In OSX it is /etc/ just like Linux. Now add lines like so,</p>
 
-<script src="https://gist.github.com/1176998.js?file=example24.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example24.txt'></script>
 
+
+<p><noscript><pre><code>192.168.10.4 www.example.com
+192.168.10.4 www.test.com</code></pre></noscript></p>
 
 <p>You should now be able to view your example sites in a browser on your host os.</p>
 
@@ -251,22 +352,28 @@
 
 <p>Everything is starting to work quite well for development but there are still a few extras worth setting up. The first is changing permissions of your web root. To make you the owner of the /var/www directory type this in Terminal</p>
 
-<script src="https://gist.github.com/1176998.js?file=example25.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example25.txt'></script>
 
+
+<p><noscript><pre><code>sudo chown youruser:youruser /var/www</code></pre></noscript></p>
 
 <h2>Install Git</h2>
 
 <p>This will now allow your user to easily create new folders and files. Next lets install my favorite version control system <a href="http://git-scm.com/">Git</a>. To install type this into Terminal</p>
 
-<script src="https://gist.github.com/1176998.js?file=example26.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example26.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install git-core</code></pre></noscript></p>
 
 <h2>Install FTP</h2>
 
 <p>You can now use git to control the code you develop on the machine. Next let's add ftp support to make moving files between your host and guest operating systems a little easier. To install ftp support type,</p>
 
-<script src="https://gist.github.com/1176998.js?file=example27.txt"></script>
+<script src='https://gist.github.com/1176998.js?file=example27.txt'></script>
 
+
+<p><noscript><pre><code>sudo apt-get install proftpd</code></pre></noscript></p>
 
 <p>You can now open your favorite ftp application in your host os and connect to your virtual machine. Just use the IP (mine in this example is 192.168.10.4) and enter in your user name and password. Ta-da!</p>
 

@@ -1,0 +1,1 @@
+ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 -pass 2 outputmovie.mp4

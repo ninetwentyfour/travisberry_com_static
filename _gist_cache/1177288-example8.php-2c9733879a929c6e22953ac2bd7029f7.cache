@@ -1,0 +1,7 @@
+<?php 
+if ($this->Project->delete($id)) {
+    $this->deleteIndextank("HomkoraProjects",$id);
+    $this->Session->setFlash('Project deleted', 'default', array('class' => 'flash_good'));
+    $this->redirect(array('action'=>'index'));
+}
+?>

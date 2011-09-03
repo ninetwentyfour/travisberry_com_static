@@ -73,13 +73,13 @@ So for simplicities sake I present to you my super awesome FFmpeg compression co
 
 For a single pass render:
 
-<script src="https://gist.github.com/1176952.js?file=example1.txt"></script>
+{% gist 1176952 example1.txt %}
 
 For a two pass render:
 
-<script src="https://gist.github.com/1176952.js?file=example2.txt"></script>
+{% gist 1176952 example2.txt %}
 
-<script src="https://gist.github.com/1176952.js?file=example3.txt"></script>
+{% gist 1176952 example3.txt %}
 
 Run the first command, then run the second for a two pass render. I used a two pass render in the test above.To better understand what all those setting mean, I recommend taking a look at this site[http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping](http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping)
 

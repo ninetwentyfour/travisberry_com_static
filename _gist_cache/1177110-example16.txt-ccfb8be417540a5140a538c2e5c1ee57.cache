@@ -1,0 +1,13 @@
+12 SessionOpen  c 192.168.10.101 51732 :80
+   12 ReqStart     c 192.168.10.101 51732 1440203205
+   12 RxRequest    c GET
+   12 RxURL        c /favicon.ico
+   12 RxProtocol   c HTTP/1.1
+   12 RxHeader     c Host: www.ironyogistudios.com
+   12 RxHeader     c User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10
+   12 RxHeader     c Accept: image/png,image/*;q=0.8,*/*;q=0.5
+   12 RxHeader     c Accept-Language: en-us,en;q=0.5
+   12 RxHeader     c Accept-Encoding: gzip,deflate
+   12 RxHeader     c Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+   12 RxHeader     c Keep-Alive: 115
+   12 RxHeader     c Connection: keep-alive

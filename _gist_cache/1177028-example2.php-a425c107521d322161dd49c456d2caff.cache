@@ -1,0 +1,17 @@
+<?php
+function search() {
+	$searchtype = $_POST['searchtype'];
+	$value = $_POST['searchuser'];
+	$results = $this->User->find('all', array('fields' => array(
+																'User.id',
+																'User.email',
+																'Entity.name',
+																'User.created',
+																'User.modified'
+																),
+												'order' => 'User.id ASC',
+												'conditions' => array($searchtype . ' ' . 'LIKE' => '%'.$value.'%')
+											));
+	$this->set('results', $results);
+}
+?>

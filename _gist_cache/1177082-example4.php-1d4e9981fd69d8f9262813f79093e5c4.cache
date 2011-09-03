@@ -1,0 +1,1 @@
+$return = "<a href='$url' rel='external nofollow' class='url'>$author</a>";

@@ -1,0 +1,5 @@
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="376" width="640">
+	<param name="src" value="http://www.travisberry.com/videos/Comp51_3.mov" />
+	<param name="autoplay" value="false" /><param name="type" value="video/quicktime" height="376" width="640" />
+	<embed src="http://www.travisberry.com/videos/Comp51_3.mov" height="376" width="640" autoplay="false" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/" />
+</object>

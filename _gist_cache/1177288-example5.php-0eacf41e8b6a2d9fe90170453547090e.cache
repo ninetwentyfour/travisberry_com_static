@@ -1,0 +1,1 @@
+<?php $id = $this->Project->id; ?>

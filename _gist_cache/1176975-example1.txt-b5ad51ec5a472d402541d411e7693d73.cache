@@ -1,0 +1,1 @@
+ffmpeg -i Elephants_Dream.mov -vcodec libtheora -b 700k -s 512x288 -acodec libvorbis -ab 96k -threads 6 test.ogg

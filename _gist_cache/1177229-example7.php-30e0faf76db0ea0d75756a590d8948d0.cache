@@ -1,0 +1,1 @@
+App::import('Vendor', 'SassParser', array('file'=>'sass'.DS.'SassParser.php'));

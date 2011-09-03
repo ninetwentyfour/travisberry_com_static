@@ -1,0 +1,1 @@
+sudo a2enmod rewrite

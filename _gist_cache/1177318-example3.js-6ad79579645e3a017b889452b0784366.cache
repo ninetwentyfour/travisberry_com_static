@@ -1,0 +1,23 @@
+//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project
+$('#c').mousedown(function(e){
+    if ($('#textAreaPopUp').length == 0) {
+        var mouseX = e.pageX - this.offsetLeft + $("#c").position().left;
+        var mouseY = e.pageY - this.offsetTop;
+        //append a text area box to the canvas where the user clicked to enter in a comment
+        var textArea = "<div id='textAreaPopUp' style='position:absolute;top:"+mouseY+"px;left:"+mouseX+"px;z-index:30;'><textarea id='textareaTest' style='width:100px;height:50px;'></textarea>";
+        var saveButton = "<input type='button' value='save' id='saveText' onclick='saveTextFromArea("+mouseY+","+mouseX+");'></div>";
+        var appendString = textArea + saveButton;
+        $("#main").append(appendString);
+    } else {
+        $('textarea#textareaTest').remove();
+        $('#saveText').remove();
+        $('#textAreaPopUp').remove();
+        var mouseX = e.pageX - this.offsetLeft + $("#c").position().left;
+        var mouseY = e.pageY - this.offsetTop;
+        //append a text area box to the canvas where the user clicked to enter in a comment
+        var textArea = "<div id='textAreaPopUp' style='position:absolute;top:"+mouseY+"px;left:"+mouseX+"px;z-index:30;'><textarea id='textareaTest' style='width:100px;height:50px;'></textarea>";
+        var saveButton = "<input type='button' value='save' id='saveText' onclick='saveTextFromArea("+mouseY+","+mouseX+");'></div>";
+        var appendString = textArea + saveButton;
+        $("#main").append(appendString);
+    }
+});

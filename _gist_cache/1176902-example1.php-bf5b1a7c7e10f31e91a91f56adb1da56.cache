@@ -1,0 +1,5 @@
+<?php 
+	if ( is_page('work') || is_page('contact')) { 
+		echo '<div id="secondnav"><div class="secondnavs"><a href="http://www.travisberry.com/video/">Video</a></div><div class="longsecondnavs">.</div></div>'; 
+	} 
+?>

@@ -69,8 +69,53 @@
 
 <p>Now open up your app_controller.php and add these four functions</p>
 
-<script src="https://gist.github.com/1177288.js?file=example1.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example1.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+function createIndextankClient(){</p>
+
+<pre><code>App::import('Vendor', 'indextank_client');
+$API_URL = 'YOUR API URL HERE';
+$client = new ApiClient($API_URL);
+return $client;
+</code></pre>
+
+<p>}</p>
+
+<p>function addIndextank($indexType,$id,$data){</p>
+
+<pre><code>//send project to indextank
+$client = $this-&amp;gt;createIndextankClient();
+$index = $client-&amp;gt;get_index($indexType);
+$doc_id = $id;
+$index-&amp;gt;add_document($doc_id, $data);
+</code></pre>
+
+<p>}</p>
+
+<p>function deleteIndextank($indexType,$id){</p>
+
+<pre><code>//delete indextank document
+$client = $this-&amp;gt;createIndextankClient();
+$index = $client-&amp;gt;get_index($indexType);
+$index-&amp;gt;delete_document($id);
+</code></pre>
+
+<p>}</p>
+
+<p>function searchIndextank($indexType,$query){</p>
+
+<pre><code>//search indextank
+$client = $this-&amp;gt;createIndextankClient();
+$index = $client-&amp;gt;get_index($indexType);
+$index-&amp;gt;add_function(2, &amp;quot;relevance&amp;quot;);
+$res = $index-&amp;gt;search($query);
+return $res;
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.</p>
 
@@ -80,32 +125,64 @@
 
 <p>So now lets add some documents to our index.</p>
 
-<script src="https://gist.github.com/1177288.js?file=example2.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example2.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+if ($this-&gt;Project-&gt;save($this-&gt;data)) {</p>
+
+<pre><code>$this-&amp;gt;Session-&amp;gt;setFlash('The project has been saved', 'default', array('class' =&amp;gt; 'flash_good'));
+$this-&amp;gt;redirect(array('action' =&amp;gt; 'index'));
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.</p>
 
 <p>Let's add the code to call our addIndextank() function in the app controller.</p>
 
-<script src="https://gist.github.com/1177288.js?file=example3.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example3.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+if ($this-&gt;Project-&gt;save($this-&gt;data)) {</p>
+
+<pre><code>//send project to index tank
+$indexData = array('text'=&amp;gt;$this-&amp;gt;data['Project']['title'],'title'=&amp;gt;$this-&amp;gt;data['Project']['title'],'description'=&amp;gt;$this-&amp;gt;data['Project']['description'],'user_id'=&amp;gt;$_SESSION['Auth']['User']['_id']);
+$id = $this-&amp;gt;Project-&amp;gt;id;
+$this-&amp;gt;addIndextank(&amp;quot;HomkoraProjects&amp;quot;,$id,$indexData);
+$this-&amp;gt;Session-&amp;gt;setFlash('The project has been saved', 'default', array('class' =&amp;gt; 'flash_good'));
+$this-&amp;gt;redirect(array('action' =&amp;gt; 'index'));
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>Let go over what's going on here.</p>
 
-<script src="https://gist.github.com/1177288.js?file=example4.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example4.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+$indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$this-&gt;data['Project']['title'],'description'=&gt;$this-&gt;data['Project']['description'],'user_id'=&gt;$<em>SESSION['Auth']['User']['</em>id']);
+?&gt;</code></pre></noscript></p>
 
 <p>This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.</p>
 
 <p>The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.</p>
 
-<script src="https://gist.github.com/1177288.js?file=example5.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example5.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php $id = $this-&gt;Project-&gt;id; ?&gt;</code></pre></noscript></p>
 
 <p>Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.</p>
 
-<script src="https://gist.github.com/1177288.js?file=example6.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example6.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php $this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData); ?&gt;</code></pre></noscript></p>
 
 <p>This line is the call to the addIndextank function. The "HomkoraProjects" is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.</p>
 
@@ -115,13 +192,34 @@
 
 <p>Starting with</p>
 
-<script src="https://gist.github.com/1177288.js?file=example7.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example7.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+if ($this-&gt;Project-&gt;delete($id)) {</p>
+
+<pre><code>$this-&amp;gt;Session-&amp;gt;setFlash('Project deleted', 'default', array('class' =&amp;gt; 'flash_good'));
+$this-&amp;gt;redirect(array('action'=&amp;gt;'index'));
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>We can add a simple call like</p>
 
-<script src="https://gist.github.com/1177288.js?file=example8.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example8.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php
+if ($this-&gt;Project-&gt;delete($id)) {</p>
+
+<pre><code>$this-&amp;gt;deleteIndextank(&amp;quot;HomkoraProjects&amp;quot;,$id);
+$this-&amp;gt;Session-&amp;gt;setFlash('Project deleted', 'default', array('class' =&amp;gt; 'flash_good'));
+$this-&amp;gt;redirect(array('action'=&amp;gt;'index'));
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
 
 <p>Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)</p>
 
@@ -129,18 +227,38 @@
 
 <p>In my projects controller I added the following function</p>
 
-<script src="https://gist.github.com/1177288.js?file=example9.php"></script>
+<script src='https://gist.github.com/1177288.js?file=example9.php'></script>
 
 
+<p><noscript><pre><code>&lt;?php
+function search(){</p>
+
+<pre><code>$query = $this-&amp;gt;data['Project']['search'];
+$res = $this-&amp;gt;searchIndextank(&amp;quot;HomkoraProjects&amp;quot;,$query);
+$i = 0;
+foreach($res-&amp;gt;results as $doc_id){
+$params = array(
+    'conditions' =&amp;gt; array('_id' =&amp;gt; $doc_id-&amp;gt;docid)
+);
+    $projects[$i++] = $this-&amp;gt;Project-&amp;gt;find('first',$params);
+}
+$this-&amp;gt;set('projects', $projects);
+</code></pre>
+
+<p>}
+?&gt;</code></pre></noscript></p>
+
+<script src='https://gist.github.com/1177293.js?file=example10.php'></script>
 
 
-<script src="https://gist.github.com/1177293.js?file=example10.php"></script>
-
+<p><noscript><pre><code>&lt;?php $query = $this-&gt;data['Project']['search']; ?&gt;</code></pre></noscript></p>
 
 <p>I pass the search term through a form and set it as the $query variable.</p>
 
-<script src="https://gist.github.com/1177293.js?file=example11.php"></script>
+<script src='https://gist.github.com/1177293.js?file=example11.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php $res = $this-&gt;searchIndextank(&quot;HomkoraProjects&quot;,$query); ?&gt;</code></pre></noscript></p>
 
 <p>Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.</p>
 

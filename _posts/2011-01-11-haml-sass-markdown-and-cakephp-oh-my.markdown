@@ -39,21 +39,21 @@ Let's start with getting just Haml working for the time being.
 
 Open up your app_controller.php and add the following line
 
-<script src="https://gist.github.com/1177229.js?file=example1.php"></script>
+{% gist 1177229 example1.php %}
 
 Now open up /config/core.php and scroll to the bottom. Add
 
-<script src="https://gist.github.com/1177229.js?file=example2.php"></script>
+{% gist 1177229 example2.php %}
 
 The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.
 
 Now open up the haml.php file you added to views. Find the line that says
 
-<script src="https://gist.github.com/1177229.js?file=example3.php"></script>
+{% gist 1177229 example3.php %}
 
 and change it to
 
-<script src="https://gist.github.com/1177229.js?file=example4.php"></script>
+{% gist 1177229 example4.php %}
 
 This assumes you copied the vendors contents to vendors in CakePHP.
 
@@ -69,31 +69,31 @@ With that out of the way, time to start the config.
 
 Open the core.php file back up and go to the Haml code we added earlier. Under that add
 
-<script src="https://gist.github.com/1177229.js?file=example5.php"></script>
+{% gist 1177229 example5.php %}
 
 The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.
 
 Now open up sass.php and find the line that looks like
 
-<script src="https://gist.github.com/1177229.js?file=example6.php"></script>
+{% gist 1177229 example6.php %}
 
 Replace it with
 
-<script src="https://gist.github.com/1177229.js?file=example7.php"></script>
+{% gist 1177229 example7.php %}
 
 After that you should be able to start putting .sass files into your css directory and they will compile to css.
 
 However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like
 
-<script src="https://gist.github.com/1177229.js?file=example8.php"></script>
+{% gist 1177229 example8.php %}
 
 with
 
-<script src="https://gist.github.com/1177229.js?file=example9.php"></script>
+{% gist 1177229 example9.php %}
 
 Then add a line to the bottom of the file with this
 
-<script src="https://gist.github.com/1177233.js?file=example10.php"></script>
+{% gist 1177233 example10.php %}
 
 Your compiled css files should now transfer gzipped.
 
@@ -101,11 +101,11 @@ Now lets add support for the newer .scss file. If you want to use .sass you can 
 
 Find the line
 
-<script src="https://gist.github.com/1177233.js?file=example11.php"></script>
+{% gist 1177233 example11.php %}
 
 and replace it with
 
-<script src="https://gist.github.com/1177233.js?file=example12.php"></script>
+{% gist 1177233 example12.php %}
 
 You can now use .scss files instead of .sass
 
@@ -117,7 +117,7 @@ However, some people make the argument that you shouldn't use Haml to style the 
 
 Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to
 
-<script src="https://gist.github.com/1177233.js?file=example13.php"></script>
+{% gist 1177233 example13.php %}
 
 inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/
 
@@ -129,29 +129,29 @@ Now open up the HamlMarkdownFilter.php inside the views/filters folder.
 
 Change
 
-<script src="https://gist.github.com/1177233.js?file=example14.php"></script>
+{% gist 1177233 example14.php %}
 
 To
 
-<script src="https://gist.github.com/1177233.js?file=example15.php"></script>
+{% gist 1177233 example15.php %}
 
 Now open up the _HamlMarkdownFilter.php file inside /vendors/haml/filters
 
 Change
 
-<script src="https://gist.github.com/1177233.js?file=example16.php"></script>
+{% gist 1177233 example16.php %}
 
 To
 
-<script src="https://gist.github.com/1177233.js?file=example17.php"></script>
+{% gist 1177233 example17.php %}
 
 also change
 
-<script src="https://gist.github.com/1177233.js?file=example18.php"></script>
+{% gist 1177233 example18.php %}
 
 To
 
-<script src="https://gist.github.com/1177233.js?file=example19.php"></script>
+{% gist 1177233 example19.php %}
 
 Now throw some Markdown into you Haml files and prepare to be amazed.
 

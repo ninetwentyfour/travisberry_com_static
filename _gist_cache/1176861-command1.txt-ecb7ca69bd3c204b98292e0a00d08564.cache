@@ -1,0 +1,5 @@
+mkdir gittest
+
+cd gittest
+
+git --bare init

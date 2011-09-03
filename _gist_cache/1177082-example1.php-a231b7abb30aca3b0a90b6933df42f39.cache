@@ -1,0 +1,17 @@
+<?php
+function comment_author_link_mine( $comment_ID = 0 ) {
+    echo get_comment_author_link_mine( $comment_ID );
+}
+
+function get_comment_author_link_mine( $comment_ID = 0 ) {
+    /** @todo Only call these functions when they are needed. Include in if... else blocks */
+    $url    = get_comment_author_url( $comment_ID );
+    $author = get_comment_author( $comment_ID );
+
+    if ( empty( $url ) || 'http://' == $url )
+        $return = $author;
+    else
+        $return = "<a href='$url' class='comment_url'>$author</a>";
+    return apply_filters('get_comment_author_link', $return);
+}
+?>

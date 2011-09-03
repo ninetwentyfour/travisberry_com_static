@@ -1,0 +1,2 @@
+//break the text into arrays based on a text width of 100px
+var phraseArray = getLines(ctx,text,100);

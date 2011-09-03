@@ -24,17 +24,17 @@ I'll be using a fairly standard User MVC for this demo.
 
 First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.
 
-<script src="https://gist.github.com/1177028.js?file=example1.php"></script>
+{% gist 1177028 example1.php %}
 	
 The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.
 
 Now in the controller, it's time to add the search action.
 
-<script src="https://gist.github.com/1177028.js?file=example2.php"></script>
+{% gist 1177028 example2.php %}
 
 It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' => %1%) One last thing is to create the search.ctp
 
-<script src="https://gist.github.com/1177028.js?file=example3.php"></script>
+{% gist 1177028 example3.php %}
 	
 It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.
 

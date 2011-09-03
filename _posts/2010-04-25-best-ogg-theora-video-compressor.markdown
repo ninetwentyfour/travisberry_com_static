@@ -79,11 +79,11 @@ In the end I would recommend ffmpeg2theora. If you're comfortable with the comma
 
 FFmpeg
 
-<script src="https://gist.github.com/1176975.js?file=example1.txt"></script>
+{% gist 1176975 example1.txt %}
 
 ffmpeg2theora
 
-<script src="https://gist.github.com/1176975.js?file=example2.txt"></script>
+{% gist 1176975 example2.txt %}
 
 If you have any suggestions for improving these please let me know in the comments. 
 </article>

@@ -1,0 +1,5 @@
+<?php 
+	if ( is_page('about') || is_page('contact')) { 
+		echo '<div id="secondnav">This is the super cool secondary navigation.</div>'; 
+	} 
+?>

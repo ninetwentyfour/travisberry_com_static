@@ -40,7 +40,7 @@ Now that Ubuntu is installed and working it's time to start installing the LAMP 
 
 Now open up Terminal (Applications > accessories > Terminal). Type in the following,
 
-<script src="https://gist.github.com/1176993.js?file=example1.txt"></script>
+{% gist 1176993 example1.txt %}
 
 Terminal will prompt for your password. Enter it in.(Terminal does not show your password as you type, so just type it in and hit enter).
 
@@ -48,13 +48,13 @@ Terminal will prompt for your password. Enter it in.(Terminal does not show your
 
 Apache should now be installed on your system. Now it's time to install PHP 5. In terminal type,
 
-<script src="https://gist.github.com/1176993.js?file=example2.txt"></script>
+{% gist 1176993 example2.txt %}
 
 ## Install MySQL
 
 Now you have PHP 5 installed. To install MySQL type,
 
-<script src="https://gist.github.com/1176993.js?file=example3.txt"></script>
+{% gist 1176993 example3.txt %}
 
 Enter in a password when the install prompts you to.
 
@@ -62,23 +62,23 @@ Enter in a password when the install prompts you to.
 
 Now install [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php) by typing
 
-<script src="https://gist.github.com/1176993.js?file=example4.txt"></script>
+{% gist 1176993 example4.txt %}
 
 When phpmyadmin asks which server to use select apache. It will then ask to create a database. Tell it to do so and enter in the password you set when installing MySQL.
 
 After installing all this you need to restart apache. To do so type
 
-<script src="https://gist.github.com/1176993.js?file=example5.txt"></script>
+{% gist 1176993 example5.txt %}
 
 ## Test Installation
 
 You should now have a working LAMP stack installed. To test everything is working, type in Terminal
 
-<script src="https://gist.github.com/1176993.js?file=example6.txt"></script>
+{% gist 1176993 example6.txt %}
 
 When the new window opens add
 
-<script src="https://gist.github.com/1176993.js?file=example7.php"></script>
+{% gist 1176993 example7.php %}
 
 Save and close the window. Now open Firefox and go to http://localhost/
 
@@ -92,11 +92,11 @@ Now everything is working as it should, but the default setup isn't the best thi
 
 First you may have noticed when we restarted apache that it gave an error about not being able to determine the fully qualified domain name. To fix this error open the terminal and type,
 
-<script src="https://gist.github.com/1176993.js?file=example8.txt"></script>
+{% gist 1176993 example8.txt %}
 
 Add to the file
 
-<script src="https://gist.github.com/1176993.js?file=example9.txt"></script>
+{% gist 1176993 example9.txt %}
 
 Save and exit. Now restart again. You should no longer see an error.
 
@@ -111,17 +111,17 @@ example.com/about/
 
 You can enable the module by typing in the Terminal
 
-<script src="https://gist.github.com/1176993.js?file=example10.txt"></script>
+{% gist 1176993 example10.txt %}
 
 ## Enable PHP 5 Error Displaying
 
 Another helpful feature not enabled by default is error displaying in PHP. Now on a production server it is good to turn these off, but when developing, they can be handy to have on. To enable type
 
-<script src="https://gist.github.com/1176996.js?file=example11.txt"></script>
+{% gist 1176996 example11.txt %}
 
 Make sure the following lines read as follows
 
-<script src="https://gist.github.com/1176996.js?file=example12.txt"></script>
+{% gist 1176996 example12.txt %}
 
 ## Setup Virtual Hosts
 
@@ -129,47 +129,47 @@ After errors are turned on, let's setup an example virtual host. Virtual hosts a
 
 To begin setting this up create two separate folders in /var/www/. Name one example.com and the other test.com. Create a simple index.html file in each, creating content that makes them easy to tell apart. Now cd to /etc/apache2/sites-enabled. Once there, type the following in Terminal
 
-<script src="https://gist.github.com/1176996.js?file=example13.txt"></script>
+{% gist 1176996 example13.txt %}
 
 Inside the file paste the following,
 
-<script src="https://gist.github.com/1176996.js?file=example14.txt"></script>
+{% gist 1176996 example14.txt %}
 
 Now create a link to the file in sites-available.
 
-<script src="https://gist.github.com/1176996.js?file=example15.txt"></script>
+{% gist 1176996 example15.txt %}
 
 Next let's create one for test.com
 
-<script src="https://gist.github.com/1176996.js?file=example16.txt"></script>
+{% gist 1176996 example16.txt %}
 
 Inside the file paste the following,
 
-<script src="https://gist.github.com/1176996.js?file=example17.txt"></script>
+{% gist 1176996 example17.txt %}
 
 Now create a link to the file in sites-available.
 
-<script src="https://gist.github.com/1176996.js?file=example18.txt"></script>
+{% gist 1176996 example18.txt %}
 
 Now your virtual hosts are ready to go, but first we need to tell the computer to listen for the addresses. To do that type the following,
 
-<script src="https://gist.github.com/1176996.js?file=example19.txt"></script>
+{% gist 1176996 example19.txt %}
 
 Then
 
-<script src="https://gist.github.com/1176998.js?file=example20.txt"></script>
+{% gist 1176998 example20.txt %}
 
 Create a new line under the first. In it add
 
-<script src="https://gist.github.com/1176998.js?file=example21.txt"></script>
+{% gist 1176998 example21.txt %}
 
 Create another line and this time add
 
-<script src="https://gist.github.com/1176998.js?file=example22.txt"></script>
+{% gist 1176998 example22.txt %}
 
 Save and close the file. Restart apache
 
-<script src="https://gist.github.com/1176998.js?file=example23.txt"></script>
+{% gist 1176998 example23.txt %}
 
 Now open Firefox and go to www.example.com. You should see your example.com index.html file. Now try www.test.com. If you see your test.com index.html file everything works as it should. Just repeat this process for any additional domains you would like to add.
 
@@ -177,7 +177,7 @@ If you want to be able to view your virtual machine sites in a browser on your h
 
 Now move back to your host os. Open a terminal session in it. Find your hosts file. In OSX it is /etc/ just like Linux. Now add lines like so,
 
-<script src="https://gist.github.com/1176998.js?file=example24.txt"></script>
+{% gist 1176998 example24.txt %}
 
 You should now be able to view your example sites in a browser on your host os.
 
@@ -185,19 +185,19 @@ You should now be able to view your example sites in a browser on your host os.
 
 Everything is starting to work quite well for development but there are still a few extras worth setting up. The first is changing permissions of your web root. To make you the owner of the /var/www directory type this in Terminal
 
-<script src="https://gist.github.com/1176998.js?file=example25.txt"></script>
+{% gist 1176998 example25.txt %}
 
 ## Install Git
 
 This will now allow your user to easily create new folders and files. Next lets install my favorite version control system [Git](http://git-scm.com/). To install type this into Terminal
 
-<script src="https://gist.github.com/1176998.js?file=example26.txt"></script>
+{% gist 1176998 example26.txt %}
 
 ## Install FTP
 
 You can now use git to control the code you develop on the machine. Next let's add ftp support to make moving files between your host and guest operating systems a little easier. To install ftp support type,
 
-<script src="https://gist.github.com/1176998.js?file=example27.txt"></script>
+{% gist 1176998 example27.txt %}
 
 You can now open your favorite ftp application in your host os and connect to your virtual machine. Just use the IP (mine in this example is 192.168.10.4) and enter in your user name and password. Ta-da!
 

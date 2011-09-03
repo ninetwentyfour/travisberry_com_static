@@ -20,23 +20,23 @@ And even better, do so without modifying the WordPress core files. It's really q
 <div class="clearfix"></div>
 In your templates functions.php file add 
 
-<script src="https://gist.github.com/1177082.js?file=example1.php"></script>
+{% gist 1177082 example1.php %}
 
 Then in your comments.php file, find and replace any mention of
 
-<script src="https://gist.github.com/1177082.js?file=example2.php"></script>
+{% gist 1177082 example2.php %}
 
 With
 
-<script src="https://gist.github.com/1177082.js?file=example3.php"></script>
+{% gist 1177082 example3.php %}
 
 This simply replaces the core files "comment_author_link()" function with one of our own. The original has
 
-<script src="https://gist.github.com/1177082.js?file=example4.php"></script>
+{% gist 1177082 example4.php %}
 
 as the link. We simply remove the rel attribute and change it to
 
-<script src="https://gist.github.com/1177082.js?file=example5.php"></script>
+{% gist 1177082 example5.php %}
 
 and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.
 

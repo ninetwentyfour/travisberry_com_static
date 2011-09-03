@@ -17,10 +17,10 @@ summary: "In continuing with my last post on how to upload videos to Ooyala with
   <h6>Published: 2010-09-18</h6>
 
 In continuing with my last post on [how to upload videos to Ooyala with PHP](http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
-
+<div class="clearfix"></div>
 Alright, so let's get to the code.
 
-<script src="https://gist.github.com/1177059.js?file=example1.php"></script>
+{% gist 1177059 example1.php %}
 
 The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one. 
 

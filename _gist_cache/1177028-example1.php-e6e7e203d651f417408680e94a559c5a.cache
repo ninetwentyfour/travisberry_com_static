@@ -1,0 +1,11 @@
+<div id="search">
+    <form id="orderform" action="<?php echo $html->url('/users/search'); ?>" method="post" enctype="multipart/form-data">
+    <label for="searchuser">Search Users:</label><input type="text" name="searchuser" />
+    Search By:
+    <input type="radio" name="searchtype" value="User.id"  checked> User ID
+    <input type="radio" name="searchtype" value="User.email"  checked> User Email
+    <input type="radio" name="searchtype" value="Entity.name"> Entity Name
+    <?php
+    	echo $form->end('Search');
+    ?>
+</div>

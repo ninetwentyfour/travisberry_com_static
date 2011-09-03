@@ -3,7 +3,7 @@ Jekyll made static site of [http://www.travisberry.com](http://www.travisberry.c
 TODO
 ====
 
-- add expires headers to static files on s3 also add content types
+- <del>add expires headers to static files on s3 also add content types</del>
 
 - <del>New favicon</del>
 

@@ -1,0 +1,10 @@
+<?php
+if ($this->Project->save($this->data)) {
+    //send project to index tank
+    $indexData = array('text'=>$this->data['Project']['title'],'title'=>$this->data['Project']['title'],'description'=>$this->data['Project']['description'],'user_id'=>$_SESSION['Auth']['User']['_id']);
+    $id = $this->Project->id;
+    $this->addIndextank("HomkoraProjects",$id,$indexData);
+    $this->Session->setFlash('The project has been saved', 'default', array('class' => 'flash_good'));
+    $this->redirect(array('action' => 'index'));
+}
+?>

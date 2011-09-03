@@ -29,7 +29,7 @@ Take the file you downloaded (indextank_client.php in my case) and place it in a
 
 Now open up your app_controller.php and add these four functions
 
-<script src="https://gist.github.com/1177288.js?file=example1.php"></script>
+{% gist 1177288 example1.php %}
 
 These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.
 
@@ -39,27 +39,27 @@ All the functions accept the $indexType variable which is where you set which in
 
 So now lets add some documents to our index.
 
-<script src="https://gist.github.com/1177288.js?file=example2.php"></script>
+{% gist 1177288 example2.php %}
 
 I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.
 
 Let's add the code to call our addIndextank() function in the app controller.
 
-<script src="https://gist.github.com/1177288.js?file=example3.php"></script>
+{% gist 1177288 example3.php %}
 
 Let go over what's going on here.
 
-<script src="https://gist.github.com/1177288.js?file=example4.php"></script>
+{% gist 1177288 example4.php %}
 
 This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.
 
 The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.
 
-<script src="https://gist.github.com/1177288.js?file=example5.php"></script>
+{% gist 1177288 example5.php %}
 
 Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.
 
-<script src="https://gist.github.com/1177288.js?file=example6.php"></script>
+{% gist 1177288 example6.php %}
 
 This line is the call to the addIndextank function. The "HomkoraProjects" is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.
 
@@ -69,11 +69,11 @@ Now if you delete the Project it's best to delete to document in the index as we
 
 Starting with
 
-<script src="https://gist.github.com/1177288.js?file=example7.php"></script>
+{% gist 1177288 example7.php %}
 
 We can add a simple call like
 
-<script src="https://gist.github.com/1177288.js?file=example8.php"></script>
+{% gist 1177288 example8.php %}
 
 Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)
 
@@ -81,13 +81,13 @@ Alright, now you can add and remove documents from your index, but what good are
 
 In my projects controller I added the following function
 
-<script src="https://gist.github.com/1177288.js?file=example9.php"></script>
+{% gist 1177288 example9.php %}
 
-<script src="https://gist.github.com/1177293.js?file=example10.php"></script>
+{% gist 1177293 example10.php %}
 
 I pass the search term through a form and set it as the $query variable.
 
-<script src="https://gist.github.com/1177293.js?file=example11.php"></script>
+{% gist 1177293 example11.php %}
 
 Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.
 

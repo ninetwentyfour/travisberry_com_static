@@ -1,0 +1,22 @@
+  require 'net/http'
+  require 'uri'
+  require 'json'
+  
+  def get_gist(fileName,content)
+    res = Net::HTTP.post_form(URI.parse('http://gist.github.com/api/v1/json/new'),
+      { 'files[#{fileName}]' => content,
+        'login' => 'USER NAME HERE',
+        'token' => 'API TOKEN HERE',
+        'description' => 'This is a test description'
+        })
+    parsed_json = JSON(res.body)
+    parsed_json['gists'].each do |key, val|
+      key.each do |k, v|
+        if "#{k}" == 'repo'
+          repo = "#{v}"
+        end
+      end
+    end
+    return "<script src=\"https://gist.github.com/#{repo}.js\"></script>"
+    
+  end

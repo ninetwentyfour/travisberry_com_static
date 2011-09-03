@@ -1,0 +1,5 @@
+<?php 
+	if ( is_page('blog')) { 
+		echo '<link rel="stylesheet" href="http://whereeveryouputthenewcssfile.css" type="text/css" media="screen" />'; 
+	} 
+?>

@@ -1,0 +1,2 @@
+var mouseX = e.pageX - this.offsetLeft + $("#c").position().left;
+var mouseY = e.pageY - this.offsetTop;

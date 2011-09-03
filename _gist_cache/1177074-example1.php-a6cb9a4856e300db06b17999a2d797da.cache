@@ -1,0 +1,8 @@
+<?php
+	$baseurl = 'http://www.example.com'; //set the base url of the site
+	$pageYouWant = $baseurl."/the-rest-of-the-url"; //add the rest of the url you want to check against
+	$currentPage = $baseurl.$_SERVER['REQUEST_URI'];// this gets the current page url
+	if($pageYouWant==$currentPage) {
+    	//do something
+	}
+?>

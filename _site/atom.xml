@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-03T14:53:29-06:00</updated>
+ <updated>2011-09-03T16:40:49-06:00</updated>
  <id>http://oldstatic.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -28,8 +28,33 @@
 
 &lt;p&gt;I'm in the process of converting my site over to running &lt;a href=&quot;http://www.locomotivecms.com&quot;&gt;Locomotive CMS&lt;/a&gt; instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/998389.js?file=gist_helper.rb&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/998389.js?file=gist_helper.rb'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;  require 'net/http'
+  require 'uri'
+  require 'json'&lt;/p&gt;
+
+&lt;p&gt;  def get_gist(fileName,content)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;res = Net::HTTP.post_form(URI.parse('http://gist.github.com/api/v1/json/new'),
+  { 'files[#{fileName}]' =&amp;amp;gt; content,
+    'login' =&amp;amp;gt; 'USER NAME HERE',
+    'token' =&amp;amp;gt; 'API TOKEN HERE',
+    'description' =&amp;amp;gt; 'This is a test description'
+    })
+parsed_json = JSON(res.body)
+parsed_json['gists'].each do |key, val|
+  key.each do |k, v|
+    if &amp;amp;quot;#{k}&amp;amp;quot; == 'repo'
+      repo = &amp;amp;quot;#{v}&amp;amp;quot;
+    end
+  end
+end
+return &amp;amp;quot;&amp;amp;lt;script src=\&amp;amp;quot;https://gist.github.com/#{repo}.js\&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;&amp;amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;It's pretty simple and works like a champ for me. Obviously I had to write a lot more stuff to integrate with Locomotive CMS, but that is for another post.&lt;/p&gt;
 
@@ -58,8 +83,23 @@
 
 &lt;p&gt;So first we need to create a canvas element&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example1.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example1.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;head&amp;amp;gt;
+&amp;amp;lt;/head&amp;amp;gt;
+&amp;amp;lt;body&amp;amp;gt;
+    &amp;amp;lt;div id=&amp;amp;quot;main&amp;amp;quot;&amp;amp;gt;
+        &amp;amp;lt;canvas id=&amp;amp;quot;c&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/canvas&amp;amp;gt;&amp;amp;lt;!-- the canvas --&amp;amp;gt;
+    &amp;amp;lt;/div&amp;amp;gt;
+    &amp;amp;lt;script src=&amp;amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
+&amp;amp;lt;/body&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we have the canvas element all set up we can start having some fun.&lt;/p&gt;
 
@@ -67,8 +107,16 @@
 
 &lt;p&gt;Add this into a css file&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example2.css&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example2.css'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;#c {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;width: 640px;
+height: 360px;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we can start adding drawings. One thing we are going to need for this is a text entry box. I debated trying to &quot;type&quot; directly into the canvas but decided against it. (for complexity reasons)&lt;/p&gt;
 
@@ -76,13 +124,43 @@
 
 &lt;p&gt;Let's go ahead and create a javascript function to handle the click and add the textarea and save button.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example3.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example3.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project
+$('#c').mousedown(function(e){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ($('#textAreaPopUp').length == 0) {
+    var mouseX = e.pageX - this.offsetLeft + $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+    var mouseY = e.pageY - this.offsetTop;
+    //append a text area box to the canvas where the user clicked to enter in a comment
+    var textArea = &amp;amp;quot;&amp;amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;amp;quot;+mouseY+&amp;amp;quot;px;left:&amp;amp;quot;+mouseX+&amp;amp;quot;px;z-index:30;'&amp;amp;gt;&amp;amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;amp;gt;&amp;amp;lt;/textarea&amp;amp;gt;&amp;amp;quot;;
+    var saveButton = &amp;amp;quot;&amp;amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;amp;quot;+mouseY+&amp;amp;quot;,&amp;amp;quot;+mouseX+&amp;amp;quot;);'&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;quot;;
+    var appendString = textArea + saveButton;
+    $(&amp;amp;quot;#main&amp;amp;quot;).append(appendString);
+} else {
+    $('textarea#textareaTest').remove();
+    $('#saveText').remove();
+    $('#textAreaPopUp').remove();
+    var mouseX = e.pageX - this.offsetLeft + $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+    var mouseY = e.pageY - this.offsetTop;
+    //append a text area box to the canvas where the user clicked to enter in a comment
+    var textArea = &amp;amp;quot;&amp;amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;amp;quot;+mouseY+&amp;amp;quot;px;left:&amp;amp;quot;+mouseX+&amp;amp;quot;px;z-index:30;'&amp;amp;gt;&amp;amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;amp;gt;&amp;amp;lt;/textarea&amp;amp;gt;&amp;amp;quot;;
+    var saveButton = &amp;amp;quot;&amp;amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;amp;quot;+mouseY+&amp;amp;quot;,&amp;amp;quot;+mouseX+&amp;amp;quot;);'&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;quot;;
+    var appendString = textArea + saveButton;
+    $(&amp;amp;quot;#main&amp;amp;quot;).append(appendString);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;});&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;There’s nothing too crazy in here. It does do a check and destroy the textarea if one is already displayed while the user clicks the canvas again.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example4.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example4.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;var mouseX = e.pageX - this.offsetLeft + $(&amp;quot;#c&amp;quot;).position().left;
+var mouseY = e.pageY - this.offsetTop;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;These are setting the position of the mouse click so we can use them to set the position to display the textarea at. It takes into account any offsets the canvas element may have as well.&lt;/p&gt;
 
@@ -90,39 +168,270 @@
 
 &lt;p&gt;Now we have to actually draw the entered text to the screen.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example5.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example5.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;function saveTextFromArea(y,x){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//get the value of the textarea then destroy it and the save button
+var text = $('textarea#textareaTest').val();
+$('textarea#textareaTest').remove();
+$('#saveText').remove();
+//get the canvas and add the text functions
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+var cw = canvas.clientWidth;
+var ch = canvas.clientHeight;
+canvas.width = cw;
+canvas.height = ch;
+//break the text into arrays based on a text width of 100px
+var phraseArray = getLines(ctx,text,100);
+// this adds the text functions to the ctx
+CanvasTextFunctions.enable(ctx);
+var counter = 0;
+//set the font styles
+var font = &amp;amp;quot;sans&amp;amp;quot;;
+var fontsize = 16;
+ctx.strokeStyle = &amp;amp;quot;rgba(237,229,0,1)&amp;amp;quot;;
+ctx.shadowOffsetX = 2;
+ctx.shadowOffsetY = 2;
+ctx.shadowBlur = 1;
+ctx.shadowColor = &amp;amp;quot;rgba(0,0,0,1)&amp;amp;quot;;
+//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+$.each(phraseArray, function() {
+    //set the placement in the canvas
+    var lineheight = fontsize * 1.5;
+    var newline = ++counter;
+    newline = newline * lineheight;
+    var topPlacement = y - $(&amp;amp;quot;#c&amp;amp;quot;).position().top + newline;
+    var leftPlacement = x - $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+    text = this;
+    //draw the text
+    ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+    ctx.save();
+    ctx.restore();
+});
+//reset the drop shadow so any other drawing don't have them
+ctx.shadowOffsetX = 0;
+ctx.shadowOffsetY = 0;
+ctx.shadowBlur = 0;
+ctx.shadowColor = &amp;amp;quot;rgba(0,0,0,0)&amp;amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;So this is fairly intense. It also uses a little library file from Jim Studt that you can find &lt;a href=&quot;http://www.federated.com/~jim/canvastext/&quot;&gt;here&lt;/a&gt;. Though I have modified mine a bit because of some conflicts it was causing me. You can grab my copy at &lt;a href=&quot;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&quot;&gt;https://github.com/ninetwentyfour/Video-Canvas/blob/master/js/text.js&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;A few important parts in that code are&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example6.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example6.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;//break the text into arrays based on a text width of 100px
+var phraseArray = getLines(ctx,text,100);&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This is going to another function that we will write in a minute. Basically it is solving the problem of canvas text not having any idea how to word wrap. It will blow right off the page without this.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example7.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example7.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;// this adds the text functions to the ctx
+CanvasTextFunctions.enable(ctx);&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This intializes the text library file.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example8.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example8.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+$.each(phraseArray, function() {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//set the placement in the canvas
+var lineheight = fontsize * 1.5;
+var newline = ++counter;
+newline = newline * lineheight;
+var topPlacement = y - $(&amp;amp;quot;#c&amp;amp;quot;).position().top + newline;
+var leftPlacement = x - $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+text = this;
+//draw the text
+ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+ctx.save();
+ctx.restore();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;});&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This is the block that actually draws the text to the screen. It takes each entry in the phraseArray and draws it to the screen moving it down by a line each time.&lt;/p&gt;
 
 &lt;p&gt;The code to control the width of the text looks like this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example9.js&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example9.js'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;function getLines(ctx,phrase,maxPxLength) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//break the text area text into lines based on &amp;amp;quot;box&amp;amp;quot; width
+var wa=phrase.split(&amp;amp;quot; &amp;amp;quot;),
+phraseArray=[],
+lastPhrase=&amp;amp;quot;&amp;amp;quot;,
+l=maxPxLength,
+measure=0;
+ctx.font = &amp;amp;quot;16px sans-serif&amp;amp;quot;;
+for (var i=0;i&amp;amp;lt;wa.length;i++) {
+    var w=wa[i];
+    measure=ctx.measureText(lastPhrase+w).width;
+    if (measure&amp;amp;lt;l) {
+        lastPhrase+=(&amp;amp;quot; &amp;amp;quot;+w);
+    }else {
+        phraseArray.push(lastPhrase);
+        lastPhrase=w;
+    }
+    if (i===wa.length-1) {
+        phraseArray.push(lastPhrase);
+        break;
+}
+}
+return phraseArray;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This takes the canvas variable the original text and the width you want to limit it to then returns an array of pharses limited to the length you pass.&lt;/p&gt;
 
 &lt;p&gt;Once you have all this done you should have a working example. My final code looks like this.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177318.js?file=example10.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177318.js?file=example10.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;head&amp;amp;gt;
+    &amp;amp;lt;style&amp;amp;gt;
+        body {
+            background: #111;
+            color:#eee;
+        }
+        #c {
+            width: 640px;
+            height: 360px;
+            border:1px solid #111;
+            float:left;
+            background:#eee;
+        }
+        #main{
+            width:650px;
+            margin:auto;
+        }
+    &amp;amp;lt;/style&amp;amp;gt;
+&amp;amp;lt;/head&amp;amp;gt;
+&amp;amp;lt;body&amp;amp;gt;
+    &amp;amp;lt;div id=&amp;amp;quot;main&amp;amp;quot;&amp;amp;gt;
+        &amp;amp;lt;canvas id=&amp;amp;quot;c&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/canvas&amp;amp;gt;&amp;amp;lt;!-- the canvas --&amp;amp;gt;
+    &amp;amp;lt;/div&amp;amp;gt;
+    &amp;amp;lt;script src=&amp;amp;quot;http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
+    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;text.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;&amp;amp;lt;!-- Library to help text --&amp;amp;gt;
+    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot;&amp;amp;gt;
+        $('#c').mousedown(function(e){
+            if ($('#textAreaPopUp').length == 0) {
+                var mouseX = e.pageX - this.offsetLeft + $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+                var mouseY = e.pageY - this.offsetTop;
+
+                //append a text area box to the canvas where the user clicked to enter in a comment
+                var textArea = &amp;amp;quot;&amp;amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;amp;quot;+mouseY+&amp;amp;quot;px;left:&amp;amp;quot;+mouseX+&amp;amp;quot;px;z-index:30;'&amp;amp;gt;&amp;amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;amp;gt;&amp;amp;lt;/textarea&amp;amp;gt;&amp;amp;quot;;
+                var saveButton = &amp;amp;quot;&amp;amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;amp;quot;+mouseY+&amp;amp;quot;,&amp;amp;quot;+mouseX+&amp;amp;quot;);'&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;quot;;
+                var appendString = textArea + saveButton;
+                $(&amp;amp;quot;#main&amp;amp;quot;).append(appendString);
+            } else {
+                $('textarea#textareaTest').remove();
+                $('#saveText').remove();
+                $('#textAreaPopUp').remove();
+                var mouseX = e.pageX - this.offsetLeft + $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+                var mouseY = e.pageY - this.offsetTop;
+                //append a text area box to the canvas where the user clicked to enter in a comment
+                var textArea = &amp;amp;quot;&amp;amp;lt;div id='textAreaPopUp' style='position:absolute;top:&amp;amp;quot;+mouseY+&amp;amp;quot;px;left:&amp;amp;quot;+mouseX+&amp;amp;quot;px;z-index:30;'&amp;amp;gt;&amp;amp;lt;textarea id='textareaTest' style='width:100px;height:50px;'&amp;amp;gt;&amp;amp;lt;/textarea&amp;amp;gt;&amp;amp;quot;;
+                var saveButton = &amp;amp;quot;&amp;amp;lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&amp;amp;quot;+mouseY+&amp;amp;quot;,&amp;amp;quot;+mouseX+&amp;amp;quot;);'&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;quot;;
+                var appendString = textArea + saveButton;
+                $(&amp;amp;quot;#main&amp;amp;quot;).append(appendString);
+            }
+        });
+
+        function saveTextFromArea(y,x){
+            //get the value of the textarea then destroy it and the save button
+            var text = $('textarea#textareaTest').val();
+            $('textarea#textareaTest').remove();
+            $('#saveText').remove();
+            $('#textAreaPopUp').remove();
+            //get the canvas and add the text functions
+            var canvas = document.getElementById('c');
+            var ctx = canvas.getContext('2d');
+            var cw = canvas.clientWidth;
+            var ch = canvas.clientHeight;
+            canvas.width = cw;
+            canvas.height = ch;
+            //break the text into arrays based on a text width of 100px
+            var phraseArray = getLines(ctx,text,100);
+            // this adds the text functions to the ctx
+            CanvasTextFunctions.enable(ctx);
+            var counter = 0;
+            //set the font styles
+            var font = &amp;amp;quot;sans&amp;amp;quot;;
+            var fontsize = 16;
+            ctx.strokeStyle = &amp;amp;quot;rgba(237,229,0,1)&amp;amp;quot;;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 1;
+            ctx.shadowColor = &amp;amp;quot;rgba(0,0,0,1)&amp;amp;quot;;
+            //draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+            $.each(phraseArray, function() {
+                //set the placement in the canvas
+                var lineheight = fontsize * 1.5;
+                var newline = ++counter;
+                newline = newline * lineheight;
+                var topPlacement = y - $(&amp;amp;quot;#c&amp;amp;quot;).position().top + newline;
+                var leftPlacement = x - $(&amp;amp;quot;#c&amp;amp;quot;).position().left;
+                text = this;
+                //draw the text
+                ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+                ctx.save();
+                ctx.restore();
+            });
+            //reset the drop shadow so any other drawing don't have them
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.shadowBlur = 0;
+            ctx.shadowColor = &amp;amp;quot;rgba(0,0,0,0)&amp;amp;quot;;
+        }
+
+        function getLines(ctx,phrase,maxPxLength) {
+            //break the text area text into lines based on &amp;amp;quot;box&amp;amp;quot; width
+            var wa=phrase.split(&amp;amp;quot; &amp;amp;quot;),
+            phraseArray=[],
+            lastPhrase=&amp;amp;quot;&amp;amp;quot;,
+            l=maxPxLength,
+            measure=0;
+            ctx.font = &amp;amp;quot;16px sans-serif&amp;amp;quot;;
+            for (var i=0;i&amp;amp;lt;wa.length;i++) {
+                var w=wa[i];
+                measure=ctx.measureText(lastPhrase+w).width;
+                if (measure&amp;amp;lt;l) {
+                    lastPhrase+=(&amp;amp;quot; &amp;amp;quot;+w);
+                }else {
+                    phraseArray.push(lastPhrase);
+                    lastPhrase=w;
+                }
+                if (i===wa.length-1) {
+                    phraseArray.push(lastPhrase);
+                    break;
+                }
+            }
+            return phraseArray;
+        }
+    &amp;amp;lt;/script&amp;amp;gt;
+&amp;amp;lt;/body&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This is a pretty basic and is missing a few things that would make it more helpful but it should give you a good start. Please feel free to leave questions or advice on better ways to do this in the comments.&lt;/p&gt;
 
@@ -168,8 +477,53 @@
 
 &lt;p&gt;Now open up your app_controller.php and add these four functions&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+function createIndextankClient(){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'indextank_client');
+$API_URL = 'YOUR API URL HERE';
+$client = new ApiClient($API_URL);
+return $client;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function addIndextank($indexType,$id,$data){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//send project to indextank
+$client = $this-&amp;amp;gt;createIndextankClient();
+$index = $client-&amp;amp;gt;get_index($indexType);
+$doc_id = $id;
+$index-&amp;amp;gt;add_document($doc_id, $data);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function deleteIndextank($indexType,$id){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//delete indextank document
+$client = $this-&amp;amp;gt;createIndextankClient();
+$index = $client-&amp;amp;gt;get_index($indexType);
+$index-&amp;amp;gt;delete_document($id);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function searchIndextank($indexType,$query){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//search indextank
+$client = $this-&amp;amp;gt;createIndextankClient();
+$index = $client-&amp;amp;gt;get_index($indexType);
+$index-&amp;amp;gt;add_function(2, &amp;amp;quot;relevance&amp;amp;quot;);
+$res = $index-&amp;amp;gt;search($query);
+return $res;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;These are the three functions that call to IndexTank directly and the one that creates the IndexTank client object. It imports the library and create a new $client object.&lt;/p&gt;
 
@@ -179,32 +533,64 @@
 
 &lt;p&gt;So now lets add some documents to our index.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+if ($this-&amp;gt;Project-&amp;gt;save($this-&amp;gt;data)) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$this-&amp;amp;gt;Session-&amp;amp;gt;setFlash('The project has been saved', 'default', array('class' =&amp;amp;gt; 'flash_good'));
+$this-&amp;amp;gt;redirect(array('action' =&amp;amp;gt; 'index'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;I'm going to assume you having something similar in your controller. In this case it's in my add() function in the projects controller.&lt;/p&gt;
 
 &lt;p&gt;Let's add the code to call our addIndextank() function in the app controller.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example3.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example3.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+if ($this-&amp;gt;Project-&amp;gt;save($this-&amp;gt;data)) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//send project to index tank
+$indexData = array('text'=&amp;amp;gt;$this-&amp;amp;gt;data['Project']['title'],'title'=&amp;amp;gt;$this-&amp;amp;gt;data['Project']['title'],'description'=&amp;amp;gt;$this-&amp;amp;gt;data['Project']['description'],'user_id'=&amp;amp;gt;$_SESSION['Auth']['User']['_id']);
+$id = $this-&amp;amp;gt;Project-&amp;amp;gt;id;
+$this-&amp;amp;gt;addIndextank(&amp;amp;quot;HomkoraProjects&amp;amp;quot;,$id,$indexData);
+$this-&amp;amp;gt;Session-&amp;amp;gt;setFlash('The project has been saved', 'default', array('class' =&amp;amp;gt; 'flash_good'));
+$this-&amp;amp;gt;redirect(array('action' =&amp;amp;gt; 'index'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Let go over what's going on here.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example4.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example4.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$indexData = array('text'=&amp;gt;$this-&amp;gt;data['Project']['title'],'title'=&amp;gt;$this-&amp;gt;data['Project']['title'],'description'=&amp;gt;$this-&amp;gt;data['Project']['description'],'user_id'=&amp;gt;$&lt;em&gt;SESSION['Auth']['User']['&lt;/em&gt;id']);
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This line is setting the data that will be indexed. The 'text' field is one used by IndexTank by default and I recommend setting it to the type of query that will be preformed the most.&lt;/p&gt;
 
 &lt;p&gt;The key value pairs after 'text' can be whatever other data you would like to save and be able to query against.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example5.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example5.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php $id = $this-&amp;gt;Project-&amp;gt;id; ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Simply sets the ID that is going to be used for the document ID in IndexTank. I figured it best to keep them the same as in the application database so this sets it as the last saved Project ID.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example6.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example6.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php $this-&amp;gt;addIndextank(&amp;quot;HomkoraProjects&amp;quot;,$id,$indexData); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This line is the call to the addIndextank function. The &quot;HomkoraProjects&quot; is what is passed as $indexType in the app_controller and is basically the name of the index. We then pass the ID and the data to be indexed too.&lt;/p&gt;
 
@@ -214,13 +600,34 @@
 
 &lt;p&gt;Starting with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example7.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example7.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+if ($this-&amp;gt;Project-&amp;gt;delete($id)) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$this-&amp;amp;gt;Session-&amp;amp;gt;setFlash('Project deleted', 'default', array('class' =&amp;amp;gt; 'flash_good'));
+$this-&amp;amp;gt;redirect(array('action'=&amp;amp;gt;'index'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;We can add a simple call like&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example8.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example8.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+if ($this-&amp;gt;Project-&amp;gt;delete($id)) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$this-&amp;amp;gt;deleteIndextank(&amp;amp;quot;HomkoraProjects&amp;amp;quot;,$id);
+$this-&amp;amp;gt;Session-&amp;amp;gt;setFlash('Project deleted', 'default', array('class' =&amp;amp;gt; 'flash_good'));
+$this-&amp;amp;gt;redirect(array('action'=&amp;amp;gt;'index'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Deleting documents requires a lot less information so we just have to pass it the $indexType and the ID (which should match between your app and IndexTank if you add documents using the above example)&lt;/p&gt;
 
@@ -228,18 +635,38 @@
 
 &lt;p&gt;In my projects controller I added the following function&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177288.js?file=example9.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example9.php'&gt;&lt;/script&gt;
 
 
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+function search(){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$query = $this-&amp;amp;gt;data['Project']['search'];
+$res = $this-&amp;amp;gt;searchIndextank(&amp;amp;quot;HomkoraProjects&amp;amp;quot;,$query);
+$i = 0;
+foreach($res-&amp;amp;gt;results as $doc_id){
+$params = array(
+    'conditions' =&amp;amp;gt; array('_id' =&amp;amp;gt; $doc_id-&amp;amp;gt;docid)
+);
+    $projects[$i++] = $this-&amp;amp;gt;Project-&amp;amp;gt;find('first',$params);
+}
+$this-&amp;amp;gt;set('projects', $projects);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
+
+&lt;script src='https://gist.github.com/1177293.js?file=example10.php'&gt;&lt;/script&gt;
 
 
-&lt;script src=&quot;https://gist.github.com/1177293.js?file=example10.php&quot;&gt;&lt;/script&gt;
-
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php $query = $this-&amp;gt;data['Project']['search']; ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;I pass the search term through a form and set it as the $query variable.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177293.js?file=example11.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177293.js?file=example11.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php $res = $this-&amp;gt;searchIndextank(&amp;quot;HomkoraProjects&amp;quot;,$query); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Here I call our searchIndextank() function and pass it the $indexType again and the query to perform.&lt;/p&gt;
 
@@ -290,25 +717,34 @@
 
 &lt;p&gt;Open up your app_controller.php and add the following line&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;var $view = 'Haml';&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now open up /config/core.php and scroll to the bottom. Add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Configure::write('Haml.format', 'html5');
+Configure::write('Haml.filterDir', VIEWS.'filters');&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The first option is telling Haml which HTML or XHTML version to compile into. I use HTML5 for everything these days so that's what I picked. The second option tells the app where to find the Haml filter that starts the process of compiling Haml to HTML. If you put the filters folder inside your views folder, this is the path you need.&lt;/p&gt;
 
 &lt;p&gt;Now open up the haml.php file you added to views. Find the line that says&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example3.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example3.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'HamlParser', array('file'=&amp;gt;'phamlp'.DS.'haml'.DS.'HamlParser.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;and change it to&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example4.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example4.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'HamlParser', array('file'=&amp;gt;'haml'.DS.'HamlParser.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This assumes you copied the vendors contents to vendors in CakePHP.&lt;/p&gt;
 
@@ -324,37 +760,59 @@
 
 &lt;p&gt;Open the core.php file back up and go to the Haml code we added earlier. Under that add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example5.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example5.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Configure::write('Sass.style', 'compressed');
+Configure::write('Asset.filter.css', 'sass.php');&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The first line sets the output style of the css. I use compressed as it saves a little filesize, you can pick whatever you would like though. The second line tells Cake to filter the files with the sass.php you put in webroot.&lt;/p&gt;
 
 &lt;p&gt;Now open up sass.php and find the line that looks like&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example6.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example6.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'SassParser', array('file'=&amp;gt;'phamlp'.DS.'sass'.DS.'SassParser.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Replace it with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example7.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example7.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'SassParser', array('file'=&amp;gt;'sass'.DS.'SassParser.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;After that you should be able to start putting .sass files into your css directory and they will compile to css.&lt;/p&gt;
 
 &lt;p&gt;However, at least in my case, I lost my gzip on the css files. To add it back, replace the section that sets the headers, looks like&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example8.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example8.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;header(&amp;quot;Content-Type: text/css&amp;quot;);
+header(&amp;quot;Expires: &amp;quot; . gmdate(&amp;quot;D, j M Y H:i:s&amp;quot;, time() + DAY) . &amp;quot; GMT&amp;quot;);
+header(&amp;quot;Cache-Control: cache&amp;quot;); // HTTP/1.1
+header(&amp;quot;Pragma: cache&amp;quot;);        // HTTP/1.0&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177229.js?file=example9.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177229.js?file=example9.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ob_start (&amp;quot;ob_gzhandler&amp;quot;);
+header(&amp;quot;Content-Type: text/css&amp;quot;);
+$seconds_to_cache = 31556926;
+$ts = gmdate(&amp;quot;D, d M Y H:i:s&amp;quot;, time() + $seconds_to_cache) . &amp;quot; GMT&amp;quot;;
+header(&amp;quot;Expires: $ts&amp;quot;);
+header(&amp;quot;Pragma: cache&amp;quot;);
+header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Then add a line to the bottom of the file with this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example10.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example10.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ob_end_flush();&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Your compiled css files should now transfer gzipped.&lt;/p&gt;
 
@@ -362,13 +820,17 @@
 
 &lt;p&gt;Find the line&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example11.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example11.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;$sassFile = str_replace('.css', '.sass', $cssFile);&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;and replace it with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example12.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example12.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;$sassFile = str_replace('.css', '.scss', $cssFile);&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;You can now use .scss files instead of .sass&lt;/p&gt;
 
@@ -380,8 +842,14 @@
 
 &lt;p&gt;Well one great alternative to using HTML to markup you text, is to use Markdown. To use Markdown with Haml you use something similar to&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example13.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example13.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;:markdown&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Here is some markdown
+===&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/noscript&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;inside your Haml files. To get support for this, you need to download the latest Markdown PHP port from http://michelf.com/projects/php-markdown/&lt;/p&gt;
 
@@ -393,35 +861,47 @@
 
 &lt;p&gt;Change&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example14.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example14.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'HamlMarkdownFilter', array('file'=&amp;gt;'phamlp'.DS.'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;To&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example15.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example15.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;App::import('Vendor', 'HamlMarkdownFilter', array('file'=&amp;gt;'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now open up the _HamlMarkdownFilter.php file inside /vendors/haml/filters&lt;/p&gt;
 
 &lt;p&gt;Change&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example16.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example16.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;protected $vendorClass = 'MarkdownExtra_Parser';&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;To&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example17.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example17.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;protected $vendorClass = 'Markdown_Parser';&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;also change&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example18.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example18.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;return '&amp;lt;?php   '.(!empty($this-&amp;gt;vendorPath)?'require_once &amp;quot;'.$this-&amp;gt;vendorPath.'&amp;quot;;':'').'$markdown&lt;strong&gt;&lt;em&gt;=new '.$this-&amp;gt;vendorClass.'();echo  $markdown&lt;/em&gt;&lt;/strong&gt;-&amp;gt;safeTransform(&amp;quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&amp;quot;.\1.&amp;quot;', $text).'&amp;quot;);?&amp;gt;';&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;To&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177233.js?file=example19.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177233.js?file=example19.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;return '&amp;lt;?php   '.(!empty($this-&amp;gt;vendorPath)?'require_once &amp;quot;'.$this-&amp;gt;vendorPath.'&amp;quot;;':'').'$markdown&lt;strong&gt;&lt;em&gt;=new '.$this-&amp;gt;vendorClass.'();echo  $markdown&lt;/em&gt;&lt;/strong&gt;-&amp;gt;transform(&amp;quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&amp;quot;.\1.&amp;quot;', $text).'&amp;quot;);?&amp;gt;';&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now throw some Markdown into you Haml files and prepare to be amazed.&lt;/p&gt;
 
@@ -491,18 +971,47 @@
 
 &lt;p&gt;Turns out the solution is simple. If you use a block of code like this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177191.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177191.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;## Parse all .php file in the /var/www directory
+location ~ .php$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   location ~ \.php$ {
+   fastcgi_split_path_info ^(.+\.php)(.*)$;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;
+    include fastcgi_params;
+    fastcgi_param  QUERY_STRING     $query_string;
+    fastcgi_param  REQUEST_METHOD   $request_method;
+    fastcgi_param  CONTENT_TYPE     $content_type;
+    fastcgi_param  CONTENT_LENGTH   $content_length;
+    fastcgi_intercept_errors        on;
+    fastcgi_ignore_client_abort     off;
+    fastcgi_connect_timeout 60;
+    fastcgi_send_timeout 180;
+    fastcgi_read_timeout 180;
+    fastcgi_buffer_size 128k;
+    fastcgi_buffers 4 256k;
+    fastcgi_busy_buffers_size 256k;
+    fastcgi_temp_file_write_size 256k;
+}&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/noscript&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;to turn on PHP, just replace the location with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177191.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177191.js?file=example2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;location ~ $&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;and comment out&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177191.js?file=example3.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177191.js?file=example3.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;##fastcgi_split_path_info ^(.+.php)(.*)$;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Your code block should now look like&lt;/p&gt;
 
@@ -537,8 +1046,10 @@
 
 &lt;p&gt;A simple&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;will get you started.&lt;/p&gt;
 
@@ -546,8 +1057,162 @@
 
 &lt;p&gt;change it to&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;# You may add here your&lt;/p&gt;
+
+&lt;h1&gt;server {&lt;/h1&gt;
+
+&lt;h1&gt;...&lt;/h1&gt;
+
+&lt;h1&gt;}&lt;/h1&gt;
+
+&lt;h1&gt;statements for each of your virtual hosts&lt;/h1&gt;
+
+&lt;p&gt;server {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen   8080;
+server_name  localhost;
+access_log  /var/log/nginx/localhost.access.log;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Default location&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;location / {
+    root   /var/www;
+    index  index.php;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Images and static content is treated different&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {
+  access_log        off;
+  expires           30d;
+  root /var/www;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Parse all .php file in the /var/www directory&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;    location ~ .php$ {
+    fastcgi_split_path_info ^(.+\.php)(.*)$;
+    fastcgi_pass   backend;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
+    include fastcgi_params;
+    fastcgi_param  QUERY_STRING     $query_string;
+    fastcgi_param  REQUEST_METHOD   $request_method;
+    fastcgi_param  CONTENT_TYPE     $content_type;
+    fastcgi_param  CONTENT_LENGTH   $content_length;
+    fastcgi_intercept_errors        on;
+    fastcgi_ignore_client_abort     off;
+    fastcgi_connect_timeout 60;
+    fastcgi_send_timeout 180;
+    fastcgi_read_timeout 180;
+    fastcgi_buffer_size 128k;
+    fastcgi_buffers 4 256k;
+    fastcgi_busy_buffers_size 256k;
+    fastcgi_temp_file_write_size 256k;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Disable viewing .htaccess &amp;amp; .htpassword&lt;/h2&gt;
+
+&lt;p&gt;   location ~ /.ht {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   deny  all;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+upstream backend {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    server 127.0.0.1:9000;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #error_page  404  /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    #error_page   500 502 503 504  /50x.html;
+    #location = /50x.html {
+    #       root   /var/www/nginx-default;
+    #}
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+            #proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+            #fastcgi_pass   127.0.0.1:9000;
+            #fastcgi_index  index.php;
+            #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+            #includefastcgi_params;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;another virtual host using mix of IP-, name-, and port-based configuration&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1&gt;server {&lt;/h1&gt;
+
+&lt;h1&gt;listen   8000;&lt;/h1&gt;
+
+&lt;h1&gt;listen   somename:8080;&lt;/h1&gt;
+
+&lt;h1&gt;server_name  somename  alias  another.alias;&lt;/h1&gt;
+
+&lt;h1&gt;location / {&lt;/h1&gt;
+
+&lt;h1&gt;root   html;&lt;/h1&gt;
+
+&lt;h1&gt;index  index.html index.htm;&lt;/h1&gt;
+
+&lt;h1&gt;}&lt;/h1&gt;
+
+&lt;h1&gt;}&lt;/h1&gt;
+
+&lt;h1&gt;HTTPS server&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1&gt;server {&lt;/h1&gt;
+
+&lt;h1&gt;listen   443;&lt;/h1&gt;
+
+&lt;h1&gt;server_name  localhost;&lt;/h1&gt;
+
+&lt;h1&gt;ssl  on;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_certificate  cert.pem;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_certificate_key  cert.key;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_session_timeout  5m;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_protocols  SSLv3 TLSv1;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;&lt;/h1&gt;
+
+&lt;h1&gt;ssl_prefer_server_ciphers   on;&lt;/h1&gt;
+
+&lt;h1&gt;location / {&lt;/h1&gt;
+
+&lt;h1&gt;root   html;&lt;/h1&gt;
+
+&lt;h1&gt;index  index.html index.htm;&lt;/h1&gt;
+
+&lt;h1&gt;}&lt;/h1&gt;
+
+&lt;h1&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/h1&gt;
 
 &lt;p&gt;This assumes your root web folder is &lt;em&gt;/var/www&lt;/em&gt;. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.&lt;/p&gt;
 
@@ -555,13 +1220,17 @@
 
 &lt;p&gt;As usual start with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example3.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example3.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install php5-cli php5-common php5-suhosin&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;then&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example4.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example4.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install php5-fpm php5-cgi&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;You may have to add &lt;em&gt;deb http://php53.dotdeb.org stable all&lt;/em&gt; to your packages list for php5-fpm and php5-cgi to show up.&lt;/p&gt;
 
@@ -569,35 +1238,78 @@
 
 &lt;p&gt;First&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example6.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example6.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install php5-dev&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;then&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example7.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example7.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install make&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now cd into &lt;em&gt;/tmp/&lt;/em&gt;&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example8.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example8.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;wget http://bart.eaccelerator.net/source/0.9.6.1/eaccelerator-0.9.6.1.tar.bz2&lt;/p&gt;
+
+&lt;p&gt;tar xvjf eaccelerator-0.9.6.1.tar.bz2&lt;/p&gt;
+
+&lt;p&gt;cd eaccelerator-0.9.6.1/&lt;/p&gt;
+
+&lt;p&gt;sudo phpize&lt;/p&gt;
+
+&lt;p&gt;sudo ./configure –enable-eaccelerator=shared&lt;/p&gt;
+
+&lt;p&gt;sudo make&lt;/p&gt;
+
+&lt;p&gt;sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now edit &lt;em&gt;/etc/php5/fpm/php.ini&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;and right under the [PHP] block add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177105.js?file=example9.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177105.js?file=example9.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;; eAccelerator configuration
+; Note that eAccelerator may also be installed as a PHP extension or as a zend_$
+; If you are using a thread safe build of PHP you must use
+; zend_extension_ts instead of zend_extension
+;extension                       = &amp;quot;/usr/lib/php5/20090626+lfs/eaccelerator.so&amp;quot;
+zend_extension                  = &amp;quot;/usr/lib/php5/20090626+lfs/eaccelerator.so&amp;quot;
+eaccelerator.shm_size           = &amp;quot;16&amp;quot;
+eaccelerator.cache_dir          = &amp;quot;/var/cache/eaccelerator&amp;quot;
+eaccelerator.enable             = &amp;quot;1&amp;quot;
+eaccelerator.optimizer          = &amp;quot;1&amp;quot;
+eaccelerator.check_mtime        = &amp;quot;1&amp;quot;
+eaccelerator.debug              = &amp;quot;0&amp;quot;
+eaccelerator.filter             = &amp;quot;&amp;quot;
+eaccelerator.shm_max            = &amp;quot;0&amp;quot;
+eaccelerator.shm_ttl            = &amp;quot;0&amp;quot;
+eaccelerator.shm_prune_period   = &amp;quot;0&amp;quot;
+eaccelerator.shm_only           = &amp;quot;0&amp;quot;
+eaccelerator.compress           = &amp;quot;1&amp;quot;
+eaccelerator.compress_level     = &amp;quot;9&amp;quot;
+eaccelerator.allowed_admin_path = &amp;quot;/var/www/eaccelerator&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now restart PHP&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example10.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example10.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/php5-fpm restart&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Then restart Nginx&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example11.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example11.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/nginx restart&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now if you hit http://localhost:8080/index.php you should see your site.&lt;/p&gt;
 
@@ -607,25 +1319,33 @@
 
 &lt;p&gt;Install with&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example12.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example12.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install varnish&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;After install run&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example13.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example13.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;pkill varnishd&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;to make sure it’s not running while we configure it.&lt;/p&gt;
 
 &lt;p&gt;Now run&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example14.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example14.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo varnishd -f /etc/varnish/default.vcl -s malloc,1G -T 127.0.0.1:2000&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Varnish should now be running. Check by typing&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example15.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example15.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;varnishlog&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;If you see a series of lines then Varnish should be working.&lt;/p&gt;
 
@@ -633,8 +1353,22 @@
 
 &lt;p&gt;If you see results like&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177110.js?file=example16.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177110.js?file=example16.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;12 SessionOpen  c 192.168.10.101 51732 :80
+   12 ReqStart     c 192.168.10.101 51732 1440203205
+   12 RxRequest    c GET
+   12 RxURL        c /favicon.ico
+   12 RxProtocol   c HTTP/1.1
+   12 RxHeader     c Host: www.ironyogistudios.com
+   12 RxHeader     c User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10
+   12 RxHeader     c Accept: image/png,image/&lt;em&gt;;q=0.8,&lt;/em&gt;/&lt;em&gt;;q=0.5
+   12 RxHeader     c Accept-Language: en-us,en;q=0.5
+   12 RxHeader     c Accept-Encoding: gzip,deflate
+   12 RxHeader     c Accept-Charset: ISO-8859-1,utf-8;q=0.7,&lt;/em&gt;;q=0.7
+   12 RxHeader     c Keep-Alive: 115
+   12 RxHeader     c Connection: keep-alive&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.&lt;/p&gt;
 
@@ -663,28 +1397,60 @@
 
 &lt;p&gt;In your templates functions.php file add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177082.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177082.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+function comment_author_link_mine( $comment_ID = 0 ) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo get_comment_author_link_mine( $comment_ID );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function get_comment_author_link_mine( $comment_ID = 0 ) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/** @todo Only call these functions when they are needed. Include in if... else blocks */
+$url    = get_comment_author_url( $comment_ID );
+$author = get_comment_author( $comment_ID );
+
+if ( empty( $url ) || 'http://' == $url )
+    $return = $author;
+else
+    $return = &amp;amp;quot;&amp;amp;lt;a href='$url' class='comment_url'&amp;amp;gt;$author&amp;amp;lt;/a&amp;amp;gt;&amp;amp;quot;;
+return apply_filters('get_comment_author_link', $return);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Then in your comments.php file, find and replace any mention of&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177082.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177082.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php comment_author_link(); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;With&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177082.js?file=example3.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177082.js?file=example3.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php comment_author_link_mine(); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This simply replaces the core files &quot;comment_author_link()&quot; function with one of our own. The original has&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177082.js?file=example4.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177082.js?file=example4.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;$return = &amp;quot;&amp;lt;a href='$url' rel='external nofollow' class='url'&amp;gt;$author&amp;lt;/a&amp;gt;&amp;quot;;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;as the link. We simply remove the rel attribute and change it to&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177082.js?file=example5.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177082.js?file=example5.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;$return = &amp;quot;&amp;lt;a href='$url' class='comment_url'&amp;gt;$author&amp;lt;/a&amp;gt;&amp;quot;;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;and it removes the nofollow attribute from your comments. No modifying of the core files, and one less plugin to deal with.&lt;/p&gt;
 
@@ -711,8 +1477,20 @@
 
 &lt;p&gt;Well the downside is, you can't. The upside is that you can still perform a similar check&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177074.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177074.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$baseurl = 'http://www.example.com'; //set the base url of the site
+$pageYouWant = $baseurl.&amp;amp;quot;/the-rest-of-the-url&amp;amp;quot;; //add the rest of the url you want to check against
+$currentPage = $baseurl.$_SERVER['REQUEST_URI'];// this gets the current page url
+if($pageYouWant==$currentPage) {
+    //do something
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Not as smooth as is_page() but still a fairly simple way to check the page you are currently on. You can easily check if it is &quot;==&quot;/&quot;!=&quot;, and add in as many &quot;&amp;amp;&amp;amp;&quot;/&quot;||&quot; conditions as you want.&lt;/p&gt;
 
@@ -745,15 +1523,51 @@
 
 &lt;p&gt;This code is based on the assumption that there is a folder called something like &lt;em&gt;user_uploads&lt;/em&gt; with a sub-folder for each user, something like &lt;em&gt;Travis_Berry&lt;/em&gt;&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177068.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177068.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//Get the directory to zip
+$filename_no_ext= $_GET['directtozip'];
+
+// we deliver a zip file
+header(&amp;amp;quot;Content-Type: archive/zip&amp;amp;quot;);
+
+// filename for the browser to save the zip file
+header(&amp;amp;quot;Content-Disposition: attachment; filename=$filename_no_ext&amp;amp;quot;.&amp;amp;quot;.zip&amp;amp;quot;);
+
+// get a tmp name for the .zip
+$tmp_zip = tempnam (&amp;amp;quot;tmp&amp;amp;quot;, &amp;amp;quot;tempname&amp;amp;quot;) . &amp;amp;quot;.zip&amp;amp;quot;;
+
+//change directory so the zip file doesnt have a tree structure in it.
+chdir('user_uploads/'.$_GET['directtozip']);
+
+// zip the stuff (dir and all in there) into the tmp_zip file
+exec('zip '.$tmp_zip.' *');
+
+// calc the length of the zip. it is needed for the progress bar of the browser
+$filesize = filesize($tmp_zip);
+header(&amp;amp;quot;Content-Length: $filesize&amp;amp;quot;);
+
+// deliver the zip file
+$fp = fopen(&amp;amp;quot;$tmp_zip&amp;amp;quot;,&amp;amp;quot;r&amp;amp;quot;);
+echo fpassthru($fp);
+
+// clean up the tmp zip file
+unlink($tmp_zip);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Save this code as zip_folders.php&lt;/p&gt;
 
 &lt;p&gt;Then when you want to provide a link to download a users uploads as a zip file, you link to it like,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177068.js?file=example2.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177068.js?file=example2.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;zip_folders.php?directtozip=THE USERS DIRECTORY&amp;quot;&amp;gt;Download All As Zip&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;That will cause a download prompt to appear for the user when clicking on the link.&lt;/p&gt;
 
@@ -776,10 +1590,63 @@
 
 &lt;p&gt;In continuing with my last post on &lt;a href=&quot;http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/&quot;&gt;how to upload videos to Ooyala with PHP&lt;/a&gt;, here is one for &lt;a href=&quot;http://www.mediasilo.com/&quot;&gt;MediaSilo&lt;/a&gt;. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.&lt;/p&gt;
 
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Alright, so let's get to the code.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177059.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177059.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//MediaSilo Information
+$server = &amp;amp;quot;upload.mediasilo.com&amp;amp;quot;;
+$ftp_user_name = &amp;amp;quot;YOUR MEDIASILO LOGIN NAME AND HOSTNAME(e.g NAMEHOSTNAME&amp;amp;quot;;
+$ftp_user_pass = &amp;amp;quot;YOUR MEDIASILO LOGIN PASSWORD&amp;amp;quot;;
+$dest = &amp;amp;quot;THE WORKSPACE YOU WANT TO UPLOAD TO&amp;amp;quot;;
+
+//Video Folder Information
+$source_folder = &amp;amp;quot;FULL PATH TO FOLDER. NO TRAILING SLASH (e.g. /var/www/videofolder)&amp;amp;quot;;
+//Grabs everything in the source folder. You may want to set a file type like, ($source_folder.&amp;amp;quot;/*.flv&amp;amp;quot;)
+$sources = glob($source_folder.&amp;amp;quot;/*.*&amp;amp;quot;);
+
+//Connect to FTP
+set_time_limit(0);
+$connection = ftp_connect($server);
+$login = ftp_login($connection, $ftp_user_name, $ftp_user_pass);
+
+//Check connection
+if (!$connection || !$login) {
+    die('Connection attempt failed!');
+}
+
+//If there are no files, don't FTP to MediaSilo
+if (empty($sources)) {
+    //Close the FTP connection
+    ftp_close($connection);
+    $fileUploadMessage = &amp;amp;quot;No files selected for upload&amp;amp;quot;;
+    echo $fileUploadMessage;
+}else{
+    //If there are files FTP them to MediaSilo
+    foreach ($sources as $source){
+        //Put each video file on FTP server
+        $upload = ftp_put($connection, $dest.&amp;amp;quot;/&amp;amp;quot;.basename($source) , $source, FTP_BINARY);
+        //Check upload status
+        //Display message
+        if (!$upload) {
+            echo &amp;amp;quot;Cannot upload: &amp;amp;quot;.basename($source).&amp;amp;quot; &amp;amp;lt;br /&amp;amp;gt;&amp;amp;quot;;
+        }else{
+            echo &amp;amp;quot;Upload complete: &amp;amp;quot;.basename($source).&amp;amp;quot; &amp;amp;lt;br /&amp;amp;gt;&amp;amp;quot;;
+        }
+    }
+    //Close the FTP connection
+    ftp_close($connection);
+//Videos should now be uploaded to MediaSilo
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one.&lt;/p&gt;
 
@@ -807,8 +1674,155 @@
 
 &lt;p&gt;This example builds on top of their existing PHP code. Here is the final code. (You're really going to want to copy paste this into a real code editor, my code tag makes me really mess with my formatting. Apologies.)&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177051.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177051.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+/&lt;em&gt;&lt;em&gt;
+&lt;/em&gt;Publish video to ooyala
+&lt;/em&gt;/
+function publish(){// this kicks off the massive publish functions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$labels = $_POST['label'];
+$file = $_POST['video_file'];
+$dir = $file;
+$name = explode(&amp;amp;quot;/&amp;amp;quot;, $dir );
+$name = array_reverse($name );//this get just the name of the file and not
+//the whole path for the name and title of the video
+$nameforshow = $name[0];
+$label = '/'.$labels;
+$filesize = filesize($dir);
+$expires = time() + 900;
+$upload = OrdersController::upload(array('expires' =&amp;amp;gt; $expires,
+                                         'file_size' =&amp;amp;gt; $filesize,
+                                         'file_name' =&amp;amp;gt; $name[0],
+                                         'title' =&amp;amp;gt; $name[0]),$dir,$label);
+                                        //send this to the upload function
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function upload($params,$dir,$label){//this passes to the send request function&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                                //for the first time
+return OrdersController::send_request('create_video', $params,$dir,
+                                      $label,'');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function upload_complete($params,$label2){//this gets hit after posting the&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                                    //video to ooyala
+$label3 = $label2;
+$dir ='';
+$label = '';
+return OrdersController::send_request('upload_complete', $params,
+                                      '','',$label3);
+                        //goes back to send request for the second time
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function assign_label($params){//this starts creating and assigning labels&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return OrdersController::send_request2('labels', $params);//this kicks off
+                                                        //send request 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function send_request($request_type, $params,$dir,$label,$label3){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// first time through this hits the create video url and returns a url
+//to post the video to. second time through we hit the upload complete url
+$ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
+$ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
+if (!array_key_exists('expires', $params)) {
+    $params['expires'] = time() + 900;
+}
+$string_to_sign = $ooyala_scode;
+$url = 'http://api.ooyala.com/ingestion/'.$request_type.'?pcode='.$ooyala_pcode;
+$keys = array_keys($params);
+sort($keys);
+foreach ($keys as $key) {
+    $string_to_sign .= $key.'='.$params[$key];
+    $url .= '&amp;amp;amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+}
+$digest = hash('sha256', $string_to_sign, true);
+$signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
+$url .= '&amp;amp;amp;signature='.rawurlencode($signature);
+if ($request_type == 'create_video') {// if type is create video then
+                                //parse the returned xml for the post url
+    $xml = simplexml_load_file($url);
+    foreach($xml-&amp;amp;gt;children() as $child){
+        if($child-&amp;amp;gt;getName()=='embedCode'){
+            $embed_code = $child;
+        }
+        if($child-&amp;amp;gt;getname()=='urls'){
+            $upload_url = $child-&amp;amp;gt;children();
+            $file= $dir;
+            $label2 = $label;
+            $ch = curl_init($upload_url);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, array('file'=&amp;amp;gt;&amp;amp;quot;@$file&amp;amp;quot;));
+            //post the file
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $postResult = curl_exec($ch);
+            curl_close($ch);
+            if ($postResult != ''){
+                $upload_complete = OrdersController::upload_complete(array
+                                    ('embed_code' =&amp;amp;gt; $embed_code),$label2);
+                //after posting you have to hit the upload complete url
+                //to get ooyala to process the video.
+                //so kick this up to the upload complete function
+            }
+        }
+    }
+}else{
+    if ($request_type == 'upload_complete') {
+        // hit the upload complete url
+        $ch = curl_init($url);
+        $postResult2 = curl_exec($ch);
+        curl_close($ch);
+        $add_label = OrdersController::assign_label(array(
+        'embedCodes' =&amp;amp;gt; $params['embed_code'], 'labels' =&amp;amp;gt; $label3,
+        'mode'=&amp;amp;gt;'assignLabels'));
+        // this kicks back up to assign label function to add a label
+        //to the video
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;function send_request2($request_type, $params)
+// this creates the url to hit to add a label to the last uploaded video
+{&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
+$ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
+//Add an expire time of 15 minutes unless otherwise specified
+if (!array_key_exists('expires', $params)) {
+    $params['expires'] = time() + 900;
+}
+$string_to_sign = $ooyala_scode;
+$url = 'http://api.ooyala.com/partner/'.$request_type.'?pcode='.$ooyala_pcode;
+$keys = array_keys($params);
+sort($keys);
+foreach ($keys as $key) {
+    $string_to_sign .= $key.'='.$params[$key];
+    $url .= '&amp;amp;amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+}
+$digest = hash('sha256', $string_to_sign, true);
+$signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
+$url .= '&amp;amp;amp;signature='.rawurlencode($signature);
+$ch = curl_init($url);
+$postResult3 = curl_exec($ch);
+curl_close($ch);//now the video is done and uploaded to ooyala
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Essentially, you want to create an upload form, and post the values to the publish() function. From there you should be good to go.&lt;/p&gt;
 
@@ -869,8 +1883,11 @@
 
 &lt;p&gt;We finally discovered the solution.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177036.js?file=example1.xml&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177036.js?file=example1.xml'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;styleRun style=&amp;quot;10178&amp;quot; offset=&amp;quot;0&amp;quot; length=&amp;quot;1&amp;quot;/&amp;gt;
+&amp;lt;text&amp;gt;Website&amp;lt;/text&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This is part of the Motion XML file. &lt;em&gt;Website&lt;/em&gt; is the text being replaced. Above that is a length set in styleRun. This is normally set to the length of the placeholder text. In this case it would be 7. If you replace the word with one that is longer you have no problem. The Motion file will render like a champ. If it's shorter all hell breaks loose. So the fix is as simple as changing them all to 1. No more crashing.&lt;/p&gt;
 
@@ -901,20 +1918,87 @@
 
 &lt;p&gt;First, I started in the view. Instead of using the built in cakephp form helpers, I hand coded my inputs. You could easily use the form helpers though. Just make sure to set the value on certain inputs.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177028.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177028.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;search&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;form id=&amp;amp;quot;orderform&amp;amp;quot; action=&amp;amp;quot;&amp;amp;lt;?php echo $html-&amp;amp;gt;url('/users/search'); ?&amp;amp;gt;&amp;amp;quot; method=&amp;amp;quot;post&amp;amp;quot; enctype=&amp;amp;quot;multipart/form-data&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;label for=&amp;amp;quot;searchuser&amp;amp;quot;&amp;amp;gt;Search Users:&amp;amp;lt;/label&amp;amp;gt;&amp;amp;lt;input type=&amp;amp;quot;text&amp;amp;quot; name=&amp;amp;quot;searchuser&amp;amp;quot; /&amp;amp;gt;
+Search By:
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;User.id&amp;amp;quot;  checked&amp;amp;gt; User ID
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;User.email&amp;amp;quot;  checked&amp;amp;gt; User Email
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;Entity.name&amp;amp;quot;&amp;amp;gt; Entity Name
+&amp;amp;lt;?php
+    echo $form-&amp;amp;gt;end('Search');
+?&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The code is fairly straight forward. In the form tag I declared which action in the controller to use. The input tags are really straight forward. The only thing to note is in the search type radio buttons, the value is set to the Model.fieldname. This is important later on. But make sure to set them to the models you intend to search.&lt;/p&gt;
 
 &lt;p&gt;Now in the controller, it's time to add the search action.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177028.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177028.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+function search() {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$searchtype = $_POST['searchtype'];
+$value = $_POST['searchuser'];
+$results = $this-&amp;amp;gt;User-&amp;amp;gt;find('all', array('fields' =&amp;amp;gt; array(
+                                                            'User.id',
+                                                            'User.email',
+                                                            'Entity.name',
+                                                            'User.created',
+                                                            'User.modified'
+                                                            ),
+                                            'order' =&amp;amp;gt; 'User.id ASC',
+                                            'conditions' =&amp;amp;gt; array($searchtype . ' ' . 'LIKE' =&amp;amp;gt; '%'.$value.'%')
+                                        ));
+$this-&amp;amp;gt;set('results', $results);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;It's really a pretty standard find all but the key lies in the conditions. They are set to variables that are posted through the form. So if you selected Order ID as the type and entered 1 in the search box. Your condition would be array('Order.id' =&gt; %1%) One last thing is to create the search.ctp&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1177028.js?file=example3.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1177028.js?file=example3.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;search&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;form id=&amp;amp;quot;orderform&amp;amp;quot; action=&amp;amp;quot;&amp;amp;lt;?php echo $html-&amp;amp;gt;url('/users/search'); ?&amp;amp;gt;&amp;amp;quot; method=&amp;amp;quot;post&amp;amp;quot; enctype=&amp;amp;quot;multipart/form-data&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;label for=&amp;amp;quot;searchuser&amp;amp;quot;&amp;amp;gt;Search Users:&amp;amp;lt;/label&amp;amp;gt;&amp;amp;lt;input type=&amp;amp;quot;text&amp;amp;quot; name=&amp;amp;quot;searchuser&amp;amp;quot; /&amp;amp;gt;
+Search By:
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;User.id&amp;amp;quot;  checked&amp;amp;gt; User ID
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;User.email&amp;amp;quot;  checked&amp;amp;gt; User Email
+&amp;amp;lt;input type=&amp;amp;quot;radio&amp;amp;quot; name=&amp;amp;quot;searchtype&amp;amp;quot; value=&amp;amp;quot;Entity.name&amp;amp;quot;&amp;amp;gt; Entity Name
+&amp;amp;lt;?php echo $form-&amp;amp;gt;end('Search'); ?&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/div&amp;gt;
+&amp;lt;div id=&amp;quot;contentbox&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;h2&amp;amp;gt;Manage Users&amp;amp;lt;/h2&amp;amp;gt;
+&amp;amp;lt;table&amp;amp;gt;
+    &amp;amp;lt;thead&amp;amp;gt;
+        &amp;amp;lt;th&amp;amp;gt;ID&amp;amp;lt;/th&amp;amp;gt;&amp;amp;lt;th&amp;amp;gt;Email&amp;amp;lt;/th&amp;amp;gt;&amp;amp;lt;th&amp;amp;gt;Entity Name&amp;amp;lt;/th&amp;amp;gt;
+    &amp;amp;lt;/thead&amp;amp;gt;
+    &amp;amp;lt;?php foreach($results as $user) : ?&amp;amp;gt;  
+        &amp;amp;lt;tr&amp;amp;gt;
+            &amp;amp;lt;td&amp;amp;gt;&amp;amp;lt;?php echo $user['User']['id'] ?&amp;amp;gt;&amp;amp;lt;/td&amp;amp;gt;
+            &amp;amp;lt;td&amp;amp;gt;&amp;amp;lt;?php echo $user['User']['email'] ?&amp;amp;gt;&amp;amp;lt;/td&amp;amp;gt;
+            &amp;amp;lt;td&amp;amp;gt;&amp;amp;lt;?php echo $user['Entity']['name'] ?&amp;amp;gt;&amp;amp;lt;/td&amp;amp;gt;
+        &amp;amp;lt;/tr&amp;amp;gt;
+    &amp;amp;lt;?php endforeach; ?&amp;amp;gt;
+&amp;amp;lt;/table&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;It's just a simple loop through the results. I also added the search box to the top of this page, so the user can run another search if they want.&lt;/p&gt;
 
@@ -957,8 +2041,10 @@
 
 &lt;p&gt;Now open up Terminal (Applications &gt; accessories &gt; Terminal). Type in the following,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install apache2&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Terminal will prompt for your password. Enter it in.(Terminal does not show your password as you type, so just type it in and hit enter).&lt;/p&gt;
 
@@ -966,15 +2052,19 @@
 
 &lt;p&gt;Apache should now be installed on your system. Now it's time to install PHP 5. In terminal type,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install php5 libapache2-mod-php5&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Install MySQL&lt;/h2&gt;
 
 &lt;p&gt;Now you have PHP 5 installed. To install MySQL type,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example3.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example3.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Enter in a password when the install prompts you to.&lt;/p&gt;
 
@@ -982,27 +2072,35 @@
 
 &lt;p&gt;Now install &lt;a href=&quot;http://www.phpmyadmin.net/home_page/index.php&quot;&gt;phpMyAdmin&lt;/a&gt; by typing&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example4.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example4.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install libapache2-mod-auth-mysql php5-mysql phpmyadmin&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;When phpmyadmin asks which server to use select apache. It will then ask to create a database. Tell it to do so and enter in the password you set when installing MySQL.&lt;/p&gt;
 
 &lt;p&gt;After installing all this you need to restart apache. To do so type&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example5.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example5.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/apache2 restart&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Test Installation&lt;/h2&gt;
 
 &lt;p&gt;You should now have a working LAMP stack installed. To test everything is working, type in Terminal&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example6.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example6.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit /var/www/info.php&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;When the new window opens add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example7.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example7.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Save and close the window. Now open Firefox and go to http://localhost/&lt;/p&gt;
 
@@ -1016,13 +2114,17 @@
 
 &lt;p&gt;First you may have noticed when we restarted apache that it gave an error about not being able to determine the fully qualified domain name. To fix this error open the terminal and type,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example8.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example8.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit /etc/apache2/httpd.conf&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Add to the file&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example9.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example9.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ServerName localhost&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Save and exit. Now restart again. You should no longer see an error.&lt;/p&gt;
 
@@ -1038,20 +2140,34 @@
 
 &lt;p&gt;You can enable the module by typing in the Terminal&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176993.js?file=example10.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176993.js?file=example10.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo a2enmod rewrite&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Enable PHP 5 Error Displaying&lt;/h2&gt;
 
 &lt;p&gt;Another helpful feature not enabled by default is error displaying in PHP. Now on a production server it is good to turn these off, but when developing, they can be handy to have on. To enable type&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example11.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example11.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit /etc/php5/apache2/php.ini&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Make sure the following lines read as follows&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example12.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example12.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;display_errors = On&lt;/p&gt;
+
+&lt;p&gt;display_startup_errors = On&lt;/p&gt;
+
+&lt;p&gt;log_errors = On&lt;/p&gt;
+
+&lt;p&gt;error_log = /pickadirectorytostoreerrors/phperror.log&lt;/p&gt;
+
+&lt;p&gt;error_reporting = E_ALL &amp;amp; E_STRICT&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Setup Virtual Hosts&lt;/h2&gt;
 
@@ -1059,58 +2175,124 @@
 
 &lt;p&gt;To begin setting this up create two separate folders in /var/www/. Name one example.com and the other test.com. Create a simple index.html file in each, creating content that makes them easy to tell apart. Now cd to /etc/apache2/sites-enabled. Once there, type the following in Terminal&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example13.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example13.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit example.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Inside the file paste the following,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example14.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example14.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;VirtualHost *:80&amp;gt;
+ServerAdmin your@email.com
+ServerAlias www.example.com
+DocumentRoot /var/www/example.com&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;amp;lt;Directory /&amp;amp;gt;
+            Options FollowSymLinks
+            AllowOverride All
+    &amp;amp;lt;/Directory&amp;amp;gt;
+    &amp;amp;lt;Directory /var/www/example.com/&amp;amp;gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    &amp;amp;lt;/Directory&amp;amp;gt;
+    ErrorLog /var/www/example.com/logs/example-error.log
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; CustomLog /var/www/example.com/logs/example-access.log combined
+&amp;lt;/VirtualHost&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now create a link to the file in sites-available.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example15.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example15.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo ln -s /etc/apache2/sites-available/example.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Next let's create one for test.com&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example16.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example16.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit test.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Inside the file paste the following,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example17.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example17.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;VirtualHost *:80&amp;gt;
+ServerAdmin your@email.com
+ServerAlias www.test.com
+DocumentRoot /var/www/test.com&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;amp;lt;Directory /&amp;amp;gt;
+            Options FollowSymLinks
+            AllowOverride All
+    &amp;amp;lt;/Directory&amp;amp;gt;
+    &amp;amp;lt;Directory /var/www/test.com/&amp;amp;gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    &amp;amp;lt;/Directory&amp;amp;gt;
+    ErrorLog /var/www/test.com/logs/example-error.log
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; CustomLog /var/www/test.com/logs/example-access.log combined
+&amp;lt;/VirtualHost&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now create a link to the file in sites-available.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example18.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example18.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo ln -s /etc/apache2/sites-available/test.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now your virtual hosts are ready to go, but first we need to tell the computer to listen for the addresses. To do that type the following,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176996.js?file=example19.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176996.js?file=example19.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;cd /etc/&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Then&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example20.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example20.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;gksudo gedit hosts&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Create a new line under the first. In it add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example21.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example21.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;127.0.0.1  localhost www.example.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Create another line and this time add&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example22.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example22.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;127.0.0.1  localhost www.test.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Save and close the file. Restart apache&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example23.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example23.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/apache2 restart&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now open Firefox and go to www.example.com. You should see your example.com index.html file. Now try www.test.com. If you see your test.com index.html file everything works as it should. Just repeat this process for any additional domains you would like to add.&lt;/p&gt;
 
@@ -1118,8 +2300,11 @@
 
 &lt;p&gt;Now move back to your host os. Open a terminal session in it. Find your hosts file. In OSX it is /etc/ just like Linux. Now add lines like so,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example24.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example24.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;192.168.10.4 www.example.com
+192.168.10.4 www.test.com&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;You should now be able to view your example sites in a browser on your host os.&lt;/p&gt;
 
@@ -1127,22 +2312,28 @@
 
 &lt;p&gt;Everything is starting to work quite well for development but there are still a few extras worth setting up. The first is changing permissions of your web root. To make you the owner of the /var/www directory type this in Terminal&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example25.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example25.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo chown youruser:youruser /var/www&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Install Git&lt;/h2&gt;
 
 &lt;p&gt;This will now allow your user to easily create new folders and files. Next lets install my favorite version control system &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;. To install type this into Terminal&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example26.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example26.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install git-core&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;h2&gt;Install FTP&lt;/h2&gt;
 
 &lt;p&gt;You can now use git to control the code you develop on the machine. Next let's add ftp support to make moving files between your host and guest operating systems a little easier. To install ftp support type,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176998.js?file=example27.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176998.js?file=example27.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install proftpd&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;You can now open your favorite ftp application in your host os and connect to your virtual machine. Just use the IP (mine in this example is 192.168.10.4) and enter in your user name and password. Ta-da!&lt;/p&gt;
 
@@ -1245,13 +2436,17 @@
 
 &lt;p&gt;FFmpeg&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176975.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176975.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -i Elephants_Dream.mov -vcodec libtheora -b 700k -s 512x288 -acodec libvorbis -ab 96k -threads 6 test.ogg&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;ffmpeg2theora&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176975.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176975.js?file=example2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ffmpeg2theora -V 700 -A 96 -H 44100 -K 24 -x 640 -y 360 --two-pass --optimize --speedlevel 0 --seek-index --soft-target --pp vdeblock:10/hdeblock:10 Elephants_Dream.mov&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;If you have any suggestions for improving these please let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -1356,18 +2551,22 @@
 
 &lt;p&gt;For a single pass render:&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176952.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176952.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 outputmovie.mp4&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;For a two pass render:&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176952.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176952.js?file=example2.txt'&gt;&lt;/script&gt;
 
 
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -an -threads 6 -f mp4 -pass 1 /dev/null&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
+
+&lt;script src='https://gist.github.com/1176952.js?file=example3.txt'&gt;&lt;/script&gt;
 
 
-&lt;script src=&quot;https://gist.github.com/1176952.js?file=example3.txt&quot;&gt;&lt;/script&gt;
-
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -i sourcemovie.mov -vcodec libx264 -vpre hq -b 400k -g 250 -keyint_min 24 -bf 16 -coder 1 -refs 6 -flags +loop -deblockalpha -6 -deblockbeta -6 -partitions +parti4x4+parti8x8+partp8x8+partb8x8 -flags2 +dct8x8+mixed_refs+wpred+bpyramid -me_method umh -subq 8 -s 640x360 -acodec libfaac -ar 44100 -ab 96k -threads 6 -f mp4 -pass 2 outputmovie.mp4&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Run the first command, then run the second for a two pass render. I used a two pass render in the test above.To better understand what all those setting mean, I recommend taking a look at this site&lt;a href=&quot;http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping&quot;&gt;http://sites.google.com/site/linuxencoding/x264-ffmpeg-mapping&lt;/a&gt;&lt;/p&gt;
 
@@ -1402,8 +2601,10 @@
 
 &lt;p&gt;Well first off, it is in theory as easy as adding an image.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176926.js?file=example1.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176926.js?file=example1.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;video src=&amp;quot;movie.ogg&amp;quot; controls=&amp;quot;controls&amp;quot;&amp;gt;&amp;lt;/video&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Holy crap that is simple. Unfortunately your code will not end up looking like that. More on it in a bit.&lt;/p&gt;
 
@@ -1417,8 +2618,13 @@
 
 &lt;p&gt;That simple code above now turns into&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176926.js?file=example2.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176926.js?file=example2.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;video width=&amp;quot;320&amp;quot; height=&amp;quot;240&amp;quot; controls&amp;gt;
+  &amp;lt;source src=&amp;quot;NewOrleans2006.ogv&amp;quot; type='video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;'&amp;gt;
+  &amp;lt;source src=&amp;quot;NewOrleans2006.mp4&amp;quot; type='video/mp4; codecs=&amp;quot;avc1.42E01E, mp4a.40.2&amp;quot;'&amp;gt;
+&amp;lt;/video&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Not so simple anymore is it? Not horrible but not the elegant solution we were promised.&lt;/p&gt;
 
@@ -1438,8 +2644,23 @@
 
 &lt;p&gt;So now that super simple code to embed videos now looks like this to make sure it handles all browsers nicely. Note, this still won't show anything in FireFox 2 but it will show in IE. Most FF users tend to update on a regular basis so it's no huge deal.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176926.js?file=example3.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176926.js?file=example3.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;video width=&amp;quot;640&amp;quot; height=&amp;quot;360&amp;quot; id=&amp;quot;video&amp;quot; poster=&amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-poster.jpg&amp;quot; controls=&amp;quot;true&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;source src=&amp;amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-desktop.mp4&amp;amp;quot; type='video/mp4; codecs=&amp;amp;quot;avc1.64001E, mp4a.40.2&amp;amp;quot;' /&amp;amp;gt;
+&amp;amp;lt;source src=&amp;amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-iPhone-cell.3gp&amp;amp;quot; type='video/3gpp; codecs=&amp;amp;quot;mp4v.20.8, samr&amp;amp;quot;' /&amp;amp;gt;
+&amp;amp;lt;source src=&amp;amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-desktop3.ogv&amp;amp;quot; type='video/ogg; codecs=&amp;amp;quot;theora, vorbis&amp;amp;quot;' /&amp;amp;gt;
+&amp;amp;lt;object width=&amp;amp;quot;640&amp;amp;quot; height=&amp;amp;quot;385&amp;amp;quot;&amp;amp;gt;
+    &amp;amp;lt;param name=&amp;amp;quot;movie&amp;amp;quot; value=&amp;amp;quot;http://www.youtube.com/v/lFeI5SqGYJ8&amp;amp;amp;hl=en_US&amp;amp;amp;fs=1&amp;amp;amp;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/param&amp;amp;gt;
+    &amp;amp;lt;param name=&amp;amp;quot;allowFullScreen&amp;amp;quot; value=&amp;amp;quot;true&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/param&amp;amp;gt;
+    &amp;amp;lt;param name=&amp;amp;quot;allowscriptaccess&amp;amp;quot; value=&amp;amp;quot;always&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/param&amp;amp;gt;
+    &amp;amp;lt;embed src=&amp;amp;quot;http://www.youtube.com/v/lFeI5SqGYJ8&amp;amp;amp;hl=en_US&amp;amp;amp;fs=1&amp;amp;amp;&amp;amp;quot; type=&amp;amp;quot;application/x-shockwave-flash&amp;amp;quot; allowscriptaccess=&amp;amp;quot;always&amp;amp;quot; allowfullscreen=&amp;amp;quot;true&amp;amp;quot; width=&amp;amp;quot;640&amp;amp;quot; height=&amp;amp;quot;385&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/embed&amp;amp;gt;
+&amp;amp;lt;/object&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/video&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Notice instead of adding a flash video I added a youtube embed. I was tired of crunching out different codecs by this point so I said screw it and let youtube handle some of the work. (I also added an iPhone version so the code is a little longer than necessary, but not by much)&lt;/p&gt;
 
@@ -1555,13 +2776,19 @@
 
 &lt;p&gt;Now go back and edit your post again. Scroll to where you want your author box to be in your post. Once there paste the code&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176915.js?file=example1.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176915.js?file=example1.html'&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Followed by the text you want to use in you author box. Only put one version in at this point.At the end of the text paste this&lt;/p&gt;
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;utmx_section(&amp;quot;Insert your section name here&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176915.js?file=example2.html&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Followed by the text you want to use in you author box. Only put one version in at this point.&lt;/p&gt;
 
+&lt;p&gt;At the end of the text paste this&lt;/p&gt;
+
+&lt;script src='https://gist.github.com/1176915.js?file=example2.html'&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;/noscript&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now change the &quot;&lt;strong&gt;Insert your section name here&lt;/strong&gt;&quot; to something easy to deal with.Once you have everything in WordPress go back to the google tab.&lt;/p&gt;
 
@@ -1641,20 +2868,45 @@
 
 &lt;p&gt;The first way is the same as &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;including custom content&lt;/a&gt;. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( is_page('work') || is_page('contact')) { 
+    echo '&amp;amp;lt;div id=&amp;amp;quot;secondnav&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;div class=&amp;amp;quot;secondnavs&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;http://www.travisberry.com/video/&amp;amp;quot;&amp;amp;gt;Video&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;div class=&amp;amp;quot;longsecondnavs&amp;amp;quot;&amp;amp;gt;.&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;'; 
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;If you had three pages; 'work', 'contact', and 'blog', the above code would display the div 'secondnav' on every page but 'blog'.&lt;/p&gt;
 
 &lt;p&gt;Another way is to use the above method but target it to the page you want excluded. So,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( is_page('blog')) { 
+    echo '&amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;http://whereeveryouputthenewcssfile.css&amp;amp;quot; type=&amp;amp;quot;text/css&amp;amp;quot; media=&amp;amp;quot;screen&amp;amp;quot; /&amp;amp;gt;'; 
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Can be used to exclude a section of content. Let's say you still don't want to show the 'secondnav' div on the blog page. So create a new .css file. Name it whatever you like and put it where ever you like. Just replace the url in the example with a link to the new file.Inside the new .css file put this;&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example3.css&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example3.css'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;#secondnav{&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;display:none !important;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The 'secondnav' div will no be invisible on the 'blog' page.&lt;/p&gt;
 
@@ -1662,8 +2914,17 @@
 
 &lt;p&gt;Copy and paste everything from your normal 'page.php' file and paste it into 'nonav.php'. Find the part you want removed and delete it from the file. Move to the very top of the 'nonav.php' file. Paste this into the file.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example4.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example4.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+/*&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Template Name: NoNav
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;*/
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Save the file and upload it to your current theme directory.&lt;/p&gt;
 
@@ -1675,13 +2936,27 @@
 
 &lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt;&lt;a href=&quot;http://www.reddit.com/user/kylegetsspam&quot;&gt;kylegetsspam&lt;/a&gt; over on reddit pointed out another simple way of doing the same thing. Add,&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example5.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example5.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;body_class(); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;To your body tag. Then add this to your main style sheet.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176902.js?file=example6.css&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176902.js?file=example6.css'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;#page-id-2 #secondnav {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;display: none; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Edit 2:&lt;/strong&gt; To use regular PHP and not WordPress to exclude content, see &lt;a href=&quot;http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.
 &lt;/article&gt;&lt;/p&gt;
@@ -1731,8 +3006,17 @@
 
 &lt;p&gt;It seems that with the upgrade to 2.1 comes a new script.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176888.js?file=example1.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176888.js?file=example1.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//&amp;amp;lt;![CDATA[
+    var _wpcf7 = { cached: 1 };
+//]]&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This script seems to work with WP Super Cache for some reason or another. Either way, it throws up all kinds of errors in google's page speed test. I'm not sure if there is a work around yet, if I'm going to ditch Contact Form 7 and redo all my forms, or if I'm crazy and this rogue script is coming from something else.&lt;/p&gt;
 
@@ -1766,18 +3050,45 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
 
 &lt;p&gt;So let's say you have one page.php file. This is the template you use on every page on your site. On your about page you would like to add a secondary navigation. I don't know why you want to, let's just say you do. This navigation sits above the content area, so you can't just add it into your page through the WordPress wysiwyg editor. Again, you could create a new template for the page, but that is boring. Instead, where you want the second navigation to be, enter this into your page.php file.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176883.js?file=example1.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176883.js?file=example1.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( is_page('about')) { 
+    echo '&amp;amp;lt;div id=&amp;amp;quot;secondnav&amp;amp;quot;&amp;amp;gt;This is the super cool secondary navigation.&amp;amp;lt;/div&amp;amp;gt;'; 
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The code is asking if the page is named &quot;about&quot;, if it is, it echo's the div &quot;secondnav&quot;. If the page isn't called &quot;about&quot; then it echo's nothing and nothing is displayed. It's that simple. If you want the nav to display on the &quot;about&quot;and &quot;contact&quot;page add this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176883.js?file=example2.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176883.js?file=example2.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( is_page('about') || is_page('contact')) { 
+    echo '&amp;amp;lt;div id=&amp;amp;quot;secondnav&amp;amp;quot;&amp;amp;gt;This is the super cool secondary navigation.&amp;amp;lt;/div&amp;amp;gt;'; 
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;One place I find myself using this a lot is loading javascript only on pages that need it. One problem of adding javascript links to your footer.php file is that they are called on everypage whether you need them or not. The simple way to call them only when need is to add them like this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176883.js?file=example3.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176883.js?file=example3.php'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( is_page('about'))  { 
+    echo '&amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;'; 
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This works well for pages, but for your blog page and single posts you will need a different function.&lt;/p&gt;
 
@@ -1899,25 +3210,61 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
 
 &lt;p&gt;Add this snippet to the top of your .htaccess file.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176878.js?file=example1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176878.js?file=example1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Header unset ETag&lt;/p&gt;
+
+&lt;p&gt;FileETag None&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;FilesMatch &amp;quot;.(css|js)$&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SetOutputFilter DEFLATE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/FilesMatch&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;FilesMatch &amp;quot;.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Header set Expires &amp;amp;quot;Thu, 15 Apr 2010 20:00:00 GMT&amp;amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/FilesMatch&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now for a little breakdown of what each part does.&lt;/p&gt;
 
 &lt;p&gt;This part disables &lt;a href=&quot;http://en.wikipedia.org/wiki/HTTP_ETag&quot;&gt;E-Tags&lt;/a&gt; so not to cause conflicts.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176878.js?file=example2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176878.js?file=example2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Header unset ETag&lt;/p&gt;
+
+&lt;p&gt;FileETag None&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This &lt;a href=&quot;http://en.wikipedia.org/wiki/Gzip&quot;&gt;gzips&lt;/a&gt; your css and javascript files resulting in a smaller transfer size.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176878.js?file=example3.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176878.js?file=example3.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;FilesMatch &amp;quot;.(css|js)$&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SetOutputFilter DEFLATE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/FilesMatch&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This adds a &lt;a href=&quot;http://www.askapache.com/htaccess/apache-speed-expires.html&quot;&gt;far future Expires header&lt;/a&gt; to most static files you will have.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176878.js?file=example4.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176878.js?file=example4.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;FilesMatch &amp;quot;.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Header set Expires &amp;amp;quot;Thu, 15 Apr 2010 20:00:00 GMT&amp;amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/FilesMatch&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;With these few changes your score in YSlow should dramatically improve. Any other .htacces tricks? Let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -2045,7 +3392,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 &lt;p&gt;The problem came from the fact that the element is set to&lt;/p&gt;
 
 
-&lt;p&gt;&lt;script src=&quot;https://gist.github.com/1176865.js?file=example1.css&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src='https://gist.github.com/1176865.js?file=example1.css'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;.menu_body{ display:none; }&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 
 &lt;p&gt;Which is fine and dandy if you have javascript enabled. If you don&amp;#8217;t, all you see is a list of headers.&lt;/p&gt;
@@ -2059,7 +3406,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 &lt;p&gt;In the css file add this, (Change the selector to which ever one you have set to display:none;)&lt;/p&gt;
 
 
-&lt;p&gt;&lt;script src=&quot;https://gist.github.com/1176865.js?file=example2.css&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script src='https://gist.github.com/1176865.js?file=example2.css'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;.menu_body { display:inline !important; }&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 
 &lt;p&gt;Place the file somewhere on your server and move back to your html.&lt;/p&gt;
@@ -2311,30 +3658,48 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;Initiate a blank repository by running&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command1.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command1.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;mkdir gittest&lt;/p&gt;
+
+&lt;p&gt;cd gittest&lt;/p&gt;
+
+&lt;p&gt;git --bare init&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now tell the repository where it will live&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command2.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command2.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;git repo-config remote.origin.url http://yoursite.com/git/gittest/git update-server-info&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have that done, upload the folder into the &quot;git&quot; folder on your webDAV server.&lt;/p&gt;
 
 &lt;p&gt;Now create the folder you want to use as your local files folder. It can be named whatever you want. Inside create a couple html files. Save them.Now do the typical git initialization and commit the files.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command3.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command3.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;git init&lt;/p&gt;
+
+&lt;p&gt;git add .&lt;/p&gt;
+
+&lt;p&gt;git commit -m &amp;quot;yourmessagegoeshere&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Now configure your remote master repo.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command4.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command4.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;git repo-config remote.origin.url http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;The &quot;yourusername&quot; is the user name you use to login to the webDAV folder. Now try to push to the remote.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command5.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command5.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;After you hit enter on the code above it will prompt your for the password for the account.&lt;/p&gt;
 
@@ -2342,8 +3707,14 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;You can test that it works by creating a new folder somewhere on your computer. Now clone your project to it.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176861.js?file=command6.txt&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176861.js?file=command6.txt'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;mkdir newfolder&lt;/p&gt;
+
+&lt;p&gt;cd newfolder&lt;/p&gt;
+
+&lt;p&gt;git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything is working you should now be able to see the html files in the new folder.&lt;/p&gt;
 
@@ -2682,8 +4053,19 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;The final code looks something like this&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176830.js?file=quicktime.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176830.js?file=quicktime.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;OBJECT CLASSID=&amp;quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&amp;quot; WIDTH=&amp;quot;320&amp;quot; HEIGHT=&amp;quot;240&amp;quot; CODEBASE=&amp;quot;http://www.apple.com/qtactivex/qtplugin.cab&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;PARAM name=&amp;amp;quot;SRC&amp;amp;quot; VALUE=&amp;amp;quot;poster.mov&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;PARAM name=&amp;amp;quot;QTSRC&amp;amp;quot; VALUE=&amp;amp;quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;PARAM name=&amp;amp;quot;AUTOPLAY&amp;amp;quot; VALUE=&amp;amp;quot;true&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;PARAM name=&amp;amp;quot;CONTROLLER&amp;amp;quot; VALUE=&amp;amp;quot;false&amp;amp;quot;&amp;amp;gt;
+&amp;amp;lt;embed src=&amp;amp;quot;poster.mov&amp;amp;quot; qtsrc=&amp;amp;quot;rtsp://your_streaming_subdomain.com:554/your_streaming_subdomain.com/movie.mov&amp;amp;quot; width=&amp;amp;quot;320&amp;amp;quot; height=&amp;amp;quot;240&amp;amp;quot; target=&amp;amp;quot;myself&amp;amp;quot; controller=&amp;amp;quot;false&amp;amp;quot; autoplay=&amp;amp;quot;true&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/embed&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/OBJECT&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is my first test at an embeded .mov file streamed off a quicktime server.&lt;/p&gt;
 
@@ -2692,8 +4074,17 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176830.js?file=quicktime2.html&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176830.js?file=quicktime2.html'&gt;&lt;/script&gt;
 
+
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;object classid=&amp;quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&amp;quot; codebase=&amp;quot;http://www.apple.com/qtactivex/qtplugin.cab&amp;quot; height=&amp;quot;376&amp;quot; width=&amp;quot;640&amp;quot;&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;param name=&amp;amp;quot;src&amp;amp;quot; value=&amp;amp;quot;http://www.travisberry.com/videos/Comp51_3.mov&amp;amp;quot; /&amp;amp;gt;
+&amp;amp;lt;param name=&amp;amp;quot;autoplay&amp;amp;quot; value=&amp;amp;quot;false&amp;amp;quot; /&amp;amp;gt;&amp;amp;lt;param name=&amp;amp;quot;type&amp;amp;quot; value=&amp;amp;quot;video/quicktime&amp;amp;quot; height=&amp;amp;quot;376&amp;amp;quot; width=&amp;amp;quot;640&amp;amp;quot; /&amp;amp;gt;
+&amp;amp;lt;embed src=&amp;amp;quot;http://www.travisberry.com/videos/Comp51_3.mov&amp;amp;quot; height=&amp;amp;quot;376&amp;amp;quot; width=&amp;amp;quot;640&amp;amp;quot; autoplay=&amp;amp;quot;false&amp;amp;quot; type=&amp;amp;quot;video/quicktime&amp;amp;quot; pluginspage=&amp;amp;quot;http://www.apple.com/quicktime/download/&amp;amp;quot; /&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/object&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/p&gt;
 
 &lt;p&gt;This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.&lt;/p&gt;
 
@@ -2720,10 +4111,19 @@ When creating a collapsible navigation for a client, I came across the problem o
 
 &lt;p&gt;One final tip, if your home page is different from the blog page, use the is_page('originalpagename') not is_home() and use is_home() for the blog page. Update: This is the code I used for those interested.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/1176823.js?file=highlightedNav.php&quot;&gt;&lt;/script&gt;
+&lt;script src='https://gist.github.com/1176823.js?file=highlightedNav.php'&gt;&lt;/script&gt;
 
 
-&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+&lt;p&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;li&amp;amp;lt;?php if ( is_page('about') || is_404() ){ echo ' class=&amp;amp;quot;current_page_item&amp;amp;quot; ';}?&amp;amp;gt;&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;&amp;amp;lt;?php echo get_option('home'); ?&amp;amp;gt;/&amp;amp;quot;&amp;amp;gt;Home&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/li&amp;amp;gt;
+&amp;amp;lt;li&amp;amp;lt;?php if ( is_home() || is_page('blog')|| is_single() || is_search() || is_archive()) { echo ' class=&amp;amp;quot;current_page_item&amp;amp;quot;'; } ?&amp;amp;gt;&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;&amp;amp;lt;?php bloginfo('url'); ?&amp;amp;gt;/blog/&amp;amp;quot;&amp;amp;gt;Blog&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/li&amp;amp;gt;
+&amp;amp;lt;li&amp;amp;lt;?php if ( is_page('work') || is_page('video') || is_page('web')) { echo ' class=&amp;amp;quot;current_page_item&amp;amp;quot;'; } ?&amp;amp;gt;&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;&amp;amp;lt;?php bloginfo('url'); ?&amp;amp;gt;/work/&amp;amp;quot;&amp;amp;gt;Work&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/li&amp;amp;gt;
+&amp;amp;lt;li&amp;amp;lt;?php if ( is_page('contact')) { echo ' class=&amp;amp;quot;current_page_item&amp;amp;quot;'; } ?&amp;amp;gt;&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;&amp;amp;lt;?php bloginfo('url'); ?&amp;amp;gt;/contact/&amp;amp;quot;&amp;amp;gt;Contact&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/li&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
  

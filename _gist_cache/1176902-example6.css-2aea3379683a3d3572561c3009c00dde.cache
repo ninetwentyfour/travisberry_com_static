@@ -1,0 +1,3 @@
+#page-id-2 #secondnav { 
+	display: none; 
+}

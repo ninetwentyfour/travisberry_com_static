@@ -1,0 +1,1 @@
+protected $vendorClass = 'MarkdownExtra_Parser';

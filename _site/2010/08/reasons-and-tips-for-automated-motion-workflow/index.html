@@ -98,8 +98,11 @@
 
 <p>We finally discovered the solution.</p>
 
-<script src="https://gist.github.com/1177036.js?file=example1.xml"></script>
+<script src='https://gist.github.com/1177036.js?file=example1.xml'></script>
 
+
+<p><noscript><pre><code>&lt;styleRun style=&quot;10178&quot; offset=&quot;0&quot; length=&quot;1&quot;/&gt;
+&lt;text&gt;Website&lt;/text&gt;</code></pre></noscript></p>
 
 <p>This is part of the Motion XML file. <em>Website</em> is the text being replaced. Above that is a length set in styleRun. This is normally set to the length of the placeholder text. In this case it would be 7. If you replace the word with one that is longer you have no problem. The Motion file will render like a champ. If it's shorter all hell breaks loose. So the fix is as simple as changing them all to 1. No more crashing.</p>
 

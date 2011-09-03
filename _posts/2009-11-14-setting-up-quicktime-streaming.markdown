@@ -26,7 +26,7 @@ You take this url and use an &lt;object&gt; code to embed the movie in a page.
 
 The final code looks something like this
 
-<script src="https://gist.github.com/1176830.js?file=quicktime.html"></script>
+{% gist 1176830 quicktime.html %}
 
 Here is my first test at an embeded .mov file streamed off a quicktime server.
 
@@ -34,7 +34,7 @@ Here is my first test at an embeded .mov file streamed off a quicktime server.
 
 You may have noticed that this is in fact not embedded with the code above. I couldn't get it to work. I used this code -
 
-<script src="https://gist.github.com/1176830.js?file=quicktime2.html"></script>
+{% gist 1176830 quicktime2.html %}
 
 This may be caused by numerous things. I will continue to update as I tinker around with a solution. However, a regular quicktime embed does seem to move a little faster but that could be in my head.
 

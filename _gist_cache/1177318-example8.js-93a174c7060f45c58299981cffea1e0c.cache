@@ -1,0 +1,14 @@
+//draw each phrase to the screen, making the top position 20px more each time so it appears there are line breaks
+$.each(phraseArray, function() {
+    //set the placement in the canvas
+    var lineheight = fontsize * 1.5;
+    var newline = ++counter;
+    newline = newline * lineheight;
+    var topPlacement = y - $("#c").position().top + newline;
+    var leftPlacement = x - $("#c").position().left;
+    text = this;
+    //draw the text
+    ctx.drawText(font, fontsize, leftPlacement, topPlacement, text);
+    ctx.save();
+    ctx.restore();
+});

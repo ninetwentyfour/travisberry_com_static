@@ -63,8 +63,10 @@
 
 <p>Well first off, it is in theory as easy as adding an image.</p>
 
-<script src="https://gist.github.com/1176926.js?file=example1.html"></script>
+<script src='https://gist.github.com/1176926.js?file=example1.html'></script>
 
+
+<p><noscript><pre><code>&lt;video src=&quot;movie.ogg&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;</code></pre></noscript></p>
 
 <p>Holy crap that is simple. Unfortunately your code will not end up looking like that. More on it in a bit.</p>
 
@@ -78,8 +80,13 @@
 
 <p>That simple code above now turns into</p>
 
-<script src="https://gist.github.com/1176926.js?file=example2.html"></script>
+<script src='https://gist.github.com/1176926.js?file=example2.html'></script>
 
+
+<p><noscript><pre><code>&lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;
+  &lt;source src=&quot;NewOrleans2006.ogv&quot; type='video/ogg; codecs=&quot;theora, vorbis&quot;'&gt;
+  &lt;source src=&quot;NewOrleans2006.mp4&quot; type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;
+&lt;/video&gt;</code></pre></noscript></p>
 
 <p>Not so simple anymore is it? Not horrible but not the elegant solution we were promised.</p>
 
@@ -99,8 +106,23 @@
 
 <p>So now that super simple code to embed videos now looks like this to make sure it handles all browsers nicely. Note, this still won't show anything in FireFox 2 but it will show in IE. Most FF users tend to update on a regular basis so it's no huge deal.</p>
 
-<script src="https://gist.github.com/1176926.js?file=example3.html"></script>
+<script src='https://gist.github.com/1176926.js?file=example3.html'></script>
 
+
+<p><noscript><pre><code>&lt;video width=&quot;640&quot; height=&quot;360&quot; id=&quot;video&quot; poster=&quot;http://www.travisberry.com/html5video/videos/copyright/copyright-poster.jpg&quot; controls=&quot;true&quot;&gt;</p>
+
+<pre><code>&amp;lt;source src=&amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-desktop.mp4&amp;quot; type='video/mp4; codecs=&amp;quot;avc1.64001E, mp4a.40.2&amp;quot;' /&amp;gt;
+&amp;lt;source src=&amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-iPhone-cell.3gp&amp;quot; type='video/3gpp; codecs=&amp;quot;mp4v.20.8, samr&amp;quot;' /&amp;gt;
+&amp;lt;source src=&amp;quot;http://www.travisberry.com/html5video/videos/copyright/copyright-desktop3.ogv&amp;quot; type='video/ogg; codecs=&amp;quot;theora, vorbis&amp;quot;' /&amp;gt;
+&amp;lt;object width=&amp;quot;640&amp;quot; height=&amp;quot;385&amp;quot;&amp;gt;
+    &amp;lt;param name=&amp;quot;movie&amp;quot; value=&amp;quot;http://www.youtube.com/v/lFeI5SqGYJ8&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    &amp;lt;param name=&amp;quot;allowFullScreen&amp;quot; value=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    &amp;lt;param name=&amp;quot;allowscriptaccess&amp;quot; value=&amp;quot;always&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;
+    &amp;lt;embed src=&amp;quot;http://www.youtube.com/v/lFeI5SqGYJ8&amp;amp;hl=en_US&amp;amp;fs=1&amp;amp;&amp;quot; type=&amp;quot;application/x-shockwave-flash&amp;quot; allowscriptaccess=&amp;quot;always&amp;quot; allowfullscreen=&amp;quot;true&amp;quot; width=&amp;quot;640&amp;quot; height=&amp;quot;385&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;
+&amp;lt;/object&amp;gt;
+</code></pre>
+
+<p>&lt;/video&gt;</code></pre></noscript></p>
 
 <p>Notice instead of adding a flash video I added a youtube embed. I was tired of crunching out different codecs by this point so I said screw it and let youtube handle some of the work. (I also added an iPhone version so the code is a little longer than necessary, but not by much)</p>
 

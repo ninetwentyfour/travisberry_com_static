@@ -64,25 +64,61 @@
 
 <p>Add this snippet to the top of your .htaccess file.</p>
 
-<script src="https://gist.github.com/1176878.js?file=example1.txt"></script>
+<script src='https://gist.github.com/1176878.js?file=example1.txt'></script>
 
+
+<p><noscript><pre><code>Header unset ETag</p>
+
+<p>FileETag None</p>
+
+<p>&lt;FilesMatch &quot;.(css|js)$&quot;&gt;</p>
+
+<pre><code>SetOutputFilter DEFLATE
+</code></pre>
+
+<p>&lt;/FilesMatch&gt;</p>
+
+<p>&lt;FilesMatch &quot;.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$&quot;&gt;</p>
+
+<pre><code>Header set Expires &amp;quot;Thu, 15 Apr 2010 20:00:00 GMT&amp;quot;
+</code></pre>
+
+<p>&lt;/FilesMatch&gt;</code></pre></noscript></p>
 
 <p>Now for a little breakdown of what each part does.</p>
 
 <p>This part disables <a href="http://en.wikipedia.org/wiki/HTTP_ETag">E-Tags</a> so not to cause conflicts.</p>
 
-<script src="https://gist.github.com/1176878.js?file=example2.txt"></script>
+<script src='https://gist.github.com/1176878.js?file=example2.txt'></script>
 
+
+<p><noscript><pre><code>Header unset ETag</p>
+
+<p>FileETag None</code></pre></noscript></p>
 
 <p>This <a href="http://en.wikipedia.org/wiki/Gzip">gzips</a> your css and javascript files resulting in a smaller transfer size.</p>
 
-<script src="https://gist.github.com/1176878.js?file=example3.txt"></script>
+<script src='https://gist.github.com/1176878.js?file=example3.txt'></script>
 
+
+<p><noscript><pre><code>&lt;FilesMatch &quot;.(css|js)$&quot;&gt;</p>
+
+<pre><code>SetOutputFilter DEFLATE
+</code></pre>
+
+<p>&lt;/FilesMatch&gt;</code></pre></noscript></p>
 
 <p>This adds a <a href="http://www.askapache.com/htaccess/apache-speed-expires.html">far future Expires header</a> to most static files you will have.</p>
 
-<script src="https://gist.github.com/1176878.js?file=example4.txt"></script>
+<script src='https://gist.github.com/1176878.js?file=example4.txt'></script>
 
+
+<p><noscript><pre><code>&lt;FilesMatch &quot;.(mov|otf|eot|ttf|ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$&quot;&gt;</p>
+
+<pre><code>Header set Expires &amp;quot;Thu, 15 Apr 2010 20:00:00 GMT&amp;quot;
+</code></pre>
+
+<p>&lt;/FilesMatch&gt;</code></pre></noscript></p>
 
 <p>With these few changes your score in YSlow should dramatically improve. Any other .htacces tricks? Let me know in the comments.
 </article></p>

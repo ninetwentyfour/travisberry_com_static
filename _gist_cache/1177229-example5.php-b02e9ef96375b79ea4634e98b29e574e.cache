@@ -1,0 +1,2 @@
+Configure::write('Sass.style', 'compressed');
+Configure::write('Asset.filter.css', 'sass.php');

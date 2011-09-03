@@ -1,0 +1,24 @@
+<div id="search">
+	<form id="orderform" action="<?php echo $html->url('/users/search'); ?>" method="post" enctype="multipart/form-data">
+	<label for="searchuser">Search Users:</label><input type="text" name="searchuser" />
+	Search By:
+	<input type="radio" name="searchtype" value="User.id"  checked> User ID
+	<input type="radio" name="searchtype" value="User.email"  checked> User Email
+	<input type="radio" name="searchtype" value="Entity.name"> Entity Name
+	<?php echo $form->end('Search'); ?>
+</div>
+<div id="contentbox">
+	<h2>Manage Users</h2>
+	<table>
+		<thead>
+			<th>ID</th><th>Email</th><th>Entity Name</th>
+		</thead>
+		<?php foreach($results as $user) : ?>  
+			<tr>
+				<td><?php echo $user['User']['id'] ?></td>
+				<td><?php echo $user['User']['email'] ?></td>
+				<td><?php echo $user['Entity']['name'] ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+</div>

@@ -82,11 +82,13 @@ DO NOT put the "Conversion Script" on this page. Instead go to your goal page, c
 
 Now go back and edit your post again. Scroll to where you want your author box to be in your post. Once there paste the code
 
-<script src="https://gist.github.com/1176915.js?file=example1.html"></script>
+{% gist 1176915 example1.html %}
 
-Followed by the text you want to use in you author box. Only put one version in at this point.At the end of the text paste this
+Followed by the text you want to use in you author box. Only put one version in at this point.
 
-<script src="https://gist.github.com/1176915.js?file=example2.html"></script>
+At the end of the text paste this
+
+{% gist 1176915 example2.html %}
 
 Now change the "**Insert your section name here**" to something easy to deal with.Once you have everything in WordPress go back to the google tab.
 

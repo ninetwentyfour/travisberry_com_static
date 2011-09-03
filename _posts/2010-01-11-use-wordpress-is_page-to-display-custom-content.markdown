@@ -28,15 +28,15 @@ Ok, that's not the most helpful description ever. A simpler explanation would be
 
 So let's say you have one page.php file. This is the template you use on every page on your site. On your about page you would like to add a secondary navigation. I don't know why you want to, let's just say you do. This navigation sits above the content area, so you can't just add it into your page through the WordPress wysiwyg editor. Again, you could create a new template for the page, but that is boring. Instead, where you want the second navigation to be, enter this into your page.php file.
 
-<script src="https://gist.github.com/1176883.js?file=example1.php"></script>
+{% gist 1176883 example1.php %}
 
 The code is asking if the page is named "about", if it is, it echo's the div "secondnav". If the page isn't called "about" then it echo's nothing and nothing is displayed. It's that simple. If you want the nav to display on the "about"and "contact"page add this
 
-<script src="https://gist.github.com/1176883.js?file=example2.php"></script>
+{% gist 1176883 example2.php %}
 
 One place I find myself using this a lot is loading javascript only on pages that need it. One problem of adding javascript links to your footer.php file is that they are called on everypage whether you need them or not. The simple way to call them only when need is to add them like this
 
-<script src="https://gist.github.com/1176883.js?file=example3.php"></script>
+{% gist 1176883 example3.php %}
 
 This works well for pages, but for your blog page and single posts you will need a different function.
 

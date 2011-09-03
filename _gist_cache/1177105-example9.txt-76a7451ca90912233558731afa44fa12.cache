@@ -1,0 +1,20 @@
+; eAccelerator configuration
+; Note that eAccelerator may also be installed as a PHP extension or as a zend_$
+; If you are using a thread safe build of PHP you must use
+; zend_extension_ts instead of zend_extension
+;extension                       = "/usr/lib/php5/20090626+lfs/eaccelerator.so"
+zend_extension                  = "/usr/lib/php5/20090626+lfs/eaccelerator.so"
+eaccelerator.shm_size           = "16"
+eaccelerator.cache_dir          = "/var/cache/eaccelerator"
+eaccelerator.enable             = "1"
+eaccelerator.optimizer          = "1"
+eaccelerator.check_mtime        = "1"
+eaccelerator.debug              = "0"
+eaccelerator.filter             = ""
+eaccelerator.shm_max            = "0"
+eaccelerator.shm_ttl            = "0"
+eaccelerator.shm_prune_period   = "0"
+eaccelerator.shm_only           = "0"
+eaccelerator.compress           = "1"
+eaccelerator.compress_level     = "9"
+eaccelerator.allowed_admin_path = "/var/www/eaccelerator"

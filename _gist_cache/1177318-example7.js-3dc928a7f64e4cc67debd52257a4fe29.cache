@@ -1,0 +1,2 @@
+// this adds the text functions to the ctx
+CanvasTextFunctions.enable(ctx);

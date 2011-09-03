@@ -1,0 +1,9 @@
+display_errors = On
+
+display_startup_errors = On
+
+log_errors = On
+
+error_log = /pickadirectorytostoreerrors/phperror.log
+
+error_reporting = E_ALL & E_STRICT

@@ -1,0 +1,1 @@
+ffmpeg2theora -V 700 -A 96 -H 44100 -K 24 -x 640 -y 360 --two-pass --optimize --speedlevel 0 --seek-index --soft-target --pp vdeblock:10/hdeblock:10 Elephants_Dream.mov

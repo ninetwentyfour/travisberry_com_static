@@ -1,0 +1,46 @@
+<?php
+    //MediaSilo Information
+    $server = "upload.mediasilo.com";
+    $ftp_user_name = "YOUR MEDIASILO LOGIN NAME AND HOSTNAME(e.g NAMEHOSTNAME";
+    $ftp_user_pass = "YOUR MEDIASILO LOGIN PASSWORD";
+    $dest = "THE WORKSPACE YOU WANT TO UPLOAD TO";
+                               
+    //Video Folder Information
+    $source_folder = "FULL PATH TO FOLDER. NO TRAILING SLASH (e.g. /var/www/videofolder)";
+    //Grabs everything in the source folder. You may want to set a file type like, ($source_folder."/*.flv")
+    $sources = glob($source_folder."/*.*");
+               
+    //Connect to FTP
+    set_time_limit(0);
+    $connection = ftp_connect($server);
+    $login = ftp_login($connection, $ftp_user_name, $ftp_user_pass);
+
+    //Check connection
+    if (!$connection || !$login) {
+        die('Connection attempt failed!');
+    }
+               
+    //If there are no files, don't FTP to MediaSilo
+    if (empty($sources)) {
+        //Close the FTP connection
+        ftp_close($connection);
+        $fileUploadMessage = "No files selected for upload";
+        echo $fileUploadMessage;
+    }else{
+        //If there are files FTP them to MediaSilo
+        foreach ($sources as $source){
+            //Put each video file on FTP server
+            $upload = ftp_put($connection, $dest."/".basename($source) , $source, FTP_BINARY);
+            //Check upload status
+            //Display message
+            if (!$upload) {
+                echo "Cannot upload: ".basename($source)." <br />";
+            }else{
+                echo "Upload complete: ".basename($source)." <br />";
+            }
+        }
+        //Close the FTP connection
+        ftp_close($connection);
+    //Videos should now be uploaded to MediaSilo
+    }
+?>

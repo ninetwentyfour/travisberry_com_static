@@ -26,7 +26,7 @@ Installing Nginx on Ubuntu is fairly simple.
 
 A simple
 
-<script src="https://gist.github.com/1177105.js?file=example1.txt"></script>
+{% gist 1177105 example1.txt %}
 
 will get you started. 
 
@@ -34,7 +34,7 @@ Now edit the file in _/etc/nginx/sites-available/default_
 
 change it to
 
-<script src="https://gist.github.com/1177105.js?file=example2.txt"></script>
+{% gist 1177105 example2.txt %}
 
 This assumes your root web folder is _/var/www_. You’ll also notice I have it set to listen on port 8080 and not the normal 80. This comes into play later when we setup of Varnish, so just go with me for now.
 
@@ -42,11 +42,11 @@ Now we need to get PHP installed so we can actually serve PHP files.
 
 As usual start with
 
-<script src="https://gist.github.com/1177105.js?file=example3.txt"></script>
+{% gist 1177105 example3.txt %}
 
 then
 
-<script src="https://gist.github.com/1177105.js?file=example4.txt"></script>
+{% gist 1177105 example4.txt %}
 
 You may have to add _deb http://php53.dotdeb.org stable all_ to your packages list for php5-fpm and php5-cgi to show up.
 
@@ -54,29 +54,29 @@ Before configuring PHP let’s install eAccelerator. "eAccelerator is a free ope
 
 First
 
-<script src="https://gist.github.com/1177105.js?file=example6.txt"></script>
+{% gist 1177105 example6.txt %}
 
 then
 
-<script src="https://gist.github.com/1177105.js?file=example7.txt"></script>
+{% gist 1177105 example7.txt %}
 
 Now cd into _/tmp/_
 
-<script src="https://gist.github.com/1177105.js?file=example8.txt"></script>
+{% gist 1177105 example8.txt %}
 
 Now edit _/etc/php5/fpm/php.ini_
 
 and right under the [PHP] block add
 
-<script src="https://gist.github.com/1177105.js?file=example9.txt"></script>
+{% gist 1177105 example9.txt %}
 
 Now restart PHP
 
-<script src="https://gist.github.com/1177110.js?file=example10.txt"></script>
+{% gist 1177110 example10.txt %}
 
 Then restart Nginx
 
-<script src="https://gist.github.com/1177110.js?file=example11.txt"></script>
+{% gist 1177110 example11.txt %}
 
 Now if you hit http://localhost:8080/index.php you should see your site.
 
@@ -86,21 +86,21 @@ The only thing left to setup at this point is Varnish.
 
 Install with
 
-<script src="https://gist.github.com/1177110.js?file=example12.txt"></script>
+{% gist 1177110 example12.txt %}
 
 After install run
 
-<script src="https://gist.github.com/1177110.js?file=example13.txt"></script>
+{% gist 1177110 example13.txt %}
 
 to make sure it’s not running while we configure it.
 
 Now run
 
-<script src="https://gist.github.com/1177110.js?file=example14.txt"></script>
+{% gist 1177110 example14.txt %}
 
 Varnish should now be running. Check by typing
 
-<script src="https://gist.github.com/1177110.js?file=example15.txt"></script>
+{% gist 1177110 example15.txt %}
 
 If you see a series of lines then Varnish should be working.
 
@@ -108,7 +108,7 @@ You can run one more test by going to your browser and reloading the page.
 
 If you see results like
 
-<script src="https://gist.github.com/1177110.js?file=example16.txt"></script>
+{% gist 1177110 example16.txt %}
 
 Then Varnish is correctly intercepting your requests. Varnish is getting the requests on port 80 forwarding them to Nginx if needed through port 8080, which is why we set it to 8080 earlier. You can set the port to foward in /etc/varnish/default.vcl. You can learn more about the setup and optimization of Varnish here.
 

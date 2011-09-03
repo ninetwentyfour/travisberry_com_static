@@ -20,21 +20,21 @@ How fast your site loads is a huge factor in how many visits you get. One of the
 <div class="clearfix"></div>
 Add this snippet to the top of your .htaccess file.
 
-<script src="https://gist.github.com/1176878.js?file=example1.txt"></script>
+{% gist 1176878 example1.txt %}
 
 Now for a little breakdown of what each part does.
 
 This part disables [E-Tags](http://en.wikipedia.org/wiki/HTTP_ETag) so not to cause conflicts.
 
-<script src="https://gist.github.com/1176878.js?file=example2.txt"></script>
+{% gist 1176878 example2.txt %}
 
 This [gzips](http://en.wikipedia.org/wiki/Gzip) your css and javascript files resulting in a smaller transfer size.
 
-<script src="https://gist.github.com/1176878.js?file=example3.txt"></script>
+{% gist 1176878 example3.txt %}
 
 This adds a [far future Expires header](http://www.askapache.com/htaccess/apache-speed-expires.html) to most static files you will have. 
 
-<script src="https://gist.github.com/1176878.js?file=example4.txt"></script>
+{% gist 1176878 example4.txt %}
 
 With these few changes your score in YSlow should dramatically improve. Any other .htacces tricks? Let me know in the comments.
 </article>

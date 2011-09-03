@@ -59,10 +59,63 @@
 
 <p>In continuing with my last post on <a href="http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/">how to upload videos to Ooyala with PHP</a>, here is one for <a href="http://www.mediasilo.com/">MediaSilo</a>. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.</p>
 
+<div class="clearfix"></div>
+
+
 <p>Alright, so let's get to the code.</p>
 
-<script src="https://gist.github.com/1177059.js?file=example1.php"></script>
+<script src='https://gist.github.com/1177059.js?file=example1.php'></script>
 
+
+<p><noscript><pre><code>&lt;?php</p>
+
+<pre><code>//MediaSilo Information
+$server = &amp;quot;upload.mediasilo.com&amp;quot;;
+$ftp_user_name = &amp;quot;YOUR MEDIASILO LOGIN NAME AND HOSTNAME(e.g NAMEHOSTNAME&amp;quot;;
+$ftp_user_pass = &amp;quot;YOUR MEDIASILO LOGIN PASSWORD&amp;quot;;
+$dest = &amp;quot;THE WORKSPACE YOU WANT TO UPLOAD TO&amp;quot;;
+
+//Video Folder Information
+$source_folder = &amp;quot;FULL PATH TO FOLDER. NO TRAILING SLASH (e.g. /var/www/videofolder)&amp;quot;;
+//Grabs everything in the source folder. You may want to set a file type like, ($source_folder.&amp;quot;/*.flv&amp;quot;)
+$sources = glob($source_folder.&amp;quot;/*.*&amp;quot;);
+
+//Connect to FTP
+set_time_limit(0);
+$connection = ftp_connect($server);
+$login = ftp_login($connection, $ftp_user_name, $ftp_user_pass);
+
+//Check connection
+if (!$connection || !$login) {
+    die('Connection attempt failed!');
+}
+
+//If there are no files, don't FTP to MediaSilo
+if (empty($sources)) {
+    //Close the FTP connection
+    ftp_close($connection);
+    $fileUploadMessage = &amp;quot;No files selected for upload&amp;quot;;
+    echo $fileUploadMessage;
+}else{
+    //If there are files FTP them to MediaSilo
+    foreach ($sources as $source){
+        //Put each video file on FTP server
+        $upload = ftp_put($connection, $dest.&amp;quot;/&amp;quot;.basename($source) , $source, FTP_BINARY);
+        //Check upload status
+        //Display message
+        if (!$upload) {
+            echo &amp;quot;Cannot upload: &amp;quot;.basename($source).&amp;quot; &amp;lt;br /&amp;gt;&amp;quot;;
+        }else{
+            echo &amp;quot;Upload complete: &amp;quot;.basename($source).&amp;quot; &amp;lt;br /&amp;gt;&amp;quot;;
+        }
+    }
+    //Close the FTP connection
+    ftp_close($connection);
+//Videos should now be uploaded to MediaSilo
+}
+</code></pre>
+
+<p>?&gt;</code></pre></noscript></p>
 
 <p>The above code should be fairly easy to understand. The code just globs a folder of all files and loops through them, uploading each one.</p>
 

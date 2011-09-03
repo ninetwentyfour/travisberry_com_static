@@ -63,10 +63,19 @@
 
 <p>One final tip, if your home page is different from the blog page, use the is_page('originalpagename') not is_home() and use is_home() for the blog page. Update: This is the code I used for those interested.</p>
 
-<script src="https://gist.github.com/1176823.js?file=highlightedNav.php"></script>
+<script src='https://gist.github.com/1176823.js?file=highlightedNav.php'></script>
 
 
-<p></article></p>
+<p><noscript><pre><code>&lt;ul&gt;</p>
+
+<pre><code>&amp;lt;li&amp;lt;?php if ( is_page('about') || is_404() ){ echo ' class=&amp;quot;current_page_item&amp;quot; ';}?&amp;gt;&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php echo get_option('home'); ?&amp;gt;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;lt;?php if ( is_home() || is_page('blog')|| is_single() || is_search() || is_archive()) { echo ' class=&amp;quot;current_page_item&amp;quot;'; } ?&amp;gt;&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php bloginfo('url'); ?&amp;gt;/blog/&amp;quot;&amp;gt;Blog&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;lt;?php if ( is_page('work') || is_page('video') || is_page('web')) { echo ' class=&amp;quot;current_page_item&amp;quot;'; } ?&amp;gt;&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php bloginfo('url'); ?&amp;gt;/work/&amp;quot;&amp;gt;Work&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;lt;?php if ( is_page('contact')) { echo ' class=&amp;quot;current_page_item&amp;quot;'; } ?&amp;gt;&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php bloginfo('url'); ?&amp;gt;/contact/&amp;quot;&amp;gt;Contact&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+</code></pre>
+
+<p>&lt;/ul&gt;</code></pre></noscript>
+</article></p>
 
 </div>
 <p>Comments have been removed in my sites latest upgrade. They may or may not come back.</p>

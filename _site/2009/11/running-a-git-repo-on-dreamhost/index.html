@@ -83,30 +83,48 @@
 
 <p>Initiate a blank repository by running</p>
 
-<script src="https://gist.github.com/1176861.js?file=command1.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command1.txt'></script>
 
+
+<p><noscript><pre><code>mkdir gittest</p>
+
+<p>cd gittest</p>
+
+<p>git --bare init</code></pre></noscript></p>
 
 <p>Now tell the repository where it will live</p>
 
-<script src="https://gist.github.com/1176861.js?file=command2.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command2.txt'></script>
 
+
+<p><noscript><pre><code>git repo-config remote.origin.url http://yoursite.com/git/gittest/git update-server-info</code></pre></noscript></p>
 
 <p>Once you have that done, upload the folder into the "git" folder on your webDAV server.</p>
 
 <p>Now create the folder you want to use as your local files folder. It can be named whatever you want. Inside create a couple html files. Save them.Now do the typical git initialization and commit the files.</p>
 
-<script src="https://gist.github.com/1176861.js?file=command3.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command3.txt'></script>
 
+
+<p><noscript><pre><code>git init</p>
+
+<p>git add .</p>
+
+<p>git commit -m &quot;yourmessagegoeshere&quot;</code></pre></noscript></p>
 
 <p>Now configure your remote master repo.</p>
 
-<script src="https://gist.github.com/1176861.js?file=command4.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command4.txt'></script>
 
+
+<p><noscript><pre><code>git repo-config remote.origin.url http://yourusername@www.yoursite.com/git/gittest/</code></pre></noscript></p>
 
 <p>The "yourusername" is the user name you use to login to the webDAV folder. Now try to push to the remote.</p>
 
-<script src="https://gist.github.com/1176861.js?file=command5.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command5.txt'></script>
 
+
+<p><noscript><pre><code>git push origin master</code></pre></noscript></p>
 
 <p>After you hit enter on the code above it will prompt your for the password for the account.</p>
 
@@ -114,8 +132,14 @@
 
 <p>You can test that it works by creating a new folder somewhere on your computer. Now clone your project to it.</p>
 
-<script src="https://gist.github.com/1176861.js?file=command6.txt"></script>
+<script src='https://gist.github.com/1176861.js?file=command6.txt'></script>
 
+
+<p><noscript><pre><code>mkdir newfolder</p>
+
+<p>cd newfolder</p>
+
+<p>git clone http://yourusername@www.yoursite.com/git/gittest/</code></pre></noscript></p>
 
 <p>If everything is working you should now be able to see the html files in the new folder.</p>
 

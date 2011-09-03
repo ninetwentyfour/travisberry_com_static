@@ -20,7 +20,7 @@ So it may be time to ditch my favorite WordPress plugin, [Contact Form 7](http:/
 <div class="clearfix"></div>
 It seems that with the upgrade to 2.1 comes a new script.
 
-<script src="https://gist.github.com/1176888.js?file=example1.html"></script>
+{% gist 1176888 example1.html %}
 
 This script seems to work with WP Super Cache for some reason or another. Either way, it throws up all kinds of errors in google's page speed test. I'm not sure if there is a work around yet, if I'm going to ditch Contact Form 7 and redo all my forms, or if I'm crazy and this rogue script is coming from something else.
 

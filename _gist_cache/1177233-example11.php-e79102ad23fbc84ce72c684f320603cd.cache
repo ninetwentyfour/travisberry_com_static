@@ -1,0 +1,1 @@
+$sassFile = str_replace('.css', '.sass', $cssFile);

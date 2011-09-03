@@ -37,25 +37,25 @@ Now create a blank folder on the desktop. Name it whatever you want. I'll call m
 
 Initiate a blank repository by running
 
-<script src="https://gist.github.com/1176861.js?file=command1.txt"></script>
+{% gist 1176861 command1.txt %}
 
 Now tell the repository where it will live
 
-<script src="https://gist.github.com/1176861.js?file=command2.txt"></script>
+{% gist 1176861 command2.txt %}
 
 Once you have that done, upload the folder into the "git" folder on your webDAV server.
 
 Now create the folder you want to use as your local files folder. It can be named whatever you want. Inside create a couple html files. Save them.Now do the typical git initialization and commit the files.
 
-<script src="https://gist.github.com/1176861.js?file=command3.txt"></script>
+{% gist 1176861 command3.txt %}
 
 Now configure your remote master repo.
 
-<script src="https://gist.github.com/1176861.js?file=command4.txt"></script>
+{% gist 1176861 command4.txt %}
 
 The "yourusername" is the user name you use to login to the webDAV folder. Now try to push to the remote.
 
-<script src="https://gist.github.com/1176861.js?file=command5.txt"></script>
+{% gist 1176861 command5.txt %}
 
 After you hit enter on the code above it will prompt your for the password for the account.
 
@@ -63,7 +63,7 @@ That should push all your local files to the git remote repo. Now don't panic wh
 
 You can test that it works by creating a new folder somewhere on your computer. Now clone your project to it.
 
-<script src="https://gist.github.com/1176861.js?file=command6.txt"></script>
+{% gist 1176861 command6.txt %}
 
 If everything is working you should now be able to see the html files in the new folder.
 

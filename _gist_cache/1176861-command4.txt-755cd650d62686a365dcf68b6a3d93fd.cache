@@ -1,0 +1,1 @@
+git repo-config remote.origin.url http://yourusername@www.yoursite.com/git/gittest/

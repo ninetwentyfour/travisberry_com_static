@@ -1,0 +1,5 @@
+<?php 
+	if ( is_page('about'))  { 
+		echo '<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>'; 
+	} 
+?>
