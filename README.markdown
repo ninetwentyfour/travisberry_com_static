@@ -5,7 +5,7 @@ TODO
 
 - add expires headers to static files on s3 also add content types
 
-- New favicon
+- <del>New favicon</del>
 
 - <del>sitemap</del>
 
@@ -33,7 +33,7 @@ TODO
 
 - <del>add analytics code</del>
 
-- add noscript and old browser warnings
+- <del>add noscript and old browser warnings</del>
 
 - possibly add search bar into top bar so its always visible / add a top flag that comes out once you scroll so far
 
