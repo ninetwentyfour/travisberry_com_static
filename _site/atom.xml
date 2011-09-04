@@ -4,8 +4,8 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-04T13:54:21-06:00</updated>
- <id>http://oldstatic.travisberry.com/</id>
+ <updated>2011-09-04T14:44:49-06:00</updated>
+ <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Goodbye WordPress - Hello Jekyll</title>
-   <link href="http://oldstatic.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll"/>
+   <link href="http://www.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll"/>
    <updated>2011-09-04T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll</id>
+   <id>http://www.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Goodbye WordPress - Hello Jekyll&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/oldeyankee/2698654569/sizes/o/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/jekyll.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -54,9 +54,9 @@
  
  <entry>
    <title>Create GitHub Gist With Ruby</title>
-   <link href="http://oldstatic.travisberry.com/2011/05/create-github-gist-with-ruby"/>
+   <link href="http://www.travisberry.com/2011/05/create-github-gist-with-ruby"/>
    <updated>2011-05-30T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/05/create-github-gist-with-ruby</id>
+   <id>http://www.travisberry.com/2011/05/create-github-gist-with-ruby</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create GitHub Gist With Ruby&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -103,9 +103,9 @@
  
  <entry>
    <title>Write Text Anywhere With HTML5 Canvas</title>
-   <link href="http://oldstatic.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas"/>
+   <link href="http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas"/>
    <updated>2011-05-26T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas</id>
+   <id>http://www.travisberry.com/2011/05/write-text-anywhere-with-html5-canvas</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Write Text Anywhere With HTML5 Canvas&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -458,9 +458,9 @@ $.each(phraseArray, function() {
  
  <entry>
    <title>A Day In The Life Of Me</title>
-   <link href="http://oldstatic.travisberry.com/2011/03/a-day-in-the-life-of-me"/>
+   <link href="http://www.travisberry.com/2011/03/a-day-in-the-life-of-me"/>
    <updated>2011-03-04T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
+   <id>http://www.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;A Day In The Life Of Me&lt;/h3&gt;
   &lt;h6&gt;Published: March 03, 2011&lt;/h6&gt;&lt;/p&gt;
@@ -474,9 +474,9 @@ $.each(phraseArray, function() {
  
  <entry>
    <title>Fast CakePHP Search With IndexTank</title>
-   <link href="http://oldstatic.travisberry.com/2011/02/fast-cakephp-search-with-indextank"/>
+   <link href="http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank"/>
    <updated>2011-02-16T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/02/fast-cakephp-search-with-indextank</id>
+   <id>http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Fast CakePHP Search With IndexTank&lt;/h3&gt;
   &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -679,9 +679,9 @@ function search(){
  
  <entry>
    <title>Haml, Sass, Markdown, and CakePHP - Oh My!</title>
-   <link href="http://oldstatic.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"/>
+   <link href="http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my"/>
    <updated>2011-01-11T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my</id>
+   <id>http://www.travisberry.com/2011/01/haml-sass-markdown-and-cakephp-oh-my</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Haml, Sass, Markdown, and CakePHP - Oh My!&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -904,9 +904,9 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
  
  <entry>
    <title>New Time Tracking Web App - Homkora</title>
-   <link href="http://oldstatic.travisberry.com/2011/01/new-time-tracking-web-app-homkora"/>
+   <link href="http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora"/>
    <updated>2011-01-01T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2011/01/new-time-tracking-web-app-homkora</id>
+   <id>http://www.travisberry.com/2011/01/new-time-tracking-web-app-homkora</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;New Time Tracking Web App - Homkora&lt;/h3&gt;
   &lt;a href=&quot;http://homkora.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -926,9 +926,9 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
  
  <entry>
    <title>Free Single Page HTML/CSS Template</title>
-   <link href="http://oldstatic.travisberry.com/2010/12/free-single-page-htmlcss-template"/>
+   <link href="http://www.travisberry.com/2010/12/free-single-page-htmlcss-template"/>
    <updated>2010-12-19T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/12/free-single-page-htmlcss-template</id>
+   <id>http://www.travisberry.com/2010/12/free-single-page-htmlcss-template</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Free Single Page HTML/CSS Template&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/simple-dark-html-template/index.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -947,9 +947,9 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
  
  <entry>
    <title>Clean URL's in Nginx</title>
-   <link href="http://oldstatic.travisberry.com/2010/11/clean-urls-in-nginx"/>
+   <link href="http://www.travisberry.com/2010/11/clean-urls-in-nginx"/>
    <updated>2010-11-07T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/11/clean-urls-in-nginx</id>
+   <id>http://www.travisberry.com/2010/11/clean-urls-in-nginx</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Clean URL's in Nginx&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1018,9 +1018,9 @@ location ~ .php$&lt;/p&gt;
  
  <entry>
    <title>Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish</title>
-   <link href="http://oldstatic.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish"/>
+   <link href="http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish"/>
    <updated>2010-10-17T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish</id>
+   <id>http://www.travisberry.com/2010/10/lightning-fast-php-server-with-nginx-eaccelerator-and-varnish</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Lightning Fast PHP Server With Nginx, eAccelerator, and Varnish&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/10438860/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/10/nginx_server.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1331,9 +1331,9 @@ eaccelerator.allowed_admin_path = &amp;quot;/var/www/eaccelerator&amp;quot;&lt;/
  
  <entry>
    <title>Remove WordPress' NoFollow Without A Plugin</title>
-   <link href="http://oldstatic.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin"/>
+   <link href="http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin"/>
    <updated>2010-10-03T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
+   <id>http://www.travisberry.com/2010/10/remove-wordpress-nofollow-without-a-plugin</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Remove WordPress' NoFollow Without A Plugin&lt;/h3&gt;
   &lt;a href=&quot;http://www.siliakatung.com/exhibition.htm&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/do_follow.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1405,9 +1405,9 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
  
  <entry>
    <title>If is_page() With Regular PHP</title>
-   <link href="http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php"/>
+   <link href="http://www.travisberry.com/2010/10/if-is_page-with-regular-php"/>
    <updated>2010-10-02T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php</id>
+   <id>http://www.travisberry.com/2010/10/if-is_page-with-regular-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;If is_page() With Regular PHP&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/14277117@N03/3865517102&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1442,9 +1442,9 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
  
  <entry>
    <title>Use PHP To Zip Folders For Download</title>
-   <link href="http://oldstatic.travisberry.com/2010/09/use-php-to-zip-folders-for-download"/>
+   <link href="http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download"/>
    <updated>2010-09-23T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
+   <id>http://www.travisberry.com/2010/09/use-php-to-zip-folders-for-download</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use PHP To Zip Folders For Download&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/striatic/443918201/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/zip_files.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1517,9 +1517,9 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
  
  <entry>
    <title>Upload Videos To MediaSilo With PHP/FTP</title>
-   <link href="http://oldstatic.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp"/>
+   <link href="http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp"/>
    <updated>2010-09-18T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp</id>
+   <id>http://www.travisberry.com/2010/09/upload-videos-to-mediasilo-with-phpftp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Upload Videos To MediaSilo With PHP/FTP&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/spiesteleviv/3654728245/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1594,9 +1594,9 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
  
  <entry>
    <title>Upload A Video To Ooyala With PHP</title>
-   <link href="http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php"/>
+   <link href="http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php"/>
    <updated>2010-09-11T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
+   <id>http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Upload A Video To Ooyala With PHP&lt;/h3&gt;
   &lt;a href=&quot;http://www.cl.cam.ac.uk/Relics/archive_photos.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/ooyala_upload.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1750,9 +1750,9 @@ function send_request2($request_type, $params)
  
  <entry>
    <title>Reasons And Tips For Automated Motion Workflow</title>
-   <link href="http://oldstatic.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow"/>
+   <link href="http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow"/>
    <updated>2010-08-07T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow</id>
+   <id>http://www.travisberry.com/2010/08/reasons-and-tips-for-automated-motion-workflow</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Reasons And Tips For Automated Motion Workflow&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/whsimages/998243013/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1818,9 +1818,9 @@ function send_request2($request_type, $params)
  
  <entry>
    <title>Create A Ghetto, But Functional, Search Function For CakePHP</title>
-   <link href="http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp"/>
+   <link href="http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp"/>
    <updated>2010-06-21T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
+   <id>http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create A Ghetto, But Functional, Search Function For CakePHP&lt;/h3&gt;
   &lt;a href=&quot;http://store.steampowered.com/app/400/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/portalcake2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -1913,9 +1913,9 @@ function search() {
  
  <entry>
    <title>How To Setup A LAMP Virtual Machine</title>
-   <link href="http://oldstatic.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine"/>
+   <link href="http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine"/>
    <updated>2010-05-09T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine</id>
+   <id>http://www.travisberry.com/2010/05/comprehensive-guide-to-creating-a-lamp-virtual-machine</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;How To Setup A LAMP Virtual Machine&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2244,9 +2244,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Best Ogg Theora Video Compressor</title>
-   <link href="http://oldstatic.travisberry.com/2010/04/best-ogg-theora-video-compressor"/>
+   <link href="http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor"/>
    <updated>2010-04-25T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
+   <id>http://www.travisberry.com/2010/04/best-ogg-theora-video-compressor</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Best Ogg Theora Video Compressor&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/lancesh/2162074087/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/oggpixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2353,9 +2353,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Adding Internet Streaming To FFmpeg Outputs</title>
-   <link href="http://oldstatic.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs"/>
+   <link href="http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs"/>
    <updated>2010-04-17T00:00:00-06:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs</id>
+   <id>http://www.travisberry.com/2010/04/adding-internet-streaming-to-ffmpeg-outputs</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Adding Internet Streaming To FFmpeg Outputs&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/04/qtindexswapper.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2377,9 +2377,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Video Compression Show Down</title>
-   <link href="http://oldstatic.travisberry.com/2010/03/video-compression-show-down"/>
+   <link href="http://www.travisberry.com/2010/03/video-compression-show-down"/>
    <updated>2010-03-11T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/03/video-compression-show-down</id>
+   <id>http://www.travisberry.com/2010/03/video-compression-show-down</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Video Compression Show Down&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/reckon/3262118500/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/03/videopixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2487,9 +2487,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>On HTML5 Video</title>
-   <link href="http://oldstatic.travisberry.com/2010/02/on-html5-video"/>
+   <link href="http://www.travisberry.com/2010/02/on-html5-video"/>
    <updated>2010-02-25T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/02/on-html5-video</id>
+   <id>http://www.travisberry.com/2010/02/on-html5-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;On HTML5 Video&lt;/h3&gt;
   &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2595,9 +2595,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Create Simple A/B Tests In WordPress</title>
-   <link href="http://oldstatic.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress"/>
+   <link href="http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress"/>
    <updated>2010-02-19T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
+   <id>http://www.travisberry.com/2010/02/how-to-create-simple-ab-tests-in-wordpress</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create Simple A/B Tests In WordPress&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/jurvetson/133261764/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/02/abtest1.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2708,9 +2708,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>10 Easy Solutions For Contact Forms</title>
-   <link href="http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms"/>
+   <link href="http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms"/>
    <updated>2010-02-15T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
+   <id>http://www.travisberry.com/2010/02/10-easy-solutions-for-contact-forms</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;10 Easy Solutions For Contact Forms&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2748,9 +2748,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Use WordPress' is_page() To Exclude Content</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content"/>
+   <link href="http://www.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content"/>
    <updated>2010-01-30T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/use-wordpress'-is_page-to-exclude-content</id>
+   <id>http://www.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Exclude Content&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2844,9 +2844,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Don't Be Afraid To Self Promote</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/dont-be-afraid-to-self-promote"/>
+   <link href="http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote"/>
    <updated>2010-01-17T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/dont-be-afraid-to-self-promote</id>
+   <id>http://www.travisberry.com/2010/01/dont-be-afraid-to-self-promote</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Don't Be Afraid To Self Promote&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2870,9 +2870,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Say It Aint So! Time For A New Contact Form</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form"/>
+   <link href="http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form"/>
    <updated>2010-01-12T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
+   <id>http://www.travisberry.com/2010/01/say-it-aint-so-time-for-a-new-contact-form</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Say It Aint So! Time For A New Contact Form&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/ngmmemuda/4171221241/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/01/despair.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2903,9 +2903,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Use WordPress' is_page() To Display Custom Content</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content"/>
+   <link href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content</id>
+   <id>http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Display Custom Content&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -2977,9 +2977,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Gentleman WordPress Theme</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/gentleman-wordpress-theme"/>
+   <link href="http://www.travisberry.com/2010/01/gentleman-wordpress-theme"/>
    <updated>2010-01-11T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/gentleman-wordpress-theme</id>
+   <id>http://www.travisberry.com/2010/01/gentleman-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Gentleman WordPress Theme&lt;/h3&gt;
   &lt;a href=&quot;http://gentleman.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3005,9 +3005,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>A Hard Day At Work</title>
-   <link href="http://oldstatic.travisberry.com/2010/01/a-hard-day-at-work"/>
+   <link href="http://www.travisberry.com/2010/01/a-hard-day-at-work"/>
    <updated>2010-01-02T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2010/01/a-hard-day-at-work</id>
+   <id>http://www.travisberry.com/2010/01/a-hard-day-at-work</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;A Hard Day At Work&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/01/travisretouchglow-640x489.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3021,9 +3021,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Happy Holidays</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/happy-holidays"/>
+   <link href="http://www.travisberry.com/2009/12/happy-holidays"/>
    <updated>2009-12-25T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/happy-holidays</id>
+   <id>http://www.travisberry.com/2009/12/happy-holidays</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Happy Holidays&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/mr_t_in_dc/4159310486/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/christmas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3036,9 +3036,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>New Free WordPress Theme: Dark Wood</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood"/>
+   <link href="http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood</id>
+   <id>http://www.travisberry.com/2009/12/new-free-wordpress-theme-dark-wood</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;New Free WordPress Theme: Dark Wood&lt;/h3&gt;
   &lt;a href=&quot;http://darkwood.travisberry.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/darkwoodcaplarge.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3062,9 +3062,9 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
  
  <entry>
    <title>Improve YSlow Score With .htaccess</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/improve-yslow-score-with-htaccess"/>
+   <link href="http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess"/>
    <updated>2009-12-20T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/improve-yslow-score-with-htaccess</id>
+   <id>http://www.travisberry.com/2009/12/improve-yslow-score-with-htaccess</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Improve YSlow Score With .htaccess&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/markjsebastian/3114597691/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3128,9 +3128,9 @@ FileETag None&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
  
  <entry>
    <title>This Makes Me Want To Quit Video</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/this-makes-me-want-to-quit-video"/>
+   <link href="http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
+   <id>http://www.travisberry.com/2009/12/this-makes-me-want-to-quit-video</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;This Makes Me Want To Quit Video&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/natalieVideoThunb.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/natalieVideoThunb.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3148,9 +3148,9 @@ FileETag None&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
  
  <entry>
    <title>Simplifying Video Aspect Ratios</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/simplifying-video-aspect-ratios"/>
+   <link href="http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios"/>
    <updated>2009-12-16T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/simplifying-video-aspect-ratios</id>
+   <id>http://www.travisberry.com/2009/12/simplifying-video-aspect-ratios</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Simplifying Video Aspect Ratios&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/janramroth/1298370325/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/brokentv.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3183,9 +3183,9 @@ FileETag None&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
  
  <entry>
    <title>Tooting My Own Horn</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/tooting-my-own-horn"/>
+   <link href="http://www.travisberry.com/2009/12/tooting-my-own-horn"/>
    <updated>2009-12-14T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/tooting-my-own-horn</id>
+   <id>http://www.travisberry.com/2009/12/tooting-my-own-horn</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Tooting My Own Horn&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3201,9 +3201,9 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Another Free WordPress Theme</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/another-free-wordpress-theme"/>
+   <link href="http://www.travisberry.com/2009/12/another-free-wordpress-theme"/>
    <updated>2009-12-12T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/another-free-wordpress-theme</id>
+   <id>http://www.travisberry.com/2009/12/another-free-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Another Free WordPress Theme&lt;/h3&gt;
   &lt;a href=&quot;http://github.com/ninetwentyfour/DrifterEntertainment_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3232,9 +3232,9 @@ So I got an email today from &lt;a href=&quot;http://mobify.me/&quot; target=&qu
  
  <entry>
    <title>Making display:none; Javascript Accessible</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/making-displaynone-javascript-accessible"/>
+   <link href="http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible"/>
    <updated>2009-12-11T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/making-displaynone-javascript-accessible</id>
+   <id>http://www.travisberry.com/2009/12/making-displaynone-javascript-accessible</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Making display:none; Javascript Accessible&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/dmitry-baranovskiy/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/javascript.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3284,9 +3284,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Chrome and Thunderbird 3 Review</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/chrome-and-thunderbird-3-review"/>
+   <link href="http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review"/>
    <updated>2009-12-09T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/chrome-and-thunderbird-3-review</id>
+   <id>http://www.travisberry.com/2009/12/chrome-and-thunderbird-3-review</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Download My WordPress Theme&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3330,9 +3330,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Download My WordPress Theme</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/download-my-wordpress-theme"/>
+   <link href="http://www.travisberry.com/2009/12/download-my-wordpress-theme"/>
    <updated>2009-12-07T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/download-my-wordpress-theme</id>
+   <id>http://www.travisberry.com/2009/12/download-my-wordpress-theme</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Download My WordPress Theme&lt;/h3&gt;
   &lt;a href=&quot;http://github.com/ninetwentyfour/TravisBerry_com/archives/master&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/mygithubpage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3360,9 +3360,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>The Worst Is Over</title>
-   <link href="http://oldstatic.travisberry.com/2009/12/the-worst-is-over"/>
+   <link href="http://www.travisberry.com/2009/12/the-worst-is-over"/>
    <updated>2009-12-05T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/12/the-worst-is-over</id>
+   <id>http://www.travisberry.com/2009/12/the-worst-is-over</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;The Worst Is Over&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/celebration2.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3382,9 +3382,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Sound FX Tip - Muffled Sounds</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/sound-fx-tip-muffled-sounds"/>
+   <link href="http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds"/>
    <updated>2009-11-29T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/sound-fx-tip-muffled-sounds</id>
+   <id>http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Sound FX Tip - Muffled Sounds&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/mourner/3306939463/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3412,9 +3412,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Awesome News Mashup Sites</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/5-awesome-news-mashup-sites"/>
+   <link href="http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites"/>
    <updated>2009-11-25T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/5-awesome-news-mashup-sites</id>
+   <id>http://www.travisberry.com/2009/11/5-awesome-news-mashup-sites</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Awesome News Mashup Sites&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/shironekoeuro/4040697914/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3445,9 +3445,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>5 Resources To Learn After Effects Expressions</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions"/>
+   <link href="http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions"/>
    <updated>2009-11-23T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions</id>
+   <id>http://www.travisberry.com/2009/11/5-resources-to-learn-after-effects-expressions</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Resources To Learn After Effects Expressions&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3479,9 +3479,9 @@ When creating a collapsible navigation for a client, I came across the problem o
  
  <entry>
    <title>Running A Git Repo on DreamHost</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/running-a-git-repo-on-dreamhost"/>
+   <link href="http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/running-a-git-repo-on-dreamhost</id>
+   <id>http://www.travisberry.com/2009/11/running-a-git-repo-on-dreamhost</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Running A Git Repo on DreamHost&lt;/h3&gt;
   &lt;a href=&quot;http://git-scm.com/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3594,9 +3594,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>Handy List of Terminal Commands</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/handy-list-of-terminal-commands"/>
+   <link href="http://www.travisberry.com/2009/11/handy-list-of-terminal-commands"/>
    <updated>2009-11-20T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/handy-list-of-terminal-commands</id>
+   <id>http://www.travisberry.com/2009/11/handy-list-of-terminal-commands</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Handy List of Terminal Commands&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/terminalcap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3670,9 +3670,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>5 Resources for Web Type</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/5-resources-for-web-type"/>
+   <link href="http://www.travisberry.com/2009/11/5-resources-for-web-type"/>
    <updated>2009-11-17T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/5-resources-for-web-type</id>
+   <id>http://www.travisberry.com/2009/11/5-resources-for-web-type</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Resources for Web Type&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3699,9 +3699,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>Set Up a Domain, Host, and Email Quickly</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly"/>
+   <link href="http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly"/>
    <updated>2009-11-16T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly</id>
+   <id>http://www.travisberry.com/2009/11/set-up-a-domain-host-and-email-quickly</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Set Up a Domain, Host, and Email Quickly&lt;/h3&gt;
   &lt;a href=&quot;http://godaddy.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3747,9 +3747,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>YouTube Gets 1080p</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/youtube-gets-1080p"/>
+   <link href="http://www.travisberry.com/2009/11/youtube-gets-1080p"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/youtube-gets-1080p</id>
+   <id>http://www.travisberry.com/2009/11/youtube-gets-1080p</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;YouTube Gets 1080p&lt;/h3&gt;
   &lt;a href=&quot;http://youtube.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3778,9 +3778,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>Great CMYK Art</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/great-cmyk-art"/>
+   <link href="http://www.travisberry.com/2009/11/great-cmyk-art"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/great-cmyk-art</id>
+   <id>http://www.travisberry.com/2009/11/great-cmyk-art</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Great CMYK Art&lt;/h3&gt;
   &lt;a href=&quot;http://wow-dg.deviantart.com/art/cmyk-back-to-basics-42258028&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3808,9 +3808,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>5 Handy Plugins for 5 Kick-Ass Free Apps</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps"/>
+   <link href="http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps"/>
    <updated>2009-11-15T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps</id>
+   <id>http://www.travisberry.com/2009/11/5-handy-plugins-for-5-kick-ass-free-apps</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;5 Handy Plugins for 5 Kick-Ass Free Apps&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/villeneuve53/2191206080/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/plugins.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3890,9 +3890,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>Setting Up Quicktime Streaming</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/setting-up-quicktime-streaming"/>
+   <link href="http://www.travisberry.com/2009/11/setting-up-quicktime-streaming"/>
    <updated>2009-11-14T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/setting-up-quicktime-streaming</id>
+   <id>http://www.travisberry.com/2009/11/setting-up-quicktime-streaming</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Setting Up Quicktime Streaming&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/mwichary/2319091169/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
@@ -3946,9 +3946,9 @@ git clone http://yourusername@www.yoursite.com/git/gittest/&lt;/code&gt;&lt;/pre
  
  <entry>
    <title>Creating Navigation Highlights</title>
-   <link href="http://oldstatic.travisberry.com/2009/11/creating-navigation-highlights"/>
+   <link href="http://www.travisberry.com/2009/11/creating-navigation-highlights"/>
    <updated>2009-11-13T00:00:00-07:00</updated>
-   <id>http://oldstatic.travisberry.com/2009/11/creating-navigation-highlights</id>
+   <id>http://www.travisberry.com/2009/11/creating-navigation-highlights</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Creating Navigation Highlights&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
