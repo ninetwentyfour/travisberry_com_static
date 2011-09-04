@@ -14,7 +14,7 @@ summary: "Quick post to let everyone know of a good trick I just figured out. Mo
 <article class="post clearfix">
   <h3>Clean URL's in Nginx</h3>
   <a href="http://www.flickr.com/photos/wwworks/612350664 /" class="postImageLink"><img src="http://oldstatic.travisberry.com/soap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
-  <h6>Published: November 07, 2011</h6>
+  <h6>Published: November 07, 2010</h6>
 
 Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://oldstatic.travisberry.com/example
 

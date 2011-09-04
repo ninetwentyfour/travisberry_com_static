@@ -4,28 +4,36 @@
         xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">
 			  <url>
 			    <loc>http://www.travisberry.com/</loc>
-			    <lastmod>2011-09-03T20:31:05-06:00</lastmod>
+			    <lastmod>2011-09-04T13:54:21-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>1.0</priority>
 			  </url>
 			  <url>
 			    <loc>http://www.travisberry.com/blog/</loc>
-			    <lastmod>2011-09-03T20:31:05-06:00</lastmod>
+			    <lastmod>2011-09-04T13:54:21-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
 				<url>
 			    <loc>http://www.travisberry.com/work/</loc>
-			    <lastmod>2011-09-03T20:31:05-06:00</lastmod>
+			    <lastmod>2011-09-04T13:54:21-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
 				<url>
 			    <loc>http://www.travisberry.com/contact/</loc>
-			    <lastmod>2011-09-03T20:31:05-06:00</lastmod>
+			    <lastmod>2011-09-04T13:54:21-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll/</loc>
+<lastmod>2011-09-04T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://static-assets.travisberry.com/post_images/jekyll.jpg</image:loc> 
+    </image:image>
+  </url>
 	
   <url> 
     <loc>http://www.travisberry.com/2011/05/create-github-gist-with-ruby/</loc>

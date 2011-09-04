@@ -4,13 +4,53 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-03T20:31:05-06:00</updated>
+ <updated>2011-09-04T13:54:21-06:00</updated>
  <id>http://oldstatic.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Goodbye WordPress - Hello Jekyll</title>
+   <link href="http://oldstatic.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll"/>
+   <updated>2011-09-04T00:00:00-06:00</updated>
+   <id>http://oldstatic.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Goodbye WordPress - Hello Jekyll&lt;/h3&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/oldeyankee/2698654569/sizes/o/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/jekyll.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: September 04, 2011&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I ran WordPress for a couple years. There's nothing particularly wrong with it. It is still a powerful CMS with a huge community behind it. So why did I leave?&lt;/p&gt;
+
+&lt;p&gt;Really I was just looking for something else to do. That and running this site on a cheap little host wasn't cutting it anymore. Even with all the WordPress performance tweaks my site was still running slow and running out of memory.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I bounced around a bit on what to replace it with. I looked real hard at &lt;a href=&quot;http://www.locomotivecms.com/&quot;&gt;Locomotive CMS&lt;/a&gt; and I still really like it, but in the end I figured I would get the best performance out of an entirely static site. And with s3 offering support for static sites, I could run without a server.&lt;/p&gt;
+
+&lt;p&gt;Once I decided on a static site, my options got a lot smaller. The big ones I looked at were &lt;a href=&quot;http://stasis.me/&quot;&gt;Stasis&lt;/a&gt;, &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, and &lt;a href=&quot;https://github.com/koenbok/Cactus&quot;&gt;Cactus&lt;/a&gt;. All have their strengths but in the end I chose Jekyll since it's ruby based and has a fairly large community. Stasis does some cool things with a controller, but it's a little too new for me.&lt;/p&gt;
+
+&lt;p&gt;I'm not going to walk through everything I did to set this up. There are several good tutorials on the web already and you can always check out the source of this site on &lt;a href=&quot;https://github.com/ninetwentyfour/travisberry_com_static&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;These are a few of the sites that helped me get Jekyll up and running.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html&quot;&gt;Blogging Like A Hacker&lt;/a&gt; - Article from the creator of Jekyll.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://brandontilley.com/2011/01/30/gist-tag-for-jekyll.html&quot;&gt;Gist Tag For Jekyll&lt;/a&gt; - Use gists for code blocks with noscript fallback.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/kinnetica/jekyll-plugins&quot;&gt;Jekyll Plugins&lt;/a&gt; - List of plugins to extend Jekyll&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://paulstamatiou.com/how-to-wordpress-to-jekyll&quot;&gt;How To WordPress To Jekyll&lt;/a&gt; - Good article on moving from WordPress&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/#installing-and-using-jekyll&quot;&gt;Installing and Using Jekyll&lt;/a&gt; - Covers a lot of little things that are easy to miss during setup.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Overall I like the new setup. The simple interface and speed of the finished site are two big bonuses. However, Jekyll is far from the simple to use software the WordPress is. If you don't feel like messing with the internals of your blog software, I would recommend you stick with WordPress. If you like tinkering and love fast sites, then give Jekyll a test run.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Create GitHub Gist With Ruby</title>
@@ -20,7 +60,7 @@
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Create GitHub Gist With Ruby&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/gists.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: May 30, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: May 30, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;If you didn't know already, &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; is freaking awesome. One of my favorite features is gists. Gists are a simple code pasting and sharing service. Also perfect for displaying code in blog posts.&lt;/p&gt;
 
@@ -69,7 +109,7 @@
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Write Text Anywhere With HTML5 Canvas&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/paurian/3683348208/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/05/canvas.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: May 26, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: May 26, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;When working on a project recently I came across the need to be able to add some text to a canvas element. This by itself wasn't particularly hard, as there are several examples of creating text editor apps with canvas, but those all forced the text into a row style grid like a text editor. What I needed was a little more freeform in that I wanted the user to click and the text to show at that point.&lt;/p&gt;
 
@@ -423,7 +463,7 @@ $.each(phraseArray, function() {
    <id>http://oldstatic.travisberry.com/2011/03/a-day-in-the-life-of-me</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;A Day In The Life Of Me&lt;/h3&gt;
-  &lt;h6&gt;Published: March 03, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: March 03, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Super awesome timelapse at the office.&lt;/p&gt;
 
@@ -440,7 +480,7 @@ $.each(phraseArray, function() {
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Fast CakePHP Search With IndexTank&lt;/h3&gt;
   &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: February 16, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: February 16, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I've previously posted my &lt;a href=&quot;http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
 
@@ -645,7 +685,7 @@ function search(){
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Haml, Sass, Markdown, and CakePHP - Oh My!&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: January 11, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: January 11, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I've recently begun using &lt;a href=&quot;http://haml-lang.com/&quot;&gt;Haml&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; instead of good ol' HTML and CSS. If you haven't heard of them, &quot;Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to&quot;, and &quot;Sass makes CSS fun again&quot;. The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.&lt;/p&gt;
 
@@ -870,7 +910,7 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;New Time Tracking Web App - Homkora&lt;/h3&gt;
   &lt;a href=&quot;http://homkora.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: January 01, 2012&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: January 01, 2011&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I have recently launched the beta my new side project Homkora.&lt;/p&gt;
 
@@ -892,7 +932,7 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Free Single Page HTML/CSS Template&lt;/h3&gt;
   &lt;a href=&quot;http://oldstatic.travisberry.com/simple-dark-html-template/index.html&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2010/12/simple-dark-screencap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: December 12, 2011&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: December 12, 2010&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;I have just completed a new HTML CSS template for you to download. The site is made for those who need a simple single page web presence. The site is easy to modify and get setup. &lt;a href=&quot;http://oldstatic.travisberry.com/simple-dark-html-template/index.html&quot;&gt;Check out the demo.&lt;/a&gt;&lt;/p&gt;
 
@@ -913,7 +953,7 @@ header(&amp;quot;Cache-Control: maxage=$seconds_to_cache&amp;quot;);&lt;/code&gt
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Clean URL's in Nginx&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/wwworks/612350664 /&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/soap.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
-  &lt;h6&gt;Published: November 07, 2011&lt;/h6&gt;&lt;/p&gt;
+  &lt;h6&gt;Published: November 07, 2010&lt;/h6&gt;&lt;/p&gt;
 
 &lt;p&gt;Quick post to let everyone know of a good trick I just figured out. Most clean URL's are created through a rewrite and query page that does all the work. Sometimes though you just want to have a couple php scripts that you can link to like http://oldstatic.travisberry.com/example&lt;/p&gt;
 

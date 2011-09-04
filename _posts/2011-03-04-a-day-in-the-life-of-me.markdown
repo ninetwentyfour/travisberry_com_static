@@ -14,7 +14,7 @@ summary: "Super awesome timelapse at the office."
 ---
 <article class="post clearfix">
   <h3>A Day In The Life Of Me</h3>
-  <h6>Published: March 03, 2012</h6>
+  <h6>Published: March 03, 2011</h6>
 
 Super awesome timelapse at the office. 
 
