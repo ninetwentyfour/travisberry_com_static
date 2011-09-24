@@ -4,13 +4,47 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-04T14:44:49-06:00</updated>
+ <updated>2011-09-23T22:06:03-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Hospitium - New Open Source Project</title>
+   <link href="http://www.travisberry.com/2011/09/hospitium-new-open-source-project"/>
+   <updated>2011-09-05T00:00:00-06:00</updated>
+   <id>http://www.travisberry.com/2011/09/hospitium-new-open-source-project</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Hospitium - New Open Source Project&lt;/h3&gt;
+  &lt;a href=&quot;http://hospitium.heroku.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/hospitium.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: September 05, 2011&lt;/h6&gt;
+I just launched a new open source project &lt;a href=&quot;http://hospitium.heroku.com&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hospitium is a tool for animal rescues and shelters to track and manage their animals.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hospitium is the brain child of Apple Wood Rescue, a small animal rescue in Denver Colorado. Developed to fit the needs of the rescue, it has since been open sourced for anyone to use.&lt;/p&gt;
+
+&lt;p&gt;This program is completely free. You can modify it all you want and you can share it with anyone.&lt;/p&gt;
+
+&lt;p&gt;A free hosted solution is coming soon.&lt;/p&gt;
+
+&lt;p&gt;You can support the project by:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Donating to &lt;a href=&quot;http://www.appplewoodrescue.org/donate/&quot;&gt;Apple Wood Rescue&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Contributing to the development of Hospitium on &lt;a href=&quot;https://github.com/ninetwentyfour/Hospitium&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Goodbye WordPress - Hello Jekyll</title>
