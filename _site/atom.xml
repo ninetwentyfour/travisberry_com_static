@@ -4,13 +4,34 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-09-23T22:06:03-06:00</updated>
+ <updated>2011-12-24T15:06:32-07:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>So Long And Thanks For The Elephant</title>
+   <link href="http://www.travisberry.com/2011/12/so-long-and-thanks-for-the-elephant"/>
+   <updated>2011-12-24T00:00:00-07:00</updated>
+   <id>http://www.travisberry.com/2011/12/so-long-and-thanks-for-the-elephant</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;So Long And Thanks For The Elephant&lt;/h3&gt;
+  &lt;a href=&quot;http://www.flickr.com/photos/29704226@N07/5681748116/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/elephant.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: December 24, 2011&lt;/h6&gt;
+This domain as well as any other domain I own has just been moved to &lt;a href=&quot;http://name.com&quot;&gt;name.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Godaddy has a pretty crappy past of &lt;a href=&quot;http://mashable.com/2011/03/31/godaddy-ceo-elephant/&quot;&gt;elephant murder&lt;/a&gt; and &lt;a href=&quot;http://vimeo.com/31100268&quot;&gt;SOPA&lt;/a&gt; support so I decided it was time to no longer support such a company.&lt;/p&gt;
+
+&lt;p&gt;Name.com on the other hand is a local Denver company that seems to be on the up and up. So far they have been super awesome to work with.&lt;/p&gt;
+
+&lt;p&gt;If you are looking to transfer you can see how to do so &lt;a href=&quot;http://blog.name.com/2011/12/getting-on-our-sopa-box-and-saving-you-money/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Hospitium - New Open Source Project</title>
