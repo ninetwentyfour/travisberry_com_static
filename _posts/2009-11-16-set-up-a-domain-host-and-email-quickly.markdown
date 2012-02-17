@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg"
+image: "http://oldstatic1.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg"
 summary: "I’ve had a few people ask me to do this in the last couple days so I thought I would do a write up to help save some time."
 ---
 <article class="post clearfix">
   <h3>Set Up a Domain, Host, and Email Quickly</h3>
-  <a href="http://godaddy.com" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://godaddy.com" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2009/11/godaddyscreencap-640x269.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-16</h6>
 
 I've had a few people ask me to do this in the last couple days so I thought I would do a write up to help save some time.

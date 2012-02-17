@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg"
+image: "http://oldstatic1.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg"
 summary: "After Effects is an incredibly powerful motion graphics editor. One of the more powerful things inside of After Effects is expressions. Expressions give you much greater control over your animations."
 ---
 <article class="post clearfix">
   <h3>5 Resources To Learn After Effects Expressions</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2009/11/aftereffectsexpressions.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-23</h6>
 
 After Effects is an incredibly powerful motion graphics editor. One of the more powerful things inside of After Effects is expressions. Expressions give you much greater control over your animations and can automate things that are not possible with key frames and filters alone.

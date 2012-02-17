@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/do_follow.jpg"
+image: "http://oldstatic2.travisberry.com/do_follow.jpg"
 summary: "And even better, do so without modifying the WordPress core files. It’s really quite simple."
 ---
 <article class="post clearfix">
   <h3>Remove WordPress' NoFollow Without A Plugin</h3>
-  <a href="http://www.siliakatung.com/exhibition.htm" class="postImageLink"><img src="http://oldstatic.travisberry.com/do_follow.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.siliakatung.com/exhibition.htm" class="postImageLink"><img src="http://oldstatic2.travisberry.com/do_follow.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-10-03</h6>
 
 And even better, do so without modifying the WordPress core files. It's really quite simple.

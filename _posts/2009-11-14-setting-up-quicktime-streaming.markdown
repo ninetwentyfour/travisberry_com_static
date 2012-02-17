@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg"
+image: "http://oldstatic1.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg"
 summary: "I usually use a third-party service such as vimeo to host and stream my video. However, after moving to my new awesome host, DreamHost, I discovered that they had an option to enable quicktime streaming. I poked around the support wiki and decided to test it out."
 ---
 <article class="post clearfix">
   <h3>Setting Up Quicktime Streaming</h3>
-  <a href="http://www.flickr.com/photos/mwichary/2319091169/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/mwichary/2319091169/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2009/12/seriesoftubes.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-14</h6>
 
 I usually use a third-party service such as [vimeo](http://vimeo.com) to host and stream my video. However, after moving to my new awesome host, [DreamHost](http://www.dreamhost.com/), I discovered that they had an option to enable quicktime streaming. I poked around the support wiki and decided to test it out. <!--more-->

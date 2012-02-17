@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/12/plugins.jpg"
+image: "http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/plugins.jpg"
 summary: "I’m a fan of open free technology. Not only is it useful but it’s free. For beginning artists and designers, that’s key. So here is a list of kick-ass free applications and some plugins that help extend their functionality."
 ---
 <article class="post clearfix">
   <h3>5 Handy Plugins for 5 Kick-Ass Free Apps</h3>
-  <a href="http://www.flickr.com/photos/villeneuve53/2191206080/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/plugins.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/villeneuve53/2191206080/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/plugins.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-15</h6>
 
 I'm a fan of open free technology. Not only is it useful but it's free. For beginning artists and designers, that's key. So here is a list of kick-ass free applications and some plugins that help extend their functionality.

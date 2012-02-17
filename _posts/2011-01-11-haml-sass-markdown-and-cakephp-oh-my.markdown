@@ -8,13 +8,13 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg"
+image: "http://oldstatic3.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg"
 thumbnail: "http://static-assets.travisberry.com/thumbnails/haml-sass_thumb.jpg"
 summary: "I've recently begun using Haml and Sass instead of good ol' HTML and CSS. "
 ---
 <article class="post clearfix">
   <h3>Haml, Sass, Markdown, and CakePHP - Oh My!</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2011/01/haml-sass.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: January 11, 2011</h6>
 
 I've recently begun using [Haml](http://haml-lang.com/) and [Sass](http://sass-lang.com/) instead of good ol' HTML and CSS. If you haven't heard of them, "Haml is a refreshing take that is meant to free us from the shitty templating languages we have gotten used to", and "Sass makes CSS fun again". The conciseness and power of Haml and Sass are what really made me make the switch. There was just one downside, both are designed for use with Ruby.

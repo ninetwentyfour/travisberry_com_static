@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg"
+image: "http://oldstatic2.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg"
 summary: "Typography has come a long way in recent years. From everything being done in Arial, to using images to fake different fonts, the web has grown up."
 ---
 <article class="post clearfix">
   <h3>5 Resources for Web Type</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/11/typeimage.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-17</h6>
 
 Typography has come a long way in recent years. From everything being done in Arial, to using images to fake different fonts, the web has grown up. People now expect to be able to style their websites like they could style a photoshop mock up. These resources will help you accomplish that goal.<!--more-->

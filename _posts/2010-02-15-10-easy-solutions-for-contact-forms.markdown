@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg"
+image: "http://oldstatic1.travisberry.com/uploads/2010/02/contactformcap.jpg"
 summary: "Contact forms are an integral part of many websites. The construction of which can range from super simple to highly complex."
 ---
 <article class="post clearfix">
   <h3>10 Easy Solutions For Contact Forms</h3>
-  <a href="http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg" class="postImageLink"><img src="http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/uploads/2010/02/contactformcap.jpg" class="postImageLink"><img src="http://oldstatic1.travisberry.com/uploads/2010/02/contactformcap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-02-15</h6>
 
 Contact forms are an integral part of many websites. The construction of which can range from super simple to highly complex. As with most things, I prefer the easy solution. Here is a list of 10 contact form solutions that are super simple.

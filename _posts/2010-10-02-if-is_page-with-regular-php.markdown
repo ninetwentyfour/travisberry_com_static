@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg"
+image: "http://oldstatic1.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg"
 summary: "My article on WordPress' is_page() is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP. "
 ---
 <article class="post clearfix">
   <h3>If is_page() With Regular PHP</h3>
-  <a href="http://www.flickr.com/photos/14277117@N03/3865517102" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/14277117@N03/3865517102" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-10-02</h6>
 
 My article on [WordPress' is_page()](http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/) is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP. 

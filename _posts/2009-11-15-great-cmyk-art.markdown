@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg"
+image: "http://oldstatic3.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg"
 summary: "There is a great post over at PrintRadar highlighting some cool designs using CMYK as their color palate. There are some really stunning examples listed."
 ---
 <article class="post clearfix">
   <h3>Great CMYK Art</h3>
-  <a href="http://wow-dg.deviantart.com/art/cmyk-back-to-basics-42258028" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://wow-dg.deviantart.com/art/cmyk-back-to-basics-42258028" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2009/11/cmyklogo.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2009-11-15</h6>
 
 There is a great post over at [PrintRadar](http://www.printradar.com/2009/11/14/21-awesome-piece-of-digital-cmyk-art/) highlighting some cool designs using CMYK as their color palate. There are some really stunning examples listed.<!--more-->

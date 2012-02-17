@@ -1,13 +1,13 @@
 --- 
 layout: post
 title: Hospitium - New Open Source Project
-image: "http://static-assets.travisberry.com/post_images/hospitium.jpg"
-thumbnail: "http://static-assets.travisberry.com/thumbnails/hospitium_thumb.jpg"
+image: "http://static-assets1.travisberry.com/post_images/hospitium.jpg"
+thumbnail: "http://static-assets1.travisberry.com/thumbnails/hospitium_thumb.jpg"
 summary: "Hospitium was created with the simple goal of being an animal management system that doesn't suck."
 ---
 <article class="post clearfix">
   <h3>Hospitium - New Open Source Project</h3>
-  <a href="http://hospitium.co" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/hospitium.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://hospitium.co" class="postImageLink"><img src="http://static-assets1.travisberry.com/post_images/hospitium.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: September 05, 2011</h6>
 I just launched a new open source project [Hospitium](http://hospitium.co). 
 

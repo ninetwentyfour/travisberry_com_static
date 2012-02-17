@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg"
+image: "http://oldstatic3.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg"
 summary: "Hey! Have you heard? HTML5 video is going to revolutionize the way we use video on the web."
 ---
 <article class="post clearfix">
   <h3>On HTML5 Video</h3>
-  <a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://commons.wikimedia.org/wiki/File:Train_Wreck_1922.jpg#file" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/02/Train_Wreck.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-02-25</h6>
 
 Hey! Have you heard? [HTML5 video](http://en.wikipedia.org/wiki/HTML5_video) is going to revolutionize the way we use video on the web. No more dealing with Flash or Quicktime embeds. Video will now be as simple as adding an image. Ummm, no. It's not. It's not even close. That's not to say it's all bad, but boy howdy does it have a long way to go.

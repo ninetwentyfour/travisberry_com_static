@@ -8,12 +8,12 @@ categories:
   slug: uncategorized
   autoslug: uncategorized
 tags: []
-image: "http://oldstatic.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg"
+image: "http://oldstatic1.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg"
 summary: "In many video projects there is some style of graphic, lower third, or bumper that is used numerous time throughout the piece, only requiring a text change."
 ---
 <article class="post clearfix">
   <h3>Reasons And Tips For Automated Motion Workflow</h3>
-  <a href="http://www.flickr.com/photos/whsimages/998243013/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/whsimages/998243013/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2010/08/assembly_line.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: 2010-08-07</h6>
 
 In many video projects there is some style of graphic, lower third, or bumper that is used numerous time throughout the piece, only requiring a text change. Or you will have clients that sell templatized videos, who just need someone to change the default text overlays inside the base video.
