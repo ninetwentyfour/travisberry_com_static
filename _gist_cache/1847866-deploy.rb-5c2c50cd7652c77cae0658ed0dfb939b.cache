@@ -1,0 +1,14 @@
+require 'rubygems'
+require 'sinatra'
+
+get '/' do
+  "Leave this place"
+end
+
+
+#pass in the repo name and deploy that shit
+get '/deploy/:name' do
+    bb = IO.popen("cd ~/Desktop/deploy_repos/"+params[:name]+"; git pull origin master; cap deploy")
+    b = bb.readlines
+    puts b.join
+end

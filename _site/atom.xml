@@ -4,13 +4,132 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2011-12-24T15:06:32-07:00</updated>
+ <updated>2012-02-16T17:38:41-07:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Hubot Deploy</title>
+   <link href="http://www.travisberry.com/2012/02/hubot-deploy"/>
+   <updated>2012-02-16T00:00:00-07:00</updated>
+   <id>http://www.travisberry.com/2012/02/hubot-deploy</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Hubot Deploy&lt;/h3&gt;
+  &lt;a href=&quot;#&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/hubot-capistrano.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: February 16, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hubot.github.com/&quot;&gt;Hubot&lt;/a&gt; is super badass. So is &lt;a href=&quot;https://github.com/capistrano/capistrano&quot;&gt;Capistrano&lt;/a&gt;. Getting them working together is like syrup and bacon. So good.&lt;/p&gt;
+
+&lt;p&gt;I won't cover getting Hubot setup as there are plenty of &lt;a href=&quot;http://joeloughton.com/blog/uncategorized/installing-hubot-on-mac-os-x-10-7/&quot;&gt;posts available&lt;/a&gt; and it's not too terribly difficult. Just pick what service you want to hook into and fire it up. (We use hipchat)&lt;/p&gt;
+
+&lt;p&gt;I'm also not going to cover creating deploy scripts with Capistrano as again there are plenty of &lt;a href=&quot;https://github.com/capistrano/capistrano/wiki/2.x-Getting-Started&quot;&gt;other posts&lt;/a&gt; that can help.&lt;/p&gt;
+
+&lt;p&gt;We're going to jump in and assume you have Hubot running on a local machine and have at least one app setup to deploy. (Make sure the Hubot machine has access to run deploys)&lt;/p&gt;
+
+&lt;p&gt;To get Hubot to talk to the repos and deploy them we are using a simple Sinatra app as a middle layer.&lt;/p&gt;
+
+&lt;p&gt;Before that though, let's start with a quick overview of how the whole thing is going to work.&lt;/p&gt;
+
+&lt;p&gt;User tells Hubot &quot;deploy &lt;em&gt;application&lt;/em&gt;&quot; -&gt; Hubot passes the &lt;em&gt;application&lt;/em&gt; to a Sinatra API endpoint -&gt; Sinatra runs the deploy script for the repo -&gt; Hubot tells the user the app is deployed&lt;/p&gt;
+
+&lt;p&gt;So let's start with the Hubot script.&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/1847866.js?file=deploy.coffee'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;# Deploy with capistrano
+#
+# Usage:
+# deploy &amp;lt;repo&amp;gt;
+# what can you deploy?
+#
+hackers = [
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/1.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/2.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/3.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/4.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/5.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/6.gif&amp;quot;,
+  &amp;quot;http://hubot-assets.s3.amazonaws.com/hackers/7.gif&amp;quot;,
+]
+
+#array of the repo names to match and deploy
+repos = [
+  &amp;quot;example_app_1&amp;quot;,
+  &amp;quot;example_app_2&amp;quot;,
+  &amp;quot;example_app_3&amp;quot;
+]
+
+module.exports = (robot) -&amp;gt;
+  robot.respond /deploy (.+)/i, (msg) -&amp;gt;
+    if msg.match[1] in repos
+      #send waiting messages
+      msg.send 'Attempting deploy. Please hold.'
+      msg.send msg.random hackers
+
+      #hit the sinatra app to do the deploy
+      msg.http(&amp;quot;http://localhost:9393/deploy/#{msg.match[1]}&amp;quot;)
+      .get() (err, res, body) -&amp;gt;
+        if res.statusCode == 404
+          msg.send 'Something went horribly wrong'
+        else
+          msg.send 'Deployed like a boss'
+          msg.send 'http://hubot-assets.s3.amazonaws.com/fuck-yeah/3.gif'
+    else
+      msg.send 'Nope. I dont know what that is. Try deploying one of these: ' + repos.join(&amp;quot;, &amp;quot;)
+
+
+  robot.respond /(what can you deploy?)/i, (msg) -&amp;gt;
+    msg.send 'I can deploy the shit out of ' + repos.join(&amp;quot;, &amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;This is a pretty simple Hubot script. Hubot checks if the &lt;em&gt;application&lt;/em&gt; is one he knows and if so, hit the Sinatra API. There's also some fluff in there that tells the user something is happening and to be patient and a few gifs for added fun.&lt;/p&gt;
+
+&lt;p&gt;Add your &lt;em&gt;applications&lt;/em&gt; to the &lt;em&gt;repos&lt;/em&gt; array. One thing to note is the Sinatra URL, depending on your setup, this url may change for you.&lt;/p&gt;
+
+&lt;p&gt;Now that Hubot is listening for deploys, we can create the simple Sinatra app.&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/1847866.js?file=deploy.rb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;require 'rubygems'
+require 'sinatra'
+
+get '/' do
+  &amp;quot;Leave this place&amp;quot;
+end
+
+
+#pass in the repo name and deploy that shit
+get '/deploy/:name' do
+    bb = IO.popen(&amp;quot;cd ~/Desktop/deploy_repos/&amp;quot;+params[:name]+&amp;quot;; git pull origin master; cap deploy&amp;quot;)
+    b = bb.readlines
+    puts b.join
+end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Again, really really simple.&lt;/p&gt;
+
+&lt;p&gt;All the app does it take the name of the &lt;em&gt;application&lt;/em&gt; as a URL parameter and deploys that app. This is also where a little hackery comes in.&lt;/p&gt;
+
+&lt;p&gt;The key to this working correctly is the &lt;strong&gt;names in the Hubot script need to be exactly the same as the repo folder names&lt;/strong&gt;. You must also keep a copy of the repos on the same machine that is running the Sinatra app and Hubot.&lt;/p&gt;
+
+&lt;blockquote&gt;
+names in the Hubot script need to be exactly the same as the repo folder names
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;This allows the Sinatra app to cd into the repo, update the repo, then run Capistrano deploy. This example uses a deploy_repo folder on the Desktop to store all the repos. Change this as needed.&lt;/p&gt;
+
+&lt;p&gt;If everything is setup correctly you should now be able to tell Hubot &quot;deploy &lt;em&gt;application&lt;/em&gt;&quot; and watch as Hubot does all the work.&lt;/p&gt;
+
+&lt;p&gt;There's a lot a room for expansion here too. Follow the same basic setup and you can add the ability to have Hubot rollback code incase of a problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>So Long And Thanks For The Elephant</title>
@@ -40,9 +159,9 @@ This domain as well as any other domain I own has just been moved to &lt;a href=
    <id>http://www.travisberry.com/2011/09/hospitium-new-open-source-project</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Hospitium - New Open Source Project&lt;/h3&gt;
-  &lt;a href=&quot;http://hospitium.heroku.com&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/hospitium.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://hospitium.co&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/hospitium.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: September 05, 2011&lt;/h6&gt;
-I just launched a new open source project &lt;a href=&quot;http://hospitium.heroku.com&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
+I just launched a new open source project &lt;a href=&quot;http://hospitium.co&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hospitium is a tool for animal rescues and shelters to track and manage their animals.&lt;/p&gt;
 

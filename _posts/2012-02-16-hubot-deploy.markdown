@@ -1,14 +1,15 @@
 --- 
 layout: post
 title: Hubot Deploy
-image: "http://static-assets.travisberry.com/post_images/elephant.jpg"
-thumbnail: "http://static-assets.travisberry.com/thumbnails/elephant_thumb.jpg"
+image: "http://static-assets.travisberry.com/post_images/hubot-capistrano.jpg"
+thumbnail: "http://static-assets.travisberry.com/thumbnails/hubot-capistrano_thumb.jpg"
 summary: "Use Hubot and Capistrano to deploy applications for you."
 ---
 <article class="post clearfix">
   <h3>Hubot Deploy</h3>
-  <a href="#" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/elephant.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="#" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/hubot-capistrano.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
   <h6>Published: February 16, 2012</h6>
+
 [Hubot](http://hubot.github.com/) is super badass. So is [Capistrano](https://github.com/capistrano/capistrano). Getting them working together is like syrup and bacon. So good.
 
 I won't cover getting Hubot setup as there are plenty of [posts available](http://joeloughton.com/blog/uncategorized/installing-hubot-on-mac-os-x-10-7/) and it's not too terribly difficult. Just pick what service you want to hook into and fire it up. (We use hipchat)
