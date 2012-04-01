@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'LektonRegular';
-  src: url('../fonts/Lekton-Regular-webfont.eot');
-  src: url('../fonts/Lekton-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Lekton-Regular-webfont.ttf') format('truetype'),
-    url('../fonts/Lekton-Regular-webfont.svg#LektonRegular') format('svg');
+  src: url('http://static-assets3.travisberry.com/fonts/gzip/Lekton-Regular-webfont.eot.gz');
+  src: url('http://static-assets3.travisberry.com/fonts/gzip/Lekton-Regular-webfont.eot.gz?#iefix') format('embedded-opentype'),
+    url('http://static-assets3.travisberry.com/fonts/gzip/Lekton-Regular-webfont.ttf') format('truetype'),
+    url('http://static-assets3.travisberry.com/fonts/gzip/Lekton-Regular-webfont.svg#LektonRegular') format('svg');
   font-weight: normal;
   font-style: normal;
   
@@ -11,10 +11,10 @@
 
 @font-face {
   font-family: 'MolengoRegular';
-  src: url('../fonts/Molengo-Regular-webfont.eot');
-  src: url('../fonts/Molengo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Molengo-Regular-webfont.ttf') format('truetype'),
-    url('../fonts/Molengo-Regular-webfont.svg#MolengoRegular') format('svg');
+  src: url('http://static-assets3.travisberry.com/fonts/gzip/Molengo-Regular-webfont.eot.gz');
+  src: url('http://static-assets3.travisberry.com/fonts/gzip/Molengo-Regular-webfont.eot.gz?#iefix') format('embedded-opentype'),
+    url('http://static-assets3.travisberry.com/fonts/gzip/Molengo-Regular-webfont.ttf') format('truetype'),
+    url('http://static-assets3.travisberry.com/fonts/gzip/Molengo-Regular-webfont.svg#MolengoRegular') format('svg');
   font-weight: normal;
   font-style: normal;
   
@@ -149,7 +149,7 @@ blockquote p {
 }
 /* Content */
 #content {
-  background: url(http://static-assets.travisberry.com/images/content_bg.png) repeat; /* Fallback for browser that doesn't support rgba */
+  background: url(http://static-assets1.travisberry.com/images/content_bg.png) repeat; /* Fallback for browser that doesn't support rgba */
   background: rgba(204, 204, 204, .1);
   border: 1px dotted #f96682;
   border-left: none; border-right: none;
@@ -415,7 +415,7 @@ img.alignright { margin-left: 15px; }
   top: 0;
   width: 100%;
   z-index: 10;
-  background: url("http://static-assets.travisberry.com/images/bg.png") repeat scroll rgba(1, 1, 1, .5);
+  background: url("http://static-assets2.travisberry.com/images/bg.png") repeat scroll rgba(1, 1, 1, .5);
   -moz-box-shadow: 0 0 5px 5px #000;
   -webkit-box-shadow: 0 0 5px 5px#000;
   box-shadow: 0 0 5px 5px #000;
@@ -588,15 +588,6 @@ rgba(0, 0, 0, .25);
 		min-width:95%;
 	}
 }
-
-/*@media (min-width: 768px) and (max-width: 859px) { 
-	.thumbnail{
-		margin-left: 0px;
-		width:98%;
-	}
-	.alignleft {
-	float: left;
-}*/
 
 @media (min-width: 861px) and (max-width: 1050px) { 
 	.container_12, .container_16 {

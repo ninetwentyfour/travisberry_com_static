@@ -1,0 +1,9 @@
+javascript_compressor: closure
+
+javascripts:
+  application:
+    - _site/javascript/search.js
+
+stylesheets:
+  application:
+    - _site/css/style.css

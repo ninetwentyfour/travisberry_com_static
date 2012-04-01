@@ -1,3 +1,0 @@
-jekyll
-
-s3cmd sync --acl-public --delete-removed --cf-invalidate _site/ s3://www.travisberry.com

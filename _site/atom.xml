@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-01T12:23:17-06:00</updated>
+ <updated>2012-04-01T17:31:12-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -2922,9 +2922,9 @@ DocumentRoot /var/www/test.com
  
  <entry>
    <title>Use WordPress' is_page() To Exclude Content</title>
-   <link href="http://www.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content"/>
+   <link href="http://www.travisberry.com/2010/01/use-wordpress-is_page-to-exclude-content"/>
    <updated>2010-01-30T00:00:00-07:00</updated>
-   <id>http://www.travisberry.com/2010/01/use-wordpress%27-is_page-to-exclude-content</id>
+   <id>http://www.travisberry.com/2010/01/use-wordpress-is_page-to-exclude-content</id>
    <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
   &lt;h3&gt;Use WordPress' is_page() To Exclude Content&lt;/h3&gt;
   &lt;a href=&quot;http://www.flickr.com/photos/nbachiyski/2186228674/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640 height=280 /&gt;&lt;/a&gt;
