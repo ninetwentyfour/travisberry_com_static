@@ -1,0 +1,47 @@
+require 'sinatra'
+require 'json'
+require 'net/http'
+require 'open-uri'
+require 'taglib'
+
+get '/download/:url' do
+  client_id = "your client id here"
+  
+  #pass in the url to the song and resolve it to get the song ID
+  url = "http://api.soundcloud.com/resolve.json?url=#{params[:url]}&client_id=#{client_id}"
+  resp = Net::HTTP.get_response(URI.parse(url))
+  data = resp.body
+  result = JSON.parse(data)
+  if result.has_key? 'Error'
+     raise "web service error"
+  end
+  
+  #take the location and get the real song info
+  resp2 = Net::HTTP.get_response(URI.parse(result["location"]))
+  data2 = resp2.body
+  result2 = JSON.parse(data2)
+  if result2.has_key? 'Error'
+     raise "web service error"
+  end
+  title = result2["title"] #set the song title
+  artist = result2["user"]["username"] #set the song artist
+  
+  #follow the stram url and the redirect to the amazon asset
+  URL = result2["download_url_url"]+"?client_id=#{client_id}"
+  open(URL) do |resp|
+    dl = resp.base_uri.to_s
+    filename = "/Path/to/save/location/"+result2["permalink"]+".mp3"
+    open(filename, 'wb') do |file|
+      file << open(dl).read #save the file from amazon to computer
+    end
+    #open the file and add id3 tags
+    file = TagLib::MPEG::File.new(filename)
+    tag = file.id3v2_tag
+    tag.artist = artist
+    tag.title = title
+    file.save
+    file.close
+    "file download complete"
+  end
+  
+end
