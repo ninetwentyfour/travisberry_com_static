@@ -13,7 +13,7 @@ summary: "Git is freaking awesome. I’m not sure how I lived without it. For th
 ---
 <article class="post clearfix">
   <h3>Running A Git Repo on DreamHost</h3>
-  <a href="http://git-scm.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://git-scm.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/gitlogo.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-11-20</h6>
 
 [Git](http://git-scm.com/) is freaking awesome. I'm not sure how I lived without it. For those who don't know, Git is a version control system.

@@ -13,7 +13,7 @@ summary: "YouTube is the worlds largest online video site. They have been slow t
 ---
 <article class="post clearfix">
   <h3>YouTube Gets 1080p</h3>
-  <a href="http://youtube.com" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://youtube.com" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/youtubecap-640x281.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-11-15</h6>
 
 [YouTube](http://youtube.com) is the worlds largest online video site. They have been slow to the game when it comes to HD video but they seem to be trying to take the lead as of late. <!--more-->

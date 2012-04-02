@@ -13,7 +13,7 @@ summary: "How fast your site loads is a huge factor in how many visits you get. 
 ---
 <article class="post clearfix">
   <h3>Improve YSlow Score With .htaccess</h3>
-  <a href="http://www.flickr.com/photos/markjsebastian/3114597691/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/markjsebastian/3114597691/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/warpspeed.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-12-20</h6>
 
 How fast your site loads is a huge factor in how many visits you get. One of the biggest names in performance testing is [YSlow](http://developer.yahoo.com/yslow/). A high score on YSlow is a good indicator that your site is performing well. Many of the scores can be improved with a little bit of tweaking to your .htaccess file.

@@ -13,7 +13,7 @@ summary: "So I got an email today from mobify.me. I use them to make the mobile 
 ---
 <article class="post clearfix">
   <h3>Tooting My Own Horn</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2009/12/trombone.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/trombone.jpg" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2009/12/trombone.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-12-14</h6>
 
 <p>

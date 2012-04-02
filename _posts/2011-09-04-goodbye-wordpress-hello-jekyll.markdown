@@ -7,7 +7,7 @@ summary: "I got 99 problems but a server ain't one."
 ---
 <article class="post clearfix">
   <h3>Goodbye WordPress - Hello Jekyll</h3>
-  <a href="http://www.flickr.com/photos/oldeyankee/2698654569/sizes/o/" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/jekyll.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/oldeyankee/2698654569/sizes/o/" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/jekyll.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: September 04, 2011</h6>
 
 I ran WordPress for a couple years. There's nothing particularly wrong with it. It is still a powerful CMS with a huge community behind it. So why did I leave?

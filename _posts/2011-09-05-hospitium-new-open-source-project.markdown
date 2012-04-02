@@ -7,7 +7,7 @@ summary: "Hospitium was created with the simple goal of being an animal manageme
 ---
 <article class="post clearfix">
   <h3>Hospitium - New Open Source Project</h3>
-  <a href="http://hospitium.co" class="postImageLink"><img src="http://static-assets1.travisberry.com/post_images/hospitium.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://hospitium.co" class="postImageLink"><img src="http://static-assets1.travisberry.com/post_images/hospitium.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: September 05, 2011</h6>
 I just launched a new open source project [Hospitium](http://hospitium.co). 
 

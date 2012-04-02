@@ -14,7 +14,7 @@ summary: "When working on a project recently I came across the need to be able t
 ---
 <article class="post clearfix">
   <h3>Write Text Anywhere With HTML5 Canvas</h3>
-  <a href="http://www.flickr.com/photos/paurian/3683348208/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/paurian/3683348208/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2011/05/canvas.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: May 26, 2011</h6>
 
 When working on a project recently I came across the need to be able to add some text to a canvas element. This by itself wasn't particularly hard, as there are several examples of creating text editor apps with canvas, but those all forced the text into a row style grid like a text editor. What I needed was a little more freeform in that I wanted the user to click and the text to show at that point.

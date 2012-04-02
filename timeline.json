@@ -1,0 +1,136 @@
+{
+   "timeline":{
+      "headline":"And then there was light.",
+      "type":"default",
+      "startDate":"1985",
+      "text":"<p>Born in a small town in Kansas.</p>",
+      "asset":{
+         "media":"http://static-assets.travisberry.com/timeline_img/galaxy.jpg",
+         "credit":"NASA.gov"
+      },
+      "date":[
+         {
+            "startDate":"1990,08,01",
+            "endDate":"2003,05,01",
+            "headline":"Boy, you don't know anything.",
+            "text":"<p>13 years of schooling to make sure I can sort of function in real life.</p>",
+            "asset":{
+               "media":"http://static-assets1.travisberry.com/timeline_img/karate-kid.jpg",
+               "credit":"Karate Kid"
+            }
+         },
+         {
+            "startDate":"2003,05,01",
+            "endDate":"2006,07,01",
+            "headline":"Boy, you can't function in real life.",
+            "text":"<p>I spend several years \"finding myself\". Decide that guy isn't that great. Let's fix that.</p>",
+            "asset":{
+               "media":"http://static-assets2.travisberry.com/timeline_img/weirdo.jpg",
+							"credit":"allweirdpics.com"
+            }
+         },
+         {
+            "startDate":"2006,07,01",
+            "endDate":"2010,02,26",
+            "headline":"Building Travis 2.0.",
+            "text":"<p>Move to Colorado and go back to school. Spend the next four years creating things like this...</p>",
+            "asset":{
+               "media":"http://www.youtube.com/embed/lFeI5SqGYJ8?rel=0",
+							"credit":"Travis Berry"
+            }
+         },
+         {
+            "startDate":"2008,01,01",
+            "headline":"Woah, the web is pretty awesome.",
+            "text":"<p>I started working with fellow students on a <a href='http://www.amazon.com/Changing-Us-Laef-Fox/dp/B002B55QQK/ref=cm_cr_pr_pb_t' target='blank'>documentary</a> as a side project. We quickly realized we needed a website if we were to have a chance to sell this thing.</p><p class='quote'>I made a website in a high school class several years ago, why not? I'll do it. Hmm. This is a lot of fun. Maybe I should do a little more of this.</p>",
+            "asset":{
+               "media":"http://static-assets3.travisberry.com/timeline_img/internet.jpg",
+							"credit":"opte.org"
+            }
+         },
+         {
+            "startDate":"2008,08,01",
+            "endDate":"2009,03,01",
+            "headline":"Build all the websites!",
+            "text":"<p>Well I figured out how to make websites but they were a hot mess.</p> <p>Built in Dreamweaver with tables and inline styles but they worked. I started doing small websites for everyone I knew.</p> <p>Each one better than the last.</p>",
+            "asset":{
+               "media":"http://static-assets.travisberry.com/timeline_img/all-the-things.jpg",
+							"credit":"hyperboleandahalf.blogspot.com"
+            }
+         },
+         {
+            "startDate":"2009,03,01",
+            "headline":"School's about over, time to get a job.",
+            "text":"<p>Technically internship. As school was coming to close I had to go find an internship. You had until the second week of class to find one or drop. A couple days after I should of dropped the class I land an interview at bieMEDIA.</p><p>Amazingly I convince the CEO I know what I'm talking about and land the position.</p>",
+            "asset":{
+               "media":"http://static-assets1.travisberry.com/timeline_img/get-job.jpg",
+							"credit":"Always Sunny in Philadelphia"
+            }
+         },
+         {
+            "startDate":"2009,05,01",
+            "headline":"Woot! A paycheck.",
+            "text":"<p>I manage to pick up a project that runs past the date my internship is set to end. That turns me into a contractor for bieMEDIA.</p>",
+            "asset":{
+               "media":"http://static-assets2.travisberry.com/timeline_img/job-offer.jpg",
+							"credit":"Getty"
+            }
+         },
+         {
+            "startDate":"2010,03,26",
+            "headline":"Thanks for the money now get out.",
+            "text":"<p>Graduation time. The Art Institute of Colorado gives me a fancy little certificate and diploma. Parents are proud. Feeling like a boss.</p>",
+            "asset":{
+               "media":"http://static-assets3.travisberry.com/timeline_img/like-a-boss.png",
+							"credit":"fotosss.com"
+            }
+         },
+         {
+            "startDate":"2010,04,01",
+            "headline":"Welcome grunt.",
+            "text":"<p>By this point I've got front end code down pretty well and am starting to pick up a little PHP. bieMEDIA offers me a full time job as a grunt in IT.</p>",
+            "asset":{
+               "media":"http://static-assets.travisberry.com/timeline_img/IT-crowd.jpg",
+							"credit":"IT Crowd"
+            }
+         },
+         {
+            "startDate":"2010,04,01",
+            "endDate":"2010,11,01",
+            "headline":"Code, code, code.",
+            "text":"<p>An amazing thing happens when you work with people smarter than yourself. You realize you know nothing. Time to step up. Evenings and weekends are spent learning everything I can. At work I'm picking up more and more of the backend code.</p>",
+            "asset":{
+               "media":"http://static-assets1.travisberry.com/timeline_img/hackers.jpg",
+							"credit":"Hackers"
+            }
+         },
+         {
+            "startDate":"2010,11,01",
+            "endDate":"2011,06,01",
+            "headline":"What's a team lead?",
+            "text":"<p>I get a promotion from grunt to team lead. At this point I'm managing a good chunk of the codebase.</p>",
+            "asset":{
+               "media":"http://static-assets2.travisberry.com/timeline_img/matrix.jpg",
+							"credit":"The Matrix"
+            }
+         },
+         {
+            "startDate":"2011,06,01",
+            "headline":"One more time.",
+            "text":"<p>The manager of IT development leaves and I'm asked to take over. That brings us to today.</p><p>Currently I'm managing a team of three guys and contributing code when I can.</p><p>When not at work I'm usually hacking on side projects, the latest being <a href='http://hospitium.co' target='blank'>Hospitium</a>.</p>",
+            "asset":{
+               "media":"http://static-assets3.travisberry.com/timeline_img/office.jpg",
+							"credit":"The Office"
+            }
+         },
+         {
+            "startDate":"2012",
+            "headline":"Latest Tweets.",
+            "text":"<p class='tweet-spacer'> </p>",
+            "asset":{
+               "media":"<div id='tweet-box' class='twitter'><blockquote id='tweet' class='quote'></blockquote></div>"
+            }
+         }
+      ]
+   }
+}

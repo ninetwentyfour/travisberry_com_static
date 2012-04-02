@@ -13,7 +13,7 @@ summary: "When I was working on a video project this week I came across the need
 ---
 <article class="post clearfix">
   <h3>Sound FX Tip - Muffled Sounds</h3>
-  <a href="http://www.flickr.com/photos/mourner/3306939463/" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/mourner/3306939463/" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-11-29</h6>
 
 When I was working on a video project this week I came across the need to have my sound effects sound like they are coming through a cell phone and from inside a box.

@@ -14,7 +14,7 @@ summary: "I have recently launched the beta my new side project Homkora."
 ---
 <article class="post clearfix">
   <h3>New Time Tracking Web App - Homkora</h3>
-  <a href="http://homkora.com" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://homkora.com" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2011/01/homkora-cap.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: January 01, 2011</h6>
 
 I have recently launched the beta my new side project Homkora. 

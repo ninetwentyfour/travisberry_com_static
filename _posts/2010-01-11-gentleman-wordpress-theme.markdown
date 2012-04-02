@@ -13,7 +13,7 @@ summary: "Another new free theme. This WordPress theme is a simple and elegant t
 ---
 <article class="post clearfix">
   <h3>Gentleman WordPress Theme</h3>
-  <a href="http://gentleman.travisberry.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://gentleman.travisberry.com/" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2010/01/gentlemanthemecap.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-01-11</h6>
 
 Another new free theme. This WordPress theme is a simple and elegant theme, perfect for a simple text blog. [Download A Copy](http://github.com/ninetwentyfour/Gentleman-WordPress-Theme/archives/master) or[Visit A Demo](http://gentleman.travisberry.com/)

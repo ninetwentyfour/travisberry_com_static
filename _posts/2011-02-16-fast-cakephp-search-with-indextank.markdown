@@ -14,7 +14,7 @@ summary: "This time I’m going to show you a much better method, mainly by offl
 ---
 <article class="post clearfix">
   <h3>Fast CakePHP Search With IndexTank</h3>
-  <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: February 16, 2011</h6>
 
 I've previously posted my [ghetto CakePHP search function](http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.

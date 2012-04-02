@@ -13,7 +13,7 @@ summary: "Self promoting your work can be a fine line to walk. Don't do it at al
 ---
 <article class="post clearfix">
   <h3>Don't Be Afraid To Self Promote</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/01/MissionMangreat.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-01-17</h6>
 
 Self promoting your work can be a fine line to walk. Don't do it at all, and people won't take you seriously because you give the impression you don't take your work seriously. Do it too much and you run the risk of looking like a blowhard jerk. However, if you manage to find a good balance the rewards can be great.

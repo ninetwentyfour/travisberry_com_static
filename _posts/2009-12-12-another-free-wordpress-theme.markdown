@@ -13,7 +13,7 @@ summary: "I have recently completed a new WordPress theme for Drifter Entertainm
 ---
 <article class="post clearfix">
   <h3>Another Free WordPress Theme</h3>
-  <a href="http://github.com/ninetwentyfour/DrifterEntertainment_com/archives/master" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://github.com/ninetwentyfour/DrifterEntertainment_com/archives/master" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/driftersnewdesignscreencap.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-12-12</h6>
 
 <p>I have recently completed a new WordPress theme for <a href="http://www.drifterentertainment.com" target="blank">Drifter Entertainment</a>.<span id="more-381"></span> Again I have decided to give it away for free. The theme is simple allowing your content to stand out. The theme is built to Drifter Entertainments custom needs, so you will have to edit the source files.</p>

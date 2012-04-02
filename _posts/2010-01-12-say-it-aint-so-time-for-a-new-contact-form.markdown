@@ -13,7 +13,7 @@ summary: "So it may be time to ditch my favorite WordPress plugin, Contact Form 
 ---
 <article class="post clearfix">
   <h3>Say It Aint So! Time For A New Contact Form</h3>
-  <a href="http://www.flickr.com/photos/ngmmemuda/4171221241/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/uploads/2010/01/despair.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/ngmmemuda/4171221241/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/uploads/2010/01/despair.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-01-12</h6>
 
 So it may be time to ditch my favorite WordPress plugin, [Contact Form 7](http://contactform7.com/), and find something new.

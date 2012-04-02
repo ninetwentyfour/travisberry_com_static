@@ -1,0 +1,79 @@
+/*
+|--------------------------------------------------------------------------
+| UItoTop jQuery Plugin 1.1
+| http://www.mattvarone.com/web-design/uitotop-jquery-plugin/
+|--------------------------------------------------------------------------
+*/
+#top-link  { 
+	display:none; 
+	position:fixed; 
+	right:10px; 
+	bottom:5px; 
+	color:#fff; 
+	font-weight:bold; 
+	font-size:50px;
+	text-decoration:none; 
+	border:1px solid #251A32; 
+	background:url("http://static-assets2.travisberry.com/images/bg.png") repeat scroll rgba(1, 1, 1, .5); 
+	padding:10px; 
+	line-height:35px;
+	box-shadow:0 0 6px 2px black;
+}
+/*#top-link  { 
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:51px;
+	height:51px;
+	border:none;
+	text-indent:-999px;
+	background:url(http://static-assets.travisberry.com/images/ui.totop.png) no-repeat left top;
+}*/
+
+/*#top-link:hover  { 
+	background:url(http://static-assets.travisberry.com/images/ui.totop.png) no-repeat left -51px;
+	width:51px;
+	height:51px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}*/
+
+
+
+
+/*#toTop {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:51px;
+	height:51px;
+	border:none;
+	text-indent:-999px;
+	background:url(http://static-assets.travisberry.com/images/ui.totop.png) no-repeat left top;
+}
+
+#toTopHover {
+	background:url(http://static-assets.travisberry.com/images/ui.totop.png) no-repeat left -51px;
+	width:51px;
+	height:51px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#toTop:active, #toTop:focus {
+	outline:none;
+}*/

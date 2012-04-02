@@ -13,7 +13,7 @@ summary: "After my last post involving including custom content, I've received q
 ---
 <article class="post clearfix">
   <h3>Use WordPress' is_page() To Exclude Content</h3>
-  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://oldstatic.travisberry.com/uploads/2010/01/wordpressnotebookcircle.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-01-30</h6>
 
 After my last post involving including custom content, I've received questions about doing the reverse, excluding content on certain pages.

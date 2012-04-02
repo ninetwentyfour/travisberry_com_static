@@ -13,7 +13,7 @@ summary: "In an effort to develop in an environment closer to many production se
 ---
 <article class="post clearfix">
   <h3>How To Setup A LAMP Virtual Machine</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/05/oldcomp.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-05-09</h6>
 
 In an effort to develop in an environment closer to many production servers, many people have begun developing in virtual machines running on their host os. This article is a comprehensive guide to creating a LAMP virtual machine (plus a few other goodies).

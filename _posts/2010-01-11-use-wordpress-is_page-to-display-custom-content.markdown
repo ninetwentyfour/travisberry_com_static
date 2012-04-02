@@ -13,7 +13,7 @@ summary: "Something that comes up on a regular basis is how to display certain c
 ---
 <article class="post clearfix">
   <h3>Use WordPress' is_page() To Display Custom Content</h3>
-  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/nbachiyski/2186228674/" class="postImageLink"><img src="http://oldstatic1.travisberry.com/wp-content/uploads/2010/01/wordpressnotebook.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-01-11</h6>
 
 Something that comes up on a regular basis is how to display certain content on different pages or if certain conditions are met. One way to accomplish this would be to create separate templates for each page. However, if you have a bunch of pages this can quickly become a pain. The other way to accomplish this would be to use WordPress' is_page() function to display content when you want.

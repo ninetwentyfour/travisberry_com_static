@@ -13,7 +13,7 @@ summary: "It was a big day the other day with both Chrome and Thunderbird 3 bein
 ---
 <article class="post clearfix">
   <h3>Download My WordPress Theme</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/thunderchromereview.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-12-07</h6>
 
 It was a big day the other day with both Chrome and Thunderbird 3 being released. Chrome has been out on  Windows for a year, but this is the first official release for Mac. Thunderbird has been around for a while but this is the first big release in years. I downloaded and gave both a test run.

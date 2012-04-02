@@ -13,7 +13,7 @@ summary: "Recently I needed to add a search function for a CakePHP application I
 ---
 <article class="post clearfix">
   <h3>Create A Ghetto, But Functional, Search Function For CakePHP</h3>
-  <a href="http://store.steampowered.com/app/400/" class="postImageLink"><img src="http://oldstatic.travisberry.com/portalcake2.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://store.steampowered.com/app/400/" class="postImageLink"><img src="http://oldstatic.travisberry.com/portalcake2.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-06-21</h6>
 
 Recently I needed to add a search function for a [CakePHP](http://cakephp.org/) application I am building. After googling the bejeezus out of it, I never found a solution that worked. Some required the use of a search table, which then needed to index all of your content, other's just didn't work at all.

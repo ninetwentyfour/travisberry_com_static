@@ -2,8 +2,14 @@ javascript_compressor: closure
 
 javascripts:
   application:
+    - _site/javascript/easing.js 
+    - _site/javascript/jquery.ui.totop.js 
     - _site/javascript/search.js
+    - _site/javascript/timeline.js
+    - _site/javascript/tweet.js
 
 stylesheets:
   application:
+    - _site/css/ui.totop.css
+    - _site/css/timeline.css
     - _site/css/style.css

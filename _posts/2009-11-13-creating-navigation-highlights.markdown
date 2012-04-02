@@ -13,7 +13,7 @@ summary: "When creating this site I decided I wanted to have the navigation bar 
 ---
 <article class="post clearfix">
   <h3>Creating Navigation Highlights</h3>
-  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/12/Course_and_Bearing_Navigation.png" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-11-13</h6>
 
 When creating this site I decided I wanted to have the navigation bar have a different color highlight the current page. I dived in thinking it would be a simple problem. Turns out I was wrong.<!--more-->

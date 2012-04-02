@@ -13,7 +13,7 @@ summary: "There are so many great news sites out there. From traditional news, t
 ---
 <article class="post clearfix">
   <h3>5 Awesome News Mashup Sites</h3>
-  <a href="http://www.flickr.com/photos/shironekoeuro/4040697914/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/shironekoeuro/4040697914/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/wp-content/uploads/2009/12/newspapers.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2009-11-25</h6>
 
 There are so many great news sites out there. From traditional news, to bloggers, to social submission sites, following them all can be overwhelming. Luckily there are mashups that bring all these wonderful sites to one place. This makes keeping track of the latest and greatest much easier.  

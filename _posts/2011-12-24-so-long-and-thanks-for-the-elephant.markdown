@@ -7,7 +7,7 @@ summary: "This domain as well as any other domain I own has just been moved to n
 ---
 <article class="post clearfix">
   <h3>So Long And Thanks For The Elephant</h3>
-  <a href="http://www.flickr.com/photos/29704226@N07/5681748116/" class="postImageLink"><img src="http://static-assets2.travisberry.com/post_images/elephant.jpg" alt="" class="thumbnail alignleft" width=640 height=280 /></a>
+  <a href="http://www.flickr.com/photos/29704226@N07/5681748116/" class="postImageLink"><img src="http://static-assets2.travisberry.com/post_images/elephant.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: December 24, 2011</h6>
 This domain as well as any other domain I own has just been moved to [name.com](http://name.com).
 
