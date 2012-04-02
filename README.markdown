@@ -35,8 +35,10 @@ TODO
 
 - <del>add noscript and old browser warnings</del>
 
-- possibly add search bar into top bar so its always visible / add a top flag that comes out once you scroll so far
+- <del>possibly add search bar into top bar so its always visible / add a top flag that comes out once you scroll so far</del>
 
 - <del>fix style bug no work images with green href</del>
 
 - <del>Check for canonical link fix</del>
+
+- Apple touch icons
