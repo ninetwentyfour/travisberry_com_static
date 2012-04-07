@@ -1,0 +1,1 @@
+config.active_record.observers = :user_observer

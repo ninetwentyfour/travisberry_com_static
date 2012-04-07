@@ -4,13 +4,176 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-01T20:09:45-06:00</updated>
+ <updated>2012-04-07T15:01:15-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Real-Time In Place Editing For Rails</title>
+   <link href="http://www.travisberry.com/2012/04/real-time-in-place-editing-for-rails"/>
+   <updated>2012-04-07T00:00:00-06:00</updated>
+   <id>http://www.travisberry.com/2012/04/real-time-in-place-editing-for-rails</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Real-Time In Place Editing For Rails&lt;/h3&gt;
+  &lt;a href=&quot;http://marvel.wikia.com/File:Juggernaut_33.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets3.travisberry.com/post_images/juggernaut.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: April 07, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;In an effort to make &lt;a href=&quot;http://hospitium.co&quot;&gt;Hospitium's&lt;/a&gt; interface easier to use, I removed the extra step of editing data in a standard form. Instead opting to use an &lt;a href=&quot;https://www.ruby-toolbox.com/categories/rails_in_place_editing&quot;&gt;in place editing&lt;/a&gt; solution.&lt;/p&gt;
+
+&lt;p&gt;Best in Place is the gem I used and it's pretty simple to set up. Instead of covering the details here, I'll let this &lt;a href=&quot;http://railscasts.com/episodes/302-in-place-editing&quot;&gt;railscast&lt;/a&gt; explain it. That episode is a little out of date so make sure to check out the &lt;a href=&quot;https://github.com/bernat/best_in_place&quot;&gt;gem's README&lt;/a&gt;, the main change being &lt;strong&gt;Controller response with respond_with_bip&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Best in Place is a jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with no need of forms.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Getting in place editing working is easy, but one downside is multiple users can edit the same record without seeing each others changes. This could lead to confusion after a page reload and a users changes are completely wrong (at least different from what they expected). So the obvious solution is to push the changes to all users making the edits real-time.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We could roll our own complete push state, but instead I'm going to offload the work to &lt;a href=&quot;https://github.com/maccman/juggernaut&quot;&gt;Juggernaut&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Juggernaut gives you a realtime connection between your servers and client browsers.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;You can run Juggernaut locally for development, but I recommend just throwing it up on Heroku to make your life easier.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/1003748.js?file=juggernaut_heroku.md'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Clone repo:
+
+    git clone git://github.com/maccman/juggernaut.git
+    cd juggernaut
+
+Create Heroku app:
+
+    heroku create myapp --stack cedar
+    heroku addons:add redistogo:nano
+    git push heroku master
+    heroku ps:scale web=1
+    heroku open
+
+Find RedisToGo url
+
+    heroku run node
+    process.env.REDISTOGO_URL
+
+And then publish from Juggernaut's Ruby gem:
+
+    irb
+    require &amp;quot;juggernaut&amp;quot;
+    Juggernaut.url = &amp;quot;REDISTOGO_URL&amp;quot;
+    Juggernaut.publish(&amp;quot;channel1&amp;quot;, &amp;quot;woo! it's working&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Once you have Juggernaut up and running it's time to start publishing events from rails to juggernaut. The easiest way to do this is with model observers. For the rest of this post we'll assume we are working with a pretty typical User model.&lt;/p&gt;
+
+&lt;p&gt;First install the Juggernaut gem by including it in your gemfile.&lt;/p&gt;
+
+&lt;p&gt;Create a new file &lt;em&gt;/app/models/user_observer.rb&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/2331242.js?file=user_observer.rb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;require &amp;quot;juggernaut&amp;quot;
+class UserObserver &amp;lt; ActiveRecord::Observer
+  
+  def after_update(user)
+      publish(:update, user)
+  end
+  
+  def publish(type, user)
+    Juggernaut.url = ENV['JUGG_URL']
+    Juggernaut.publish(&amp;quot;/observer/user/#{user.id}&amp;quot;, {
+      :id     =&amp;gt; user.id, 
+      :type   =&amp;gt; type, 
+      :klass  =&amp;gt; user.class.name,
+      :record =&amp;gt; user.changes
+    })
+  end
+  
+end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;All this does is listen for update actions to the user model. Which conveniently is the action best in place uses to update the model. The changed data is then published to the Juggernaut instance.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;ENV['JUGG_URL']&lt;/code&gt; should be set to the &lt;code&gt;REDISTOGO_URL&lt;/code&gt; from the Heroku setup steps above.&lt;/p&gt;
+
+&lt;p&gt;You will also need to initialize the observer by adding the following to &lt;em&gt;/config/application.rb&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/2331242.js?file=application.rb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;config.active_record.observers = :user_observer&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Now that the changes are being published, we need need to make the view listen for the changes.&lt;/p&gt;
+
+&lt;p&gt;In your application layout add&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/2331242.js?file=application.html.erb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;http://your-juggernaut-app.herokuapp.com/application.js&amp;quot; type=&amp;quot;text/javascript&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Then in your user view add&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/2331242.js?file=show.html.erb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    //setup juggernaut to handle real time updating page changes
+    var jug = new Juggernaut({
+        secure: false,
+        host: 'your-juggernaut-app.herokuapp.com',
+        port: 80,
+        transports: ['xhr-polling','jsonp-polling']
+    });
+
+    //subscribe to the url for the specific user, this is the same url we published to from the model observer
+    jug.subscribe(&amp;quot;/observer/user/&amp;lt;%= @user.id %&amp;gt;&amp;quot;, function(data){
+        //set the updated_text with an error message first - will override if a better result
+        var updated_text = &amp;quot;There was an update, but a problem displaying. Please refresh.&amp;quot;;
+        jQuery.each(data.record, function(i, val) {
+            //the updated_at of the record is always returned, we just skip it here since it's not important
+            if (i != &amp;quot;updated_at&amp;quot;){
+                //set the updated_text to the update vaule - this is for simple text areas and fields
+                updated_text = val[1];
+                //if we updated a collection via dropdown, we need to do some more work
+                if ($(&amp;quot;#best_in_place_user_&amp;lt;%= @user.id %&amp;gt;_&amp;quot;+i).attr(&amp;quot;data-collection&amp;quot;) !== undefined) {
+                    //grab the data values from the best in place dropdown
+                    var brand = $('#best_in_place_user_&amp;lt;%= @user.id %&amp;gt;_'+i).attr(&amp;quot;data-collection&amp;quot;);
+                    var test = $.parseJSON(brand);
+                    $.each(test, function(index, value) {
+                        //loop on the json looking for a match
+                        if(value[0] == val[1]){
+                            //update the text from the dropdown value
+                            updated_text = value[1];
+                        }
+                    });
+                }
+                //highlight the changed field and update the text with the value from juggernaut - all users viewing the page will see this
+                $('#best_in_place_user_&amp;lt;%= @user.id %&amp;gt;_'+i).css(&amp;quot;background-color&amp;quot;,&amp;quot;#c7f464&amp;quot;).html(updated_text).delay(1500).animate({backgroundColor: &amp;quot;#f5f5f5&amp;quot;}, 1000 );
+            }
+        });
+    });
+&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Now anytime a user changes a field with best in place, other users viewing the same page will see the updates real-time.&lt;/p&gt;
+
+&lt;p&gt;The real tricky part here is knowing the field ID to update with the changed value. Best In Place generates field IDs dynamically with no way to override them. Luckily they are fairly predictable and we can infer what field was updated by the field name and the model name/ID. That's what &lt;code&gt;$('#best_in_place_user_&amp;lt;%= @user.id %&amp;gt;_'+i)&lt;/code&gt; is doing. &lt;code&gt;i&lt;/code&gt; contains the model field name such as &lt;code&gt;username&lt;/code&gt; or &lt;code&gt;last_login&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are also a few problems with this. One being any special formatting done to things like dates won't be formatted by the javascript. This can be worked around by formatting the value as needed though. The other problem is the way I passed the user info into the javascript is ugly. Here is a &lt;a href=&quot;http://railscasts.com/episodes/324-passing-data-to-javascript&quot;&gt;railscast&lt;/a&gt; with some ideas on how you could clean that up.&lt;/p&gt;
+
+&lt;p&gt;To see real-time editing in action, sign up for an account at &lt;a href=&quot;http://hospitium.co/users/sign_up&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Hubot Deploy</title>

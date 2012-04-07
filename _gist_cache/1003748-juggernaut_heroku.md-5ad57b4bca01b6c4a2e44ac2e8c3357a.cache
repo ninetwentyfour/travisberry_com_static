@@ -1,0 +1,24 @@
+Clone repo:
+
+    git clone git://github.com/maccman/juggernaut.git
+    cd juggernaut
+
+Create Heroku app:
+
+    heroku create myapp --stack cedar
+    heroku addons:add redistogo:nano
+    git push heroku master
+    heroku ps:scale web=1
+    heroku open
+
+Find RedisToGo url
+
+    heroku run node
+    process.env.REDISTOGO_URL
+
+And then publish from Juggernaut's Ruby gem:
+
+    irb
+    require "juggernaut"
+    Juggernaut.url = "REDISTOGO_URL"
+    Juggernaut.publish("channel1", "woo! it's working")

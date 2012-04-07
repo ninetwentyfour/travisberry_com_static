@@ -116,7 +116,7 @@ blockquote {
   float: right;
   font-style: italic;
   margin-left: 20px;
-  padding: 15px 25px 10px 10px;
+  padding: 0px 25px 10px 10px;
   text-indent: 10px;
   max-width: 500px;
 }

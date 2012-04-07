@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Real-Time In Place Editing For Rails | Travis Berry</title>
+		<meta name="author" content="Travis Berry">
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="http://www.travisberry.com/favicon.ico">
+		<link href="http://static-assets1.travisberry.com/apple-touch/57.png" rel="apple-touch-icon" sizes="57x57" type="image/png" />
+		<link href="http://static-assets1.travisberry.com/apple-touch/72.png" rel="apple-touch-icon" sizes="72x72" type="image/png" />
+		<link href="http://static-assets1.travisberry.com/apple-touch/114.png" rel="apple-touch-icon" sizes="114x114" type="image/png" />
+		
+		<link rel="alternate" type="application/atom+xml" href="http://www.travisberry.com/atom.xml" />
+		<link href="http://static-assets.travisberry.com/assets/application.css.gz" media="screen" rel="stylesheet" type="text/css" />
+		<link rel="canonical" href="http://www.travisberry.com/2012/04/real-time-in-place-editing-for-rails/" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if lte IE 7]>
+			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
+			<script type="text/javascript" src="http://static-assets.travisberry.com/js/unitpngfix.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="topBar">
+			
+				<a href="http://www.travisberry.com/2012/04/real-time-in-place-editing-for-rails"><img src="http://static-assets3.travisberry.com/thumbnails/juggernaut_thumb.jpg" alt="Real-Time In Place Editing For Rails" title="Real-Time In Place Editing For Rails" width=20 height=20 /></a>
+			
+				<a href="http://www.travisberry.com/2012/02/hubot-deploy"><img src="http://static-assets3.travisberry.com/thumbnails/hubot-capistrano_thumb.jpg" alt="Hubot Deploy" title="Hubot Deploy" width=20 height=20 /></a>
+			
+				<a href="http://www.travisberry.com/2011/12/so-long-and-thanks-for-the-elephant"><img src="http://static-assets2.travisberry.com/thumbnails/elephant_thumb.jpg" alt="So Long And Thanks For The Elephant" title="So Long And Thanks For The Elephant" width=20 height=20 /></a>
+			
+				<a href="http://www.travisberry.com/2011/09/hospitium-new-open-source-project"><img src="http://static-assets1.travisberry.com/thumbnails/hospitium_thumb.jpg" alt="Hospitium - New Open Source Project" title="Hospitium - New Open Source Project" width=20 height=20 /></a>
+			
+				<a href="http://www.travisberry.com/2011/09/goodbye-wordpress-hello-jekyll"><img src="http://static-assets.travisberry.com/thumbnails/jekyll_thumb.jpg" alt="Goodbye WordPress - Hello Jekyll" title="Goodbye WordPress - Hello Jekyll" width=20 height=20 /></a>
+			
+				<a href="http://www.travisberry.com/2011/05/create-github-gist-with-ruby"><img src="http://static-assets.travisberry.com/thumbnails/gists_thumb.jpg" alt="Create GitHub Gist With Ruby" title="Create GitHub Gist With Ruby" width=20 height=20 /></a>
+			
+			<noscript style="font-size:12px;vertical-align:middle;">
+				For full functionality of this site it is necessary to enable JavaScript.
+				Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+				instructions how to enable JavaScript in your web browser</a>.
+				<style>
+					pre{
+					  text-shadow: none !important;
+					  font-size:14px;
+					  background-color: #111111;
+					  color: #CAF715;
+						padding:10px;
+						margin-bottom:20px;
+						overflow:auto;
+					}
+				</style>
+			</noscript>
+		</div>
+		<div id="wrapper" class="container_12">
+			<div id="content">
+				<nav>
+					<ul id="menu" class="clearfix">
+						<li class="link on first last" id="home-link"><a href="/"><span></span>Home</a></li>
+						<li class="link on first last" id="blog-link"><a href="/blog/"><span></span>Blog</a></li>
+						<li class="link on first last" id="work-link"><a href="/work/"><span></span>Work</a></li>
+						<li class="link on first last" id="contact-link"><a href="/contact/"><span></span>Contact</a></li>
+					</ul>
+					<br class="clear" />
+				</nav>
+				<div id="post">
+<p><article class="post clearfix">
+  <h3>Real-Time In Place Editing For Rails</h3>
+  <a href="http://marvel.wikia.com/File:Juggernaut_33.jpg" class="postImageLink"><img src="http://static-assets3.travisberry.com/post_images/juggernaut.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
+  <h6>Published: April 07, 2012</h6></p>
+
+<p>In an effort to make <a href="http://hospitium.co">Hospitium's</a> interface easier to use, I removed the extra step of editing data in a standard form. Instead opting to use an <a href="https://www.ruby-toolbox.com/categories/rails_in_place_editing">in place editing</a> solution.</p>
+
+<p>Best in Place is the gem I used and it's pretty simple to set up. Instead of covering the details here, I'll let this <a href="http://railscasts.com/episodes/302-in-place-editing">railscast</a> explain it. That episode is a little out of date so make sure to check out the <a href="https://github.com/bernat/best_in_place">gem's README</a>, the main change being <strong>Controller response with respond_with_bip</strong>.</p>
+
+<blockquote><p>Best in Place is a jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with no need of forms.</p></blockquote>
+
+<p>Getting in place editing working is easy, but one downside is multiple users can edit the same record without seeing each others changes. This could lead to confusion after a page reload and a users changes are completely wrong (at least different from what they expected). So the obvious solution is to push the changes to all users making the edits real-time.</p>
+
+<div class="clearfix"></div>
+
+
+<p>We could roll our own complete push state, but instead I'm going to offload the work to <a href="https://github.com/maccman/juggernaut">Juggernaut</a>.</p>
+
+<blockquote><p>Juggernaut gives you a realtime connection between your servers and client browsers.</p></blockquote>
+
+<p>You can run Juggernaut locally for development, but I recommend just throwing it up on Heroku to make your life easier.</p>
+
+<div class="clearfix"></div>
+
+
+
+
+<div class="gistFallback">
+<script src='https://gist.github.com/1003748.js?file=juggernaut_heroku.md'></script><noscript><pre><code>Clone repo:
+
+    git clone git://github.com/maccman/juggernaut.git
+    cd juggernaut
+
+Create Heroku app:
+
+    heroku create myapp --stack cedar
+    heroku addons:add redistogo:nano
+    git push heroku master
+    heroku ps:scale web=1
+    heroku open
+
+Find RedisToGo url
+
+    heroku run node
+    process.env.REDISTOGO_URL
+
+And then publish from Juggernaut's Ruby gem:
+
+    irb
+    require &quot;juggernaut&quot;
+    Juggernaut.url = &quot;REDISTOGO_URL&quot;
+    Juggernaut.publish(&quot;channel1&quot;, &quot;woo! it's working&quot;)</code></pre></noscript>
+</div>
+
+
+<p>Once you have Juggernaut up and running it's time to start publishing events from rails to juggernaut. The easiest way to do this is with model observers. For the rest of this post we'll assume we are working with a pretty typical User model.</p>
+
+<p>First install the Juggernaut gem by including it in your gemfile.</p>
+
+<p>Create a new file <em>/app/models/user_observer.rb</em></p>
+
+<div class="gistFallback">
+<script src='https://gist.github.com/2331242.js?file=user_observer.rb'></script><noscript><pre><code>require &quot;juggernaut&quot;
+class UserObserver &lt; ActiveRecord::Observer
+  
+  def after_update(user)
+      publish(:update, user)
+  end
+  
+  def publish(type, user)
+    Juggernaut.url = ENV['JUGG_URL']
+    Juggernaut.publish(&quot;/observer/user/#{user.id}&quot;, {
+      :id     =&gt; user.id, 
+      :type   =&gt; type, 
+      :klass  =&gt; user.class.name,
+      :record =&gt; user.changes
+    })
+  end
+  
+end</code></pre></noscript>
+</div>
+
+
+<p>All this does is listen for update actions to the user model. Which conveniently is the action best in place uses to update the model. The changed data is then published to the Juggernaut instance.</p>
+
+<p>The <code>ENV['JUGG_URL']</code> should be set to the <code>REDISTOGO_URL</code> from the Heroku setup steps above.</p>
+
+<p>You will also need to initialize the observer by adding the following to <em>/config/application.rb</em></p>
+
+<div class="gistFallback">
+<script src='https://gist.github.com/2331242.js?file=application.rb'></script><noscript><pre><code>config.active_record.observers = :user_observer</code></pre></noscript>
+</div>
+
+
+<p>Now that the changes are being published, we need need to make the view listen for the changes.</p>
+
+<p>In your application layout add</p>
+
+<div class="gistFallback">
+<script src='https://gist.github.com/2331242.js?file=application.html.erb'></script><noscript><pre><code>&lt;script src=&quot;http://your-juggernaut-app.herokuapp.com/application.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></pre></noscript>
+</div>
+
+
+<p>Then in your user view add</p>
+
+<div class="gistFallback">
+<script src='https://gist.github.com/2331242.js?file=show.html.erb'></script><noscript><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    //setup juggernaut to handle real time updating page changes
+    var jug = new Juggernaut({
+        secure: false,
+        host: 'your-juggernaut-app.herokuapp.com',
+        port: 80,
+        transports: ['xhr-polling','jsonp-polling']
+    });
+
+    //subscribe to the url for the specific user, this is the same url we published to from the model observer
+    jug.subscribe(&quot;/observer/user/&lt;%= @user.id %&gt;&quot;, function(data){
+        //set the updated_text with an error message first - will override if a better result
+        var updated_text = &quot;There was an update, but a problem displaying. Please refresh.&quot;;
+        jQuery.each(data.record, function(i, val) {
+            //the updated_at of the record is always returned, we just skip it here since it's not important
+            if (i != &quot;updated_at&quot;){
+                //set the updated_text to the update vaule - this is for simple text areas and fields
+                updated_text = val[1];
+                //if we updated a collection via dropdown, we need to do some more work
+                if ($(&quot;#best_in_place_user_&lt;%= @user.id %&gt;_&quot;+i).attr(&quot;data-collection&quot;) !== undefined) {
+                    //grab the data values from the best in place dropdown
+                    var brand = $('#best_in_place_user_&lt;%= @user.id %&gt;_'+i).attr(&quot;data-collection&quot;);
+                    var test = $.parseJSON(brand);
+                    $.each(test, function(index, value) {
+                        //loop on the json looking for a match
+                        if(value[0] == val[1]){
+                            //update the text from the dropdown value
+                            updated_text = value[1];
+                        }
+                    });
+                }
+                //highlight the changed field and update the text with the value from juggernaut - all users viewing the page will see this
+                $('#best_in_place_user_&lt;%= @user.id %&gt;_'+i).css(&quot;background-color&quot;,&quot;#c7f464&quot;).html(updated_text).delay(1500).animate({backgroundColor: &quot;#f5f5f5&quot;}, 1000 );
+            }
+        });
+    });
+&lt;/script&gt;</code></pre></noscript>
+</div>
+
+
+<p>Now anytime a user changes a field with best in place, other users viewing the same page will see the updates real-time.</p>
+
+<p>The real tricky part here is knowing the field ID to update with the changed value. Best In Place generates field IDs dynamically with no way to override them. Luckily they are fairly predictable and we can infer what field was updated by the field name and the model name/ID. That's what <code>$('#best_in_place_user_&lt;%= @user.id %&gt;_'+i)</code> is doing. <code>i</code> contains the model field name such as <code>username</code> or <code>last_login</code>.</p>
+
+<p>There are also a few problems with this. One being any special formatting done to things like dates won't be formatted by the javascript. This can be worked around by formatting the value as needed though. The other problem is the way I passed the user info into the javascript is ugly. Here is a <a href="http://railscasts.com/episodes/324-passing-data-to-javascript">railscast</a> with some ideas on how you could clean that up.</p>
+
+<p>To see real-time editing in action, sign up for an account at <a href="http://hospitium.co/users/sign_up">Hospitium</a>.</p>
+
+<p></article></p>
+
+</div>
+<p>Continue the discussion on twitter. <a href="https://twitter.com/#!/travisberry">@travisberry</a></p>
+<div id="related">
+  <h2>Probably Not Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>16 Feb 2012</span> &raquo; <a href="/2012/02/hubot-deploy">Hubot Deploy</a></li>
+    
+      <li><span>24 Dec 2011</span> &raquo; <a href="/2011/12/so-long-and-thanks-for-the-elephant">So Long And Thanks For The Elephant</a></li>
+    
+      <li><span>05 Sep 2011</span> &raquo; <a href="/2011/09/hospitium-new-open-source-project">Hospitium - New Open Source Project</a></li>
+    
+  </ul>
+</div>
+			</div> <!-- end content -->
+			<div class="clear"></div>
+			<footer id="footer" class="grid_12">
+				<h1><a href="/">Travis Berry</a></h1>
+			</footer> <!-- end footer -->
+			<div class="clear"></div>
+		</div> <!-- end wrapper -->
+		<a href="#top" id="top-link">&and;</a>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="http://static-assets.travisberry.com/assets/application.js.gz"></script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-11593601-1']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</body>
+</html>
