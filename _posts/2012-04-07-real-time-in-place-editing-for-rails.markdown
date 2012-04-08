@@ -74,6 +74,4 @@ There are also a few problems with this. One being any special formatting done t
 
 To see real-time editing in action, sign up for an account at [Hospitium](http://hospitium.co/users/sign_up).
 
-V69UD6MF5K9M
-
 </article>

@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-08T13:34:02-06:00</updated>
+ <updated>2012-04-08T13:40:31-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -256,8 +256,6 @@ end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
 &lt;p&gt;There are also a few problems with this. One being any special formatting done to things like dates won't be formatted by the javascript. This can be worked around by formatting the value as needed though. The other problem is the way I passed the user info into the javascript is ugly. Here is a &lt;a href=&quot;http://railscasts.com/episodes/324-passing-data-to-javascript&quot;&gt;railscast&lt;/a&gt; with some ideas on how you could clean that up.&lt;/p&gt;
 
 &lt;p&gt;To see real-time editing in action, sign up for an account at &lt;a href=&quot;http://hospitium.co/users/sign_up&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;V69UD6MF5K9M&lt;/p&gt;
 
 &lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
