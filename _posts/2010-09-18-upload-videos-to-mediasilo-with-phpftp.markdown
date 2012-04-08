@@ -16,7 +16,7 @@ summary: "In continuing with my last post on how to upload videos to Ooyala with
   <a href="http://www.flickr.com/photos/spiesteleviv/3654728245/" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-09-18</h6>
 
-In continuing with my last post on [how to upload videos to Ooyala with PHP](http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
+In continuing with my last post on [how to upload videos to Ooyala with PHP](http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/), here is one for [MediaSilo](http://www.mediasilo.com/). This ones a little different though in that it uses FTP as opposed to an API to upload the videos.
 <div class="clearfix"></div>
 Alright, so let's get to the code.
 

@@ -16,7 +16,7 @@ summary: "A while back I did a comparison of the popular mp4 compressors. Specif
   <a href="http://www.flickr.com/photos/lancesh/2162074087/" class="postImageLink"><img src="http://oldstatic2.travisberry.com/oggpixels.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: 2010-04-25</h6>
 
-A while back I did a [comparison of the popular mp4 compressors](http://oldstatic.travisberry.com/2010/03/video-compression-show-down/). Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.
+A while back I did a [comparison of the popular mp4 compressors](http://www.travisberry.com/2010/03/video-compression-show-down/). Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.
 
 I try to make my content cross browser compatible, but for this one I have no choice. **You must use Firefox or Chrome to fully view this post.** The newer the version the better.
 

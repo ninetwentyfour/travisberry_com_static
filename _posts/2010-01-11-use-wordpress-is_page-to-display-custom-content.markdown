@@ -56,6 +56,6 @@ WordPress provides a slew of other tags as well including
 
 As you can see, you can target pretty specific events and conditions. So have fun experimenting with conditional tags and if you come up with something cool, let me know in the comments.
 
-**Edit:** To use regular PHP and not WordPress to include content, see [my post here](http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/).
+**Edit:** To use regular PHP and not WordPress to include content, see [my post here](http://www.travisberry.com/2010/10/if-is_page-with-regular-php/).
 
 </article>

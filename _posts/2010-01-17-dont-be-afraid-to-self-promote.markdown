@@ -22,7 +22,7 @@ I have certainly been one to fall into the don't promote category. Mainly becaus
 
 The number of sites I promote my work on is still relatively small. I also try to really interact on the site and promote others work as well as my own. This helps avoid the blowhard jerk label you can receive by only promoting your work. Plus when others begin to notice you consistently promoting their work, they start to do it to your stuff. 
 
-Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the [latest post](http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.
+Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the [latest post](http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/). So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.
 
 If you've had positive, or negative, experience with self promotion let me know in the comments.
 </article>

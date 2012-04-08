@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-07T18:21:05-06:00</updated>
+ <updated>2012-04-07T20:39:36-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -819,7 +819,7 @@ $.each(phraseArray, function() {
   &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: February 16, 2011&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;I've previously posted my &lt;a href=&quot;http://oldstatic.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
+&lt;p&gt;I've previously posted my &lt;a href=&quot;http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
 
 &lt;p&gt;You simply hand them the documents you want indexed and the give you back the ability to query against it.&lt;/p&gt;
 
@@ -1750,7 +1750,7 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
   &lt;a href=&quot;http://www.flickr.com/photos/14277117@N03/3865517102&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic1.travisberry.com/wp-content/uploads/2010/10/paper_machine.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-10-02&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;My article on &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;WordPress' is_page()&lt;/a&gt; is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP.&lt;/p&gt;
+&lt;p&gt;My article on &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;WordPress' is_page()&lt;/a&gt; is one of the most popular articles on my site. One thing I receive questions about on a regular basis, is how to use is_page() in regular PHP.&lt;/p&gt;
 
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
@@ -1862,7 +1862,7 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
   &lt;a href=&quot;http://www.flickr.com/photos/spiesteleviv/3654728245/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic3.travisberry.com/wp-content/uploads/2010/09/media_silo_pic.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-09-18&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;In continuing with my last post on &lt;a href=&quot;http://oldstatic.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/&quot;&gt;how to upload videos to Ooyala with PHP&lt;/a&gt;, here is one for &lt;a href=&quot;http://www.mediasilo.com/&quot;&gt;MediaSilo&lt;/a&gt;. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.&lt;/p&gt;
+&lt;p&gt;In continuing with my last post on &lt;a href=&quot;http://www.travisberry.com/2010/09/upload-a-video-to-ooyala-with-php/&quot;&gt;how to upload videos to Ooyala with PHP&lt;/a&gt;, here is one for &lt;a href=&quot;http://www.mediasilo.com/&quot;&gt;MediaSilo&lt;/a&gt;. This ones a little different though in that it uses FTP as opposed to an API to upload the videos.&lt;/p&gt;
 
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
@@ -2589,7 +2589,7 @@ DocumentRoot /var/www/test.com
   &lt;a href=&quot;http://www.flickr.com/photos/lancesh/2162074087/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic2.travisberry.com/oggpixels.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: 2010-04-25&lt;/h6&gt;&lt;/p&gt;
 
-&lt;p&gt;A while back I did a &lt;a href=&quot;http://oldstatic.travisberry.com/2010/03/video-compression-show-down/&quot;&gt;comparison of the popular mp4 compressors&lt;/a&gt;. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.&lt;/p&gt;
+&lt;p&gt;A while back I did a &lt;a href=&quot;http://www.travisberry.com/2010/03/video-compression-show-down/&quot;&gt;comparison of the popular mp4 compressors&lt;/a&gt;. Specifically ones used to convert videos for HTML5 playback. Well here is a follow up, this time around though, we're comparing compressors for Ogg Theora.&lt;/p&gt;
 
 &lt;p&gt;I try to make my content cross browser compatible, but for this one I have no choice. &lt;strong&gt;You must use Firefox or Chrome to fully view this post.&lt;/strong&gt; The newer the version the better.&lt;/p&gt;
 
@@ -3100,7 +3100,7 @@ DocumentRoot /var/www/test.com
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The first way is the same as &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;including custom content&lt;/a&gt;. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.&lt;/p&gt;
+&lt;p&gt;The first way is the same as &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;including custom content&lt;/a&gt;. The only difference is you have to list every page besides the ones you don't want it to show on. This can be quite consuming if you have a large number of pages. On a small portfolio site though, this is totally useful.&lt;/p&gt;
 
 &lt;div class=&quot;gistFallback&quot;&gt;
 &lt;script src='https://gist.github.com/1176902.js?file=example1.php'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php 
@@ -3174,7 +3174,7 @@ DocumentRoot /var/www/test.com
 &lt;/div&gt;
 
 
-&lt;p&gt;&lt;strong&gt;Edit 2:&lt;/strong&gt; To use regular PHP and not WordPress to exclude content, see &lt;a href=&quot;http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.
+&lt;p&gt;&lt;strong&gt;Edit 2:&lt;/strong&gt; To use regular PHP and not WordPress to exclude content, see &lt;a href=&quot;http://www.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.
 &lt;/article&gt;&lt;/p&gt;
 </content>
  </entry>
@@ -3198,7 +3198,7 @@ DocumentRoot /var/www/test.com
 
 &lt;p&gt;The number of sites I promote my work on is still relatively small. I also try to really interact on the site and promote others work as well as my own. This helps avoid the blowhard jerk label you can receive by only promoting your work. Plus when others begin to notice you consistently promoting their work, they start to do it to your stuff.&lt;/p&gt;
 
-&lt;p&gt;Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the &lt;a href=&quot;http://oldstatic.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;latest post&lt;/a&gt;. So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.&lt;/p&gt;
+&lt;p&gt;Anyway, back to the rewards, after spending a minimal amount of time promoting my articles, my monthly views doubled in two days. And that was after doing it to just the &lt;a href=&quot;http://www.travisberry.com/2010/01/use-wordpress-is_page-to-display-custom-content/&quot;&gt;latest post&lt;/a&gt;. So from now on, I intend to continue with my article promotion. Hopefully, the trend will continue to grow.&lt;/p&gt;
 
 &lt;p&gt;If you've had positive, or negative, experience with self promotion let me know in the comments.
 &lt;/article&gt;&lt;/p&gt;
@@ -3306,7 +3306,7 @@ This Conditional Tag checks if Pages are being displayed. This is a boolean func
 
 &lt;p&gt;As you can see, you can target pretty specific events and conditions. So have fun experimenting with conditional tags and if you come up with something cool, let me know in the comments.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; To use regular PHP and not WordPress to include content, see &lt;a href=&quot;http://oldstatic.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; To use regular PHP and not WordPress to include content, see &lt;a href=&quot;http://www.travisberry.com/2010/10/if-is_page-with-regular-php/&quot;&gt;my post here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
