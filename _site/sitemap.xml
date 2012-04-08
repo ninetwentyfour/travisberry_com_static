@@ -4,28 +4,36 @@
         xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">
 			  <url>
 			    <loc>http://www.travisberry.com/</loc>
-			    <lastmod>2012-04-08T11:59:38-06:00</lastmod>
+			    <lastmod>2012-04-08T13:26:56-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>1.0</priority>
 			  </url>
 			  <url>
 			    <loc>http://www.travisberry.com/blog/</loc>
-			    <lastmod>2012-04-08T11:59:38-06:00</lastmod>
+			    <lastmod>2012-04-08T13:26:56-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
 				<url>
 			    <loc>http://www.travisberry.com/work/</loc>
-			    <lastmod>2012-04-08T11:59:38-06:00</lastmod>
+			    <lastmod>2012-04-08T13:26:56-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
 				<url>
 			    <loc>http://www.travisberry.com/contact/</loc>
-			    <lastmod>2012-04-08T11:59:38-06:00</lastmod>
+			    <lastmod>2012-04-08T13:26:56-06:00</lastmod>
 			    <changefreq>weekly</changefreq>
 			    <priority>0.8</priority>
 			  </url>
+	
+  <url> 
+    <loc>http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden/</loc>
+<lastmod>2012-04-08T00:00:00-06:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <image:image>
+       <image:loc>http://static-assets.travisberry.com/post_images/indexden.jpg</image:loc> 
+    </image:image>
+  </url>
 	
   <url> 
     <loc>http://www.travisberry.com/2012/04/real-time-in-place-editing-for-rails/</loc>

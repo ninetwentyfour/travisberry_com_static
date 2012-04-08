@@ -1,0 +1,14 @@
+<?php
+
+function add_to_index() {
+
+	$projects = $this->Project->find('all');
+
+	foreach($projects as $project){
+		$indexData = array('text'=>$project['Project']['title'],'title'=>$project['Project']['title'],'description'=>$project['Project']['description'],'user_id'=>$project['Project']['user_id']);
+		$id = $project['Project']['_id'];
+		$this->addIndextank("HomkoraProjects",$id,$indexData);
+	}
+}
+
+?>

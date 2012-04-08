@@ -4,13 +4,99 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-08T11:59:38-06:00</updated>
+ <updated>2012-04-08T13:26:56-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Moving From IndexTank To IndexDen</title>
+   <link href="http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden"/>
+   <updated>2012-04-08T00:00:00-06:00</updated>
+   <id>http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Moving From IndexTank To IndexDen&lt;/h3&gt;
+  &lt;a href=&quot;http://marvel.wikia.com/File:Juggernaut_33.jpg&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets.travisberry.com/post_images/indexden.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: April 08, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;A while back I did a post on &lt;a href=&quot;http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank/&quot;&gt;using IndexTank with CakePHP&lt;/a&gt;. Since then IndexTank has been bought by LinkedIn and will be &lt;a href=&quot;https://indextank.com/documentation/faq2&quot;&gt;shutdown&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Luckily there is a drop in replacement in the form of &lt;a href=&quot;http://indexden.com/&quot;&gt;IndexDen&lt;/a&gt;. I was able to get &lt;a href=&quot;http://homkora.com&quot;&gt;Homkora&lt;/a&gt; switched over in about 30 minutes.&lt;/p&gt;
+
+&lt;p&gt;First signup for an account with IndexDen. The create the indexes that you need. I recommend calling them whatever you called them in IndexTank, that way there is no need to change the code.&lt;/p&gt;
+
+&lt;p&gt;From the example in the original post&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/1177288.js?file=example1.php'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+function createIndextankClient(){
+    App::import('Vendor', 'indextank_client');
+    $API_URL = 'YOUR API URL HERE';
+    $client = new ApiClient($API_URL);
+    return $client;
+}
+   
+function addIndextank($indexType,$id,$data){
+    //send project to indextank
+    $client = $this-&amp;gt;createIndextankClient();
+    $index = $client-&amp;gt;get_index($indexType);
+    $doc_id = $id;
+    $index-&amp;gt;add_document($doc_id, $data);
+}
+   
+function deleteIndextank($indexType,$id){
+    //delete indextank document
+    $client = $this-&amp;gt;createIndextankClient();
+    $index = $client-&amp;gt;get_index($indexType);
+    $index-&amp;gt;delete_document($id);
+}
+   
+function searchIndextank($indexType,$query){
+    //search indextank
+    $client = $this-&amp;gt;createIndextankClient();
+    $index = $client-&amp;gt;get_index($indexType);
+    $index-&amp;gt;add_function(2, &amp;quot;relevance&amp;quot;);
+    $res = $index-&amp;gt;search($query);
+    return $res;
+}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;All you have to change is &lt;code&gt;$API_URL = 'YOUR API URL HERE';&lt;/code&gt; from the IndexTank URL to the IndexDen one.&lt;/p&gt;
+
+&lt;p&gt;That is technically all you need to do to start using IndexDen instead of IndexTank. However, you will notice that none of you records are in the new index.&lt;/p&gt;
+
+&lt;p&gt;A quick way to add them back in is with a simple loop. Staying with the last posts example, here is how I added the projects from Homkora.&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/2339198.js?file=projects_controller.php'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+function add_to_index() {
+
+    $projects = $this-&amp;gt;Project-&amp;gt;find('all');
+
+    foreach($projects as $project){
+        $indexData = array('text'=&amp;gt;$project['Project']['title'],'title'=&amp;gt;$project['Project']['title'],'description'=&amp;gt;$project['Project']['description'],'user_id'=&amp;gt;$project['Project']['user_id']);
+        $id = $project['Project']['_id'];
+        $this-&amp;gt;addIndextank(&amp;quot;HomkoraProjects&amp;quot;,$id,$indexData);
+    }
+}
+
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;I just added in this simple function, hit the URL once, then removed it. All the old records are in, and any new records will be added thanks to the code from the first post.&lt;/p&gt;
+
+&lt;p&gt;So if you need a quick fix for IndexTanks closure, give IndexDen a shot. I've been in contact with the CEO of the company and he seems like a really nice guy so if you have a more complex setup, contact them and I bet they can help you out.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Real-Time In Place Editing For Rails</title>
@@ -170,6 +256,8 @@ end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
 &lt;p&gt;There are also a few problems with this. One being any special formatting done to things like dates won't be formatted by the javascript. This can be worked around by formatting the value as needed though. The other problem is the way I passed the user info into the javascript is ugly. Here is a &lt;a href=&quot;http://railscasts.com/episodes/324-passing-data-to-javascript&quot;&gt;railscast&lt;/a&gt; with some ideas on how you could clean that up.&lt;/p&gt;
 
 &lt;p&gt;To see real-time editing in action, sign up for an account at &lt;a href=&quot;http://hospitium.co/users/sign_up&quot;&gt;Hospitium&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;V69UD6MF5K9M&lt;/p&gt;
 
 &lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>
@@ -818,6 +906,8 @@ $.each(phraseArray, function() {
   &lt;h3&gt;Fast CakePHP Search With IndexTank&lt;/h3&gt;
   &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
   &lt;h6&gt;Published: February 16, 2011&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update April 08, 2012:&lt;/strong&gt; IndexTank is shutting down. Use IndexDen instead. &lt;a href=&quot;http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden&quot;&gt;Instructions here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I've previously posted my &lt;a href=&quot;http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/&quot;&gt;ghetto CakePHP search function&lt;/a&gt;. This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where &lt;a href=&quot;http://indextank.com/&quot;&gt;IndexTank&lt;/a&gt; comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.&lt;/p&gt;
 

@@ -17,6 +17,8 @@ summary: "This time I’m going to show you a much better method, mainly by offl
   <a href="http://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG" class="postImageLink"><img src="http://oldstatic.travisberry.com/wp-content/uploads/2011/02/indextank.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: February 16, 2011</h6>
 
+**Update April 08, 2012:** IndexTank is shutting down. Use IndexDen instead. [Instructions here](http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden).
+
 I've previously posted my [ghetto CakePHP search function](http://www.travisberry.com/2010/06/create-a-ghetto-but-functional-search-function-for-cakephp/). This time I'm going to show you a much better method, mainly by offloading the work to people who really know how to do search. That's where [IndexTank](http://indextank.com/) comes in - they know how to do search. They power the search for Reddit, WordPress.com, and many others.
 
 You simply hand them the documents you want indexed and the give you back the ability to query against it.

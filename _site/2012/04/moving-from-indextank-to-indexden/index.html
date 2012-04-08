@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>Sound FX Tip - Muffled Sounds | Travis Berry</title>
+		<title>Moving From IndexTank To IndexDen | Travis Berry</title>
 		<meta name="author" content="Travis Berry">
 		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 		
 		<link rel="alternate" type="application/atom+xml" href="http://www.travisberry.com/atom.xml" />
 		<link href="http://static-assets.travisberry.com/assets/application.css.gz" media="screen" rel="stylesheet" type="text/css" />
-		<link rel="canonical" href="http://www.travisberry.com/2009/11/sound-fx-tip-muffled-sounds/" />
+		<link rel="canonical" href="http://www.travisberry.com/2012/04/moving-from-indextank-to-indexden/" />
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 		<![endif]-->
@@ -69,27 +69,83 @@
 				</nav>
 				<div id="post">
 <p><article class="post clearfix">
-  <h3>Sound FX Tip - Muffled Sounds</h3>
-  <a href="http://www.flickr.com/photos/mourner/3306939463/" class="postImageLink"><img src="http://oldstatic3.travisberry.com/wp-content/uploads/2009/12/audioknobs.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
-  <h6>Published: 2009-11-29</h6></p>
+  <h3>Moving From IndexTank To IndexDen</h3>
+  <a href="http://marvel.wikia.com/File:Juggernaut_33.jpg" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/indexden.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
+  <h6>Published: April 08, 2012</h6></p>
 
-<p>When I was working on a video project this week I came across the need to have my sound effects sound like they are coming through a cell phone and from inside a box.</p>
+<p>A while back I did a post on <a href="http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank/">using IndexTank with CakePHP</a>. Since then IndexTank has been bought by LinkedIn and will be <a href="https://indextank.com/documentation/faq2">shutdown</a>.</p>
 
-<div class="clearfix"></div>
+<p>Luckily there is a drop in replacement in the form of <a href="http://indexden.com/">IndexDen</a>. I was able to get <a href="http://homkora.com">Homkora</a> switched over in about 30 minutes.</p>
+
+<p>First signup for an account with IndexDen. The create the indexes that you need. I recommend calling them whatever you called them in IndexTank, that way there is no need to change the code.</p>
+
+<p>From the example in the original post</p>
+
+<div class="gistFallback">
+<script src='https://gist.github.com/1177288.js?file=example1.php'></script><noscript><pre><code>&lt;?php
+function createIndextankClient(){
+    App::import('Vendor', 'indextank_client');
+    $API_URL = 'YOUR API URL HERE';
+    $client = new ApiClient($API_URL);
+    return $client;
+}
+   
+function addIndextank($indexType,$id,$data){
+    //send project to indextank
+    $client = $this-&gt;createIndextankClient();
+    $index = $client-&gt;get_index($indexType);
+    $doc_id = $id;
+    $index-&gt;add_document($doc_id, $data);
+}
+   
+function deleteIndextank($indexType,$id){
+    //delete indextank document
+    $client = $this-&gt;createIndextankClient();
+    $index = $client-&gt;get_index($indexType);
+    $index-&gt;delete_document($id);
+}
+   
+function searchIndextank($indexType,$query){
+    //search indextank
+    $client = $this-&gt;createIndextankClient();
+    $index = $client-&gt;get_index($indexType);
+    $index-&gt;add_function(2, &quot;relevance&quot;);
+    $res = $index-&gt;search($query);
+    return $res;
+}
+?&gt;</code></pre></noscript>
+</div>
 
 
-<p>Turns out there is an extremely easy solution for both, high and low pass filters.</p>
+<p>All you have to change is <code>$API_URL = 'YOUR API URL HERE';</code> from the IndexTank URL to the IndexDen one.</p>
 
-<p>To make something sound like it is coming out of a crappy cell phone speaker put a high pass filter on it. You may have to tweak the settings a little bit to get the effect you want, but that is it.</p>
+<p>That is technically all you need to do to start using IndexDen instead of IndexTank. However, you will notice that none of you records are in the new index.</p>
 
-<p><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/highpass.jpg" title="highpass" alt="highpass" /></p>
+<p>A quick way to add them back in is with a simple loop. Staying with the last posts example, here is how I added the projects from Homkora.</p>
 
-<p>To solve the other problem of needing a sound to sound like it's coming from inside a box, use a low pass filter. Again, you may need to tweak the settings to get your desired results.</p>
+<div class="gistFallback">
+<script src='https://gist.github.com/2339198.js?file=projects_controller.php'></script><noscript><pre><code>&lt;?php
 
-<p><img src="http://oldstatic.travisberry.com/wp-content/uploads/2009/11/lowpass.jpg" title="lowpass" alt="lowpass" /></p>
+function add_to_index() {
 
-<p>I love when solutions to problems are as simple as this. If you know of any other quick audio tips, let me know in the comments.
-</article></p>
+    $projects = $this-&gt;Project-&gt;find('all');
+
+    foreach($projects as $project){
+        $indexData = array('text'=&gt;$project['Project']['title'],'title'=&gt;$project['Project']['title'],'description'=&gt;$project['Project']['description'],'user_id'=&gt;$project['Project']['user_id']);
+        $id = $project['Project']['_id'];
+        $this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData);
+    }
+}
+
+?&gt;</code></pre></noscript>
+</div>
+
+
+<p>I just added in this simple function, hit the URL once, then removed it. All the old records are in, and any new records will be added thanks to the code from the first post.</p>
+
+<p>So if you need a quick fix for IndexTanks closure, give IndexDen a shot. I've been in contact with the CEO of the company and he seems like a really nice guy so if you have a more complex setup, contact them and I bet they can help you out.</p>
+
+<p></article></p>
 
 </div>
 <p>Continue the discussion on twitter. <a href="https://twitter.com/#!/travisberry">@travisberry</a></p>
@@ -97,11 +153,11 @@
   <h2>Probably Not Related Posts</h2>
   <ul class="posts">
     
-      <li><span>08 Apr 2012</span> &raquo; <a href="/2012/04/moving-from-indextank-to-indexden">Moving From IndexTank To IndexDen</a></li>
-    
       <li><span>07 Apr 2012</span> &raquo; <a href="/2012/04/real-time-in-place-editing-for-rails">Real-Time In Place Editing For Rails</a></li>
     
       <li><span>16 Feb 2012</span> &raquo; <a href="/2012/02/hubot-deploy">Hubot Deploy</a></li>
+    
+      <li><span>24 Dec 2011</span> &raquo; <a href="/2011/12/so-long-and-thanks-for-the-elephant">So Long And Thanks For The Elephant</a></li>
     
   </ul>
 </div>
