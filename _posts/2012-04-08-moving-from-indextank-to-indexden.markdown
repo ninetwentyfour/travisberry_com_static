@@ -7,7 +7,7 @@ summary: "IndexTank is closing. Make an easy transition with IndexDen."
 ---
 <article class="post clearfix">
   <h3>Moving From IndexTank To IndexDen</h3>
-  <a href="http://marvel.wikia.com/File:Juggernaut_33.jpg" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/indexden.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
+  <a href="http://s0.geograph.org.uk/geophotos/02/41/96/2419659_06c1d213.jpg" class="postImageLink"><img src="http://static-assets.travisberry.com/post_images/indexden.jpg" alt="" class="thumbnail alignleft" width=640  /></a>
   <h6>Published: April 08, 2012</h6>
 
 A while back I did a post on [using IndexTank with CakePHP](http://www.travisberry.com/2011/02/fast-cakephp-search-with-indextank/). Since then IndexTank has been bought by LinkedIn and will be [shutdown](https://indextank.com/documentation/faq2).
