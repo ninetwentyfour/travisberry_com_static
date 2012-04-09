@@ -14,7 +14,7 @@ A while back I did a post on [using IndexTank with CakePHP](http://www.travisber
 
 Luckily there is a drop in replacement in the form of [IndexDen](http://indexden.com/). I was able to get [Homkora](http://homkora.com) switched over in about 30 minutes.
 
-First signup for an account with IndexDen. The create the indexes that you need. I recommend calling them whatever you called them in IndexTank, that way there is no need to change the code.
+First signup for an account with IndexDen. Then create the indexes that you need. I recommend calling them whatever you called them in IndexTank, that way there is no need to change the code.
 
 From the example in the original post
 
