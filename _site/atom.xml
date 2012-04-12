@@ -4,7 +4,7 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-04-08T20:38:52-06:00</updated>
+ <updated>2012-04-11T21:45:07-06:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
@@ -93,6 +93,13 @@ function add_to_index() {
 &lt;p&gt;I just added in this simple function, hit the URL once, then removed it. All the old records are in, and any new records will be added thanks to the code from the first post.&lt;/p&gt;
 
 &lt;p&gt;So if you need a quick fix for IndexTanks closure, give IndexDen a shot. I've been in contact with the CEO of the company and he seems like a really nice guy so if you have a more complex setup, contact them and I bet they can help you out.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; Other services offering drop in replacements.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.searchify.com/&quot;&gt;http://www.searchify.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 
 &lt;p&gt;&lt;/article&gt;&lt;/p&gt;
 </content>

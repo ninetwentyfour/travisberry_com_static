@@ -36,4 +36,8 @@ I just added in this simple function, hit the URL once, then removed it. All the
 
 So if you need a quick fix for IndexTanks closure, give IndexDen a shot. I've been in contact with the CEO of the company and he seems like a really nice guy so if you have a more complex setup, contact them and I bet they can help you out.
 
+**Edit:** Other services offering drop in replacements.
+
+- [http://www.searchify.com/](http://www.searchify.com/)
+
 </article>
