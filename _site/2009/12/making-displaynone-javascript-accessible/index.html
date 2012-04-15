@@ -114,7 +114,7 @@ When creating a collapsible navigation for a client, I came across the problem o
 <p></article></p>
 
 </div>
-<p>Continue the discussion on twitter. <a href="https://twitter.com/#!/travisberry">@travisberry</a></p>
+<p><a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a></p>
 <div id="related">
   <h2>Probably Not Related Posts</h2>
   <ul class="posts">
@@ -137,6 +137,13 @@ When creating a collapsible navigation for a client, I came across the problem o
 		<a href="#top" id="top-link">&and;</a>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 		<script src="http://static-assets.travisberry.com/assets/application.js.gz"></script>
+		<script>
+			(function() {
+				var hn = document.createElement('script'); hn.type = 'text/javascript';
+				hn.async = true; hn.src = 'http://hnbutton.appspot.com/static/hn.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+			})();
+		</script>
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-11593601-1']);
