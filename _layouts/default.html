@@ -23,6 +23,11 @@
 			<link href="http://static.travisberry.com/sites/4ddebc054a2ab10001000007/theme/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" />
 			<script type="text/javascript" src="http://static-assets.travisberry.com/js/unitpngfix.js"></script>
 		<![endif]-->
+		{% if page.summary != nil %}
+			<meta content="{{ page.summary }}" name="description" />
+		{% else %}
+			<meta content="{{ page.description }}" name="description" />
+		{% endif %}
 	</head>
 	<body>
 		<div id="topBar">
