@@ -117,10 +117,19 @@
          {
             "startDate":"2011,06,01",
             "headline":"One more time.",
-            "text":"<p>The manager of IT development leaves and I'm asked to take over. That brings us to today.</p><p>Currently I'm managing a team of three guys and contributing code when I can.</p><p>When not at work I'm usually hacking on side projects, the latest being <a href='http://hospitium.co' target='blank'>Hospitium</a>.</p>",
+            "text":"<p>The manager of IT development leaves and I'm asked to take over. I manage a team of three guys and contribute code when I can.</p>",
             "asset":{
                "media":"http://static-assets3.travisberry.com/timeline_img/office.jpg",
 							"credit":"The Office"
+            }
+         },
+         {
+            "startDate":"2012,06,04",
+            "headline":"Give me a sweatshirt.",
+            "text":"<p>bieMEDIA was a good time, but I was getting the itch to do something new.</p><p>Then as luck would have it, <a href='http://sendgrid.com/'>SendGrid</a> posted a picture of their awesome new hoodies. In my attempt to get one I somehow end up with a job.</p><p>That brings us to now. When not at work I'm usually hacking on side projects, the latest being <a href='http://hospitium.co' target='blank'>Hospitium</a>.</p>",
+            "asset":{
+               "media":"http://static-assets3.travisberry.com/timeline_img/hoodie_crop.jpg",
+							"credit":"SendGrid"
             }
          },
          {

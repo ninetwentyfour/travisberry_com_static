@@ -4,13 +4,58 @@
  <title>Travis Berry</title>
  <link href="http://www.travisberry.com/atom.xml" rel="self"/>
  <link href="http://www.travisberry.com/"/>
- <updated>2012-10-13T17:42:09-06:00</updated>
+ <updated>2013-02-02T16:24:27-07:00</updated>
  <id>http://www.travisberry.com/</id>
  <author>
    <name>Travis Berry</name>
    <email>contact@travisberry.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Simple Multi-File Uploads With Paperclip</title>
+   <link href="http://www.travisberry.com/2013/02/simple-multi-file-uploads-with-paperclip"/>
+   <updated>2013-02-01T00:00:00-07:00</updated>
+   <id>http://www.travisberry.com/2013/02/simple-multi-file-uploads-with-paperclip</id>
+   <content type="html">&lt;p&gt;&lt;article class=&quot;post clearfix&quot;&gt;
+  &lt;h3&gt;Simple Multi-File Uploads With Paperclip&lt;/h3&gt;
+  &lt;a href=&quot;http://pixabay.com/pt/paperclips-colorido-anexar-4479/&quot; class=&quot;postImageLink&quot;&gt;&lt;img src=&quot;http://static-assets3.travisberry.com/post_images/paperclip.jpg&quot; alt=&quot;&quot; class=&quot;thumbnail alignleft&quot; width=640  /&gt;&lt;/a&gt;
+  &lt;h6&gt;Published: February 1, 2012&lt;/h6&gt;&lt;/p&gt;
+
+&lt;p&gt;I needed to add multi-file uploads to a rails application recently and was looking for a solution that didn't involve using &lt;a href=&quot;https://code.google.com/p/swfupload/&quot;&gt;swfupload&lt;/a&gt; or anything like that. I was already using &lt;a href=&quot;https://github.com/thoughtbot/paperclip&quot;&gt;paperclip&lt;/a&gt; and I wanted something that was super easy to get running so I went with HTML5 multi-uploads.&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;I use a dedicated Document model, depending on how paperclip is setup on your models, you may get different results, or this might not work for you.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;First add a new file form field.&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/4695134.js?file=form.erb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;  &amp;lt;%= form_for Document.new, :url =&amp;gt; documents_path, :remote =&amp;gt; true, :html =&amp;gt; {:multipart =&amp;gt; true} do |f| %&amp;gt;
+        &amp;lt;%= f.file_field :filearrays, :multiple =&amp;gt;:true %&amp;gt;
+        &amp;lt;%= f.submit &amp;quot;Submit&amp;quot; %&amp;gt;
+    &amp;lt;% end %&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Then in the controller create action you can do.&lt;/p&gt;
+
+&lt;div class=&quot;gistFallback&quot;&gt;
+&lt;script src='https://gist.github.com/4695134.js?file=documents_controller.rb'&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;params[:document][:filearrays].each do |file|
+  @document = Document.new(:document =&amp;gt; file)
+  @document.save
+end&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;It will handle single files or multiples just fine.&lt;/p&gt;
+
+&lt;p&gt;That should be pretty much all you need to get started. Of course you can improve it by adding some validation to allowed file types, setting a flash message to let the user know if the file was uploaded or not, or anything else you may need.&lt;/p&gt;
+
+&lt;p&gt;&lt;/article&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Moving From IndexTank To IndexDen</title>

@@ -1,0 +1,4 @@
+params[:document][:filearrays].each do |file|
+  @document = Document.new(:document => file)
+  @document.save
+end

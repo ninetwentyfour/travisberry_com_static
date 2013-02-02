@@ -1,0 +1,4 @@
+  <%= form_for Document.new, :url => documents_path, :remote => true, :html => {:multipart => true} do |f| %>
+		<%= f.file_field :filearrays, :multiple =>:true %>
+		<%= f.submit "Submit" %>
+	<% end %>
