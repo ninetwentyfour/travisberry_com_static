@@ -99,15 +99,15 @@
 <p>Open up your app_controller.php and add the following line</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example1.php'></script><noscript><pre><code>var $view = 'Haml';</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example1.php'></script><noscript><pre><code>var $view = &#39;Haml&#39;;</code></pre></noscript>
 </div>
 
 
 <p>Now open up /config/core.php and scroll to the bottom. Add</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example2.php'></script><noscript><pre><code>Configure::write('Haml.format', 'html5');
-Configure::write('Haml.filterDir', VIEWS.'filters');</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example2.php'></script><noscript><pre><code>Configure::write(&#39;Haml.format&#39;, &#39;html5&#39;);
+Configure::write(&#39;Haml.filterDir&#39;, VIEWS.&#39;filters&#39;);</code></pre></noscript>
 </div>
 
 
@@ -116,14 +116,14 @@ Configure::write('Haml.filterDir', VIEWS.'filters');</code></pre></noscript>
 <p>Now open up the haml.php file you added to views. Find the line that says</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example3.php'></script><noscript><pre><code>App::import('Vendor', 'HamlParser', array('file'=&gt;'phamlp'.DS.'haml'.DS.'HamlParser.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example3.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;HamlParser&#39;, array(&#39;file&#39;=&gt;&#39;phamlp&#39;.DS.&#39;haml&#39;.DS.&#39;HamlParser.php&#39;));</code></pre></noscript>
 </div>
 
 
 <p>and change it to</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example4.php'></script><noscript><pre><code>App::import('Vendor', 'HamlParser', array('file'=&gt;'haml'.DS.'HamlParser.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example4.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;HamlParser&#39;, array(&#39;file&#39;=&gt;&#39;haml&#39;.DS.&#39;HamlParser.php&#39;));</code></pre></noscript>
 </div>
 
 
@@ -142,8 +142,8 @@ Configure::write('Haml.filterDir', VIEWS.'filters');</code></pre></noscript>
 <p>Open the core.php file back up and go to the Haml code we added earlier. Under that add</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example5.php'></script><noscript><pre><code>Configure::write('Sass.style', 'compressed');
-Configure::write('Asset.filter.css', 'sass.php');</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example5.php'></script><noscript><pre><code>Configure::write(&#39;Sass.style&#39;, &#39;compressed&#39;);
+Configure::write(&#39;Asset.filter.css&#39;, &#39;sass.php&#39;);</code></pre></noscript>
 </div>
 
 
@@ -152,14 +152,14 @@ Configure::write('Asset.filter.css', 'sass.php');</code></pre></noscript>
 <p>Now open up sass.php and find the line that looks like</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example6.php'></script><noscript><pre><code>App::import('Vendor', 'SassParser', array('file'=&gt;'phamlp'.DS.'sass'.DS.'SassParser.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example6.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;SassParser&#39;, array(&#39;file&#39;=&gt;&#39;phamlp&#39;.DS.&#39;sass&#39;.DS.&#39;SassParser.php&#39;));</code></pre></noscript>
 </div>
 
 
 <p>Replace it with</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177229.js?file=example7.php'></script><noscript><pre><code>App::import('Vendor', 'SassParser', array('file'=&gt;'sass'.DS.'SassParser.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177229.js?file=example7.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;SassParser&#39;, array(&#39;file&#39;=&gt;&#39;sass&#39;.DS.&#39;SassParser.php&#39;));</code></pre></noscript>
 </div>
 
 
@@ -202,14 +202,14 @@ header(&quot;Cache-Control: maxage=$seconds_to_cache&quot;);</code></pre></noscr
 <p>Find the line</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example11.php'></script><noscript><pre><code>$sassFile = str_replace('.css', '.sass', $cssFile);</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example11.php'></script><noscript><pre><code>$sassFile = str_replace(&#39;.css&#39;, &#39;.sass&#39;, $cssFile);</code></pre></noscript>
 </div>
 
 
 <p>and replace it with</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example12.php'></script><noscript><pre><code>$sassFile = str_replace('.css', '.scss', $cssFile);</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example12.php'></script><noscript><pre><code>$sassFile = str_replace(&#39;.css&#39;, &#39;.scss&#39;, $cssFile);</code></pre></noscript>
 </div>
 
 
@@ -241,14 +241,14 @@ header(&quot;Cache-Control: maxage=$seconds_to_cache&quot;);</code></pre></noscr
 <p>Change</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example14.php'></script><noscript><pre><code>App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'phamlp'.DS.'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example14.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;HamlMarkdownFilter&#39;, array(&#39;file&#39;=&gt;&#39;phamlp&#39;.DS.&#39;haml&#39;.DS.&#39;filters&#39;.DS.&#39;_HamlMarkdownFilter.php&#39;));</code></pre></noscript>
 </div>
 
 
 <p>To</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example15.php'></script><noscript><pre><code>App::import('Vendor', 'HamlMarkdownFilter', array('file'=&gt;'haml'.DS.'filters'.DS.'_HamlMarkdownFilter.php'));</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example15.php'></script><noscript><pre><code>App::import(&#39;Vendor&#39;, &#39;HamlMarkdownFilter&#39;, array(&#39;file&#39;=&gt;&#39;haml&#39;.DS.&#39;filters&#39;.DS.&#39;_HamlMarkdownFilter.php&#39;));</code></pre></noscript>
 </div>
 
 
@@ -257,28 +257,28 @@ header(&quot;Cache-Control: maxage=$seconds_to_cache&quot;);</code></pre></noscr
 <p>Change</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example16.php'></script><noscript><pre><code>protected $vendorClass = 'MarkdownExtra_Parser';</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example16.php'></script><noscript><pre><code>protected $vendorClass = &#39;MarkdownExtra_Parser&#39;;</code></pre></noscript>
 </div>
 
 
 <p>To</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example17.php'></script><noscript><pre><code>protected $vendorClass = 'Markdown_Parser';</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example17.php'></script><noscript><pre><code>protected $vendorClass = &#39;Markdown_Parser&#39;;</code></pre></noscript>
 </div>
 
 
 <p>also change</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example18.php'></script><noscript><pre><code>return '&lt;?php   '.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown___=new '.$this-&gt;vendorClass.'();echo  $markdown___-&gt;safeTransform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example18.php'></script><noscript><pre><code>return &#39;&lt;?php   &#39;.(!empty($this-&gt;vendorPath)?&#39;require_once &quot;&#39;.$this-&gt;vendorPath.&#39;&quot;;&#39;:&#39;&#39;).&#39;$markdown___=new &#39;.$this-&gt;vendorClass.&#39;();echo  $markdown___-&gt;safeTransform(&quot;&#39;.preg_replace(HamlParser::MATCH_INTERPOLATION, &#39;&quot;.\1.&quot;&#39;, $text).&#39;&quot;);?&gt;&#39;;</code></pre></noscript>
 </div>
 
 
 <p>To</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177233.js?file=example19.php'></script><noscript><pre><code>return '&lt;?php   '.(!empty($this-&gt;vendorPath)?'require_once &quot;'.$this-&gt;vendorPath.'&quot;;':'').'$markdown___=new '.$this-&gt;vendorClass.'();echo  $markdown___-&gt;transform(&quot;'.preg_replace(HamlParser::MATCH_INTERPOLATION, '&quot;.\1.&quot;', $text).'&quot;);?&gt;';</code></pre></noscript>
+<script src='https://gist.github.com/1177233.js?file=example19.php'></script><noscript><pre><code>return &#39;&lt;?php   &#39;.(!empty($this-&gt;vendorPath)?&#39;require_once &quot;&#39;.$this-&gt;vendorPath.&#39;&quot;;&#39;:&#39;&#39;).&#39;$markdown___=new &#39;.$this-&gt;vendorClass.&#39;();echo  $markdown___-&gt;transform(&quot;&#39;.preg_replace(HamlParser::MATCH_INTERPOLATION, &#39;&quot;.\1.&quot;&#39;, $text).&#39;&quot;);?&gt;&#39;;</code></pre></noscript>
 </div>
 
 

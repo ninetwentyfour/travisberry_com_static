@@ -94,11 +94,11 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
     $url    = get_comment_author_url( $comment_ID );
     $author = get_comment_author( $comment_ID );
 
-    if ( empty( $url ) || 'http://' == $url )
+    if ( empty( $url ) || &#39;http://&#39; == $url )
         $return = $author;
     else
-        $return = &quot;&lt;a href='$url' class='comment_url'&gt;$author&lt;/a&gt;&quot;;
-    return apply_filters('get_comment_author_link', $return);
+        $return = &quot;&lt;a href=&#39;$url&#39; class=&#39;comment_url&#39;&gt;$author&lt;/a&gt;&quot;;
+    return apply_filters(&#39;get_comment_author_link&#39;, $return);
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -121,14 +121,14 @@ function get_comment_author_link_mine( $comment_ID = 0 ) {
 <p>This simply replaces the core files "comment_author_link()" function with one of our own. The original has</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177082.js?file=example4.php'></script><noscript><pre><code>$return = &quot;&lt;a href='$url' rel='external nofollow' class='url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
+<script src='https://gist.github.com/1177082.js?file=example4.php'></script><noscript><pre><code>$return = &quot;&lt;a href=&#39;$url&#39; rel=&#39;external nofollow&#39; class=&#39;url&#39;&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
 </div>
 
 
 <p>as the link. We simply remove the rel attribute and change it to</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177082.js?file=example5.php'></script><noscript><pre><code>$return = &quot;&lt;a href='$url' class='comment_url'&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
+<script src='https://gist.github.com/1177082.js?file=example5.php'></script><noscript><pre><code>$return = &quot;&lt;a href=&#39;$url&#39; class=&#39;comment_url&#39;&gt;$author&lt;/a&gt;&quot;;</code></pre></noscript>
 </div>
 
 

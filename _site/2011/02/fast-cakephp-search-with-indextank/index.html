@@ -93,8 +93,8 @@
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example1.php'></script><noscript><pre><code>&lt;?php
 function createIndextankClient(){
-    App::import('Vendor', 'indextank_client');
-    $API_URL = 'YOUR API URL HERE';
+    App::import(&#39;Vendor&#39;, &#39;indextank_client&#39;);
+    $API_URL = &#39;YOUR API URL HERE&#39;;
     $client = new ApiClient($API_URL);
     return $client;
 }
@@ -137,8 +137,8 @@ function searchIndextank($indexType,$query){
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example2.php'></script><noscript><pre><code>&lt;?php
 if ($this-&gt;Project-&gt;save($this-&gt;data)) {
-    $this-&gt;Session-&gt;setFlash('The project has been saved', 'default', array('class' =&gt; 'flash_good'));
-    $this-&gt;redirect(array('action' =&gt; 'index'));
+    $this-&gt;Session-&gt;setFlash(&#39;The project has been saved&#39;, &#39;default&#39;, array(&#39;class&#39; =&gt; &#39;flash_good&#39;));
+    $this-&gt;redirect(array(&#39;action&#39; =&gt; &#39;index&#39;));
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -152,11 +152,11 @@ if ($this-&gt;Project-&gt;save($this-&gt;data)) {
 <script src='https://gist.github.com/1177288.js?file=example3.php'></script><noscript><pre><code>&lt;?php
 if ($this-&gt;Project-&gt;save($this-&gt;data)) {
     //send project to index tank
-    $indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$this-&gt;data['Project']['title'],'description'=&gt;$this-&gt;data['Project']['description'],'user_id'=&gt;$_SESSION['Auth']['User']['_id']);
+    $indexData = array(&#39;text&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;title&#39;],&#39;title&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;title&#39;],&#39;description&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;description&#39;],&#39;user_id&#39;=&gt;$_SESSION[&#39;Auth&#39;][&#39;User&#39;][&#39;_id&#39;]);
     $id = $this-&gt;Project-&gt;id;
     $this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData);
-    $this-&gt;Session-&gt;setFlash('The project has been saved', 'default', array('class' =&gt; 'flash_good'));
-    $this-&gt;redirect(array('action' =&gt; 'index'));
+    $this-&gt;Session-&gt;setFlash(&#39;The project has been saved&#39;, &#39;default&#39;, array(&#39;class&#39; =&gt; &#39;flash_good&#39;));
+    $this-&gt;redirect(array(&#39;action&#39; =&gt; &#39;index&#39;));
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -166,7 +166,7 @@ if ($this-&gt;Project-&gt;save($this-&gt;data)) {
 
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example4.php'></script><noscript><pre><code>&lt;?php
-$indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$this-&gt;data['Project']['title'],'description'=&gt;$this-&gt;data['Project']['description'],'user_id'=&gt;$_SESSION['Auth']['User']['_id']);
+$indexData = array(&#39;text&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;title&#39;],&#39;title&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;title&#39;],&#39;description&#39;=&gt;$this-&gt;data[&#39;Project&#39;][&#39;description&#39;],&#39;user_id&#39;=&gt;$_SESSION[&#39;Auth&#39;][&#39;User&#39;][&#39;_id&#39;]);
 ?&gt;</code></pre></noscript>
 </div>
 
@@ -198,8 +198,8 @@ $indexData = array('text'=&gt;$this-&gt;data['Project']['title'],'title'=&gt;$th
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example7.php'></script><noscript><pre><code>&lt;?php
 if ($this-&gt;Project-&gt;delete($id)) {
-    $this-&gt;Session-&gt;setFlash('Project deleted', 'default', array('class' =&gt; 'flash_good'));
-    $this-&gt;redirect(array('action'=&gt;'index'));
+    $this-&gt;Session-&gt;setFlash(&#39;Project deleted&#39;, &#39;default&#39;, array(&#39;class&#39; =&gt; &#39;flash_good&#39;));
+    $this-&gt;redirect(array(&#39;action&#39;=&gt;&#39;index&#39;));
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -211,8 +211,8 @@ if ($this-&gt;Project-&gt;delete($id)) {
 <script src='https://gist.github.com/1177288.js?file=example8.php'></script><noscript><pre><code>&lt;?php 
 if ($this-&gt;Project-&gt;delete($id)) {
     $this-&gt;deleteIndextank(&quot;HomkoraProjects&quot;,$id);
-    $this-&gt;Session-&gt;setFlash('Project deleted', 'default', array('class' =&gt; 'flash_good'));
-    $this-&gt;redirect(array('action'=&gt;'index'));
+    $this-&gt;Session-&gt;setFlash(&#39;Project deleted&#39;, &#39;default&#39;, array(&#39;class&#39; =&gt; &#39;flash_good&#39;));
+    $this-&gt;redirect(array(&#39;action&#39;=&gt;&#39;index&#39;));
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -227,16 +227,16 @@ if ($this-&gt;Project-&gt;delete($id)) {
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example9.php'></script><noscript><pre><code>&lt;?php
 function search(){
-    $query = $this-&gt;data['Project']['search'];
+    $query = $this-&gt;data[&#39;Project&#39;][&#39;search&#39;];
     $res = $this-&gt;searchIndextank(&quot;HomkoraProjects&quot;,$query);
     $i = 0;
     foreach($res-&gt;results as $doc_id){
     $params = array(
-        'conditions' =&gt; array('_id' =&gt; $doc_id-&gt;docid)
+        &#39;conditions&#39; =&gt; array(&#39;_id&#39; =&gt; $doc_id-&gt;docid)
     );
-        $projects[$i++] = $this-&gt;Project-&gt;find('first',$params);
+        $projects[$i++] = $this-&gt;Project-&gt;find(&#39;first&#39;,$params);
     }
-    $this-&gt;set('projects', $projects);
+    $this-&gt;set(&#39;projects&#39;, $projects);
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -245,7 +245,7 @@ function search(){
 
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1177293.js?file=example10.php'></script><noscript><pre><code>&lt;?php $query = $this-&gt;data['Project']['search']; ?&gt;</code></pre></noscript>
+<script src='https://gist.github.com/1177293.js?file=example10.php'></script><noscript><pre><code>&lt;?php $query = $this-&gt;data[&#39;Project&#39;][&#39;search&#39;]; ?&gt;</code></pre></noscript>
 </div>
 
 

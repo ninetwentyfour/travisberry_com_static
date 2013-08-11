@@ -103,10 +103,10 @@
 
     //Check connection
     if (!$connection || !$login) {
-        die('Connection attempt failed!');
+        die(&#39;Connection attempt failed!&#39;);
     }
                
-    //If there are no files, don't FTP to MediaSilo
+    //If there are no files, don&#39;t FTP to MediaSilo
     if (empty($sources)) {
         //Close the FTP connection
         ftp_close($connection);

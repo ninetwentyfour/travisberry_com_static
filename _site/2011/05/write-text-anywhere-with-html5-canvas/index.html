@@ -123,24 +123,24 @@
 
 <div class="gistFallback">
 <script src='https://gist.github.com/1177318.js?file=example3.js'></script><noscript><pre><code>//steal the mousedown event for the canvas for one time - you can use a regular click if you want - this was to interact with some other code in my project
-$('#c').mousedown(function(e){
-    if ($('#textAreaPopUp').length == 0) {
+$(&#39;#c&#39;).mousedown(function(e){
+    if ($(&#39;#textAreaPopUp&#39;).length == 0) {
         var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
         var mouseY = e.pageY - this.offsetTop;
         //append a text area box to the canvas where the user clicked to enter in a comment
-        var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
-        var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+        var textArea = &quot;&lt;div id=&#39;textAreaPopUp&#39; style=&#39;position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;&#39;&gt;&lt;textarea id=&#39;textareaTest&#39; style=&#39;width:100px;height:50px;&#39;&gt;&lt;/textarea&gt;&quot;;
+        var saveButton = &quot;&lt;input type=&#39;button&#39; value=&#39;save&#39; id=&#39;saveText&#39; onclick=&#39;saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);&#39;&gt;&lt;/div&gt;&quot;;
         var appendString = textArea + saveButton;
         $(&quot;#main&quot;).append(appendString);
     } else {
-        $('textarea#textareaTest').remove();
-        $('#saveText').remove();
-        $('#textAreaPopUp').remove();
+        $(&#39;textarea#textareaTest&#39;).remove();
+        $(&#39;#saveText&#39;).remove();
+        $(&#39;#textAreaPopUp&#39;).remove();
         var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
         var mouseY = e.pageY - this.offsetTop;
         //append a text area box to the canvas where the user clicked to enter in a comment
-        var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
-        var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+        var textArea = &quot;&lt;div id=&#39;textAreaPopUp&#39; style=&#39;position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;&#39;&gt;&lt;textarea id=&#39;textareaTest&#39; style=&#39;width:100px;height:50px;&#39;&gt;&lt;/textarea&gt;&quot;;
+        var saveButton = &quot;&lt;input type=&#39;button&#39; value=&#39;save&#39; id=&#39;saveText&#39; onclick=&#39;saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);&#39;&gt;&lt;/div&gt;&quot;;
         var appendString = textArea + saveButton;
         $(&quot;#main&quot;).append(appendString);
     }
@@ -165,12 +165,12 @@ var mouseY = e.pageY - this.offsetTop;</code></pre></noscript>
 <div class="gistFallback">
 <script src='https://gist.github.com/1177318.js?file=example5.js'></script><noscript><pre><code>function saveTextFromArea(y,x){
     //get the value of the textarea then destroy it and the save button
-    var text = $('textarea#textareaTest').val();
-    $('textarea#textareaTest').remove();
-    $('#saveText').remove();
+    var text = $(&#39;textarea#textareaTest&#39;).val();
+    $(&#39;textarea#textareaTest&#39;).remove();
+    $(&#39;#saveText&#39;).remove();
     //get the canvas and add the text functions
-    var canvas = document.getElementById('c');
-    var ctx = canvas.getContext('2d');
+    var canvas = document.getElementById(&#39;c&#39;);
+    var ctx = canvas.getContext(&#39;2d&#39;);
     var cw = canvas.clientWidth;
     var ch = canvas.clientHeight;
     canvas.width = cw;
@@ -202,7 +202,7 @@ var mouseY = e.pageY - this.offsetTop;</code></pre></noscript>
         ctx.save();
         ctx.restore();
     });
-    //reset the drop shadow so any other drawing don't have them
+    //reset the drop shadow so any other drawing don&#39;t have them
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
@@ -314,25 +314,25 @@ $.each(phraseArray, function() {
         &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;
         &lt;script type=&quot;text/javascript&quot; src=&quot;text.js&quot;&gt;&lt;/script&gt;&lt;!-- Library to help text --&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
-            $('#c').mousedown(function(e){
-                if ($('#textAreaPopUp').length == 0) {
+            $(&#39;#c&#39;).mousedown(function(e){
+                if ($(&#39;#textAreaPopUp&#39;).length == 0) {
                     var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
                     var mouseY = e.pageY - this.offsetTop;
 
                     //append a text area box to the canvas where the user clicked to enter in a comment
-                    var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
-                    var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+                    var textArea = &quot;&lt;div id=&#39;textAreaPopUp&#39; style=&#39;position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;&#39;&gt;&lt;textarea id=&#39;textareaTest&#39; style=&#39;width:100px;height:50px;&#39;&gt;&lt;/textarea&gt;&quot;;
+                    var saveButton = &quot;&lt;input type=&#39;button&#39; value=&#39;save&#39; id=&#39;saveText&#39; onclick=&#39;saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);&#39;&gt;&lt;/div&gt;&quot;;
                     var appendString = textArea + saveButton;
                     $(&quot;#main&quot;).append(appendString);
                 } else {
-                    $('textarea#textareaTest').remove();
-                    $('#saveText').remove();
-                    $('#textAreaPopUp').remove();
+                    $(&#39;textarea#textareaTest&#39;).remove();
+                    $(&#39;#saveText&#39;).remove();
+                    $(&#39;#textAreaPopUp&#39;).remove();
                     var mouseX = e.pageX - this.offsetLeft + $(&quot;#c&quot;).position().left;
                     var mouseY = e.pageY - this.offsetTop;
                     //append a text area box to the canvas where the user clicked to enter in a comment
-                    var textArea = &quot;&lt;div id='textAreaPopUp' style='position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;'&gt;&lt;textarea id='textareaTest' style='width:100px;height:50px;'&gt;&lt;/textarea&gt;&quot;;
-                    var saveButton = &quot;&lt;input type='button' value='save' id='saveText' onclick='saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);'&gt;&lt;/div&gt;&quot;;
+                    var textArea = &quot;&lt;div id=&#39;textAreaPopUp&#39; style=&#39;position:absolute;top:&quot;+mouseY+&quot;px;left:&quot;+mouseX+&quot;px;z-index:30;&#39;&gt;&lt;textarea id=&#39;textareaTest&#39; style=&#39;width:100px;height:50px;&#39;&gt;&lt;/textarea&gt;&quot;;
+                    var saveButton = &quot;&lt;input type=&#39;button&#39; value=&#39;save&#39; id=&#39;saveText&#39; onclick=&#39;saveTextFromArea(&quot;+mouseY+&quot;,&quot;+mouseX+&quot;);&#39;&gt;&lt;/div&gt;&quot;;
                     var appendString = textArea + saveButton;
                     $(&quot;#main&quot;).append(appendString);
                 }
@@ -340,13 +340,13 @@ $.each(phraseArray, function() {
            
             function saveTextFromArea(y,x){
                 //get the value of the textarea then destroy it and the save button
-                var text = $('textarea#textareaTest').val();
-                $('textarea#textareaTest').remove();
-                $('#saveText').remove();
-                $('#textAreaPopUp').remove();
+                var text = $(&#39;textarea#textareaTest&#39;).val();
+                $(&#39;textarea#textareaTest&#39;).remove();
+                $(&#39;#saveText&#39;).remove();
+                $(&#39;#textAreaPopUp&#39;).remove();
                 //get the canvas and add the text functions
-                var canvas = document.getElementById('c');
-                var ctx = canvas.getContext('2d');
+                var canvas = document.getElementById(&#39;c&#39;);
+                var ctx = canvas.getContext(&#39;2d&#39;);
                 var cw = canvas.clientWidth;
                 var ch = canvas.clientHeight;
                 canvas.width = cw;
@@ -378,7 +378,7 @@ $.each(phraseArray, function() {
                     ctx.save();
                     ctx.restore();
                 });
-                //reset the drop shadow so any other drawing don't have them
+                //reset the drop shadow so any other drawing don&#39;t have them
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
                 ctx.shadowBlur = 0;

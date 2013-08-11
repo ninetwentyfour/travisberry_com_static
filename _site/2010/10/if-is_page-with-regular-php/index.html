@@ -85,9 +85,9 @@
 
 <div class="gistFallback">
 <script src='https://gist.github.com/1177074.js?file=example1.php'></script><noscript><pre><code>&lt;?php
-    $baseurl = 'http://www.example.com'; //set the base url of the site
+    $baseurl = &#39;http://www.example.com&#39;; //set the base url of the site
     $pageYouWant = $baseurl.&quot;/the-rest-of-the-url&quot;; //add the rest of the url you want to check against
-    $currentPage = $baseurl.$_SERVER['REQUEST_URI'];// this gets the current page url
+    $currentPage = $baseurl.$_SERVER[&#39;REQUEST_URI&#39;];// this gets the current page url
     if($pageYouWant==$currentPage) {
         //do something
     }

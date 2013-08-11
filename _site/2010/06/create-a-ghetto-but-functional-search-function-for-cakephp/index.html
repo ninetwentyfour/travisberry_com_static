@@ -86,14 +86,14 @@
 
 <div class="gistFallback">
 <script src='https://gist.github.com/1177028.js?file=example1.php'></script><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;
-    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url('/users/search'); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url(&#39;/users/search&#39;); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
     &lt;label for=&quot;searchuser&quot;&gt;Search Users:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;searchuser&quot; /&gt;
     Search By:
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.id&quot;  checked&gt; User ID
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.email&quot;  checked&gt; User Email
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;Entity.name&quot;&gt; Entity Name
     &lt;?php
-        echo $form-&gt;end('Search');
+        echo $form-&gt;end(&#39;Search&#39;);
     ?&gt;
 &lt;/div&gt;</code></pre></noscript>
 </div>
@@ -106,19 +106,19 @@
 <div class="gistFallback">
 <script src='https://gist.github.com/1177028.js?file=example2.php'></script><noscript><pre><code>&lt;?php
 function search() {
-    $searchtype = $_POST['searchtype'];
-    $value = $_POST['searchuser'];
-    $results = $this-&gt;User-&gt;find('all', array('fields' =&gt; array(
-                                                                'User.id',
-                                                                'User.email',
-                                                                'Entity.name',
-                                                                'User.created',
-                                                                'User.modified'
+    $searchtype = $_POST[&#39;searchtype&#39;];
+    $value = $_POST[&#39;searchuser&#39;];
+    $results = $this-&gt;User-&gt;find(&#39;all&#39;, array(&#39;fields&#39; =&gt; array(
+                                                                &#39;User.id&#39;,
+                                                                &#39;User.email&#39;,
+                                                                &#39;Entity.name&#39;,
+                                                                &#39;User.created&#39;,
+                                                                &#39;User.modified&#39;
                                                                 ),
-                                                'order' =&gt; 'User.id ASC',
-                                                'conditions' =&gt; array($searchtype . ' ' . 'LIKE' =&gt; '%'.$value.'%')
+                                                &#39;order&#39; =&gt; &#39;User.id ASC&#39;,
+                                                &#39;conditions&#39; =&gt; array($searchtype . &#39; &#39; . &#39;LIKE&#39; =&gt; &#39;%&#39;.$value.&#39;%&#39;)
                                             ));
-    $this-&gt;set('results', $results);
+    $this-&gt;set(&#39;results&#39;, $results);
 }
 ?&gt;</code></pre></noscript>
 </div>
@@ -128,13 +128,13 @@ function search() {
 
 <div class="gistFallback">
 <script src='https://gist.github.com/1177028.js?file=example3.php'></script><noscript><pre><code>&lt;div id=&quot;search&quot;&gt;
-    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url('/users/search'); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;form id=&quot;orderform&quot; action=&quot;&lt;?php echo $html-&gt;url(&#39;/users/search&#39;); ?&gt;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
     &lt;label for=&quot;searchuser&quot;&gt;Search Users:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;searchuser&quot; /&gt;
     Search By:
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.id&quot;  checked&gt; User ID
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;User.email&quot;  checked&gt; User Email
     &lt;input type=&quot;radio&quot; name=&quot;searchtype&quot; value=&quot;Entity.name&quot;&gt; Entity Name
-    &lt;?php echo $form-&gt;end('Search'); ?&gt;
+    &lt;?php echo $form-&gt;end(&#39;Search&#39;); ?&gt;
 &lt;/div&gt;
 &lt;div id=&quot;contentbox&quot;&gt;
     &lt;h2&gt;Manage Users&lt;/h2&gt;
@@ -144,9 +144,9 @@ function search() {
         &lt;/thead&gt;
         &lt;?php foreach($results as $user) : ?&gt;  
             &lt;tr&gt;
-                &lt;td&gt;&lt;?php echo $user['User']['id'] ?&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;?php echo $user['User']['email'] ?&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;?php echo $user['Entity']['name'] ?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?php echo $user[&#39;User&#39;][&#39;id&#39;] ?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?php echo $user[&#39;User&#39;][&#39;email&#39;] ?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?php echo $user[&#39;Entity&#39;][&#39;name&#39;] ?&gt;&lt;/td&gt;
             &lt;/tr&gt;
         &lt;?php endforeach; ?&gt;
     &lt;/table&gt;

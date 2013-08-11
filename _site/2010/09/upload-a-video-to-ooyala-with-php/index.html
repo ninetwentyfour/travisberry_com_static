@@ -88,83 +88,83 @@
 *Publish video to ooyala
 */
 function publish(){// this kicks off the massive publish functions
-    $labels = $_POST['label'];
-    $file = $_POST['video_file'];
+    $labels = $_POST[&#39;label&#39;];
+    $file = $_POST[&#39;video_file&#39;];
     $dir = $file;
     $name = explode(&quot;/&quot;, $dir );
     $name = array_reverse($name );//this get just the name of the file and not
     //the whole path for the name and title of the video
     $nameforshow = $name[0];
-    $label = '/'.$labels;
+    $label = &#39;/&#39;.$labels;
     $filesize = filesize($dir);
     $expires = time() + 900;
-    $upload = OrdersController::upload(array('expires' =&gt; $expires,
-                                             'file_size' =&gt; $filesize,
-                                             'file_name' =&gt; $name[0],
-                                             'title' =&gt; $name[0]),$dir,$label);
+    $upload = OrdersController::upload(array(&#39;expires&#39; =&gt; $expires,
+                                             &#39;file_size&#39; =&gt; $filesize,
+                                             &#39;file_name&#39; =&gt; $name[0],
+                                             &#39;title&#39; =&gt; $name[0]),$dir,$label);
                                             //send this to the upload function
 }
 
 function upload($params,$dir,$label){//this passes to the send request function
                                     //for the first time
-    return OrdersController::send_request('create_video', $params,$dir,
-                                          $label,'');
+    return OrdersController::send_request(&#39;create_video&#39;, $params,$dir,
+                                          $label,&#39;&#39;);
 }
 
 function upload_complete($params,$label2){//this gets hit after posting the
                                         //video to ooyala
     $label3 = $label2;
-    $dir ='';
-    $label = '';
-    return OrdersController::send_request('upload_complete', $params,
-                                          '','',$label3);
+    $dir =&#39;&#39;;
+    $label = &#39;&#39;;
+    return OrdersController::send_request(&#39;upload_complete&#39;, $params,
+                                          &#39;&#39;,&#39;&#39;,$label3);
                             //goes back to send request for the second time
 }
 
 function assign_label($params){//this starts creating and assigning labels
-    return OrdersController::send_request2('labels', $params);//this kicks off
+    return OrdersController::send_request2(&#39;labels&#39;, $params);//this kicks off
                                                             //send request 2
 }
 
 function send_request($request_type, $params,$dir,$label,$label3){
     // first time through this hits the create video url and returns a url
     //to post the video to. second time through we hit the upload complete url
-    $ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
-    $ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
-    if (!array_key_exists('expires', $params)) {
-        $params['expires'] = time() + 900;
+    $ooyala_pcode = &#39;PUT YOUR OOYALA PARTNER CODE HERE&#39;;
+    $ooyala_scode = &#39;PUT YOUR OOYALA SECRET CODE HERE&#39;;
+    if (!array_key_exists(&#39;expires&#39;, $params)) {
+        $params[&#39;expires&#39;] = time() + 900;
     }
     $string_to_sign = $ooyala_scode;
-    $url = 'http://api.ooyala.com/ingestion/'.$request_type.'?pcode='.$ooyala_pcode;
+    $url = &#39;http://api.ooyala.com/ingestion/&#39;.$request_type.&#39;?pcode=&#39;.$ooyala_pcode;
     $keys = array_keys($params);
     sort($keys);
     foreach ($keys as $key) {
-        $string_to_sign .= $key.'='.$params[$key];
-        $url .= '&amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+        $string_to_sign .= $key.&#39;=&#39;.$params[$key];
+        $url .= &#39;&amp;&#39;.rawurlencode($key).&#39;=&#39;.rawurlencode($params[$key]);
     }
-    $digest = hash('sha256', $string_to_sign, true);
-    $signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
-    $url .= '&amp;signature='.rawurlencode($signature);
-    if ($request_type == 'create_video') {// if type is create video then
+    $digest = hash(&#39;sha256&#39;, $string_to_sign, true);
+    $signature = ereg_replace(&#39;=+$&#39;, &#39;&#39;, trim(base64_encode($digest)));
+    $url .= &#39;&amp;signature=&#39;.rawurlencode($signature);
+    if ($request_type == &#39;create_video&#39;) {// if type is create video then
                                     //parse the returned xml for the post url
         $xml = simplexml_load_file($url);
         foreach($xml-&gt;children() as $child){
-            if($child-&gt;getName()=='embedCode'){
+            if($child-&gt;getName()==&#39;embedCode&#39;){
                 $embed_code = $child;
             }
-            if($child-&gt;getname()=='urls'){
+            if($child-&gt;getname()==&#39;urls&#39;){
                 $upload_url = $child-&gt;children();
                 $file= $dir;
                 $label2 = $label;
                 $ch = curl_init($upload_url);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, array('file'=&gt;&quot;@$file&quot;));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, array(&#39;file&#39;=&gt;&quot;@$file&quot;));
                 //post the file
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 $postResult = curl_exec($ch);
                 curl_close($ch);
-                if ($postResult != ''){
+                if ($postResult != &#39;&#39;){
                     $upload_complete = OrdersController::upload_complete(array
-                                        ('embed_code' =&gt; $embed_code),$label2);
+                                        (&#39;embed_code&#39; =&gt; $embed_code),$label2);
                     //after posting you have to hit the upload complete url
                     //to get ooyala to process the video.
                     //so kick this up to the upload complete function
@@ -172,14 +172,14 @@ function send_request($request_type, $params,$dir,$label,$label3){
             }
         }
     }else{
-        if ($request_type == 'upload_complete') {
+        if ($request_type == &#39;upload_complete&#39;) {
             // hit the upload complete url
             $ch = curl_init($url);
             $postResult2 = curl_exec($ch);
             curl_close($ch);
             $add_label = OrdersController::assign_label(array(
-            'embedCodes' =&gt; $params['embed_code'], 'labels' =&gt; $label3,
-            'mode'=&gt;'assignLabels'));
+            &#39;embedCodes&#39; =&gt; $params[&#39;embed_code&#39;], &#39;labels&#39; =&gt; $label3,
+            &#39;mode&#39;=&gt;&#39;assignLabels&#39;));
             // this kicks back up to assign label function to add a label
             //to the video
         }
@@ -189,23 +189,23 @@ function send_request($request_type, $params,$dir,$label,$label3){
 function send_request2($request_type, $params)
 // this creates the url to hit to add a label to the last uploaded video
 {
-    $ooyala_pcode = 'PUT YOUR OOYALA PARTNER CODE HERE';
-    $ooyala_scode = 'PUT YOUR OOYALA SECRET CODE HERE';
+    $ooyala_pcode = &#39;PUT YOUR OOYALA PARTNER CODE HERE&#39;;
+    $ooyala_scode = &#39;PUT YOUR OOYALA SECRET CODE HERE&#39;;
     //Add an expire time of 15 minutes unless otherwise specified
-    if (!array_key_exists('expires', $params)) {
-        $params['expires'] = time() + 900;
+    if (!array_key_exists(&#39;expires&#39;, $params)) {
+        $params[&#39;expires&#39;] = time() + 900;
     }
     $string_to_sign = $ooyala_scode;
-    $url = 'http://api.ooyala.com/partner/'.$request_type.'?pcode='.$ooyala_pcode;
+    $url = &#39;http://api.ooyala.com/partner/&#39;.$request_type.&#39;?pcode=&#39;.$ooyala_pcode;
     $keys = array_keys($params);
     sort($keys);
     foreach ($keys as $key) {
-        $string_to_sign .= $key.'='.$params[$key];
-        $url .= '&amp;'.rawurlencode($key).'='.rawurlencode($params[$key]);
+        $string_to_sign .= $key.&#39;=&#39;.$params[$key];
+        $url .= &#39;&amp;&#39;.rawurlencode($key).&#39;=&#39;.rawurlencode($params[$key]);
     }
-    $digest = hash('sha256', $string_to_sign, true);
-    $signature = ereg_replace('=+$', '', trim(base64_encode($digest)));
-    $url .= '&amp;signature='.rawurlencode($signature);
+    $digest = hash(&#39;sha256&#39;, $string_to_sign, true);
+    $signature = ereg_replace(&#39;=+$&#39;, &#39;&#39;, trim(base64_encode($digest)));
+    $url .= &#39;&amp;signature=&#39;.rawurlencode($signature);
     $ch = curl_init($url);
     $postResult3 = curl_exec($ch);
     curl_close($ch);//now the video is done and uploaded to ooyala

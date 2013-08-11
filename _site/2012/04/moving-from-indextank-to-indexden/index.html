@@ -87,8 +87,8 @@
 <div class="gistFallback">
 <script src='https://gist.github.com/1177288.js?file=example1.php'></script><noscript><pre><code>&lt;?php
 function createIndextankClient(){
-    App::import('Vendor', 'indextank_client');
-    $API_URL = 'YOUR API URL HERE';
+    App::import(&#39;Vendor&#39;, &#39;indextank_client&#39;);
+    $API_URL = &#39;YOUR API URL HERE&#39;;
     $client = new ApiClient($API_URL);
     return $client;
 }
@@ -131,11 +131,11 @@ function searchIndextank($indexType,$query){
 
 function add_to_index() {
 
-    $projects = $this-&gt;Project-&gt;find('all');
+    $projects = $this-&gt;Project-&gt;find(&#39;all&#39;);
 
     foreach($projects as $project){
-        $indexData = array('text'=&gt;$project['Project']['title'],'title'=&gt;$project['Project']['title'],'description'=&gt;$project['Project']['description'],'user_id'=&gt;$project['Project']['user_id']);
-        $id = $project['Project']['_id'];
+        $indexData = array(&#39;text&#39;=&gt;$project[&#39;Project&#39;][&#39;title&#39;],&#39;title&#39;=&gt;$project[&#39;Project&#39;][&#39;title&#39;],&#39;description&#39;=&gt;$project[&#39;Project&#39;][&#39;description&#39;],&#39;user_id&#39;=&gt;$project[&#39;Project&#39;][&#39;user_id&#39;]);
+        $id = $project[&#39;Project&#39;][&#39;_id&#39;];
         $this-&gt;addIndextank(&quot;HomkoraProjects&quot;,$id,$indexData);
     }
 }

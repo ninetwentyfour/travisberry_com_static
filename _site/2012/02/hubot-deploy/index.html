@@ -120,23 +120,23 @@ module.exports = (robot) -&gt;
   robot.respond /deploy (.+)/i, (msg) -&gt;
     if msg.match[1] in repos
       #send waiting messages
-      msg.send 'Attempting deploy. Please hold.'
+      msg.send &#39;Attempting deploy. Please hold.&#39;
       msg.send msg.random hackers
 
       #hit the sinatra app to do the deploy
       msg.http(&quot;http://localhost:9393/deploy/#{msg.match[1]}&quot;)
       .get() (err, res, body) -&gt;
         if res.statusCode == 404
-          msg.send 'Something went horribly wrong'
+          msg.send &#39;Something went horribly wrong&#39;
         else
-          msg.send 'Deployed like a boss'
-          msg.send 'http://hubot-assets.s3.amazonaws.com/fuck-yeah/3.gif'
+          msg.send &#39;Deployed like a boss&#39;
+          msg.send &#39;http://hubot-assets.s3.amazonaws.com/fuck-yeah/3.gif&#39;
     else
-      msg.send 'Nope. I dont know what that is. Try deploying one of these: ' + repos.join(&quot;, &quot;)
+      msg.send &#39;Nope. I dont know what that is. Try deploying one of these: &#39; + repos.join(&quot;, &quot;)
 
 
   robot.respond /(what can you deploy?)/i, (msg) -&gt;
-    msg.send 'I can deploy the shit out of ' + repos.join(&quot;, &quot;)</code></pre></noscript>
+    msg.send &#39;I can deploy the shit out of &#39; + repos.join(&quot;, &quot;)</code></pre></noscript>
 </div>
 
 
@@ -147,16 +147,16 @@ module.exports = (robot) -&gt;
 <p>Now that Hubot is listening for deploys, we can create the simple Sinatra app.</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/1847866.js?file=deploy.rb'></script><noscript><pre><code>require 'rubygems'
-require 'sinatra'
+<script src='https://gist.github.com/1847866.js?file=deploy.rb'></script><noscript><pre><code>require &#39;rubygems&#39;
+require &#39;sinatra&#39;
 
-get '/' do
+get &#39;/&#39; do
   &quot;Leave this place&quot;
 end
 
 
 #pass in the repo name and deploy that shit
-get '/deploy/:name' do
+get &#39;/deploy/:name&#39; do
     bb = IO.popen(&quot;cd ~/Desktop/deploy_repos/&quot;+params[:name]+&quot;; git pull origin master; cap deploy&quot;)
     b = bb.readlines
     puts b.join

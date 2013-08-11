@@ -83,21 +83,21 @@
 <p>I'm in the process of converting my site over to running <a href="http://www.locomotivecms.com">Locomotive CMS</a> instead of WordPress, so I needed to create a way to add gists through the admin interface and simply return the embed code.</p>
 
 <div class="gistFallback">
-<script src='https://gist.github.com/998389.js?file=gist_helper.rb'></script><noscript><pre><code>  require 'net/http'
-  require 'uri'
-  require 'json'
+<script src='https://gist.github.com/998389.js?file=gist_helper.rb'></script><noscript><pre><code>  require &#39;net/http&#39;
+  require &#39;uri&#39;
+  require &#39;json&#39;
   
   def get_gist(fileName,content)
-    res = Net::HTTP.post_form(URI.parse('http://gist.github.com/api/v1/json/new'),
-      { 'files[#{fileName}]' =&gt; content,
-        'login' =&gt; 'USER NAME HERE',
-        'token' =&gt; 'API TOKEN HERE',
-        'description' =&gt; 'This is a test description'
+    res = Net::HTTP.post_form(URI.parse(&#39;http://gist.github.com/api/v1/json/new&#39;),
+      { &#39;files[#{fileName}]&#39; =&gt; content,
+        &#39;login&#39; =&gt; &#39;USER NAME HERE&#39;,
+        &#39;token&#39; =&gt; &#39;API TOKEN HERE&#39;,
+        &#39;description&#39; =&gt; &#39;This is a test description&#39;
         })
     parsed_json = JSON(res.body)
-    parsed_json['gists'].each do |key, val|
+    parsed_json[&#39;gists&#39;].each do |key, val|
       key.each do |k, v|
-        if &quot;#{k}&quot; == 'repo'
+        if &quot;#{k}&quot; == &#39;repo&#39;
           repo = &quot;#{v}&quot;
         end
       end

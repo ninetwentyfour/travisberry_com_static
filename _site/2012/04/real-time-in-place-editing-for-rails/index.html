@@ -117,12 +117,12 @@ Find RedisToGo url
     heroku run node
     process.env.REDISTOGO_URL
 
-And then publish from Juggernaut's Ruby gem:
+And then publish from Juggernaut&#39;s Ruby gem:
 
     irb
     require &quot;juggernaut&quot;
     Juggernaut.url = &quot;REDISTOGO_URL&quot;
-    Juggernaut.publish(&quot;channel1&quot;, &quot;woo! it's working&quot;)</code></pre></noscript>
+    Juggernaut.publish(&quot;channel1&quot;, &quot;woo! it&#39;s working&quot;)</code></pre></noscript>
 </div>
 
 
@@ -141,7 +141,7 @@ class UserObserver &lt; ActiveRecord::Observer
   end
   
   def publish(type, user)
-    Juggernaut.url = ENV['JUGG_URL']
+    Juggernaut.url = ENV[&#39;JUGG_URL&#39;]
     Juggernaut.publish(&quot;/observer/user/#{user.id}&quot;, {
       :id     =&gt; user.id, 
       :type   =&gt; type, 
@@ -181,9 +181,9 @@ end</code></pre></noscript>
     //setup juggernaut to handle real time updating page changes
     var jug = new Juggernaut({
         secure: false,
-        host: 'your-juggernaut-app.herokuapp.com',
+        host: &#39;your-juggernaut-app.herokuapp.com&#39;,
         port: 80,
-        transports: ['xhr-polling','jsonp-polling']
+        transports: [&#39;xhr-polling&#39;,&#39;jsonp-polling&#39;]
     });
 
     //subscribe to the url for the specific user, this is the same url we published to from the model observer
@@ -191,14 +191,14 @@ end</code></pre></noscript>
         //set the updated_text with an error message first - will override if a better result
         var updated_text = &quot;There was an update, but a problem displaying. Please refresh.&quot;;
         jQuery.each(data.record, function(i, val) {
-            //the updated_at of the record is always returned, we just skip it here since it's not important
+            //the updated_at of the record is always returned, we just skip it here since it&#39;s not important
             if (i != &quot;updated_at&quot;){
                 //set the updated_text to the update vaule - this is for simple text areas and fields
                 updated_text = val[1];
                 //if we updated a collection via dropdown, we need to do some more work
                 if ($(&quot;#best_in_place_user_&lt;%= @user.id %&gt;_&quot;+i).attr(&quot;data-collection&quot;) !== undefined) {
                     //grab the data values from the best in place dropdown
-                    var brand = $('#best_in_place_user_&lt;%= @user.id %&gt;_'+i).attr(&quot;data-collection&quot;);
+                    var brand = $(&#39;#best_in_place_user_&lt;%= @user.id %&gt;_&#39;+i).attr(&quot;data-collection&quot;);
                     var test = $.parseJSON(brand);
                     $.each(test, function(index, value) {
                         //loop on the json looking for a match
@@ -209,7 +209,7 @@ end</code></pre></noscript>
                     });
                 }
                 //highlight the changed field and update the text with the value from juggernaut - all users viewing the page will see this
-                $('#best_in_place_user_&lt;%= @user.id %&gt;_'+i).css(&quot;background-color&quot;,&quot;#c7f464&quot;).html(updated_text).delay(1500).animate({backgroundColor: &quot;#f5f5f5&quot;}, 1000 );
+                $(&#39;#best_in_place_user_&lt;%= @user.id %&gt;_&#39;+i).css(&quot;background-color&quot;,&quot;#c7f464&quot;).html(updated_text).delay(1500).animate({backgroundColor: &quot;#f5f5f5&quot;}, 1000 );
             }
         });
     });

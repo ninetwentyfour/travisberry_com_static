@@ -1,6 +1,6 @@
 jammit -o assets -c _assets.yml
 
-jekyll
+jekyll build
 
 s3cmd sync --acl-public --delete-removed _site/ s3://www.travisberry.com
 

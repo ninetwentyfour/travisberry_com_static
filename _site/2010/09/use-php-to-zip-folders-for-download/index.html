@@ -92,7 +92,7 @@
 <div class="gistFallback">
 <script src='https://gist.github.com/1177068.js?file=example1.php'></script><noscript><pre><code>&lt;?php
     //Get the directory to zip
-    $filename_no_ext= $_GET['directtozip'];
+    $filename_no_ext= $_GET[&#39;directtozip&#39;];
 
     // we deliver a zip file
     header(&quot;Content-Type: archive/zip&quot;);
@@ -104,10 +104,10 @@
     $tmp_zip = tempnam (&quot;tmp&quot;, &quot;tempname&quot;) . &quot;.zip&quot;;
 
     //change directory so the zip file doesnt have a tree structure in it.
-    chdir('user_uploads/'.$_GET['directtozip']);
+    chdir(&#39;user_uploads/&#39;.$_GET[&#39;directtozip&#39;]);
    
     // zip the stuff (dir and all in there) into the tmp_zip file
-    exec('zip '.$tmp_zip.' *');
+    exec(&#39;zip &#39;.$tmp_zip.&#39; *&#39;);
    
     // calc the length of the zip. it is needed for the progress bar of the browser
     $filesize = filesize($tmp_zip);
